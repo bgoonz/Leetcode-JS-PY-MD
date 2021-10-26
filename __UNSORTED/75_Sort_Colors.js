@@ -15,13 +15,13 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-// var sortColors = function(nums) {
-//     var redIndex = 0;
-//     var blueIndex = nums.length - 1;
-//     var red = 0;
-//     var blue = 2;
+//  let sortColors = function(nums) {
+//      let redIndex = 0;
+//      let blueIndex = nums.length - 1;
+//      let red = 0;
+//      let blue = 2;
 
-//     for(var i = 0; i <= blueIndex; i++) {
+//     for( let i = 0; i <= blueIndex; i++) {
 //         if(nums[i] === red) {
 //             swap(nums, redIndex, i);
 //             redIndex++;
@@ -37,15 +37,15 @@
 //     if(i === j) {
 //         return;
 //     }
-//     var tmp = arr[i];
+//      let tmp = arr[i];
 //     arr[i] = arr[j];
 //     arr[j] = tmp;
 // }
 
-var sortColors = function (nums) {
-  var redIdx = 0;
-  var blueIdx = nums.length - 1;
-  var i = 0;
+let sortColors = function (nums) {
+  let redIdx = 0;
+  let blueIdx = nums.length - 1;
+  let i = 0;
 
   while (i <= blueIdx) {
     if (nums[i] === 0) {
@@ -58,7 +58,7 @@ var sortColors = function (nums) {
   }
 
   function swap(nums, i, j) {
-    var tmp = nums[i];
+    let tmp = nums[i];
     nums[i] = nums[j];
     nums[j] = tmp;
   }

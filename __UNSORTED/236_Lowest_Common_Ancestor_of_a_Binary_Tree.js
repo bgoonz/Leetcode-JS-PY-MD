@@ -34,13 +34,13 @@
 // Hide Similar Problems
 
 // reference: http://www.cnblogs.com/anne-vista/p/4815076.html
-var lowestCommonAncestor = function (root, p, q) {
+let lowestCommonAncestor = function (root, p, q) {
   if (root === null || root === p || root === q) {
     return root;
   }
 
-  var l = lowestCommonAncestor(root.left, p, q);
-  var r = lowestCommonAncestor(root.right, p, q);
+  let l = lowestCommonAncestor(root.left, p, q);
+  let r = lowestCommonAncestor(root.right, p, q);
 
   if (l !== null && r !== null) {
     // p and q are on two different side of root node.
@@ -52,13 +52,13 @@ var lowestCommonAncestor = function (root, p, q) {
 
 // second attempt
 
-var lowestCommonAncestor = function (root, p, q) {
+let lowestCommonAncestor = function (root, p, q) {
   if (root === null || root === p || root === q) {
     return root;
   }
 
-  var left = lowestCommonAncestor(root.left, p, q);
-  var right = lowestCommonAncestor(root.right, p, q);
+  let left = lowestCommonAncestor(root.left, p, q);
+  let right = lowestCommonAncestor(root.right, p, q);
 
   if (left !== null && right !== null) {
     return root;

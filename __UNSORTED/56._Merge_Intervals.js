@@ -20,8 +20,8 @@
  * @return {Interval[]}
  */
 
-var merge = function (intervals) {
-  var res = [];
+let merge = function (intervals) {
+  let res = [];
 
   intervals.sort((i1, i2) => (i1.start > i2.start ? 1 : -1));
 
@@ -29,9 +29,9 @@ var merge = function (intervals) {
     res.push(intervals[0]);
   }
 
-  for (var i = 1; i < intervals.length; i++) {
-    var interval = intervals[i];
-    var last = res.pop();
+  for (let i = 1; i < intervals.length; i++) {
+    let interval = intervals[i];
+    let last = res.pop();
 
     if (interval.start > last.end) {
       res.push(last);

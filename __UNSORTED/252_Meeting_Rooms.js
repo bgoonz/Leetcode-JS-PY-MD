@@ -21,15 +21,15 @@
  */
 
 // 132 ms
-var canAttendMeetings = function (intervals) {
+let canAttendMeetings = function (intervals) {
   // sort by starting time
   intervals.sort((interval1, interval2) =>
     interval1.start > interval2.start ? 1 : -1
   );
 
-  for (var i = 1; i < intervals.length; i++) {
-    var pre = intervals[i - 1];
-    var cur = intervals[i];
+  for (let i = 1; i < intervals.length; i++) {
+    let pre = intervals[i - 1];
+    let cur = intervals[i];
 
     if (pre.end > cur.start) {
       return false;
@@ -41,12 +41,12 @@ var canAttendMeetings = function (intervals) {
 
 // second attempt
 
-var canAttendMeetings = function (intervals) {
+let canAttendMeetings = function (intervals) {
   intervals.sort((a, b) => {
     return a.start > b.start ? 1 : -1;
   });
 
-  for (var i = 1; i < intervals.length; i++) {
+  for (let i = 1; i < intervals.length; i++) {
     if (intervals[i - 1].end > intervals[i].start) {
       return false;
     }

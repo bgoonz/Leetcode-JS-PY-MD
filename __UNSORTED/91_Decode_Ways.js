@@ -16,15 +16,15 @@
  * @return {number}
  */
 
-var numDecodings = function (s) {
+let numDecodings = function (s) {
   if (!s || s[0] === "0") {
     return 0;
   }
 
-  var nums = [1, 1];
+  let nums = [1, 1];
 
-  for (var i = 2; i <= s.length; i++) {
-    var tmp;
+  for (let i = 2; i <= s.length; i++) {
+    let tmp;
 
     tmp = parseInt(s.substring(i - 1, i));
 
@@ -50,16 +50,16 @@ console.log(numDecodings("10"));
 
 // Using recusion
 // It also store all the possible combination
-// var numDecodings = function(s) {
-//     var result = [];
+//  let numDecodings = function(s) {
+//      let result = [];
 
 //     function traverse(s, beg, end, cur) {
 //         if(end > s.length) {
 //           return
 //         }
 
-//         var str = s.substring(beg, end);
-//         var num = parseInt(str);
+//          let str = s.substring(beg, end);
+//          let num = parseInt(str);
 
 //         if(isNaN(num) || num === 0 || num > 26) {
 //           return;

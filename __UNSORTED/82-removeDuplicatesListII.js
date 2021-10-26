@@ -9,11 +9,11 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function (head) {
+let deleteDuplicates = function (head) {
   if (!head || !head.next) return head;
-  var pre = new ListNode(null);
+  let pre = new ListNode(null);
   pre.next = head;
-  var preCopy = pre;
+  let preCopy = pre;
   while (head.next) {
     if (pre.next.val !== head.next.val) {
       pre = pre.next;

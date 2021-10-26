@@ -32,6 +32,6 @@ WordDistance.prototype.shortest = function (word1, word2) {
 
 /**
  * Your WordDistance object will be instantiated and called as such:
- * var obj = new WordDistance(words)
- * var param_1 = obj.shortest(word1,word2)
+ *  let obj = new WordDistance(words)
+ *  let param_1 = obj.shortest(word1,word2)
  */

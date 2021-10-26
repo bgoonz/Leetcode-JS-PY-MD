@@ -6,17 +6,17 @@
  * @param {number} k
  * @return {ListNode}
  */
-var rotateRight = function (head, k) {
+let rotateRight = function (head, k) {
   if (!head || !head.next) return head;
-  var headCopy = head;
-  var first = head;
-  var second = head;
-  var i = 1;
+  let headCopy = head;
+  let first = head;
+  let second = head;
+  let i = 1;
   while (first.next) {
     first = first.next;
     i++;
   }
-  var j = i - (k % i);
+  let j = i - (k % i);
   // if the steps eqauls to i (the length) return original list.
   if (j === i) return head;
 

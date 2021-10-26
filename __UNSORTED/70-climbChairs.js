@@ -3,14 +3,14 @@
  * @return {number}
  */
 // interative
-var climbStairs = function (n) {
-  var result = 0;
-  var stepOne = 1;
-  var stepTwo = 2;
+let climbStairs = function (n) {
+  let result = 0;
+  let stepOne = 1;
+  let stepTwo = 2;
   if (n === 1) return stepOne;
   if (n === 2) return stepTwo;
 
-  for (var i = 3; i <= n; i++) {
+  for (let i = 3; i <= n; i++) {
     result = stepOne + stepTwo;
     stepOne = stepTwo;
     stepTwo = result;
@@ -20,12 +20,12 @@ var climbStairs = function (n) {
 };
 
 // 2nd try
-var climbStairs = function (n) {
+let climbStairs = function (n) {
   if (n <= 2) return n;
-  var stepOne = 1;
-  var stepTwo = 2;
-  var result;
-  for (var i = 2; i < n; i++) {
+  let stepOne = 1;
+  let stepTwo = 2;
+  let result;
+  for (let i = 2; i < n; i++) {
     result = stepOne + stepTwo;
     stepOne = stepTwo;
     stepTwo = result;
@@ -35,16 +35,16 @@ var climbStairs = function (n) {
 };
 
 // recursive, exponential complexity. Not accepted
-var climbStairs = function (n) {
+let climbStairs = function (n) {
   if (n === 1) return 1;
   if (n === 2) return 2;
   if (n > 2) return climbStairs(n - 2) + climbStairs(n - 1);
 };
 
 // not optimal
-var climbStairs = function (n) {
-  var f = [1, 2];
-  for (var i = 2; i < n; i++) {
+let climbStairs = function (n) {
+  let f = [1, 2];
+  for (let i = 2; i < n; i++) {
     f[i] = f[i - 1] + f[i - 2];
   }
 

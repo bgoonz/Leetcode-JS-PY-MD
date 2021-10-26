@@ -6,9 +6,9 @@
  * @param {number} k
  * @return {number[]}
  */
-var topKFrequent = function (nums, k) {
-  var map = {};
-  for (var i = 0; i < nums.length; i++) {
+let topKFrequent = function (nums, k) {
+  let map = {};
+  for (let i = 0; i < nums.length; i++) {
     if (map.hasOwnProperty(nums[i])) {
       map[nums[i]] += 1;
     } else {
@@ -16,17 +16,17 @@ var topKFrequent = function (nums, k) {
     }
   }
 
-  var bucket = [];
-  for (var key in map) {
-    var keyVal = parseInt(key, 10);
+  let bucket = [];
+  for (let key in map) {
+    let keyVal = parseInt(key, 10);
     bucket[map[key]]
       ? bucket[map[key]].push(keyVal)
       : (bucket[map[key]] = [keyVal]);
   }
 
-  var result = [];
+  let result = [];
 
-  for (var j = bucket.length - 1; j > 0; j--) {
+  for (let j = bucket.length - 1; j > 0; j--) {
     if (bucket[j]) {
       result = result.concat(bucket[j]);
     }

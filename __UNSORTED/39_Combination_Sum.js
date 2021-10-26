@@ -20,8 +20,8 @@
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum = function (candidates, target) {
-  var result = [];
+let combinationSum = function (candidates, target) {
+  let result = [];
 
   if (candidates === null || candidates.length === 0) {
     return result;
@@ -31,14 +31,14 @@ var combinationSum = function (candidates, target) {
     return a > b ? 1 : -1;
   });
 
-  var output = [];
+  let output = [];
 
   generate(candidates, result, output, target, 0);
 
   return result;
 };
 
-var generate = function (candidates, result, output, sum, index) {
+let generate = function (candidates, result, output, sum, index) {
   if (sum === 0) {
     result.push(output.slice());
   }
@@ -46,7 +46,7 @@ var generate = function (candidates, result, output, sum, index) {
     return;
   }
 
-  for (var i = index; i < candidates.length; i++) {
+  for (let i = index; i < candidates.length; i++) {
     if (i > index && candidates[i] === candidates[i - 1]) {
       continue;
     }
@@ -60,13 +60,13 @@ var generate = function (candidates, result, output, sum, index) {
 };
 
 // Another solution
-var combinationSum = function (candidates, target) {
-  var results = [];
+let combinationSum = function (candidates, target) {
+  let results = [];
   comb(candidates.sort(), 0, [], 0, target, results);
   return results;
 };
 
-var comb = function (cand, index, partial, partialSum, target, results) {
+let comb = function (cand, index, partial, partialSum, target, results) {
   if (target === partialSum) {
     results.push(partial);
     return;

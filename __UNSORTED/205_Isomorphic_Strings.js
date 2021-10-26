@@ -23,21 +23,21 @@
  * @param {string} t
  * @return {boolean}
  */
-var isIsomorphic = function (s, t) {
+let isIsomorphic = function (s, t) {
   if (s.length !== t.length) {
     return false;
   }
 
-  var hash1 = {};
-  var hash2 = {};
+  let hash1 = {};
+  let hash2 = {};
 
-  for (var i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     hash1[s[i]] = t[i];
     hash2[t[i]] = s[i];
   }
 
-  var result1 = "";
-  var result2 = "";
+  let result1 = "";
+  let result2 = "";
 
   for (i = 0; i < s.length; i++) {
     result1 += hash1[s[i]];

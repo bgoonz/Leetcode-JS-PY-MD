@@ -2,30 +2,30 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var shortestDistance = function(grid) {
-    var rows = grid.length;
+ let shortestDistance = function(grid) {
+     let rows = grid.length;
     if(rows === 0) {
         return -1;
     }
     
-    var cols = grid[0].length;
+     let cols = grid[0].length;
     // 2D array that records sum distances to all buildings
-    var dist = [];
+     let dist = [];
     
     // 2D array that records how many buildings can visit here
-    var nums = [];
+     let nums = [];
     
-    for(var row = 0; row < rows; row++) {
+    for( let row = 0; row < rows; row++) {
         dist.push([]);
         nums.push([]);
         
-        for(var col = 0; col < cols; col++) {
+        for( let col = 0; col < cols; col++) {
             dist[row][col] = 0;
             nums[row][col] = 0;
         }
     }
     
-    var buildingNum = 0;
+     let buildingNum = 0;
     
     for(row = 0; row < rows; row++) {
         for(col = 0; col < cols; col++) {
@@ -36,7 +36,7 @@ var shortestDistance = function(grid) {
         }
     }  
     
-    var min = Infinity;
+     let min = Infinity;
     
     for(row = 0; row < rows; row++) {
         for(col = 0; col < cols; col++) {
@@ -54,32 +54,32 @@ var shortestDistance = function(grid) {
 };
 
 function bfs(grid, begCol, begRow, dist, nums) {
-    var rows = grid.length;
-    var cols = grid[0].length;
-    var queue = [];
+     let rows = grid.length;
+     let cols = grid[0].length;
+     let queue = [];
     queue.push([begRow, begCol]);
-    var dirs = [[-1,0],[0,1],[1,0],[0,-1]];
-    var level = 0;
+     let dirs = [[-1,0],[0,1],[1,0],[0,-1]];
+     let level = 0;
     
     // record if location is visited
-    var visited = [];
+     let visited = [];
     // init visited to all false
-    for(var row = 0; row < rows; row++) {
+    for( let row = 0; row < rows; row++) {
         visited.push([]);
-        for(var col = 0; col < cols; col++) {
+        for( let col = 0; col < cols; col++) {
             visited[row][col] = false;
         }
     }
      
     while(queue.length !== 0) {
         level++;
-        var len = queue.length;
+         let len = queue.length;
         
-        for(var i = 0; i < len; i++) {
-            var coords = queue.shift();
-            for(var j =0; j < dirs.length; j++) {
-                var x = coords[0] + dirs[j][0];
-                var y = coords[1] + dirs[j][1];
+        for( let i = 0; i < len; i++) {
+             let coords = queue.shift();
+            for( let j =0; j < dirs.length; j++) {
+                 let x = coords[0] + dirs[j][0];
+                 let y = coords[1] + dirs[j][1];
                 
                 if(x >= 0 && x < rows && y >= 0 && y < cols && !visited[x][y] && grid[x][y] === 0) {
                     visited[x][y] = true;

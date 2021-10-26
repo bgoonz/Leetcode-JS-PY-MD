@@ -19,7 +19,7 @@
  * @return {number}
  */
 
-var hammingWeight = function (n) {
+let hammingWeight = function (n) {
   if (n === null) {
     return n;
   }

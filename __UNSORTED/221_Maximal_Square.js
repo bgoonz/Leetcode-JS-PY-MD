@@ -18,17 +18,17 @@
  * @param {character[][]} matrix
  * @return {number}
  */
-var maximalSquare = function (matrix) {
-  var dp = [];
-  var ans = 0;
+let maximalSquare = function (matrix) {
+  let dp = [];
+  let ans = 0;
 
-  for (var i = 0; i < matrix.length; i++) {
-    var arr = Array(matrix[i].length).fill(0);
+  for (let i = 0; i < matrix.length; i++) {
+    let arr = Array(matrix[i].length).fill(0);
     dp.push(arr);
   }
 
-  for (var x = 0; x < matrix.length; x++) {
-    for (var y = 0; y < matrix[x].length; y++) {
+  for (let x = 0; x < matrix.length; x++) {
+    for (let y = 0; y < matrix[x].length; y++) {
       dp[x][y] = parseInt(matrix[x][y]);
 
       // conditions to make sure that x !== 0 && y !== 0 && dp[x][y] !== 0
@@ -46,7 +46,7 @@ var maximalSquare = function (matrix) {
   return Math.pow(ans, 2);
 };
 
-var matrix = ["1111", "1111", "1111"];
+let matrix = ["1111", "1111", "1111"];
 // dp becomes
 // 1111
 // 1222

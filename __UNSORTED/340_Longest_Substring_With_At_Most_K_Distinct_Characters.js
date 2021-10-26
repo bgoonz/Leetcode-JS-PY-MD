@@ -3,22 +3,22 @@
  * @param {number} k
  * @return {number}
  */
-var lengthOfLongestSubstringKDistinct = function (s, k) {
-  var longestSubstr = "";
-  var maxLength = 0;
-  var start = 0;
-  var map = new Map();
+let lengthOfLongestSubstringKDistinct = function (s, k) {
+  let longestSubstr = "";
+  let maxLength = 0;
+  let start = 0;
+  let map = new Map();
 
   if (k === 0) {
     return 0;
   }
 
-  for (var i = 0; i < s.length; i++) {
-    var c = s.charAt(i);
+  for (let i = 0; i < s.length; i++) {
+    let c = s.charAt(i);
 
     // if map already contains two distrinct chars and the char is new to the map
     if (map.size >= k && map.get(c) === undefined) {
-      var leftMost = s.length;
+      let leftMost = s.length;
 
       // Calc substring len before the new char
       if (i - start > maxLength) {

@@ -15,10 +15,10 @@
 // Hide Tags Dynamic Programming Bit Manipulation
 // Hide Similar Problems (E) Number of 1 Bits
 
-var countBits = function (num) {
-  var ans = [0];
+let countBits = function (num) {
+  let ans = [0];
 
-  for (var i = 1; i <= num; i++) {
+  for (let i = 1; i <= num; i++) {
     ans[i] = (ans[i] || 0) + ans[i & (i - 1)] + 1;
   }
 

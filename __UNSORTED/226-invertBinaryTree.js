@@ -9,11 +9,11 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function (root) {
+let invertTree = function (root) {
   if (root === null) {
     return null;
   }
-  var node = root.left;
+  let node = root.left;
   root.left = root.right;
   root.right = node;
   if (root.left) {

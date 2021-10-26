@@ -15,7 +15,7 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-var lowestCommonAncestor = function (root, p, q) {
+let lowestCommonAncestor = function (root, p, q) {
   if (root === null) {
     return root;
   }

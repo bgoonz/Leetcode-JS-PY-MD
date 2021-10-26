@@ -2,18 +2,18 @@
  * @param {number} n
  * @return {string}
  */
-var countAndSay = function (n) {
+let countAndSay = function (n) {
   if (n === null || n.length === 0) {
     return "";
   }
 
-  var cur = "1";
-  var num = 1;
+  let cur = "1";
+  let num = 1;
 
   while (n > 1) {
-    var r = "";
+    let r = "";
 
-    for (var i = 0; i < cur.length; i++) {
+    for (let i = 0; i < cur.length; i++) {
       if (i < cur.length - 1 && cur[i] === cur[i + 1]) {
         num++;
       } else {
@@ -28,14 +28,14 @@ var countAndSay = function (n) {
   return cur;
 };
 
-// var countAndSay = function(n) {
-//     var str = '1';
+//  let countAndSay = function(n) {
+//      let str = '1';
 
-//     for(var i = 1; i < n; i++) {
-//         var newStr = '';
-//         var count = 1;
+//     for( let i = 1; i < n; i++) {
+//          let newStr = '';
+//          let count = 1;
 
-//         for(var j = 1; j < str.length; j++) {
+//         for( let j = 1; j < str.length; j++) {
 //             if(str[j] === str[j - 1]) {
 //                 count++;
 //             } else {

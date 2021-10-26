@@ -38,14 +38,14 @@
 
 // only pre order travesal can provide information about the root node
 // the other technique that we can use is to use level order traversal
-var serialize = function(root) {
-    var result = [];
+ let serialize = function(root) {
+     let result = [];
     serializer(root, result);
     
     return result.join(",");
 };
 
-var serializer = function(node, output) {
+ let serializer = function(node, output) {
     if(node === null) {
         output.push("#");
         return;
@@ -62,16 +62,16 @@ var serializer = function(node, output) {
  * @param {string} data
  * @return {TreeNode}
  */
-var deserialize = function(data) {
+ let deserialize = function(data) {
     data = data.split(",");
-    var index = 0;
+     let index = 0;
    
     function deserializer(data) {
         if(index > data.length || data[index] === "#") {
             return null;
         }
         
-        var node = new TreeNode(parseInt(data[index]));
+         let node = new TreeNode(parseInt(data[index]));
         index++;
         node.left = deserializer(data);
         index++;
@@ -102,18 +102,18 @@ var deserialize = function(data) {
  * @param {TreeNode} root
  * @return {string}
  */
-// var serialize = function(root) {
+//  let serialize = function(root) {
 //     if(!root) {
 //         return "";
 //     }
     
-//     var result = [];
-//     var curLvl = [];
-//     var nextLvl = [];
+//      let result = [];
+//      let curLvl = [];
+//      let nextLvl = [];
 //     curLvl.push(root);
 
 //     while(curLvl.length) {
-//         var node = curLvl.shift();
+//          let node = curLvl.shift();
         
 //         if(node) {
 //             result.push(node.val);
@@ -150,27 +150,27 @@ var deserialize = function(data) {
  * @param {string} data
  * @return {TreeNode}
  */
-// var deserialize = function(data) {
+//  let deserialize = function(data) {
 //     if(data === "") {
 //         return null
 //     }
     
 //     data = data.split(',');
     
-//     var val = data.shift();
-//     var root = new TreeNode(val);
+//      let val = data.shift();
+//      let root = new TreeNode(val);
     
-//     var curLvlCnt = 1;
-//     var nextLvlCnt = 0;
-//     var lvl = [];
+//      let curLvlCnt = 1;
+//      let nextLvlCnt = 0;
+//      let lvl = [];
 //     lvl.push(root);
 
 //     while(data.length) {
-//         var node = lvl.shift();
+//          let node = lvl.shift();
 //         curLvlCnt--;
         
-//         var leftVal = data.shift();
-//         var rightVal = data.shift();
+//          let leftVal = data.shift();
+//          let rightVal = data.shift();
         
 //         if(leftVal) {
 //             node.left = new TreeNode(leftVal);

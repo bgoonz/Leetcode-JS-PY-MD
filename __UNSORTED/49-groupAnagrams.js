@@ -6,10 +6,10 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function (strs) {
-  var map = {};
-  for (var i = 0; i < strs.length; i++) {
-    var strCopy = strs[i].split("");
+let groupAnagrams = function (strs) {
+  let map = {};
+  for (let i = 0; i < strs.length; i++) {
+    let strCopy = strs[i].split("");
     strCopy.sort(strCompare);
     if (strCopy.join("") in map) {
       map[strCopy.join("")].push(strs[i]);
@@ -18,15 +18,15 @@ var groupAnagrams = function (strs) {
     }
   }
 
-  var result = [];
-  for (var key in map) {
+  let result = [];
+  for (let key in map) {
     result.push(map[key].sort(strCompare));
   }
 
   return result;
 };
 
-var strCompare = function (a, b) {
+let strCompare = function (a, b) {
   if (a < b) return -1;
   else if (a > b) return 1;
   else return 0;

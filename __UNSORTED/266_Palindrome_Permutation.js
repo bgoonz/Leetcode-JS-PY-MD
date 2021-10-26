@@ -7,16 +7,16 @@
  * @param {string} s
  * @return {boolean}
  */
-var canPermutePalindrome = function (s) {
-  var countMap = {};
+let canPermutePalindrome = function (s) {
+  let countMap = {};
 
-  for (var i = 0; i < s.length; i++) {
-    var c = s[i];
+  for (let i = 0; i < s.length; i++) {
+    let c = s[i];
 
     countMap[c] = countMap[c] || 0;
     countMap[c]++;
   }
-  var oddCount = 0;
+  let oddCount = 0;
 
   for (i in countMap) {
     if (countMap[i] % 2 === 1) {
@@ -29,12 +29,12 @@ var canPermutePalindrome = function (s) {
 
 // Solution (2) that assume it's ascii 256 chars only
 
-var canPermutePalindrome = function (s) {
+let canPermutePalindrome = function (s) {
   // assume that s is only contact 256 english letters
-  var letters = Array(256).fill(0);
-  var odd = 0;
-  for (var i = 0; i < s.length; i++) {
-    var letterIndex = s[i].charCodeAt(0);
+  let letters = Array(256).fill(0);
+  let odd = 0;
+  for (let i = 0; i < s.length; i++) {
+    let letterIndex = s[i].charCodeAt(0);
     odd += (++letters[letterIndex] & 1) === 1 ? 1 : -1;
   }
   return odd < 2;

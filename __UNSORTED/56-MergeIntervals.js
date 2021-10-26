@@ -11,14 +11,14 @@
  * @param {Interval[]} intervals
  * @return {Interval[]}
  */
-var merge = function (intervals) {
+let merge = function (intervals) {
   if (intervals.length <= 0) return intervals;
   intervals.sort(function (a, b) {
     return a.start - b.start;
   });
-  var result = [];
-  var pre = intervals[0];
-  for (var i = 1, length = intervals.length; i < length; i++) {
+  let result = [];
+  let pre = intervals[0];
+  for (let i = 1, length = intervals.length; i < length; i++) {
     if (intervals[i].start > pre.end) {
       result.push(pre);
       // this pre inteval may not be merged, this is why there is a push after this loop

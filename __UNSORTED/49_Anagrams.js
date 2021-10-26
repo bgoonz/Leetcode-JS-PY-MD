@@ -2,14 +2,14 @@
  * @param {string[]} strs
  * @return {string[]}
  */
-var anagrams = function (strs) {
-  var result = [];
-  var hash = {};
-  var keyList = {};
+let anagrams = function (strs) {
+  let result = [];
+  let hash = {};
+  let keyList = {};
 
-  for (var i = 0; i < strs.length; i++) {
-    var str = strs[i];
-    var key = getKey(str);
+  for (let i = 0; i < strs.length; i++) {
+    let str = strs[i];
+    let key = getKey(str);
 
     if (hash[key]) {
       keyList[key] = true;
@@ -27,11 +27,11 @@ var anagrams = function (strs) {
   return result;
 };
 
-var getKey = function (str) {
-  var key = "";
-  var arr = [];
-  for (var i = 0; i < str.length; i++) {
-    var val = str.charCodeAt(i) - "a".charCodeAt(0);
+let getKey = function (str) {
+  let key = "";
+  let arr = [];
+  for (let i = 0; i < str.length; i++) {
+    let val = str.charCodeAt(i) - "a".charCodeAt(0);
     arr[val] = arr[val] || 0;
     arr[val]++;
   }

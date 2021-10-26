@@ -3,14 +3,14 @@
  * @param {number} sum
  * @return {number[][]}
  */
-var pathSum = function (root, sum) {
-  var result = [];
-  var results = [];
+ let pathSum = function (root, sum) {
+   let result = [];
+   let results = [];
   pathSumHelper(root, sum, result, results);
   return results;
 };
 
-var pathSumHelper = function (root, sum, result, results) {
+ let pathSumHelper = function (root, sum, result, results) {
   if (!root) {
     return;
   }

@@ -38,9 +38,9 @@ BSTIterator.prototype.hasNext = function () {
 
 /**
  * Your BSTIterator object will be instantiated and called as such:
- * var obj = new BSTIterator(root)
- * var param_1 = obj.next()
- * var param_2 = obj.hasNext()
+ *  let obj = new BSTIterator(root)
+ *  let param_1 = obj.next()
+ *  let param_2 = obj.hasNext()
  */
 
 // another
@@ -98,7 +98,7 @@ BSTIterator.prototype.hasNext = function () {
 
 /**
  * Your BSTIterator object will be instantiated and called as such:
- * var obj = new BSTIterator(root)
- * var param_1 = obj.next()
- * var param_2 = obj.hasNext()
+ *  let obj = new BSTIterator(root)
+ *  let param_1 = obj.next()
+ *  let param_2 = obj.hasNext()
  */

@@ -2,12 +2,12 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function (strs) {
+let longestCommonPrefix = function (strs) {
   if (strs.length === 0) return "";
-  var firstString = strs[0];
-  var commonLength = firstString.length;
-  for (var i = 1; i < strs.length; i++) {
-    for (var j = 0; j < commonLength; j++) {
+  let firstString = strs[0];
+  let commonLength = firstString.length;
+  for (let i = 1; i < strs.length; i++) {
+    for (let j = 0; j < commonLength; j++) {
       if (!strs[i][j]) break;
       if (firstString[j] !== strs[i][j]) break;
     }
@@ -18,7 +18,7 @@ var longestCommonPrefix = function (strs) {
 };
 
 // a better way
-var longestCommonPrefix = function (strs) {
+let longestCommonPrefix = function (strs) {
   if (strs.length === 0) {
     return "";
   }

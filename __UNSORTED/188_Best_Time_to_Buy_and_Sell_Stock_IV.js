@@ -8,14 +8,14 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function (k, prices) {
-  var len = prices.length;
+let maxProfit = function (k, prices) {
+  let len = prices.length;
 
   if (len === 0) {
     return 0;
   }
-  var globalBest = initMatrix(len, k + 1);
-  var localBest = initMatrix(len, k + 1);
+  let globalBest = initMatrix(len, k + 1);
+  let localBest = initMatrix(len, k + 1);
 
   // matrix[row][col]
   // row is ith day
@@ -23,10 +23,10 @@ var maxProfit = function (k, prices) {
   // localBest[i][j] is the max profit across i day, with j transaction where there is transaction happening on i day
   // globalBest[i][j] is the max profit across i day, with j transaction
 
-  for (var i = 1; i < len; i++) {
-    var diff = prices[i] - prices[i - 1];
+  for (let i = 1; i < len; i++) {
+    let diff = prices[i] - prices[i - 1];
 
-    for (var j = 1; j <= k; j++) {
+    for (let j = 1; j <= k; j++) {
       // globalBest[i - 1][j - 1] + Math.max(diff, 0)
       // -> current global best before ith day and jth transaction, Math.max(diff, 0) means we can take this transaction into account or discard it.
       // localBest[i - 1][j] + diff
@@ -45,11 +45,11 @@ var maxProfit = function (k, prices) {
 };
 
 function initMatrix(days, transactions) {
-  var matrix = [];
+  let matrix = [];
 
-  for (var i = 0; i < days; i++) {
+  for (let i = 0; i < days; i++) {
     matrix.push([]);
-    for (var j = 0; j < transactions; j++) {
+    for (let j = 0; j < transactions; j++) {
       matrix[i][j] = 0;
     }
   }

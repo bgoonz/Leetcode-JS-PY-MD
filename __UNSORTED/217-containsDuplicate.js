@@ -2,10 +2,10 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function (nums) {
-  var appears = {};
-  var containsDuplicate = false;
-  for (var i = 0; i < nums.length; i++) {
+let containsDuplicate = function (nums) {
+  let appears = {};
+  let containsDuplicate = false;
+  for (let i = 0; i < nums.length; i++) {
     if (appears[nums[i]]) {
       appears[nums[i]] += 1;
       containsDuplicate = true;

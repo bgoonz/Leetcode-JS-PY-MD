@@ -4,17 +4,17 @@
  * @param {number} upper
  * @return {string[]}
  */
-var findMissingRanges = function (nums, lower, upper) {
-  var missing = [];
+let findMissingRanges = function (nums, lower, upper) {
+  let missing = [];
   if (nums.length === 0) {
     missing.push(getRange(lower, upper));
     return missing;
   }
 
   // Only need to search range between lower and upper
-  var next = lower;
-  for (var i = 0; i < nums.length; i++) {
-    var val = nums[i];
+  let next = lower;
+  for (let i = 0; i < nums.length; i++) {
+    let val = nums[i];
 
     if (val < next) {
       continue;

@@ -23,9 +23,9 @@ Vector2D.prototype.hasNext = function () {
 
 /**
  * Your Vector2D object will be instantiated and called as such:
- * var obj = new Vector2D(v)
- * var param_1 = obj.next()
- * var param_2 = obj.hasNext()
+ *  let obj = new Vector2D(v)
+ *  let param_1 = obj.next()
+ *  let param_2 = obj.hasNext()
  */
 
 // another
@@ -58,7 +58,7 @@ Vector2D.prototype.hasNext = function () {
 };
 /**
  * Your Vector2D object will be instantiated and called as such:
- * var obj = new Vector2D(v)
- * var param_1 = obj.next()
- * var param_2 = obj.hasNext()
+ *  let obj = new Vector2D(v)
+ *  let param_1 = obj.next()
+ *  let param_2 = obj.hasNext()
  */

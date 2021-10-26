@@ -31,7 +31,7 @@ function TrieNode(chr) {
 /**
  * @constructor
  */
-var WordDictionary = function () {
+let WordDictionary = function () {
   this.root = new TrieNode(null, false);
 };
 
@@ -41,9 +41,9 @@ var WordDictionary = function () {
  * Adds a word into the data structure.
  */
 WordDictionary.prototype.addWord = function (word) {
-  var node = this.root;
-  for (var i = 0; i < word.length; i++) {
-    var chr = word[i];
+  let node = this.root;
+  for (let i = 0; i < word.length; i++) {
+    let chr = word[i];
     node.children[chr] = node.children[chr] || new TrieNode(chr);
     node = node.children[chr];
   }
@@ -58,17 +58,17 @@ WordDictionary.prototype.addWord = function (word) {
  * contain the dot character '.' to represent any one letter.
  */
 WordDictionary.prototype.search = function (word) {
-  var node = this.root;
+  let node = this.root;
 
   function dfs(node, word, i) {
     if (i === word.length) {
       return node.isWord;
     }
 
-    var chr = word[i];
+    let chr = word[i];
 
     if (chr === ".") {
-      for (var key in node.children) {
+      for (let key in node.children) {
         if (dfs(node.children[key], word, i + 1)) {
           return true;
         }
@@ -85,7 +85,7 @@ WordDictionary.prototype.search = function (word) {
 
 /**
  * Your WordDictionary object will be instantiated and called as such:
- * var wordDictionary = new WordDictionary();
+ *  let wordDictionary = new WordDictionary();
  * wordDictionary.addWord("word");
  * wordDictionary.search("pattern");
  */

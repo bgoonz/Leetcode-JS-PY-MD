@@ -30,13 +30,13 @@
  * @param {number[][]} prerequisites
  * @return {number[]}
  */
-var findOrder = function (numCourses, prerequisites) {
-  var courseWithOtherCoursesDependOn = {};
-  var courseDependsOnOtherCourses = {};
+let findOrder = function (numCourses, prerequisites) {
+  let courseWithOtherCoursesDependOn = {};
+  let courseDependsOnOtherCourses = {};
 
   prerequisites.forEach((prerequisite) => {
-    var prereqCourse = prerequisite[1];
-    var courseToTake = prerequisite[0];
+    let prereqCourse = prerequisite[1];
+    let courseToTake = prerequisite[0];
 
     courseWithOtherCoursesDependOn[prereqCourse] =
       courseWithOtherCoursesDependOn[prereqCourse] || new Set();
@@ -49,20 +49,20 @@ var findOrder = function (numCourses, prerequisites) {
     courseDependsOnOtherCourses[courseToTake].add(prereqCourse);
   });
 
-  var courseWithNoDependencies = [];
+  let courseWithNoDependencies = [];
 
-  for (var i in courseDependsOnOtherCourses) {
+  for (let i in courseDependsOnOtherCourses) {
     if (courseDependsOnOtherCourses[i].size === 0) {
       courseWithNoDependencies.push(i);
     }
   }
 
   // pretty much the same as Course Schedule I. Just need to add those non root
-  var courseOrders = [];
-  var hasCourseOrders = {};
+  let courseOrders = [];
+  let hasCourseOrders = {};
 
   while (courseWithNoDependencies.length > 0) {
-    var rootCourse = courseWithNoDependencies.shift();
+    let rootCourse = courseWithNoDependencies.shift();
 
     courseOrders.push(parseInt(rootCourse));
     hasCourseOrders[parseInt(rootCourse)] = true;

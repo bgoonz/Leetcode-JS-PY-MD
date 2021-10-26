@@ -13,17 +13,17 @@
  * @param {number} H
  * @return {number}
  */
-var computeArea = function (A, B, C, D, E, F, G, H) {
-  var area = (C - A) * (D - B) + (G - E) * (H - F);
+let computeArea = function (A, B, C, D, E, F, G, H) {
+  let area = (C - A) * (D - B) + (G - E) * (H - F);
 
   if (A > G || C < E || D < F || B > H) {
     return area;
   }
 
-  var left = Math.max(A, E);
-  var top = Math.min(D, H);
-  var right = Math.min(C, G);
-  var bottom = Math.max(B, F);
+  let left = Math.max(A, E);
+  let top = Math.min(D, H);
+  let right = Math.min(C, G);
+  let bottom = Math.max(B, F);
 
   return area - (right - left) * (top - bottom);
 };

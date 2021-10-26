@@ -2,13 +2,13 @@
  * @param {number} x
  * @return {number}
  */
-var mySqrt = function (x) {
+let mySqrt = function (x) {
   if (x === 0) return x;
-  var left = 0;
-  var right = x;
-  var mid = Math.floor(x / 2);
+  let left = 0;
+  let right = x;
+  let mid = Math.floor(x / 2);
   while (left <= right) {
-    var divideX = Math.floor(x / mid);
+    let divideX = Math.floor(x / mid);
     // instead of using mid * mid > x, use x / mid incase overflow happens
     if (mid > divideX) {
       right = mid - 1;

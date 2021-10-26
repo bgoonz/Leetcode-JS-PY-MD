@@ -23,19 +23,19 @@
  * @param {number} maxWidth
  * @return {string[]}
  */
-var fullJustify = function (words, maxWidth) {
-  var result = [];
-  var start = 0;
-  var end = -1;
-  var currentWordsLen = 0;
-  var i = 0;
+let fullJustify = function (words, maxWidth) {
+  let result = [];
+  let start = 0;
+  let end = -1;
+  let currentWordsLen = 0;
+  let i = 0;
 
   while (i < words.length) {
     if (words[i].size > maxWidth) {
       return result;
     }
 
-    var newLen = currentWordsLen + (end - start + 1) + words[i].length; // current words len + their spaces + new word
+    let newLen = currentWordsLen + (end - start + 1) + words[i].length; // current words len + their spaces + new word
 
     if (newLen <= maxWidth) {
       // words[i] can fit in the current line
@@ -43,7 +43,7 @@ var fullJustify = function (words, maxWidth) {
       currentWordsLen += words[i].length;
       i++;
     } else {
-      var line = createLine(
+      let line = createLine(
         words,
         maxWidth,
         start,
@@ -58,28 +58,28 @@ var fullJustify = function (words, maxWidth) {
     }
   }
 
-  var lastLine = createLine(words, maxWidth, start, end, currentWordsLen, true);
+  let lastLine = createLine(words, maxWidth, start, end, currentWordsLen, true);
   result.push(lastLine);
   return result;
 };
 
 function createLine(words, maxWidth, start, end, currentWordsLen, isLast) {
-  var result = "";
+  let result = "";
   if (start < 0 || end >= words.length) {
     return result;
   }
 
   result += words[start]; // consume the first word
-  var numberOfWords = end - start + 1; // number of words to insert in this line
+  let numberOfWords = end - start + 1; // number of words to insert in this line
 
   // special case: one word or last line - left justified
   if (numberOfWords === 1 || isLast) {
-    for (var i = start + 1; i <= end; i++) {
+    for (let i = start + 1; i <= end; i++) {
       // start from start + 1 since we already append the first word
       result += " " + words[i];
     }
 
-    var remainingSpaces = maxWidth - currentWordsLen - (numberOfWords - 1);
+    let remainingSpaces = maxWidth - currentWordsLen - (numberOfWords - 1);
     for (i = 0; i < remainingSpaces; i++) {
       result += " ";
     }
@@ -87,14 +87,14 @@ function createLine(words, maxWidth, start, end, currentWordsLen, isLast) {
     return result;
   }
 
-  var k = parseInt((maxWidth - currentWordsLen) / (numberOfWords - 1));
-  var m = (maxWidth - currentWordsLen) % (numberOfWords - 1);
+  let k = parseInt((maxWidth - currentWordsLen) / (numberOfWords - 1));
+  let m = (maxWidth - currentWordsLen) % (numberOfWords - 1);
 
   for (i = start + 1; i <= end; i++) {
     // start from start + 1 since we already append the first word
-    var nspace = i - start <= m ? k + 1 : k;
+    let nspace = i - start <= m ? k + 1 : k;
 
-    for (var j = 0; j < nspace; j++) {
+    for (let j = 0; j < nspace; j++) {
       result += " ";
     }
 

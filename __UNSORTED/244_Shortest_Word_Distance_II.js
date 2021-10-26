@@ -19,11 +19,11 @@
  * @constructor
  * @param {string[]} words
  */
-var WordDistance = function (words) {
+let WordDistance = function (words) {
   this.positions = {};
 
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
 
     this.positions[word] = this.positions[word] || [];
     this.positions[word].push(i);
@@ -36,15 +36,15 @@ var WordDistance = function (words) {
  * @return {integer}
  */
 WordDistance.prototype.shortest = function (word1, word2) {
-  var i = 0;
-  var j = 0;
-  var dist = Infinity;
-  var pos1 = this.positions[word1];
-  var pos2 = this.positions[word2];
+  let i = 0;
+  let j = 0;
+  let dist = Infinity;
+  let pos1 = this.positions[word1];
+  let pos2 = this.positions[word2];
 
   while (i < pos1.length && j < pos2.length) {
-    var i1 = pos1[i];
-    var i2 = pos2[j];
+    let i1 = pos1[i];
+    let i2 = pos2[j];
 
     dist = Math.min(dist, Math.abs(i1 - i2));
 
@@ -60,7 +60,7 @@ WordDistance.prototype.shortest = function (word1, word2) {
 
 /**
  * Your WordDistance object will be instantiated and called as such:
- * var wordDistance = new WordDistance(words);
+ *  let wordDistance = new WordDistance(words);
  * wordDistance.shortest("word1", "word2");
  * wordDistance.shortest("anotherWord1", "anotherWord2");
  */

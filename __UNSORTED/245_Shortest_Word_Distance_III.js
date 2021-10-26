@@ -23,12 +23,12 @@
  * @param {string} word2
  * @return {number}
  */
-var shortestWordDistance = function (words, word1, word2) {
-  var idx1 = -1;
-  var idx2 = -1;
-  var dist = words.length - 1;
+let shortestWordDistance = function (words, word1, word2) {
+  let idx1 = -1;
+  let idx2 = -1;
+  let dist = words.length - 1;
 
-  for (var i = 0; i < words.length; i++) {
+  for (let i = 0; i < words.length; i++) {
     if (words[i] === word1) {
       if (words[idx1] === word1 && word1 === word2) {
         idx2 = idx1;

@@ -76,8 +76,8 @@ LRUCache.prototype.put = function (key, value) {
 
 /**
  * Your LRUCache object will be instantiated and called as such:
- * var obj = Object.create(LRUCache).createNew(capacity)
- * var param_1 = obj.get(key)
+ *  let obj = Object.create(LRUCache).createNew(capacity)
+ *  let param_1 = obj.get(key)
  * obj.put(key,value)
  */
 
@@ -123,7 +123,7 @@ LRUCache.prototype.put = function (key, value) {
 
 /**
  * Your LRUCache object will be instantiated and called as such:
- * var obj = new LRUCache(capacity)
- * var param_1 = obj.get(key)
+ *  let obj = new LRUCache(capacity)
+ *  let param_1 = obj.get(key)
  * obj.put(key,value)
  */

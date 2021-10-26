@@ -11,21 +11,21 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var largestValues = function (root) {
-  var next = [root];
-  var maxArr = [];
+let largestValues = function (root) {
+  let next = [root];
+  let maxArr = [];
 
   if (!root) {
     return maxArr;
   }
 
   while (next.length > 0) {
-    var curr = next.slice();
-    var max = -Number.MAX_VALUE;
+    let curr = next.slice();
+    let max = -Number.MAX_VALUE;
     next = [];
 
     while (curr.length > 0) {
-      var node = curr.shift();
+      let node = curr.shift();
       max = Math.max(node.val, max);
 
       if (node.left) {
@@ -43,13 +43,13 @@ var largestValues = function (root) {
 };
 
 // DFS
-var largestValues = function (root) {
-  var result = [];
+let largestValues = function (root) {
+  let result = [];
   helper(root, result, 0);
   return result;
 };
 
-var helper = function (root, res, level) {
+let helper = function (root, res, level) {
   if (!root) {
     return;
   }

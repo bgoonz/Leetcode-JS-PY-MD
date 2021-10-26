@@ -6,7 +6,7 @@
 function ShortestWordDist(words) {
   this.hashMap = {};
 
-  var map = this.hashMap;
+  let map = this.hashMap;
 
   words.forEach(function (word, index) {
     if (word in map) {
@@ -18,13 +18,13 @@ function ShortestWordDist(words) {
 }
 
 ShortestWordDist.prototype.shortest = function (word1, word2) {
-  var list1 = this.hashMap[word1];
-  var list2 = this.hashMap[word2];
-  var dist = Number.MAX_VALUE;
+  let list1 = this.hashMap[word1];
+  let list2 = this.hashMap[word2];
+  let dist = Number.MAX_VALUE;
 
-  for (var i = 0, j = 0; i < list1.length && j < list2.length; ) {
-    var index1 = list1[i];
-    var index2 = list2[j];
+  for (let i = 0, j = 0; i < list1.length && j < list2.length; ) {
+    let index1 = list1[i];
+    let index2 = list2[j];
 
     dist = Math.min(Math.abs(index1 - index2), dist);
     if (index1 < index2) {
@@ -38,7 +38,7 @@ ShortestWordDist.prototype.shortest = function (word1, word2) {
 };
 
 // test cases
-var ws = [
+let ws = [
   "practice",
   "makes",
   "perfect",
@@ -49,10 +49,10 @@ var ws = [
   "apple",
   "alpha",
 ];
-var words = new ShortestWordDist(ws);
+let words = new ShortestWordDist(ws);
 
-var word1 = "practice";
-var word2 = "coding";
-var word3 = "apple";
+let word1 = "practice";
+let word2 = "coding";
+let word3 = "apple";
 console.log(words.shortest(word1, word2));
 console.log(words.shortest(word2, word3));

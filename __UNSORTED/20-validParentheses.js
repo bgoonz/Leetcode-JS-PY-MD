@@ -2,9 +2,9 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function (s) {
-  var stack = [];
-  for (var i = 0; i < s.length; i++) {
+let isValid = function (s) {
+  let stack = [];
+  for (let i = 0; i < s.length; i++) {
     if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
       stack.push(s[i]);
     }
@@ -29,8 +29,8 @@ var isValid = function (s) {
 };
 
 // second try
-var isValid = function (s) {
-  var stack = [];
+let isValid = function (s) {
+  let stack = [];
 
   s.split("").forEach(function (char) {
     if (char === "(" || char === "{" || char === "[") {

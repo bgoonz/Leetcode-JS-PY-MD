@@ -8,7 +8,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function (nums) {
+let rob = function (nums) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
   return Math.max(
@@ -17,12 +17,12 @@ var rob = function (nums) {
   );
 };
 
-var robSingle = function (nums, start, end) {
-  var toRob = 0;
-  var notRob = 0;
+let robSingle = function (nums, start, end) {
+  let toRob = 0;
+  let notRob = 0;
 
-  for (var i = start; i <= end; i++) {
-    var tmp = toRob;
+  for (let i = start; i <= end; i++) {
+    let tmp = toRob;
     toRob = notRob + nums[i];
     notRob = Math.max(notRob, tmp);
   }

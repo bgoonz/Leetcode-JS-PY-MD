@@ -15,7 +15,7 @@
 
 // reference: http://blog.csdn.net/pointbreak1/article/details/48596115
 
-var addOperators = function (num, target) {
+let addOperators = function (num, target) {
   function opRecur(num, target, lastOp, result, expression, results) {
     if (num.length === 0) {
       if (target === result) {
@@ -24,14 +24,14 @@ var addOperators = function (num, target) {
       return;
     }
 
-    for (var i = 1; i <= num.length; i++) {
-      var curr = num.substring(0, i);
+    for (let i = 1; i <= num.length; i++) {
+      let curr = num.substring(0, i);
       if (curr.length > 1 && curr[0] === "0") {
         continue;
       }
 
-      var rest = num.substring(i);
-      var currVal = parseInt(curr);
+      let rest = num.substring(i);
+      let currVal = parseInt(curr);
 
       if (expression.length === 0) {
         opRecur(rest, target, currVal, currVal, expression + curr, results);
@@ -68,7 +68,7 @@ var addOperators = function (num, target) {
     }
   }
 
-  var results = [];
+  let results = [];
   opRecur(num, target, 0, 0, "", results);
   return results;
 };

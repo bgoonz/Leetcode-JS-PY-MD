@@ -15,9 +15,9 @@
  * @param {Interval} newInterval
  * @return {Interval[]}
  */
-var insert = function (intervals, newInterval) {
-  var result = [];
-  for (var i = 0, length = intervals.length; i < length; i++) {
+let insert = function (intervals, newInterval) {
+  let result = [];
+  for (let i = 0, length = intervals.length; i < length; i++) {
     if (intervals[i].end < newInterval.start) {
       result.push(intervals[i]);
     } else if (intervals[i].start > newInterval.end) {

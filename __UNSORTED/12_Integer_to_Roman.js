@@ -6,8 +6,8 @@
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function (num) {
-  var dict = [
+let intToRoman = function (num) {
+  let dict = [
     "M",
     "CM",
     "D",
@@ -22,17 +22,17 @@ var intToRoman = function (num) {
     "IV",
     "I",
   ];
-  var val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  var result = "";
+  let val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  let result = "";
 
-  for (var i = 0; i < val.length; i++) {
-    var v = val[i];
+  for (let i = 0; i < val.length; i++) {
+    let v = val[i];
 
     if (num >= v) {
-      var count = parseInt(num / v);
+      let count = parseInt(num / v);
       num %= v;
 
-      for (var j = 0; j < count; j++) {
+      for (let j = 0; j < count; j++) {
         result = result + dict[i];
       }
     }

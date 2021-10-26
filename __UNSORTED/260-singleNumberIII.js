@@ -2,9 +2,9 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var singleNumber = function (nums) {
-  var appears = {};
-  for (var i = 0; i < nums.length; i++) {
+let singleNumber = function (nums) {
+  let appears = {};
+  for (let i = 0; i < nums.length; i++) {
     if (appears[nums[i]]) {
       delete appears[nums[i]];
     } else {
@@ -12,8 +12,8 @@ var singleNumber = function (nums) {
     }
   }
 
-  var arr = [];
-  for (var key in appears) {
+  let arr = [];
+  for (let key in appears) {
     arr.push(parseInt(key));
   }
   return arr;

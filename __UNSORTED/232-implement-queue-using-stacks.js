@@ -40,9 +40,9 @@ MyQueue.prototype.empty = function () {
 
 /**
  * Your MyQueue object will be instantiated and called as such:
- * var obj = Object.create(MyQueue).createNew()
+ *  let obj = Object.create(MyQueue).createNew()
  * obj.push(x)
- * var param_2 = obj.pop()
- * var param_3 = obj.peek()
- * var param_4 = obj.empty()
+ *  let param_2 = obj.pop()
+ *  let param_3 = obj.peek()
+ *  let param_4 = obj.empty()
  */

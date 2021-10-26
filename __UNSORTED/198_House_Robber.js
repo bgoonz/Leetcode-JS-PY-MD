@@ -17,15 +17,15 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function (nums) {
+let rob = function (nums) {
   if (nums === null) {
     return nums;
   }
 
-  var even = 0;
-  var odd = 0;
+  let even = 0;
+  let odd = 0;
 
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (i % 2 === 0) {
       even = Math.max(even + nums[i], odd);
     } else {
@@ -36,16 +36,16 @@ var rob = function (nums) {
   return Math.max(even, odd);
 };
 
-// var rob = function(nums) {
-//     var dp = [];
+//  let rob = function(nums) {
+//      let dp = [];
 
 //     if(!nums || nums.length === 0) {
 //         return 0;
 //     }
 //     // dp[i] is the max amount can rob on ith house
 
-//     for(var i = 0; i < nums.length; i++){
-//         var num = nums[i];
+//     for( let i = 0; i < nums.length; i++){
+//          let num = nums[i];
 //         dp[i] = Math.max((dp[i-2] || 0) + num, (dp[i-1] || 0));
 //     }
 

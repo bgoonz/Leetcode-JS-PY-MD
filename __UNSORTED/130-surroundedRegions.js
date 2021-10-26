@@ -7,14 +7,14 @@
  * @param {character[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-var solve = function (board) {
-  var xIndex = [];
-  var yIndex = [];
-  var rows = board.length;
+let solve = function (board) {
+  let xIndex = [];
+  let yIndex = [];
+  let rows = board.length;
   if (rows === 0) return;
-  var cols = board[0].length;
+  let cols = board[0].length;
 
-  for (var i = 0; i < rows; i++) {
+  for (let i = 0; i < rows; i++) {
     if (board[i][0] === "O") {
       xIndex.push(i);
       yIndex.push(0);
@@ -37,10 +37,10 @@ var solve = function (board) {
       yIndex.push(i);
     }
   }
-  var k = 0;
+  let k = 0;
   while (k < xIndex.length) {
-    var x = xIndex[k];
-    var y = yIndex[k];
+    let x = xIndex[k];
+    let y = yIndex[k];
     board[x][y] = "Y";
     if (x > 1 && board[x - 1][y] === "O") {
       xIndex.push(x - 1);
@@ -61,8 +61,8 @@ var solve = function (board) {
     k++;
   }
 
-  for (var j = 0; j < rows; j++) {
-    for (var h = 0; h < cols; h++) {
+  for (let j = 0; j < rows; j++) {
+    for (let h = 0; h < cols; h++) {
       if (board[j][h] === "O") {
         board[j][h] = "X";
       }

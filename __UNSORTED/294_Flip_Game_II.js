@@ -15,20 +15,20 @@
  * @param {string} s
  * @return {boolean}
  */
-var canWin = function (s) {
+let canWin = function (s) {
   if (s === null || s.length === 0) {
     return false;
   }
 
-  var arr = s.split("");
+  let arr = s.split("");
 
   // player 1 can guarantee win if the move player 1 made can lead to player 2 no win of winning
   function checkCanWin(arr) {
-    for (var i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
       if (arr[i] === "+" && arr[i + 1] === "+") {
         arr[i] = arr[i + 1] = "-";
 
-        var win = !checkCanWin(arr);
+        let win = !checkCanWin(arr);
 
         arr[i] = arr[i + 1] = "+";
 

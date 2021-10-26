@@ -9,16 +9,16 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrder = function (root) {
+ let levelOrder = function (root) {
   if (!root) return [];
-  var preLevel = [root],
+   let preLevel = [root],
     currLevel = [root];
-  var result = [[root.val]];
+   let result = [[root.val]];
   while (true) {
     if (currLevel.length === 0) break;
-    var val = [];
+     let val = [];
     currLevel = [];
-    for (var i = 0; i < preLevel.length; i++) {
+    for ( let i = 0; i < preLevel.length; i++) {
       if (preLevel[i].left) {
         currLevel.push(preLevel[i].left);
         val.push(preLevel[i].left.val);
@@ -37,16 +37,16 @@ var levelOrder = function (root) {
 };
 
 // second try
-var levelOrder = function (root) {
-  var results = [];
+ let levelOrder = function (root) {
+   let results = [];
   if (!root) return results;
-  var prevLevel = [root];
-  var currLevel = [];
-  var result = [];
+   let prevLevel = [root];
+   let currLevel = [];
+   let result = [];
 
   while (prevLevel.length > 0) {
     while (prevLevel.length > 0) {
-      var node = prevLevel.shift();
+       let node = prevLevel.shift();
       result.push(node.val);
       if (node.left) {
         currLevel.push(node.left);
@@ -65,13 +65,13 @@ var levelOrder = function (root) {
 };
 
 // third try, recursive. DFS.
-var levelOrder = function (root) {
-  var results = [];
+ let levelOrder = function (root) {
+   let results = [];
   helper(results, root, 0);
   return results;
 };
 
-var helper = function (results, node, level) {
+ let helper = function (results, node, level) {
   if (!node) return results;
   if (level === results.length) {
     results[level] = [];
@@ -82,22 +82,22 @@ var helper = function (results, node, level) {
 };
 
 // 4th try
-var levelOrder = function (root) {
-  var results = [];
-  var prevLevel = [];
-  var currentLevel = [root];
+ let levelOrder = function (root) {
+   let results = [];
+   let prevLevel = [];
+   let currentLevel = [root];
 
   if (!root) {
     return results;
   }
 
   while (currentLevel.length > 0) {
-    var result = [];
+     let result = [];
     prevLevel = currentLevel.slice();
     currentLevel = [];
 
     while (prevLevel.length > 0) {
-      var node = prevLevel.shift();
+       let node = prevLevel.shift();
       result.push(node.val);
       if (node.left) {
         currentLevel.push(node.left);

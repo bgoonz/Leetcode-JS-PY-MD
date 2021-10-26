@@ -3,7 +3,7 @@
  * Initialize your data structure here.
  */
 //  http://www.cnblogs.com/Liok3187/p/4626730.html
-var TrieNode = function (key) {
+let TrieNode = function (key) {
   return {
     key: key,
     isWord: false,
@@ -11,7 +11,7 @@ var TrieNode = function (key) {
   };
 };
 
-var Trie = function () {
+let Trie = function () {
   this.root = TrieNode();
 };
 
@@ -21,8 +21,8 @@ var Trie = function () {
  * Inserts a word into the trie.
  */
 Trie.prototype.insert = function (word) {
-  var tree = this.root;
-  var i, curr;
+  let tree = this.root;
+  let i, curr;
 
   for (i = 0; i < word.length; i++) {
     curr = word[i];
@@ -41,10 +41,10 @@ Trie.prototype.insert = function (word) {
  * Returns if the word is in the trie.
  */
 Trie.prototype.search = function (word) {
-  var tree = this.root;
+  let tree = this.root;
 
-  for (var i = 0; i < word.length; i++) {
-    var curr = word[i];
+  for (let i = 0; i < word.length; i++) {
+    let curr = word[i];
 
     if (!tree.children[curr]) {
       return false;
@@ -63,10 +63,10 @@ Trie.prototype.search = function (word) {
  * that starts with the given prefix.
  */
 Trie.prototype.startsWith = function (prefix) {
-  var tree = this.root;
+  let tree = this.root;
 
-  for (var i = 0; i < prefix.length; i++) {
-    var curr = prefix[i];
+  for (let i = 0; i < prefix.length; i++) {
+    let curr = prefix[i];
 
     if (!tree.children[curr]) {
       return false;
@@ -80,7 +80,7 @@ Trie.prototype.startsWith = function (prefix) {
 
 /**
  * Your Trie object will be instantiated and called as such:
- * var trie = new Trie();
+ *  let trie = new Trie();
  * trie.insert("somestring");
  * trie.search("key");
  */

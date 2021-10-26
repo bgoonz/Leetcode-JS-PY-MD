@@ -28,16 +28,16 @@
  */
 
 //  http://bangbingsyb.blogspot.com/2014/11/leetcode-insert-interval.html
-var insert = function (intervals, newInterval) {
-  var result = [];
+let insert = function (intervals, newInterval) {
+  let result = [];
   // Easier to consider if two sections are not overlapped
   // [s1, e1] [s2, e2] --> e2 < s1 or e1 < s2
   // once merged when two sections are overlapped, [min(s1,s2), max(e1,e2)]
 
-  var isInsert = false;
+  let isInsert = false;
 
-  for (var i = 0; i < intervals.length; i++) {
-    var interval = intervals[i];
+  for (let i = 0; i < intervals.length; i++) {
+    let interval = intervals[i];
 
     if (isInsert) {
       result.push(interval);

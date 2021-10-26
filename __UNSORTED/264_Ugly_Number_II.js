@@ -10,18 +10,18 @@
  * @param {number} n
  * @return {number}
  */
-var nthUglyNumber = function (n) {
-  var uglys = [1];
-  var p2 = 0;
-  var p3 = 0;
-  var p5 = 0;
+let nthUglyNumber = function (n) {
+  let uglys = [1];
+  let p2 = 0;
+  let p3 = 0;
+  let p5 = 0;
 
   while (uglys.length < n) {
-    var ugly2 = uglys[p2] * 2;
-    var ugly3 = uglys[p3] * 3;
-    var ugly5 = uglys[p5] * 5;
+    let ugly2 = uglys[p2] * 2;
+    let ugly3 = uglys[p3] * 3;
+    let ugly5 = uglys[p5] * 5;
 
-    var minV = Math.min(ugly2, ugly3, ugly5);
+    let minV = Math.min(ugly2, ugly3, ugly5);
 
     if (minV === ugly2) {
       p2++;

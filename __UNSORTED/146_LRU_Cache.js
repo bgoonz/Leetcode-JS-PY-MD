@@ -9,7 +9,7 @@ class Node {
 /**
  * @constructor
  */
-var LRUCache = function (capacity) {
+let LRUCache = function (capacity) {
   this.list = null;
   this.map = new Map();
   this.head = null;
@@ -104,7 +104,7 @@ function DoublyLinkListNode(key, value) {
 /**
  * @constructor
  */
-var LRUCache = function (capacity) {
+let LRUCache = function (capacity) {
   this.head = this.tail = null;
   this.maxCapacity = capacity;
   this.currSize = 0;
@@ -154,7 +154,7 @@ LRUCache.prototype.removeLast = function () {
   }
 
   delete this.hash[this.tail.key];
-  var newTail = this.tail.prev;
+  let newTail = this.tail.prev;
 
   if (newTail === null) {
     this.head = this.tail = null;
@@ -167,7 +167,7 @@ LRUCache.prototype.removeLast = function () {
 };
 
 LRUCache.prototype.moveToHead = function (key) {
-  var newHead = this.hash[key];
+  let newHead = this.hash[key];
 
   if (this.head === null && this.tail === null) {
     this.head = this.tail = newHead;

@@ -3,13 +3,13 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var majorityElement = function (nums) {
-  var n1 = null;
-  var n2 = null;
-  var c1 = 0;
-  var c2 = 0;
+let majorityElement = function (nums) {
+  let n1 = null;
+  let n2 = null;
+  let c1 = 0;
+  let c2 = 0;
 
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (n1 !== null && n1 === nums[i]) {
       c1++;
     } else if (n2 !== null && n2 === nums[i]) {
@@ -28,12 +28,12 @@ var majorityElement = function (nums) {
 
   c1 = 0;
   c2 = 0;
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] === n1) c1++;
     if (nums[i] === n2) c2++;
   }
 
-  var result = [];
+  let result = [];
   if (c1 > Math.floor(nums.length / 3)) result.push(n1);
   if (c2 > Math.floor(nums.length / 3)) result.push(n2);
   return result;

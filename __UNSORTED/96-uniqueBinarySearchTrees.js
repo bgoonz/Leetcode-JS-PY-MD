@@ -12,13 +12,13 @@
  * @param {number} n
  * @return {number}
  */
-var numTrees = function (n) {
-  var count = [1, 1];
+let numTrees = function (n) {
+  let count = [1, 1];
 
-  for (var i = 2; i <= n; i++) {
+  for (let i = 2; i <= n; i++) {
     // give an intial value to count[i], otherwise, it will be NaN
     count[i] = 0;
-    for (var j = 0; j < i; j++) {
+    for (let j = 0; j < i; j++) {
       count[i] += count[j] * count[i - j - 1];
     }
   }

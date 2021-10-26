@@ -3,14 +3,14 @@
  * @return {number}
  */
 // sort first.
-var hIndex = function (citations) {
+let hIndex = function (citations) {
   citations.sort(function (a, b) {
     return a - b;
   });
 
-  var result = 0;
-  for (var i = 0, length = citations.length; i < length; i++) {
-    var min = Math.min(citations[i], length - i);
+  let result = 0;
+  for (let i = 0, length = citations.length; i < length; i++) {
+    let min = Math.min(citations[i], length - i);
     result = Math.max(result, min);
   }
 

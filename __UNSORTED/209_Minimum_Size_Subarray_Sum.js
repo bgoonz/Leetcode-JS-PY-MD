@@ -22,11 +22,11 @@
  */
 
 // O(n) solution
-var minSubArrayLen = function (s, nums) {
-  var sum = 0;
-  var left = 0;
-  var right = 0;
-  var minLen = Infinity;
+let minSubArrayLen = function (s, nums) {
+  let sum = 0;
+  let left = 0;
+  let right = 0;
+  let minLen = Infinity;
 
   while (right < nums.length) {
     while (right < nums.length && sum < s) {

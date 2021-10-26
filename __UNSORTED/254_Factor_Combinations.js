@@ -41,8 +41,8 @@
  */
 
 // reference: http://www.cnblogs.com/airwindow/p/4822572.html
-var getFactors = function (n) {
-  var result = [];
+let getFactors = function (n) {
+  let result = [];
   gatherResult(n, 2, [], result);
   return result;
 };
@@ -56,7 +56,7 @@ function gatherResult(n, start, currentResult, finalResult) {
     return;
   }
   // i = start will ensure ascending order
-  for (var i = start; i <= n; i++) {
+  for (let i = start; i <= n; i++) {
     if (n % i === 0) {
       currentResult.push(i);
       gatherResult(n / i, i, currentResult, finalResult);

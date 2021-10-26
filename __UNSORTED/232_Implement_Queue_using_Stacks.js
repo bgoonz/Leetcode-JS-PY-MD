@@ -5,7 +5,7 @@
 /**
  * @constructor
  */
-var Queue = function () {
+let Queue = function () {
   this.stack = [];
 };
 

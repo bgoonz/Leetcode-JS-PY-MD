@@ -4,7 +4,7 @@
  */
 
 function shortestWordDist(words, word1, word2) {
-  var index1, index2;
+  let index1, index2;
 
   return words.reduce(function (dist, word, index) {
     if (word === word1) {
@@ -24,9 +24,9 @@ function shortestWordDist(words, word1, word2) {
 }
 
 // test cases
-var words = ["practice", "makes", "perfect", "coding", "makes"];
-var word1 = "practice";
-var word2 = "coding";
-var word3 = "makes";
+let words = ["practice", "makes", "perfect", "coding", "makes"];
+let word1 = "practice";
+let word2 = "coding";
+let word3 = "makes";
 console.log(shortestWordDist(words, word1, word2));
 console.log(shortestWordDist(words, word2, word3));

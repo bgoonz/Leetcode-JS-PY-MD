@@ -10,7 +10,7 @@
  * @param {number[]} postorder
  * @return {TreeNode}
  */
-var buildTree = function (inorder, postorder) {
+ let buildTree = function (inorder, postorder) {
   if (inorder === null || postorder === null) {
     return null;
   }
@@ -29,17 +29,17 @@ var buildTree = function (inorder, postorder) {
   );
 };
 
-var generate = function (inorder, il, ir, postorder, pl, pr) {
+ let generate = function (inorder, il, ir, postorder, pl, pr) {
   if (il > ir || pl > pr) {
     return null;
   }
 
-  var rootVal = postorder[pr];
-  var root = new TreeNode(rootVal);
-  var rootIndex = -1;
+   let rootVal = postorder[pr];
+   let root = new TreeNode(rootVal);
+   let rootIndex = -1;
 
-  for (var i = il; i <= ir; i++) {
-    var nodeVal = inorder[i];
+  for ( let i = il; i <= ir; i++) {
+     let nodeVal = inorder[i];
     if (nodeVal === rootVal) {
       rootIndex = i;
       break;
@@ -50,8 +50,8 @@ var generate = function (inorder, il, ir, postorder, pl, pr) {
     return null;
   }
 
-  var leftTreeSize = rootIndex - il;
-  var rightTreeSize = ir - rootIndex;
+   let leftTreeSize = rootIndex - il;
+   let rightTreeSize = ir - rootIndex;
 
   root.left = generate(
     inorder,

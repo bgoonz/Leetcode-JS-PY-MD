@@ -3,10 +3,10 @@
  * @param {string} needle
  * @return {number}
  */
-var strStr = function (haystack, needle) {
-  var hIndex = 0;
+let strStr = function (haystack, needle) {
+  let hIndex = 0;
   while (haystack.length - hIndex >= needle.length) {
-    var nIndex = 0;
+    let nIndex = 0;
     if (haystack[hIndex] === needle[nIndex]) {
       while (nIndex < needle.length) {
         if (haystack[hIndex + nIndex] !== needle[nIndex]) break;

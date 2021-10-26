@@ -20,12 +20,12 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function (head) {
-  var curr = head;
-  var prev = null;
+let reverseList = function (head) {
+  let curr = head;
+  let prev = null;
 
   while (curr) {
-    var next = curr.next;
+    let next = curr.next;
     curr.next = prev;
     prev = curr;
     curr = next;

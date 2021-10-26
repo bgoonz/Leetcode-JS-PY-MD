@@ -30,19 +30,19 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isSymmetric = function (root) {
-  var queue = [];
+ let isSymmetric = function (root) {
+   let queue = [];
   queue.push(root);
 
   while (queue.length !== 0) {
-    var len = queue.length;
+     let len = queue.length;
 
     if (!isLevelSymmetric(queue)) {
       return false;
     }
 
-    for (var i = 0; i < len; i++) {
-      var node = queue.shift();
+    for ( let i = 0; i < len; i++) {
+       let node = queue.shift();
 
       if (node !== null) {
         queue.push(node.left);
@@ -55,9 +55,9 @@ var isSymmetric = function (root) {
 };
 
 function isLevelSymmetric(nodes) {
-  var len = nodes.length;
-  var beg = 0;
-  var end = len - 1;
+   let len = nodes.length;
+   let beg = 0;
+   let end = len - 1;
 
   while (beg < end) {
     if (

@@ -15,11 +15,11 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function (nums) {
-  var oc = 1;
-  var sorted = 0;
+let removeDuplicates = function (nums) {
+  let oc = 1;
+  let sorted = 0;
 
-  for (var i = 1; i < nums.length; i++) {
+  for (let i = 1; i < nums.length; i++) {
     if (nums[i] === nums[sorted]) {
       if (oc === 2) {
         continue;

@@ -44,11 +44,11 @@
  * @param {NestedInteger[]} nestedList
  * @return {number}
  */
-var depthSumInverse = function (nestedList) {
+let depthSumInverse = function (nestedList) {
   function getDepth(arr, lvl) {
-    var maxDepth = lvl;
+    let maxDepth = lvl;
 
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (!arr[i].isInteger()) {
         // maxDepth represents the max depth at that level,
         // e.g. [[[[55]]],[[31]],[99],[],75]
@@ -61,12 +61,12 @@ var depthSumInverse = function (nestedList) {
     return maxDepth;
   }
 
-  var depth = getDepth(nestedList, 1);
+  let depth = getDepth(nestedList, 1);
 
   function traverse(arr, lvl) {
-    var sum = 0;
+    let sum = 0;
 
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (arr[i].isInteger()) {
         sum += arr[i].getInteger() * lvl;
       } else {

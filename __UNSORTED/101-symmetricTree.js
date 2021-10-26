@@ -10,12 +10,12 @@
  * @return {boolean}
  */
 // recursive
-var isSymmetric = function (root) {
+ let isSymmetric = function (root) {
   if (!root) return true;
   return isSymmetricHelper(root.left, root.right);
 };
 
-var isSymmetricHelper = function (left, right) {
+ let isSymmetricHelper = function (left, right) {
   if (!left || !right) return left === right;
   if (left.val !== right.val) return false;
   return (
@@ -25,7 +25,7 @@ var isSymmetricHelper = function (left, right) {
 };
 
 // second try, not good.
-var helper = function (left, right) {
+ let helper = function (left, right) {
   if (!left || !right) {
     if (!left && !right) return true;
     return false;
@@ -41,7 +41,7 @@ var helper = function (left, right) {
 };
 
 // third try
-var helper = function (left, right) {
+ let helper = function (left, right) {
   if (!left && !right) {
     return true;
   } else if (!left || !right) {
@@ -59,9 +59,9 @@ var helper = function (left, right) {
 };
 
 // iterative
-var isSymmetric = function (root) {
+ let isSymmetric = function (root) {
   if (!root) return true;
-  var treeStack = [];
+   let treeStack = [];
   if (root.left) {
     if (!root.right) return false;
     treeStack.push(root.left);
@@ -72,8 +72,8 @@ var isSymmetric = function (root) {
 
   while (treeStack.length > 0) {
     if (treeStack.length % 2 !== 0) return false;
-    var right = treeStack.pop();
-    var left = treeStack.pop();
+     let right = treeStack.pop();
+     let left = treeStack.pop();
     if (right.val !== left.val) return false;
     if (left.left) {
       if (!right.right) return false;
@@ -90,9 +90,9 @@ var isSymmetric = function (root) {
 };
 
 // a second try
-var isSymmetric = function (root) {
+ let isSymmetric = function (root) {
   if (!root) return true;
-  var stack = [];
+   let stack = [];
   if (root.left && root.right) {
     stack.push(root.left);
     stack.push(root.right);
@@ -104,8 +104,8 @@ var isSymmetric = function (root) {
 
   while (stack.length > 0) {
     if (stack.length % 2 !== 0) return false;
-    var left = stack.pop();
-    var right = stack.pop();
+     let left = stack.pop();
+     let right = stack.pop();
     if (left.val !== right.val) return false;
     if (left.left && right.right) {
       stack.push(left.left, right.right);

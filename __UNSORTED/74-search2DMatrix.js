@@ -3,15 +3,15 @@
  * @param {number} target
  * @return {boolean}
  */
-var searchMatrix = function (matrix, target) {
-  var low = 0;
-  var rows = matrix.length;
-  var cols = matrix[0].length;
-  var high = rows * cols - 1;
+let searchMatrix = function (matrix, target) {
+  let low = 0;
+  let rows = matrix.length;
+  let cols = matrix[0].length;
+  let high = rows * cols - 1;
 
   while (low <= high) {
-    var mid = low + Math.floor((high - low) / 2);
-    var midNumber = findElementByIndex(matrix, mid, rows, cols);
+    let mid = low + Math.floor((high - low) / 2);
+    let midNumber = findElementByIndex(matrix, mid, rows, cols);
     if (target < midNumber) high = mid - 1;
     else if (target > midNumber) low = mid + 1;
     else return true;
@@ -20,21 +20,21 @@ var searchMatrix = function (matrix, target) {
   return false;
 };
 
-var findElementByIndex = function (matrix, index, m, n) {
-  var row = Math.floor(index / n);
-  var col = index - n * row;
+let findElementByIndex = function (matrix, index, m, n) {
+  let row = Math.floor(index / n);
+  let col = index - n * row;
   return matrix[row][col];
 };
 
 // second try
-var searchMatrix = function (matrix, target) {
-  var low = 0;
-  var rows = matrix.length;
-  var cols = matrix[0].length;
-  var high = rows * cols - 1;
+let searchMatrix = function (matrix, target) {
+  let low = 0;
+  let rows = matrix.length;
+  let cols = matrix[0].length;
+  let high = rows * cols - 1;
   while (low <= high) {
-    var mid = low + Math.floor((high - low) / 2);
-    var midElement = findElementByIndex(matrix, mid, cols);
+    let mid = low + Math.floor((high - low) / 2);
+    let midElement = findElementByIndex(matrix, mid, cols);
     if (midElement === target) {
       return true;
     } else if (midElement > target) {
@@ -47,8 +47,8 @@ var searchMatrix = function (matrix, target) {
 };
 
 // only need n (columns).
-var findElementByIndex = function (matrix, index, n) {
-  var row = Math.floor(index / n);
-  var col = Math.floor(index % n);
+let findElementByIndex = function (matrix, index, n) {
+  let row = Math.floor(index / n);
+  let col = Math.floor(index % n);
   return matrix[row][col];
 };

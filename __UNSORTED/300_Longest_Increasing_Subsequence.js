@@ -18,8 +18,8 @@
  * @param {number[]} nums
  * @return {number}
  */
-var lengthOfLIS = function (nums) {
-  var size = nums.length;
+let lengthOfLIS = function (nums) {
+  let size = nums.length;
 
   if (size === 0) {
     return 0;
@@ -27,8 +27,8 @@ var lengthOfLIS = function (nums) {
 
   dp = Array(size).fill(1);
 
-  for (var i = 1; i < size; i++) {
-    for (var j = 0; j < i; j++) {
+  for (let i = 1; i < size; i++) {
+    for (let j = 0; j < i; j++) {
       if (nums[i] > nums[j]) {
         dp[i] = Math.max(dp[i], dp[j] + 1);
       }

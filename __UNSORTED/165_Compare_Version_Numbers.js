@@ -8,18 +8,18 @@
  * @return {number}
  */
 
-var comparator = function (v1, v2) {};
+let comparator = function (v1, v2) {};
 
-var compareVersion = function (version1, version2) {
-  var arr1 = version1.split(".");
-  var arr2 = version2.split(".");
+let compareVersion = function (version1, version2) {
+  let arr1 = version1.split(".");
+  let arr2 = version2.split(".");
 
-  var index = 0;
-  var len = Math.max(arr1.length, arr2.length);
+  let index = 0;
+  let len = Math.max(arr1.length, arr2.length);
 
   while (index < len) {
-    var v1 = parseInt(arr1[index]);
-    var v2 = parseInt(arr2[index]);
+    let v1 = parseInt(arr1[index]);
+    let v2 = parseInt(arr2[index]);
 
     if (isNaN(v1) && v2 !== 0) {
       return -1;

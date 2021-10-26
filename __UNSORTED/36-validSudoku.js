@@ -5,14 +5,14 @@
  * @param {character[][]} board
  * @return {boolean}
  */
-var isValidSudoku = function (board) {
+let isValidSudoku = function (board) {
   if (!board || board.length !== 9 || board[0].length !== 9) return false;
 
-  for (var i = 0; i < board.length; i++) {
-    var row = {};
-    var col = {};
-    var grid = {};
-    for (var j = 0; j < board.length; j++) {
+  for (let i = 0; i < board.length; i++) {
+    let row = {};
+    let col = {};
+    let grid = {};
+    for (let j = 0; j < board.length; j++) {
       if (board[i][j] !== "." && !(board[i][j] in row)) {
         row[board[i][j]] = true;
       } else if (board[i][j] !== "." && board[i][j] in row) {
@@ -25,8 +25,8 @@ var isValidSudoku = function (board) {
         return false;
       }
 
-      var rowIndex = 3 * Math.floor(i / 3) + Math.floor(j / 3);
-      var colIndex = 3 * (i % 3) + (j % 3);
+      let rowIndex = 3 * Math.floor(i / 3) + Math.floor(j / 3);
+      let colIndex = 3 * (i % 3) + (j % 3);
       if (
         board[rowIndex][colIndex] !== "." &&
         !(board[rowIndex][colIndex] in grid)

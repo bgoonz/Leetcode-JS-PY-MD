@@ -13,7 +13,7 @@
  * @param {string} num2
  * @return {string}
  */
-var multiply = function (num1, num2) {
+let multiply = function (num1, num2) {
   if (
     num1 === null ||
     num2 === null ||
@@ -25,20 +25,20 @@ var multiply = function (num1, num2) {
     return "0";
   }
 
-  var arr1 = num1.split("").reverse();
-  var arr2 = num2.split("").reverse();
-  var result = [];
+  let arr1 = num1.split("").reverse();
+  let arr2 = num2.split("").reverse();
+  let result = [];
 
-  for (var i = 0; i < arr1.length; i++) {
-    var carry = 0;
-    var val1 = parseInt(arr1[i]);
+  for (let i = 0; i < arr1.length; i++) {
+    let carry = 0;
+    let val1 = parseInt(arr1[i]);
 
-    for (var j = 0; j < arr2.length; j++) {
-      var val2 = parseInt(arr2[j]);
-      var product = val1 * val2 + carry;
-      var exist = result[i + j] || 0;
-      var sum = product + exist;
-      var digit = sum % 10;
+    for (let j = 0; j < arr2.length; j++) {
+      let val2 = parseInt(arr2[j]);
+      let product = val1 * val2 + carry;
+      let exist = result[i + j] || 0;
+      let sum = product + exist;
+      let digit = sum % 10;
       carry = Math.floor(sum / 10);
       result[i + j] = digit;
     }

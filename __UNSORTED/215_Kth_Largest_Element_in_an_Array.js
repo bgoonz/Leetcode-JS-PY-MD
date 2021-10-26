@@ -20,14 +20,14 @@
  */
 
 //  use quick select
-var findKthLargest = function (nums, k) {
-  var smaller = [];
-  var larger = [];
-  var pivot = nums[parseInt(nums.length / 2)];
-  var pivotCnt = 0;
+let findKthLargest = function (nums, k) {
+  let smaller = [];
+  let larger = [];
+  let pivot = nums[parseInt(nums.length / 2)];
+  let pivotCnt = 0;
 
-  for (var i = 0; i < nums.length; i++) {
-    var num = nums[i];
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
 
     if (num > pivot) {
       larger.push(num);

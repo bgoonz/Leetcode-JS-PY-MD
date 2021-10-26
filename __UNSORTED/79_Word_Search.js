@@ -17,11 +17,11 @@
 // Hide Tags Array Backtracking
 // Hide Similar Problems (H) Word Search II
 
-var exist = function (board, word) {
-  var hash = {};
+let exist = function (board, word) {
+  let hash = {};
 
-  for (var i = 0; i < board.length; i++) {
-    for (var j = 0; j < board[0].length; j++) {
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[0].length; j++) {
       if (dfs(board, word, 0, i, j)) {
         return true;
       }
@@ -29,7 +29,7 @@ var exist = function (board, word) {
   }
 
   function dfs(board, word, w, i, j) {
-    var key = i + "," + j;
+    let key = i + "," + j;
     if (hash[key]) {
       return false;
     }
@@ -42,7 +42,7 @@ var exist = function (board, word) {
       return false;
     }
 
-    var result = false;
+    let result = false;
 
     if (word[w] === board[i][j]) {
       hash[key] = true;

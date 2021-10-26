@@ -63,7 +63,7 @@ WordDictionary.prototype._match = function (arr, k, node) {
 
 /**
  * Your WordDictionary object will be instantiated and called as such:
- * var obj = Object.create(WordDictionary).createNew()
+ *  let obj = Object.create(WordDictionary).createNew()
  * obj.addWord(word)
- * var param_2 = obj.search(word)
+ *  let param_2 = obj.search(word)
  */

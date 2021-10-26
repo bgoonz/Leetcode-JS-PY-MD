@@ -24,12 +24,12 @@
  * @param {string} time
  * @return {string}
  */
-var nextClosestTime = function (time) {
+let nextClosestTime = function (time) {
   let cur = 60 * parseInt(time.substring(0, 2));
   cur += parseInt(time.substring(3));
   const allowed = new Set();
 
-  for (var i = 0; i < time.length; i++) {
+  for (let i = 0; i < time.length; i++) {
     if (time[i] !== ":") {
       allowed.add(parseInt(time[i]));
     }
@@ -37,7 +37,7 @@ var nextClosestTime = function (time) {
 
   while (true) {
     cur = (cur + 1) % (24 * 60);
-    var curTime = [
+    let curTime = [
       Math.floor(cur / 60 / 10), // hour 24 -> 2
       Math.floor(cur / 60) % 10, // hour 24 -> 4
       Math.floor((cur % 60) / 10), // minutes 59 -> 5
@@ -45,7 +45,7 @@ var nextClosestTime = function (time) {
     ];
 
     for (i = 0; i < curTime.length; i++) {
-      var t = curTime[i];
+      let t = curTime[i];
       if (!allowed.has(t)) {
         break;
       }

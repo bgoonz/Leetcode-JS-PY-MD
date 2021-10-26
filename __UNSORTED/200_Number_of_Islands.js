@@ -19,18 +19,18 @@
  * @param {character[][]} grid
  * @return {number}
  */
-var numIslands = function (grid) {
-  var visited = [];
-  var row = grid.length;
+let numIslands = function (grid) {
+  let visited = [];
+  let row = grid.length;
 
   if (!grid || row === 0) {
     return 0;
   }
 
-  var col = grid[0].length;
-  var count = 0;
-  for (var i = 0; i < row; i++) {
-    for (var j = 0; j < col; j++) {
+  let col = grid[0].length;
+  let count = 0;
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
       if (grid[i][j] === "1") {
         count++;
         traverse(i, j, grid, row, col);
@@ -41,7 +41,7 @@ var numIslands = function (grid) {
   return count;
 };
 
-var traverse = function (i, j, grid, row, col) {
+let traverse = function (i, j, grid, row, col) {
   if (0 <= i && i < row && 0 <= j && j < col && grid[i][j] === "1") {
     grid[i][j] = "2";
 
@@ -57,16 +57,16 @@ var traverse = function (i, j, grid, row, col) {
  * @param {character[][]} grid
  * @return {number}
  */
-var numIslands = function (grid) {
-  var count = 0;
+let numIslands = function (grid) {
+  let count = 0;
 
   function traverseIsland(i, j, grid) {
-    var stack = [];
+    let stack = [];
 
     stack.push([i, j]);
 
     while (stack.length) {
-      var pair = stack.pop();
+      let pair = stack.pop();
       i = pair[0];
       j = pair[1];
 
@@ -86,8 +86,8 @@ var numIslands = function (grid) {
     }
   }
 
-  for (var i = 0; i < grid.length; i++) {
-    for (var j = 0; j < grid[0].length; j++) {
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
       if (grid[i][j] === "1") {
         traverseIsland(i, j, grid);
         count++;

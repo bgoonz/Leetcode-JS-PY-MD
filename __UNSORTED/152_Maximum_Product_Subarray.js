@@ -15,18 +15,18 @@
  * @return {number}
  */
 // reference: http://www.programcreek.com/2014/03/leetcode-maximum-product-subarray-java/
-var maxProduct = function (nums) {
+let maxProduct = function (nums) {
   if (nums === null || nums.length === 0) {
     return 0;
   }
 
-  var max = nums[0];
-  var min = max;
-  var ans = max;
+  let max = nums[0];
+  let min = max;
+  let ans = max;
 
-  for (var i = 1; i < nums.length; i++) {
-    var tmax = nums[i] * max;
-    var tmin = nums[i] * min;
+  for (let i = 1; i < nums.length; i++) {
+    let tmax = nums[i] * max;
+    let tmin = nums[i] * min;
 
     max = Math.max(Math.max(tmax, nums[i]), tmin);
     min = Math.min(Math.min(tmax, nums[i]), tmin);

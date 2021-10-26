@@ -9,16 +9,16 @@
  * @param {number[]} nums
  * @return {number}
  */
-var firstMissingPositive = function (nums) {
+let firstMissingPositive = function (nums) {
   if (nums.length <= 0) return 1;
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     while (nums[i] !== i + 1) {
       if (nums[i] <= 0) break;
       if (nums[i] > nums.length - 1 || nums[nums[i] - 1] === nums[i]) break;
       swap(nums, nums[i] - 1, i);
     }
   }
-  for (var j = 0; j < nums.length; j++) {
+  for (let j = 0; j < nums.length; j++) {
     if (nums[j] !== j + 1) {
       return j + 1;
     }
@@ -27,8 +27,8 @@ var firstMissingPositive = function (nums) {
   return nums[nums.length - 1] + 1;
 };
 
-var swap = function (nums, i, j) {
-  var tmp = nums[i];
+let swap = function (nums, i, j) {
+  let tmp = nums[i];
   nums[i] = nums[j];
   nums[j] = tmp;
 };

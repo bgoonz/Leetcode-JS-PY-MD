@@ -28,26 +28,26 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var zigzagLevelOrder = function (root) {
+ let zigzagLevelOrder = function (root) {
   // bfs
 
   if (!root) {
     return [];
   }
 
-  var curLevel = [];
+   let curLevel = [];
   curLevel.push(root);
 
-  var fromLeft = true;
-  var result = [];
-  var tmpResult = [];
-  var nextLevel = [];
+   let fromLeft = true;
+   let result = [];
+   let tmpResult = [];
+   let nextLevel = [];
 
   while (curLevel.length > 0) {
-    var len = curLevel.length;
+     let len = curLevel.length;
 
-    for (var i = 0; i < len; i++) {
-      var node = curLevel.pop();
+    for ( let i = 0; i < len; i++) {
+       let node = curLevel.pop();
       tmpResult.push(node.val);
 
       if (fromLeft) {

@@ -6,19 +6,19 @@
  * @return {number[][]}
  */
 
-var subsetsWithDup = function (nums) {
+let subsetsWithDup = function (nums) {
   nums.sort(function (a, b) {
     return a > b;
   });
-  var result = [[]];
-  var current = [];
+  let result = [[]];
+  let current = [];
   generate(nums, 0, current, result);
   return result;
 };
 
-var generate = function (nums, index, current, result) {
-  for (var i = index; i < nums.length; i++) {
-    var num = nums[i];
+let generate = function (nums, index, current, result) {
+  for (let i = index; i < nums.length; i++) {
+    let num = nums[i];
 
     current.push(num);
     result.push(current.slice());

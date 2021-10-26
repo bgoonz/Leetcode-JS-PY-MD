@@ -25,7 +25,7 @@
  * @param {function} read4()
  * @return {function}
  */
-var solution = function (read4) {
+let solution = function (read4) {
   let bufRead = [];
   let count = 0; // how many characters read with read4
   let i = 0;
@@ -62,18 +62,18 @@ var solution = function (read4) {
   };
 };
 
-var solution = function (read4) {
+let solution = function (read4) {
   /**
    * @param {character[]} buf Destination buffer
    * @param {number} n Number of characters to read
    * @return {number} The number of actual characters read
    */
-  var read4Buff = [];
-  var read4NumCharRead = 0;
-  var read4Remain = 0;
+  let read4Buff = [];
+  let read4NumCharRead = 0;
+  let read4Remain = 0;
 
   return function (buf, n) {
-    var numCharRead = 0;
+    let numCharRead = 0;
 
     // Need to run read4 N times to get n char
     while (numCharRead < n) {

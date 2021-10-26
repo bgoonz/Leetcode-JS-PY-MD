@@ -4,11 +4,11 @@
  * @param {string} preorder
  * @return {boolean}
  */
-var isValidSerialization = function (preorder) {
-  var stack = [];
-  var i = 0;
-  var newStr = preorder.split(",");
-  var length = newStr.length;
+let isValidSerialization = function (preorder) {
+  let stack = [];
+  let i = 0;
+  let newStr = preorder.split(",");
+  let length = newStr.length;
 
   while (i < length) {
     stack.push(newStr[i]);

@@ -22,11 +22,11 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var increasingTriplet = function (nums) {
-  var min1 = Infinity;
-  var min2 = Infinity;
+let increasingTriplet = function (nums) {
+  let min1 = Infinity;
+  let min2 = Infinity;
 
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] <= min1) {
       min1 = nums[i];
     } else if (nums[i] <= min2) {

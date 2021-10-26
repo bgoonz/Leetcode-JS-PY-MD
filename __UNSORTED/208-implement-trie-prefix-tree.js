@@ -37,10 +37,10 @@ Trie.prototype.startsWith = function (prefix) {
 
 /**
  * Your Trie object will be instantiated and called as such:
- * var obj = new Trie()
+ *  let obj = new Trie()
  * obj.insert(word)
- * var param_2 = obj.search(word)
- * var param_3 = obj.startsWith(prefix)
+ *  let param_2 = obj.search(word)
+ *  let param_3 = obj.startsWith(prefix)
  */
 
 Trie.prototype.traverse = function (word) {
@@ -145,8 +145,8 @@ class Node {
 
 /**
  * Your Trie object will be instantiated and called as such:
- * var obj = new Trie()
+ *  let obj = new Trie()
  * obj.insert(word)
- * var param_2 = obj.search(word)
- * var param_3 = obj.startsWith(prefix)
+ *  let param_2 = obj.search(word)
+ *  let param_3 = obj.startsWith(prefix)
  */

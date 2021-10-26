@@ -2,13 +2,13 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrderBottom = function (root) {
-  var results = [];
+ let levelOrderBottom = function (root) {
+   let results = [];
   helper(root, 0, results);
   return results;
 };
 
-var helper = function (node, level, results) {
+ let helper = function (node, level, results) {
   if (!node) return results;
   if (level >= results.length) {
     // insert level result array reversely

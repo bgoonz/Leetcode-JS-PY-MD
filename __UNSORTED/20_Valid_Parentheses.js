@@ -2,16 +2,16 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function (s) {
-  var stack = [];
-  var index = 0;
+let isValid = function (s) {
+  let stack = [];
+  let index = 0;
   while (index < s.length) {
-    var c = s[index];
+    let c = s[index];
 
     if (c === "(" || c === "[" || c === "{") {
       stack.push(c);
     } else {
-      var oldC = stack.pop();
+      let oldC = stack.pop();
 
       if (oldC === "(" && c !== ")") {
         return false;
@@ -32,16 +32,16 @@ var isValid = function (s) {
 
 // second attempt
 
-var isValid = function (s) {
-  var stack = [];
+let isValid = function (s) {
+  let stack = [];
 
-  for (var i = 0; i < s.length; i++) {
-    var chr = s[i];
+  for (let i = 0; i < s.length; i++) {
+    let chr = s[i];
 
     if (chr === "(" || chr === "{" || chr === "[") {
       stack.push(chr);
     } else if (chr === ")" || chr === "}" || chr === "]") {
-      var top = stack.pop();
+      let top = stack.pop();
       if (
         !top ||
         (top === "(" && chr !== ")") ||

@@ -28,8 +28,8 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var rob = function (root) {
-  var result = robViaDfs(root);
+let rob = function (root) {
+  let result = robViaDfs(root);
   return Math.max.apply(null, result);
 };
 
@@ -40,7 +40,7 @@ function robViaDfs(root) {
     return [0, 0];
   }
 
-  var left = robViaDfs(root.left),
+  let left = robViaDfs(root.left),
     right = robViaDfs(root.right),
     includeRoot,
     notIncludeRoot;

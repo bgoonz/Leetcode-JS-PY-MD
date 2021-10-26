@@ -16,11 +16,11 @@
  * @param {ListNode} head
  * @return {TreeNode}
  */
-var sortedListToBST = function (head) {
+ let sortedListToBST = function (head) {
   if (!head) return head;
-  var slow = head;
-  var fast = head;
-  var prev = null;
+   let slow = head;
+   let fast = head;
+   let prev = null;
 
   while (fast && fast.next) {
     fast = fast.next.next;
@@ -28,7 +28,7 @@ var sortedListToBST = function (head) {
     slow = slow.next;
   }
 
-  var node = new TreeNode(slow.val);
+   let node = new TreeNode(slow.val);
   // if prev is null, it means, slow and fast did not move, it means this half is done.
   // otherwise, prev is the end of the first half (left sub tree). And set prev.next = null.
   if (!prev) {

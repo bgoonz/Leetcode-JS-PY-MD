@@ -377,6 +377,102 @@
         "documentation": {}
     },
     {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
         "label": "Counter",
         "importPath": "collections",
         "description": "collections",
@@ -469,6 +565,22 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "functools",
         "kind": 6,
         "isExtraImport": true,
@@ -479,6 +591,14 @@
     },
     {
         "label": "partial",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "cmp_to_key",
         "importPath": "functools",
         "description": "functools",
         "isExtraImport": true,
@@ -6142,6 +6262,1203 @@
         "description": "__UNSORTED.125",
         "peekOfCode": "class Solution:\n    def isPalindrome(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: bool\n        \"\"\"\n        ss = \"\".join(c.lower() for c in s if c.isalnum())\n        return ss[::-1] == ss",
         "detail": "__UNSORTED.125",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.126",
+        "description": "__UNSORTED.126",
+        "peekOfCode": "class Solution:\n    def findLadders(\n        self, beginWord: str, endWord: str, wordList: List[str]\n    ) -> List[List[str]]:\n        wordList = set(wordList)\n        if endWord not in wordList:\n            return 0\n        q = {beginWord}\n        wordList -= q\n        tree = defaultdict(set)",
+        "detail": "__UNSORTED.126",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.127",
+        "description": "__UNSORTED.127",
+        "peekOfCode": "class Solution:\n    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:\n        wordList = set(wordList)\n        if not wordList or endWord not in wordList:\n            return 0\n        wordList.discard(beginWord)\n        q1, q2 = {beginWord}, {endWord}\n        step = 1\n        while q1 and q2:\n            temp = set()",
+        "detail": "__UNSORTED.127",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.128",
+        "description": "__UNSORTED.128",
+        "peekOfCode": "class Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        if not nums:\n            return 0\n        length = {}\n        unions = {}\n        nums = set(nums)\n        def union(x, y):\n            root1 = find(x)\n            root2 = find(y)",
+        "detail": "__UNSORTED.128",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.128",
+        "description": "__UNSORTED.128",
+        "peekOfCode": "class Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        nums = set(nums)\n        result = 0\n        for num in nums:\n            if num - 1 not in nums:\n                next = num + 1\n                while next in nums:\n                    next += 1\n                result = max(result, next - num)",
+        "detail": "__UNSORTED.128",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.128",
+        "description": "__UNSORTED.128",
+        "peekOfCode": "class Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        if not nums or len(nums) == 0:\n            return 0\n        if len(nums) < 2:\n            return 1\n        nums.sort()\n        result, l = 1, 1\n        for i in range(1, len(nums)):\n            if nums[i] == nums[i - 1]:",
+        "detail": "__UNSORTED.128",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.129",
+        "description": "__UNSORTED.129",
+        "peekOfCode": "class Solution:\n    def sumNumbers(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: int\n        \"\"\"\n        return self.getSum(root, 0)\n    def getSum(self, node, s):\n        if not node:\n            return 0",
+        "detail": "__UNSORTED.129",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.130",
+        "description": "__UNSORTED.130",
+        "peekOfCode": "class Solution:\n    def solve(self, board: List[List[str]]) -> None:\n        \"\"\"\n        Do not return anything, modify board in-place instead.\n        \"\"\"\n        if not board or not board[0]:\n            return\n        m, n = len(board), len(board[0])\n        queue = deque()\n        for i in range(m):",
+        "detail": "__UNSORTED.130",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.131",
+        "description": "__UNSORTED.131",
+        "peekOfCode": "class Solution:\n    def partition(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: List[List[str]]\n        \"\"\"\n        res = []\n        self.dfs(res, [], s)\n        return res\n    def dfs(self, res, path, s):",
+        "detail": "__UNSORTED.131",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.132",
+        "description": "__UNSORTED.132",
+        "peekOfCode": "class Solution:\n    def minCut(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: int\n        \"\"\"\n        if not s or len(s) == 0:\n            return 0\n        n = len(s)\n        dp = list(range(n))",
+        "detail": "__UNSORTED.132",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "__UNSORTED.133",
+        "description": "__UNSORTED.133",
+        "peekOfCode": "class Node:\n    def __init__(self, val = 0, neighbors = None):\n        self.val = val\n        self.neighbors = neighbors if neighbors is not None else []\n\"\"\"\nfrom collections import deque\nclass Solution:\n    def cloneGraph(self, node: \"Node\") -> \"Node\":\n        if not node:\n            return None",
+        "detail": "__UNSORTED.133",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.133",
+        "description": "__UNSORTED.133",
+        "peekOfCode": "class Solution:\n    def cloneGraph(self, node: \"Node\") -> \"Node\":\n        if not node:\n            return None\n        visited = {node: Node(node.val)}\n        queue = deque([node])\n        while queue:\n            curr = queue.popleft()\n            for n in curr.neighbors:\n                if n not in visited:",
+        "detail": "__UNSORTED.133",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.134",
+        "description": "__UNSORTED.134",
+        "peekOfCode": "class Solution:\n    def canCompleteCircuit(self, gas, cost):\n        \"\"\"\n        :type gas: List[int]\n        :type cost: List[int]\n        :rtype: int\n        \"\"\"\n        start, total, tank = 0, 0, 0\n        for i in range(len(gas)):\n            curr = gas[i] - cost[i]",
+        "detail": "__UNSORTED.134",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.135",
+        "description": "__UNSORTED.135",
+        "peekOfCode": "class Solution:\n    # time: O(n)\n    # space: O(n)\n    # def candy(self, ratings):\n    #     \"\"\"\n    #     :type ratings: List[int]\n    #     :rtype: int\n    #     \"\"\"\n    #     res = [1]*len(ratings)\n    #     for i in range(1, len(ratings)):",
+        "detail": "__UNSORTED.135",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "__UNSORTED.138",
+        "description": "__UNSORTED.138",
+        "peekOfCode": "class Node:\n    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):\n        self.val = int(x)\n        self.next = next\n        self.random = random\n\"\"\"\nfrom collections import defaultdict\nclass Solution:\n    def copyRandomList(self, head: \"Node\") -> \"Node\":\n        d = defaultdict(lambda: Node(0, None, None))",
+        "detail": "__UNSORTED.138",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.138",
+        "description": "__UNSORTED.138",
+        "peekOfCode": "class Solution:\n    def copyRandomList(self, head: \"Node\") -> \"Node\":\n        d = defaultdict(lambda: Node(0, None, None))\n        d[None] = None\n        curr = head\n        while curr:\n            d[curr].val = curr.val\n            d[curr].next = d[curr.next]\n            d[curr].random = d[curr.random]\n            curr = curr.next",
+        "detail": "__UNSORTED.138",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.139",
+        "description": "__UNSORTED.139",
+        "peekOfCode": "class Solution:\n    def wordBreak(self, s: str, wordDict: List[str]) -> bool:\n        wordDict = set(wordDict)\n        return self.dfs(s, wordDict, {})\n    def dfs(self, s, wordDict, cache):\n        if s in cache:\n            return cache[s]\n        if s in wordDict:\n            return True\n        for i in range(1, len(s)):",
+        "detail": "__UNSORTED.139",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.139",
+        "description": "__UNSORTED.139",
+        "peekOfCode": "class Solution:\n    def wordBreak(self, s: str, wordDict: List[str]) -> bool:\n        wordDict = set(wordDict)\n        dp = [False] * (len(s) + 1)\n        dp[0] = True\n        for j in range(1, len(s) + 1):\n            for i in range(j):\n                word = s[i:j]\n                if word in wordDict and dp[i]:\n                    dp[j] = True",
+        "detail": "__UNSORTED.139",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.140",
+        "description": "__UNSORTED.140",
+        "peekOfCode": "class Solution:\n    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:\n        return self.dfs(s, set(wordDict), dict())\n    def dfs(self, s, wordDict, cache):\n        if s in cache:\n            return cache[s]\n        if len(s) == 0:\n            return [\"\"]\n        result = []\n        for i in range(1, len(s) + 1):",
+        "detail": "__UNSORTED.140",
+        "documentation": {}
+    },
+    {
+        "label": "ListNode",
+        "kind": 6,
+        "importPath": "__UNSORTED.141",
+        "description": "__UNSORTED.141",
+        "peekOfCode": "class ListNode(object):\n    def __init__(self, x):\n        self.val = x\n        self.next = None\nclass Solution(object):\n    def hasCycle(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: bool\n        \"\"\"",
+        "detail": "__UNSORTED.141",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.141",
+        "description": "__UNSORTED.141",
+        "peekOfCode": "class Solution(object):\n    def hasCycle(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: bool\n        \"\"\"\n        if not head:\n            return False\n        fast = slow = head\n        while fast.next and fast.next.next:",
+        "detail": "__UNSORTED.141",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.142",
+        "description": "__UNSORTED.142",
+        "peekOfCode": "class Solution(object):\n    def detectCycle(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: ListNode\n        \"\"\"\n        if not head:\n            return None\n        slow, fast = head, head.next\n        while fast and fast.next:",
+        "detail": "__UNSORTED.142",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.143",
+        "description": "__UNSORTED.143",
+        "peekOfCode": "class Solution:\n    def reorderList(self, head: ListNode) -> None:\n        \"\"\"\n        Do not return anything, modify head in-place instead.\n        \"\"\"\n        if not head:\n            return\n        slow = fast = head\n        while fast and fast.next:\n            slow = slow.next",
+        "detail": "__UNSORTED.143",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "__UNSORTED.144",
+        "description": "__UNSORTED.144",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, x):\n        self.val = x\n        self.left = None\n        self.right = None\nclass Solution:\n    def preorderTraversal(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: List[int]",
+        "detail": "__UNSORTED.144",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.144",
+        "description": "__UNSORTED.144",
+        "peekOfCode": "class Solution:\n    def preorderTraversal(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: List[int]\n        \"\"\"\n        if root:\n            return (\n                [root.val]\n                + self.preorderTraversal(root.left)",
+        "detail": "__UNSORTED.144",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "__UNSORTED.145",
+        "description": "__UNSORTED.145",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, x):\n        self.val = x\n        self.left = None\n        self.right = None\nclass Solution:\n    def postorderTraversal(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: List[int]",
+        "detail": "__UNSORTED.145",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.145",
+        "description": "__UNSORTED.145",
+        "peekOfCode": "class Solution:\n    def postorderTraversal(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: List[int]\n        \"\"\"\n        if root:\n            return (\n                self.postorderTraversal(root.left)\n                + self.postorderTraversal(root.right)",
+        "detail": "__UNSORTED.145",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "__UNSORTED.146",
+        "description": "__UNSORTED.146",
+        "peekOfCode": "class Node(object):\n    def __init__(self, key, val):\n        self.key = key\n        self.val = val\n        self.next = None\n        self.prev = None\nclass LRUCache(object):\n    def __init__(self, capacity):\n        \"\"\"\n        :type capacity: int",
+        "detail": "__UNSORTED.146",
+        "documentation": {}
+    },
+    {
+        "label": "LRUCache",
+        "kind": 6,
+        "importPath": "__UNSORTED.146",
+        "description": "__UNSORTED.146",
+        "peekOfCode": "class LRUCache(object):\n    def __init__(self, capacity):\n        \"\"\"\n        :type capacity: int\n        \"\"\"\n        self.capacity = capacity\n        self.dict = {}\n        self.head = Node(0, 0)\n        self.tail = Node(0, 0)\n        self.head.next = self.tail",
+        "detail": "__UNSORTED.146",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.147",
+        "description": "__UNSORTED.147",
+        "peekOfCode": "class Solution(object):\n    def insertionSortList(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: ListNode\n        \"\"\"\n        if not head:\n            return None\n        sortedList = head\n        head = head.next",
+        "detail": "__UNSORTED.147",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.148",
+        "description": "__UNSORTED.148",
+        "peekOfCode": "class Solution(object):\n    def sortList(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: ListNode\n        \"\"\"\n        if not head or not head.next:\n            return head\n        slow, fast = head, head.next\n        while fast.next and fast.next.next:",
+        "detail": "__UNSORTED.148",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.149",
+        "description": "__UNSORTED.149",
+        "peekOfCode": "class Solution:\n    def maxPoints(self, points: List[List[int]]) -> int:\n        n = len(points)\n        if n <= 2:\n            return n\n        result = 0\n        for i in range(n):\n            curmax = 0\n            overlap = 0\n            d = dict()",
+        "detail": "__UNSORTED.149",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.150",
+        "description": "__UNSORTED.150",
+        "peekOfCode": "class Solution:\n    def evalRPN(self, tokens: List[str]) -> int:\n        stack = []\n        for token in tokens:\n            if token not in {\"+\", \"-\", \"*\", \"/\"}:\n                stack.append(int(token))\n            else:\n                r, l = stack.pop(), stack.pop()\n                if token == \"+\":\n                    stack.append(l + r)",
+        "detail": "__UNSORTED.150",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.151",
+        "description": "__UNSORTED.151",
+        "peekOfCode": "class Solution(object):\n    def reverseWords(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: str\n        \"\"\"\n        ss = \" \".join(s.split()[::-1])\n        return ss",
+        "detail": "__UNSORTED.151",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.152",
+        "description": "__UNSORTED.152",
+        "peekOfCode": "class Solution:\n    def maxProduct(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if not nums:\n            return 0\n        result = big = small = nums[0]\n        for num in nums[1:]:",
+        "detail": "__UNSORTED.152",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.153",
+        "description": "__UNSORTED.153",
+        "peekOfCode": "class Solution:\n    def findMin(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if not nums:\n            return -1\n        l, r = 0, len(nums) - 1\n        while l < r:",
+        "detail": "__UNSORTED.153",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.154",
+        "description": "__UNSORTED.154",
+        "peekOfCode": "class Solution:\n    def findMin(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if not nums:\n            return -1\n        l, r = 0, len(nums) - 1\n        while l < r:",
+        "detail": "__UNSORTED.154",
+        "documentation": {}
+    },
+    {
+        "label": "MinStack",
+        "kind": 6,
+        "importPath": "__UNSORTED.155",
+        "description": "__UNSORTED.155",
+        "peekOfCode": "class MinStack:\n    def __init__(self):\n        \"\"\"\n        initialize your data structure here.\n        \"\"\"\n        self.stack = []\n    def push(self, x):\n        \"\"\"\n        :type x: int\n        :rtype: void",
+        "detail": "__UNSORTED.155",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.157",
+        "description": "__UNSORTED.157",
+        "peekOfCode": "class Solution:\n    def read(self, buf, n):\n        \"\"\"\n        :type buf: Destination buffer (List[str])\n        :type n: Number of characters to read (int)\n        :rtype: The number of actual characters read (int)\n        \"\"\"\n        i = 0\n        while i < n:\n            buf4 = [\" \"] * 4",
+        "detail": "__UNSORTED.157",
+        "documentation": {}
+    },
+    {
+        "label": "file",
+        "kind": 5,
+        "importPath": "__UNSORTED.157",
+        "description": "__UNSORTED.157",
+        "peekOfCode": "file = File(\"abcdefghijk\") # File is \"abcdefghijk\", initially file pointer (fp) points to 'a'\nbuf4 = [' '] * 4 # Create buffer with enough space to store characters\nread4(buf4) # read4 returns 4. Now buf = ['a','b','c','d'], fp points to 'e'\nread4(buf4) # read4 returns 4. Now buf = ['e','f','g','h'], fp points to 'i'\nread4(buf4) # read4 returns 3. Now buf = ['i','j','k',...], fp points to end of file\n\"\"\"\nclass Solution:\n    def read(self, buf, n):\n        \"\"\"\n        :type buf: Destination buffer (List[str])",
+        "detail": "__UNSORTED.157",
+        "documentation": {}
+    },
+    {
+        "label": "buf4",
+        "kind": 5,
+        "importPath": "__UNSORTED.157",
+        "description": "__UNSORTED.157",
+        "peekOfCode": "buf4 = [' '] * 4 # Create buffer with enough space to store characters\nread4(buf4) # read4 returns 4. Now buf = ['a','b','c','d'], fp points to 'e'\nread4(buf4) # read4 returns 4. Now buf = ['e','f','g','h'], fp points to 'i'\nread4(buf4) # read4 returns 3. Now buf = ['i','j','k',...], fp points to end of file\n\"\"\"\nclass Solution:\n    def read(self, buf, n):\n        \"\"\"\n        :type buf: Destination buffer (List[str])\n        :type n: Number of characters to read (int)",
+        "detail": "__UNSORTED.157",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.158",
+        "description": "__UNSORTED.158",
+        "peekOfCode": "class Solution:\n    def __init__(self):\n        self.q = deque()\n    def read(self, buf: List[str], n: int) -> int:\n        i = 0\n        while i < n:\n            while self.q and i < n:\n                buf[i] = self.q.popleft()\n                i += 1\n            else:",
+        "detail": "__UNSORTED.158",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.159",
+        "description": "__UNSORTED.159",
+        "peekOfCode": "class Solution:\n    def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:\n        d = {}\n        count = 0\n        start, end = 0, 0\n        result = 0\n        while end < len(s):\n            c = s[end]\n            d[c] = d.get(c, 0) + 1\n            if d[c] == 1:",
+        "detail": "__UNSORTED.159",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.160",
+        "description": "__UNSORTED.160",
+        "peekOfCode": "class Solution(object):\n    def getIntersectionNode(self, headA, headB):\n        \"\"\"\n        :type head1, head1: ListNode\n        :rtype: ListNode\n        \"\"\"\n        if not headA or not headB:\n            return None\n        pa, pb = headA, headB\n        while pa != pb:",
+        "detail": "__UNSORTED.160",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.161",
+        "description": "__UNSORTED.161",
+        "peekOfCode": "class Solution:\n    def isOneEditDistance(self, s, t):\n        \"\"\"\n        :type s: str\n        :type t: str\n        :rtype: bool\n        \"\"\"\n        if len(s) > len(t):\n            return self.isOneEditDistance(t, s)\n        m, n = len(s), len(t)",
+        "detail": "__UNSORTED.161",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.162",
+        "description": "__UNSORTED.162",
+        "peekOfCode": "class Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        l, r = 0, len(nums) - 1\n        while l < r:\n            mid = l + (r - l) // 2\n            high_mid = mid + 1\n            if nums[mid] < nums[high_mid]:\n                l = high_mid\n            else:\n                r = mid",
+        "detail": "__UNSORTED.162",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.163",
+        "description": "__UNSORTED.163",
+        "peekOfCode": "class Solution:\n    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[str]:\n        nums = [lower - 1] + nums + [upper + 1]\n        res = []\n        for i in range(len(nums) - 1):\n            if nums[i + 1] - nums[i] == 2:\n                res.append(str(nums[i] + 1))\n            elif nums[i + 1] - nums[i] > 2:\n                res.append(str(nums[i] + 1) + \"->\" + str(nums[i + 1] - 1))\n        return res",
+        "detail": "__UNSORTED.163",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.165",
+        "description": "__UNSORTED.165",
+        "peekOfCode": "class Solution:\n    def compareVersion(self, version1: str, version2: str) -> int:\n        l1 = [int(s) for s in version1.split(\".\")]\n        l2 = [int(s) for s in version2.split(\".\")]\n        len1, len2 = len(l1), len(l2)\n        if len1 > len2:\n            l2 += [0] * (len1 - len2)\n        elif len1 < len2:\n            l1 += [0] * (len2 - len1)\n        return (l1 > l2) - (l1 < l2)",
+        "detail": "__UNSORTED.165",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.167",
+        "description": "__UNSORTED.167",
+        "peekOfCode": "class Solution:\n    def twoSum(self, numbers, target):\n        \"\"\"\n        :type numbers: List[int]\n        :type target: int\n        :rtype: List[int]\n        \"\"\"\n        l, r = 0, len(numbers) - 1\n        while l < r:\n            s = numbers[l] + numbers[r]",
+        "detail": "__UNSORTED.167",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.168",
+        "description": "__UNSORTED.168",
+        "peekOfCode": "class Solution:\n    def convertToTitle(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: str\n        \"\"\"\n        result, start = \"\", ord(\"A\")\n        while n > 0:\n            result, n = chr((n - 1) % 26 + start) + result, (n - 1) // 26\n        return result",
+        "detail": "__UNSORTED.168",
+        "documentation": {}
+    },
+    {
+        "label": "TwoSum",
+        "kind": 6,
+        "importPath": "__UNSORTED.170",
+        "description": "__UNSORTED.170",
+        "peekOfCode": "class TwoSum:\n    def __init__(self):\n        \"\"\"\n        Initialize your data structure here.\n        \"\"\"\n        self.d = {}\n    def add(self, number: int) -> None:\n        \"\"\"\n        Add the number to an internal data structure..\n        \"\"\"",
+        "detail": "__UNSORTED.170",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.171",
+        "description": "__UNSORTED.171",
+        "peekOfCode": "class Solution:\n    def titleToNumber(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: int\n        \"\"\"\n        result, start = 0, ord(\"A\")\n        for c in s:\n            result = result * 26 + (ord(c) - start) + 1\n        return result",
+        "detail": "__UNSORTED.171",
+        "documentation": {}
+    },
+    {
+        "label": "BSTIterator",
+        "kind": 6,
+        "importPath": "__UNSORTED.173",
+        "description": "__UNSORTED.173",
+        "peekOfCode": "class BSTIterator:\n    def __init__(self, root: TreeNode):\n        self.result = []\n        def dfs(root):\n            if not root:\n                return\n            if root.right:\n                dfs(root.right)\n            self.result.append(root.val)\n            if root.left:",
+        "detail": "__UNSORTED.173",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.179",
+        "description": "__UNSORTED.179",
+        "peekOfCode": "class Solution:\n    def largestNumber(self, nums: List[int]) -> str:\n        nums = list(map(str, nums))\n        comp = lambda x, y: -1 if x + y > y + x else 1 if x + y < y + x else 0\n        return str(int(\"\".join(sorted(nums, key=cmp_to_key(comp)))))",
+        "detail": "__UNSORTED.179",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.186",
+        "description": "__UNSORTED.186",
+        "peekOfCode": "class Solution(object):\n    def reverseWords(self, str):\n        \"\"\"\n        :type str: List[str]\n        :rtype: void Do not return anything, modify str in-place instead.\n        \"\"\"\n        self.reverse(str, 0, len(str) - 1)\n        start, end = 0, -1\n        for i in range(len(str)):\n            if str[i] == \" \":",
+        "detail": "__UNSORTED.186",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.188",
+        "description": "__UNSORTED.188",
+        "peekOfCode": "class Solution:\n    def maxProfit(self, k: int, prices: List[int]) -> int:\n        n = len(prices)\n        if n < 2:\n            return 0\n        if n // 2 <= k:\n            return self.quickSolve(prices)\n        dp = [[0 for _ in range(n + 1)] for _ in range(k + 1)]\n        for i in range(1, k + 1):\n            buy = float(\"-inf\")",
+        "detail": "__UNSORTED.188",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.189",
+        "description": "__UNSORTED.189",
+        "peekOfCode": "class Solution:\n    def rotate(self, nums, k):\n        \"\"\"\n        :type nums: List[int]\n        :type k: int\n        :rtype: void Do not return anything, modify nums in-place instead.\n        \"\"\"\n        if not nums:\n            return\n        n = len(nums)",
+        "detail": "__UNSORTED.189",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.190",
+        "description": "__UNSORTED.190",
+        "peekOfCode": "class Solution:\n    # @param n, an integer\n    # @return an integer\n    def reverseBits(self, n):\n        res = 0\n        for i in range(32):\n            res += n & 1\n            n = n >> 1\n            if i != 31:\n                res = res << 1",
+        "detail": "__UNSORTED.190",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.191",
+        "description": "__UNSORTED.191",
+        "peekOfCode": "class Solution(object):\n    def hammingWeight(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        bits = 0\n        mask = 1\n        for i in range(32):\n            if (n & mask) != 0:",
+        "detail": "__UNSORTED.191",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.198",
+        "description": "__UNSORTED.198",
+        "peekOfCode": "class Solution:\n    def rob(self, nums: List[int]) -> int:\n        if not nums:\n            return 0\n        s1, s2 = 0, 0\n        for num in nums:\n            s1, s2 = s2, max(s1 + num, s2)\n        return s2",
+        "detail": "__UNSORTED.198",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.199",
+        "description": "__UNSORTED.199",
+        "peekOfCode": "class Solution:\n    def rightSideView(self, root: TreeNode) -> List[int]:\n        if not root:\n            return []\n        queue = deque([(root, 1)])\n        result = []\n        while queue:\n            node, depth = queue.popleft()\n            if len(result) < depth:\n                result.append(node.val)",
+        "detail": "__UNSORTED.199",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.200",
+        "description": "__UNSORTED.200",
+        "peekOfCode": "class Solution:\n    # updated union find\n    def numIslands(self, grid: List[List[str]]) -> int:\n        def find(x):\n            if UF[x] != x:\n                UF[x] = find(UF[x])\n            return UF[x]\n        def union(x, y):\n            UF[find(x)] = find(y)\n        if not grid or not grid[0]:",
+        "detail": "__UNSORTED.200",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.200",
+        "description": "__UNSORTED.200",
+        "peekOfCode": "class Solution:\n    def numIslands(self, grid: List[List[str]]) -> int:\n        m, n = len(grid), len(grid[0])\n        count = 0\n        for i in range(m):\n            for j in range(n):\n                if grid[i][j] == \"1\":\n                    self.dfs(grid, i, j)\n                    count += 1\n        return count",
+        "detail": "__UNSORTED.200",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.203",
+        "description": "__UNSORTED.203",
+        "peekOfCode": "class Solution(object):\n    def countPrimes(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        if n < 2:\n            return 0\n        A = [0] * (n + 1)\n        count = 0",
+        "detail": "__UNSORTED.203",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.204",
+        "description": "__UNSORTED.204",
+        "peekOfCode": "class Solution(object):\n    def countPrimes(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        if n <= 2:\n            return 0\n        prime = [True] * n\n        prime[:2] = [False, False]",
+        "detail": "__UNSORTED.204",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.205",
+        "description": "__UNSORTED.205",
+        "peekOfCode": "class Solution:\n    def isIsomorphic(self, s: str, t: str) -> bool:\n        def convert(ss):\n            d = {}\n            return [d.setdefault(c, len(d)) for c in ss]\n        return convert(s) == convert(t)",
+        "detail": "__UNSORTED.205",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.206",
+        "description": "__UNSORTED.206",
+        "peekOfCode": "class Solution:\n    def reverseList(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: ListNode\n        \"\"\"\n        prev = None\n        while head:\n            head.next, prev, head = prev, head, head.next\n        return prev",
+        "detail": "__UNSORTED.206",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.207",
+        "description": "__UNSORTED.207",
+        "peekOfCode": "class Solution:\n    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:\n        graph, visited = {}, {}\n        for i in range(numCourses):\n            graph[i] = set()\n            visited[i] = 0\n        for p in prerequisites:\n            graph[p[1]].add(p[0])\n        for k in graph.keys():\n            if not self.dfs(k, graph, visited):",
+        "detail": "__UNSORTED.207",
+        "documentation": {}
+    },
+    {
+        "label": "TrieNode",
+        "kind": 6,
+        "importPath": "__UNSORTED.208",
+        "description": "__UNSORTED.208",
+        "peekOfCode": "class TrieNode:\n    def __init__(self):\n        self.children = {}\n        self.is_word = False\nclass Trie:\n    def __init__(self):\n        \"\"\"\n        Initialize your data structure here.\n        \"\"\"\n        self.root = TrieNode()",
+        "detail": "__UNSORTED.208",
+        "documentation": {}
+    },
+    {
+        "label": "Trie",
+        "kind": 6,
+        "importPath": "__UNSORTED.208",
+        "description": "__UNSORTED.208",
+        "peekOfCode": "class Trie:\n    def __init__(self):\n        \"\"\"\n        Initialize your data structure here.\n        \"\"\"\n        self.root = TrieNode()\n    def insert(self, word: str) -> None:\n        \"\"\"\n        Inserts a word into the trie.\n        \"\"\"",
+        "detail": "__UNSORTED.208",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.209",
+        "description": "__UNSORTED.209",
+        "peekOfCode": "class Solution:\n    def minSubArrayLen(self, s, nums):\n        \"\"\"\n        :type s: int\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        total = l = 0\n        result = len(nums) + 1\n        for r in range(len(nums)):",
+        "detail": "__UNSORTED.209",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.210",
+        "description": "__UNSORTED.210",
+        "peekOfCode": "class Solution:\n    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:\n        graph, visited = {}, {}\n        for c in range(numCourses):\n            graph[c] = set()\n            visited[c] = 0\n        for p in prerequisites:\n            graph[p[1]].add(p[0])\n        result = []\n        for key in graph.keys():",
+        "detail": "__UNSORTED.210",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.210",
+        "description": "__UNSORTED.210",
+        "peekOfCode": "class Solution:\n    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:\n        inDegree, tree = [0] * numCourses, defaultdict(set)\n        for p in prerequisites:\n            inDegree[p[0]] += 1\n            tree[p[1]].add(p[0])\n        queue = deque()\n        for i in range(numCourses):\n            if inDegree[i] == 0:\n                queue.append(i)",
+        "detail": "__UNSORTED.210",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "__UNSORTED.211",
+        "description": "__UNSORTED.211",
+        "peekOfCode": "class TreeNode:\n    def __init__(self):\n        self.children = {}\n        self.is_word = False\nclass WordDictionary:\n    def __init__(self):\n        \"\"\"\n        Initialize your data structure here.\n        \"\"\"\n        self.root = TreeNode()",
+        "detail": "__UNSORTED.211",
+        "documentation": {}
+    },
+    {
+        "label": "WordDictionary",
+        "kind": 6,
+        "importPath": "__UNSORTED.211",
+        "description": "__UNSORTED.211",
+        "peekOfCode": "class WordDictionary:\n    def __init__(self):\n        \"\"\"\n        Initialize your data structure here.\n        \"\"\"\n        self.root = TreeNode()\n    def addWord(self, word: str) -> None:\n        \"\"\"\n        Adds a word into the data structure.\n        \"\"\"",
+        "detail": "__UNSORTED.211",
+        "documentation": {}
+    },
+    {
+        "label": "TrieNode",
+        "kind": 6,
+        "importPath": "__UNSORTED.212",
+        "description": "__UNSORTED.212",
+        "peekOfCode": "class TrieNode:\n    def __init__(self):\n        self.children = {}\n        self.is_word = False\nclass Trie:\n    def __init__(self):\n        self.node = TrieNode()\n    def add(self, word):\n        node = self.node\n        for c in word:",
+        "detail": "__UNSORTED.212",
+        "documentation": {}
+    },
+    {
+        "label": "Trie",
+        "kind": 6,
+        "importPath": "__UNSORTED.212",
+        "description": "__UNSORTED.212",
+        "peekOfCode": "class Trie:\n    def __init__(self):\n        self.node = TrieNode()\n    def add(self, word):\n        node = self.node\n        for c in word:\n            node = node.children.setdefault(c, TrieNode())\n        node.is_word = True\nclass Solution:\n    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:",
+        "detail": "__UNSORTED.212",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.212",
+        "description": "__UNSORTED.212",
+        "peekOfCode": "class Solution:\n    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:\n        trie = Trie()\n        for word in words:\n            trie.add(word)\n        result = []\n        for i in range(len(board)):\n            for j in range(len(board[0])):\n                self.dfs(board, result, trie.node, i, j, \"\")\n        return result",
+        "detail": "__UNSORTED.212",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.215",
+        "description": "__UNSORTED.215",
+        "peekOfCode": "class Solution:\n    def findKthLargest(self, nums: List[int], k: int) -> int:\n        def quickSelect(low, high, k):\n            i = low\n            for j in range(low, high):\n                if nums[j] <= nums[high]:\n                    nums[i], nums[j] = nums[j], nums[i]\n                    i += 1\n            nums[i], nums[high] = nums[high], nums[i]\n            count = high - i + 1",
+        "detail": "__UNSORTED.215",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.215",
+        "description": "__UNSORTED.215",
+        "peekOfCode": "class Solution:\n    def findKthLargest(self, nums: List[int], k: int) -> int:\n        q = []\n        for i, n in enumerate(nums):\n            heapq.heappush(q, (-n, i))\n        result = None\n        for _ in range(k):\n            result = -heapq.heappop(q)[0]\n        return result",
+        "detail": "__UNSORTED.215",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.216",
+        "description": "__UNSORTED.216",
+        "peekOfCode": "class Solution:\n    def combinationSum3(self, k: int, n: int) -> List[List[int]]:\n        result = []\n        self.dfs(list(range(1, 10)), k, n, [], result)\n        return result\n    def dfs(self, arr, k, n, path, result):\n        if k < 0 or n < 0:\n            return\n        if k == 0 and n == 0:\n            result.append(path)",
+        "detail": "__UNSORTED.216",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.218",
+        "description": "__UNSORTED.218",
+        "peekOfCode": "class Solution:\n    def getSkyline(self, buildings):\n        \"\"\"\n        :type buildings: List[List[int]]\n        :rtype: List[List[int]]\n        \"\"\"\n        rectangles = [[l, -h, r] for l, r, h in buildings] + [\n            [r, h, None] for l, r, h in buildings\n        ]\n        rectangles.sort()",
+        "detail": "__UNSORTED.218",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.220",
+        "description": "__UNSORTED.220",
+        "peekOfCode": "class Solution:\n    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:\n        if t < 0:\n            return False\n        d = {}\n        w = t + 1\n        for i, num in enumerate(nums):\n            key = num // w\n            if key in d:\n                return True",
+        "detail": "__UNSORTED.220",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.221",
+        "description": "__UNSORTED.221",
+        "peekOfCode": "class Solution:\n    def maximalSquare(self, matrix: List[List[str]]) -> int:\n        if not matrix or not matrix[0]:\n            return 0\n        m, n = len(matrix), len(matrix[0])\n        dp = [[0] * (n + 1) for _ in range(m + 1)]\n        slide = 0\n        for i in range(1, m + 1):\n            for j in range(1, n + 1):\n                if matrix[i - 1][j - 1] == \"1\":",
+        "detail": "__UNSORTED.221",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.224",
+        "description": "__UNSORTED.224",
+        "peekOfCode": "class Solution(object):\n    def calculate(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: int\n        \"\"\"\n        curr, total, sign, i = 0, 0, 1, 0\n        stack = []\n        while i < len(s):\n            if s[i].isdigit():",
+        "detail": "__UNSORTED.224",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.226",
+        "description": "__UNSORTED.226",
+        "peekOfCode": "class Solution:\n    def invertTree(self, root: TreeNode) -> TreeNode:\n        if not root:\n            return root\n        temp = root.right\n        root.right = self.invertTree(root.left)\n        root.left = self.invertTree(temp)\n        return root",
+        "detail": "__UNSORTED.226",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.227",
+        "description": "__UNSORTED.227",
+        "peekOfCode": "class Solution:\n    def calculate(self, s: str) -> int:\n        def compute(num1, num2, op):\n            if op == \"-\":\n                return num2 - num1\n            if op == \"+\":\n                return num1 + num2\n            if op == \"*\":\n                return num1 * num2\n            if op == \"/\":",
+        "detail": "__UNSORTED.227",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.229",
+        "description": "__UNSORTED.229",
+        "peekOfCode": "class Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        candidate1, candidate2 = 0, 1\n        count1, count2 = 0, 0\n        for num in nums:\n            if candidate1 == num:\n                count1 += 1\n            elif candidate2 == num:\n                count2 += 1\n            elif count1 == 0:",
+        "detail": "__UNSORTED.229",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.230",
+        "description": "__UNSORTED.230",
+        "peekOfCode": "class Solution:\n    def kthSmallest(self, root: TreeNode, k: int) -> int:\n        result = []\n        def inorder(node):\n            if not node:\n                return\n            inorder(node.left)\n            result.append(node.val)\n            inorder(node.right)\n        inorder(root)",
+        "detail": "__UNSORTED.230",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.234",
+        "description": "__UNSORTED.234",
+        "peekOfCode": "class Solution:\n    def isPalindrome(self, head: ListNode) -> bool:\n        rev = None\n        slow = fast = head\n        while fast and fast.next:\n            fast = fast.next.next\n            slow.next, rev, slow = rev, slow, slow.next\n        if fast:\n            slow = slow.next\n        while rev and slow and rev.val == slow.val:",
+        "detail": "__UNSORTED.234",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.235",
+        "description": "__UNSORTED.235",
+        "peekOfCode": "class Solution:\n    def lowestCommonAncestor(\n        self, root: \"TreeNode\", p: \"TreeNode\", q: \"TreeNode\"\n    ) -> \"TreeNode\":\n        if p.val < root.val > q.val:\n            return self.lowestCommonAncestor(root.left, p, q)\n        if p.val > root.val < q.val:\n            return self.lowestCommonAncestor(root.right, p, q)\n        return root\n# class Solution:",
+        "detail": "__UNSORTED.235",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.236",
+        "description": "__UNSORTED.236",
+        "peekOfCode": "class Solution:\n    def lowestCommonAncestor(\n        self, root: \"TreeNode\", p: \"TreeNode\", q: \"TreeNode\"\n    ) -> \"TreeNode\":\n        if root in [None, p, q]:\n            return root\n        left = self.lowestCommonAncestor(root.left, p, q)\n        right = self.lowestCommonAncestor(root.right, p, q)\n        return root if left and right else left or right",
+        "detail": "__UNSORTED.236",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.238",
+        "description": "__UNSORTED.238",
+        "peekOfCode": "class Solution:\n    def productExceptSelf(self, nums: List[int]) -> List[int]:\n        product = 1\n        result = []\n        for num in nums:\n            result.append(product)\n            product *= num\n        product = 1\n        for i in range(len(nums) - 1, -1, -1):\n            result[i] *= product",
+        "detail": "__UNSORTED.238",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.239",
+        "description": "__UNSORTED.239",
+        "peekOfCode": "class Solution:\n    def maxSlidingWindow(self, nums, k):\n        \"\"\"\n        :type nums: List[int]\n        :type k: int\n        :rtype: List[int]\n        \"\"\"\n        q = deque()\n        ret = []\n        for i, num in enumerate(nums):",
+        "detail": "__UNSORTED.239",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.240",
+        "description": "__UNSORTED.240",
+        "peekOfCode": "class Solution:\n    def searchMatrix(self, matrix, target):\n        \"\"\"\n        :type matrix: List[List[int]]\n        :type target: int\n        :rtype: bool\n        \"\"\"\n        if not matrix or len(matrix) == 0 or not matrix[0]:\n            return False\n        m, n = len(matrix), len(matrix[0])",
+        "detail": "__UNSORTED.240",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.242",
+        "description": "__UNSORTED.242",
+        "peekOfCode": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        return Counter(s) == Counter(t)",
+        "detail": "__UNSORTED.242",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.243",
+        "description": "__UNSORTED.243",
+        "peekOfCode": "class Solution:\n    def shortestDistance(self, words, word1, word2):\n        \"\"\"\n        :type words: List[str]\n        :type word1: str\n        :type word2: str\n        :rtype: int\n        \"\"\"\n        idx1, idx2 = len(words), len(words)\n        result = len(words)",
+        "detail": "__UNSORTED.243",
+        "documentation": {}
+    },
+    {
+        "label": "WordDistance",
+        "kind": 6,
+        "importPath": "__UNSORTED.244",
+        "description": "__UNSORTED.244",
+        "peekOfCode": "class WordDistance:\n    def __init__(self, words: List[str]):\n        self.d = defaultdict(list)\n        for i, word in enumerate(words):\n            self.d[word].append(i)\n    def shortest(self, word1: str, word2: str) -> int:\n        loc1 = self.d[word1]\n        loc2 = self.d[word2]\n        result = float(\"inf\")\n        i, j = 0, 0",
+        "detail": "__UNSORTED.244",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.246",
+        "description": "__UNSORTED.246",
+        "peekOfCode": "class Solution(object):\n    def isStrobogrammatic(self, num):\n        \"\"\"\n        :type num: str\n        :rtype: bool\n        \"\"\"\n        mapping = {\"6\": \"9\", \"8\": \"8\", \"1\": \"1\", \"9\": \"6\", \"0\": \"0\"}\n        l, r = 0, len(num) - 1\n        while l <= r:\n            if num[l] not in mapping or num[r] not in mapping:",
+        "detail": "__UNSORTED.246",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.249",
+        "description": "__UNSORTED.249",
+        "peekOfCode": "class Solution:\n    def groupStrings(self, strings: List[str]) -> List[List[str]]:\n        d = {}\n        for s in strings:\n            key = []\n            for i in range(1, len(s)):\n                key.append(str((ord(s[i]) - ord(s[i - 1])) % 26))\n            k = \",\".join(key)\n            d[k] = d.get(k, []) + [s]\n        return list(d.values())",
+        "detail": "__UNSORTED.249",
+        "documentation": {}
+    },
+    {
+        "label": "Vector2D",
+        "kind": 6,
+        "importPath": "__UNSORTED.251",
+        "description": "__UNSORTED.251",
+        "peekOfCode": "class Vector2D(object):\n    def __init__(self, vec2d):\n        \"\"\"\n        Initialize your data structure here.\n        :type vec2d: List[List[int]]\n        \"\"\"\n        self.row = 0\n        self.col = 0\n        self.vec2d = vec2d\n    def next(self):",
+        "detail": "__UNSORTED.251",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.252",
+        "description": "__UNSORTED.252",
+        "peekOfCode": "class Solution:\n    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:\n        intervals = sorted(intervals, key=lambda x: x[1])\n        end = -1\n        for interval in intervals:\n            if interval[0] >= end:\n                end = interval[1]\n                continue\n            return False\n        return True",
+        "detail": "__UNSORTED.252",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.253",
+        "description": "__UNSORTED.253",
+        "peekOfCode": "class Solution:\n    def minMeetingRooms(self, intervals: List[List[int]]) -> int:\n        if not intervals:\n            return 0\n        result, curr = 0, 0\n        for i, val in sorted(\n            x for interval in intervals for x in [(interval[0], 1), (interval[1], -1)]\n        ):\n            curr += val\n            result = max(curr, result)",
+        "detail": "__UNSORTED.253",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.256",
+        "description": "__UNSORTED.256",
+        "peekOfCode": "class Solution:\n    def minCost(self, costs):\n        \"\"\"\n        :type costs: List[List[int]]\n        :rtype: int\n        \"\"\"\n        prev = [0] * 3\n        for cost in costs:\n            prev = [cost[i] + min(prev[:i] + prev[i + 1 :]) for i in range(3)]\n        return min(prev)",
+        "detail": "__UNSORTED.256",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.257",
+        "description": "__UNSORTED.257",
+        "peekOfCode": "class Solution(object):\n    def binaryTreePaths(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: List[str]\n        \"\"\"\n        if not root:\n            return []\n        paths = []\n        def dfs(root, curr):",
+        "detail": "__UNSORTED.257",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.268",
+        "description": "__UNSORTED.268",
+        "peekOfCode": "class Solution(object):\n    def missingNumber(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if not nums:\n            return 0\n        totalSum, n = sum(nums), len(nums)\n        expectedSum = (n * (n + 1)) / 2",
+        "detail": "__UNSORTED.268",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.279",
+        "description": "__UNSORTED.279",
+        "peekOfCode": "class Solution(object):\n    def numSquares(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        mapping = {}\n        squares = [num * num for num in range(1, int(pow(n, 0.5)) + 1)]\n        for square in squares:\n            mapping[square] = 1",
+        "detail": "__UNSORTED.279",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "class Solution(object):\n\tdef __init__(self, v1, v2):\n\t\tself.v1 = v1\n\t\tself.v2 = v2\n\t\tself.index_v1 = 0\n\t\tself.index_v2 = 0\n\tdef next(self):\n\t\tresult = -1\n\t\tif self.index_v1 != len(self.v1) and self.index_v1 <= self.index_v2:\n\t\t\tresult = self.v1[self.index_v1]",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "v1",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "v1 = [1, 2]\nv2 = [3, 4, 5, 6]\nBy calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1, 3, 2, 4, 5, 6].\n'''\nclass Solution(object):\n\tdef __init__(self, v1, v2):\n\t\tself.v1 = v1\n\t\tself.v2 = v2\n\t\tself.index_v1 = 0\n\t\tself.index_v2 = 0",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "v2",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "v2 = [3, 4, 5, 6]\nBy calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1, 3, 2, 4, 5, 6].\n'''\nclass Solution(object):\n\tdef __init__(self, v1, v2):\n\t\tself.v1 = v1\n\t\tself.v2 = v2\n\t\tself.index_v1 = 0\n\t\tself.index_v2 = 0\n\tdef next(self):",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tself.v1",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\tself.v1 = v1\n\t\tself.v2 = v2\n\t\tself.index_v1 = 0\n\t\tself.index_v2 = 0\n\tdef next(self):\n\t\tresult = -1\n\t\tif self.index_v1 != len(self.v1) and self.index_v1 <= self.index_v2:\n\t\t\tresult = self.v1[self.index_v1]\n\t\t\tself.index_v1 += 1\n\t\telse:",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tself.v2",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\tself.v2 = v2\n\t\tself.index_v1 = 0\n\t\tself.index_v2 = 0\n\tdef next(self):\n\t\tresult = -1\n\t\tif self.index_v1 != len(self.v1) and self.index_v1 <= self.index_v2:\n\t\t\tresult = self.v1[self.index_v1]\n\t\t\tself.index_v1 += 1\n\t\telse:\n\t\t\tresult = self.v2[self.index_v2]",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tself.index_v1",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\tself.index_v1 = 0\n\t\tself.index_v2 = 0\n\tdef next(self):\n\t\tresult = -1\n\t\tif self.index_v1 != len(self.v1) and self.index_v1 <= self.index_v2:\n\t\t\tresult = self.v1[self.index_v1]\n\t\t\tself.index_v1 += 1\n\t\telse:\n\t\t\tresult = self.v2[self.index_v2]\n\t\t\tself.index_v2 += 1",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tself.index_v2",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\tself.index_v2 = 0\n\tdef next(self):\n\t\tresult = -1\n\t\tif self.index_v1 != len(self.v1) and self.index_v1 <= self.index_v2:\n\t\t\tresult = self.v1[self.index_v1]\n\t\t\tself.index_v1 += 1\n\t\telse:\n\t\t\tresult = self.v2[self.index_v2]\n\t\t\tself.index_v2 += 1\n\t\treturn result",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tresult",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\tresult = -1\n\t\tif self.index_v1 != len(self.v1) and self.index_v1 <= self.index_v2:\n\t\t\tresult = self.v1[self.index_v1]\n\t\t\tself.index_v1 += 1\n\t\telse:\n\t\t\tresult = self.v2[self.index_v2]\n\t\t\tself.index_v2 += 1\n\t\treturn result\n\tdef hasNext(self):\n\t\treturn self.index_v1 < len(self.v1) or self.index_v2 < len(self.v2)",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tresult",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\t\tresult = self.v1[self.index_v1]\n\t\t\tself.index_v1 += 1\n\t\telse:\n\t\t\tresult = self.v2[self.index_v2]\n\t\t\tself.index_v2 += 1\n\t\treturn result\n\tdef hasNext(self):\n\t\treturn self.index_v1 < len(self.v1) or self.index_v2 < len(self.v2)\nsolution = Solution([1, 2], [3, 4, 5, 6])\nwhile solution.hasNext():",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tresult",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "\t\t\tresult = self.v2[self.index_v2]\n\t\t\tself.index_v2 += 1\n\t\treturn result\n\tdef hasNext(self):\n\t\treturn self.index_v1 < len(self.v1) or self.index_v2 < len(self.v2)\nsolution = Solution([1, 2], [3, 4, 5, 6])\nwhile solution.hasNext():\n\tprint solution.next()",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 5,
+        "importPath": "__UNSORTED.281",
+        "description": "__UNSORTED.281",
+        "peekOfCode": "solution = Solution([1, 2], [3, 4, 5, 6])\nwhile solution.hasNext():\n\tprint solution.next()",
+        "detail": "__UNSORTED.281",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.283",
+        "description": "__UNSORTED.283",
+        "peekOfCode": "class Solution(object):\n    def moveZeroes(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: void Do not return anything, modify nums in-place instead.\n        \"\"\"\n        zeroIndex = 0\n        for index in range(len(nums)):\n            if nums[index] != 0:\n                nums[zeroIndex] = nums[index]",
+        "detail": "__UNSORTED.283",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "class Solution(object):\n    def inorderSuccessor(self, root, p):\n        \"\"\"\n        :type root: TreeNode\n        :type p: TreeNode\n        :rtype: TreeNode\n\t\t\"\"\"\n\t\tif not root or not p:\n\t\t\treturn None\n\t\tif p.right:",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tp",
+        "kind": 5,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "\t\t\tp = p.right\n\t\t\twhile p.left:\n\t\t\t\tp = p.left\n\t\t\treturn p\n\t\tsuccessor = None\n\t\twhile root and root != p:\n\t\t\tif root.val > p.val:\n\t\t\t\tsuccessor = root\n\t\t\t\troot = root.left\n\t\t\telse:",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tp",
+        "kind": 5,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "\t\t\t\tp = p.left\n\t\t\treturn p\n\t\tsuccessor = None\n\t\twhile root and root != p:\n\t\t\tif root.val > p.val:\n\t\t\t\tsuccessor = root\n\t\t\t\troot = root.left\n\t\t\telse:\n\t\t\t\troot = root.right\n\t\treturn successor",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tsuccessor",
+        "kind": 5,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "\t\tsuccessor = None\n\t\twhile root and root != p:\n\t\t\tif root.val > p.val:\n\t\t\t\tsuccessor = root\n\t\t\t\troot = root.left\n\t\t\telse:\n\t\t\t\troot = root.right\n\t\treturn successor",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tsuccessor",
+        "kind": 5,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "\t\t\t\tsuccessor = root\n\t\t\t\troot = root.left\n\t\t\telse:\n\t\t\t\troot = root.right\n\t\treturn successor",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\troot",
+        "kind": 5,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "\t\t\t\troot = root.left\n\t\t\telse:\n\t\t\t\troot = root.right\n\t\treturn successor",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\troot",
+        "kind": 5,
+        "importPath": "__UNSORTED.285",
+        "description": "__UNSORTED.285",
+        "peekOfCode": "\t\t\t\troot = root.right\n\t\treturn successor",
+        "detail": "__UNSORTED.285",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.287",
+        "description": "__UNSORTED.287",
+        "peekOfCode": "class Solution(object):\n    def findDuplicate(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        slow, fast = nums[0], nums[0]\n        while True:\n            slow = nums[slow]\n            fast = nums[nums[fast]]",
+        "detail": "__UNSORTED.287",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.289",
+        "description": "__UNSORTED.289",
+        "peekOfCode": "class Solution(object):\n    def gameOfLife(self, board):\n        \"\"\"\n        :type board: List[List[int]]\n        :rtype: void Do not return anything, modify board in-place instead.\n        \"\"\"\n        index = []\n        def around(i, j, board):\n            count = 0\n            for k in range(i - 1, i + 2):",
+        "detail": "__UNSORTED.289",
+        "documentation": {}
+    },
+    {
+        "label": "MedianFinder",
+        "kind": 6,
+        "importPath": "__UNSORTED.295",
+        "description": "__UNSORTED.295",
+        "peekOfCode": "class MedianFinder(object):\n    def __init__(self):\n        \"\"\"\n        initialize your data structure here.\n        \"\"\"\n        self.max_heap = []\n        self.min_heap = []\n    def addNum(self, num):\n        \"\"\"\n        :type num: int",
+        "detail": "__UNSORTED.295",
+        "documentation": {}
+    },
+    {
+        "label": "Codec",
+        "kind": 6,
+        "importPath": "__UNSORTED.297",
+        "description": "__UNSORTED.297",
+        "peekOfCode": "class Codec:\n    def serialize(self, root):\n        \"\"\"Encodes a tree to a single string.\n        :type root: TreeNode\n        :rtype: str\n        \"\"\"\n        def preorder(root):\n            if root:\n                seralizeTree.append(str(root.val) + \",\")\n                preorder(root.left)",
+        "detail": "__UNSORTED.297",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.298",
+        "description": "__UNSORTED.298",
+        "peekOfCode": "class Solution(object):\n\tdef dfs(curr, parent, length):\n\t\tif not curr:\n\t\t\treturn length\n\t\tif parent:\n\t\t\tlength = length + 1 if curr.val == parent.val + 1\n\t\telse:\n\t\t\tlength = 1\n\t\treturn max(length, max(dfs(curr.left, curr, length), dfs(curr.right, curr, length)))\n\tdef longestConsecutive(TreeNode root):",
+        "detail": "__UNSORTED.298",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tlength",
+        "kind": 5,
+        "importPath": "__UNSORTED.298",
+        "description": "__UNSORTED.298",
+        "peekOfCode": "\t\t\tlength = length + 1 if curr.val == parent.val + 1\n\t\telse:\n\t\t\tlength = 1\n\t\treturn max(length, max(dfs(curr.left, curr, length), dfs(curr.right, curr, length)))\n\tdef longestConsecutive(TreeNode root):\n\t\tif not root:\n\t\t\treturn 0\n\t\treturn dfs(root, null, 0)",
+        "detail": "__UNSORTED.298",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tlength",
+        "kind": 5,
+        "importPath": "__UNSORTED.298",
+        "description": "__UNSORTED.298",
+        "peekOfCode": "\t\t\tlength = 1\n\t\treturn max(length, max(dfs(curr.left, curr, length), dfs(curr.right, curr, length)))\n\tdef longestConsecutive(TreeNode root):\n\t\tif not root:\n\t\t\treturn 0\n\t\treturn dfs(root, null, 0)",
+        "detail": "__UNSORTED.298",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "__UNSORTED.300",
+        "description": "__UNSORTED.300",
+        "peekOfCode": "class Solution(object):\n    def lengthOfLIS(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if len(nums) <= 1:\n            return len(nums)\n        count = [0 for _ in range(len(nums))]\n        result = 1",
+        "detail": "__UNSORTED.300",
         "documentation": {}
     },
     {

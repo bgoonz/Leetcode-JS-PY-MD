@@ -19,9 +19,9 @@
  */
 
 function isValid(s) {
-  var count = 0;
+  let count = 0;
 
-  for (var i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     if (s[i] === "(") {
       count++;
     } else if (s[i] === ")") {
@@ -36,12 +36,12 @@ function isValid(s) {
   return count === 0;
 }
 
-var removeInvalidParentheses = function (s) {
-  var queue = [];
+let removeInvalidParentheses = function (s) {
+  let queue = [];
   queue.push(s);
-  var visited = {};
-  var res = [];
-  var found = false;
+  let visited = {};
+  let res = [];
+  let found = false;
 
   // breadth first search since we are looking for the minimum changes
   while (queue.length > 0) {
@@ -59,12 +59,12 @@ var removeInvalidParentheses = function (s) {
     }
 
     // if nothing found, then loop through the entire string and remove one of the parenthesis.
-    for (var i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
       if (s[i] !== "(" && s[i] !== ")") {
         continue;
       }
 
-      var newS = s.substring(0, i) + s.substring(i + 1);
+      let newS = s.substring(0, i) + s.substring(i + 1);
 
       if (!visited[newS]) {
         visited[newS] = true;

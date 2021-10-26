@@ -4,12 +4,12 @@
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function (s) {
+let longestPalindrome = function (s) {
   if (!s) return s;
-  var longest = s.substring(0, 1);
-  for (var i = 0; i < s.length; i++) {
+  let longest = s.substring(0, 1);
+  for (let i = 0; i < s.length; i++) {
     // odd
-    var tmp = getPalindromeSubstring(s, i, i);
+    let tmp = getPalindromeSubstring(s, i, i);
     if (tmp.length > longest.length) {
       longest = tmp;
     }
@@ -26,7 +26,7 @@ var longestPalindrome = function (s) {
 
 // Given a center, either one letter or two letter,
 // Find longest palindrome
-var getPalindromeSubstring = function (s, i, j) {
+let getPalindromeSubstring = function (s, i, j) {
   while (i >= 0 && j < s.length && s[i] === s[j]) {
     i--;
     j++;
@@ -37,15 +37,15 @@ var getPalindromeSubstring = function (s, i, j) {
 
 // dp method, should work. memory exceed limit
 // bottom-up.
-var longestPalindrome = function (s) {
+let longestPalindrome = function (s) {
   if (!s) return s;
-  var longest = s.substring(0, 1);
-  var length = s.length;
-  var dp = [];
-  var maxLength = 1;
-  for (var i = length - 1; i >= 0; i--) {
+  let longest = s.substring(0, 1);
+  let length = s.length;
+  let dp = [];
+  let maxLength = 1;
+  for (let i = length - 1; i >= 0; i--) {
     dp[i] = [];
-    for (var j = i; j < length; j++) {
+    for (let j = i; j < length; j++) {
       // j - i <= 2 is important, in case i + 1 is out of array boundary.
       if (s[i] === s[j] && (j - i <= 2 || dp[i + 1][j - 1])) {
         dp[i][j] = true;

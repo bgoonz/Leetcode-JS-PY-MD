@@ -10,15 +10,15 @@
  * @param {string} t
  * @return {number}
  */
-var numDistinct = function (s, t) {
+ let numDistinct = function (s, t) {
   if (!s) return 0;
 
-  var match = [];
-  for (var i = 0; i <= s.length; i++) {
+   let match = [];
+  for ( let i = 0; i <= s.length; i++) {
     match[i] = [1];
   }
 
-  for (var j = 1; j <= t.length; j++) {
+  for ( let j = 1; j <= t.length; j++) {
     match[0][j] = 0;
   }
 
@@ -34,15 +34,15 @@ var numDistinct = function (s, t) {
 };
 
 // just use one dimension array to store matched numbers
-var numDistinct = function (s, t) {
+ let numDistinct = function (s, t) {
   if (!s) return 0;
   if (t.length > s.length) return 0;
 
-  var tLength = t.length;
-  var sLength = s.length;
+   let tLength = t.length;
+   let sLength = s.length;
 
-  var dp = [1];
-  for (var i = 1; i <= tLength; i++) {
+   let dp = [1];
+  for ( let i = 1; i <= tLength; i++) {
     dp.push(0);
   }
 

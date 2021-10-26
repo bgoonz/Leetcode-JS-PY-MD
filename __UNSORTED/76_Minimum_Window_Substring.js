@@ -21,17 +21,17 @@
  */
 
 // reference: http://www.cnblogs.com/TenosDoIt/p/3461301.html
-var minWindow = function (s, t) {
-  var lenS = s.length;
-  var lenT = t.length;
-  var queue = [];
-  var tRequireCount = {}; // string T required count
-  var tFoundCount = {}; // string T found count
-  var hasFound = 0;
-  var windowBeg = -1;
-  var windowEnd = lenS;
+let minWindow = function (s, t) {
+  let lenS = s.length;
+  let lenT = t.length;
+  let queue = [];
+  let tRequireCount = {}; // string T required count
+  let tFoundCount = {}; // string T found count
+  let hasFound = 0;
+  let windowBeg = -1;
+  let windowEnd = lenS;
 
-  for (var i = 0; i < lenT; i++) {
+  for (let i = 0; i < lenT; i++) {
     // init tFoundCount to all 0s
     tFoundCount[t[i]] = 0;
     // init tRequireCount to count of that character in t
@@ -64,7 +64,7 @@ var minWindow = function (s, t) {
 
       // when the current location which is in queue
       if (hasFound === lenT) {
-        var k;
+        let k;
 
         do {
           k = queue.shift();
@@ -93,23 +93,23 @@ var minWindow = function (s, t) {
  * @param {string} t
  * @return {string}
  */
-var minWindow = function (s, t) {
-  var lenS = s.length;
-  var lenT = t.length;
-  var tCharToFoundCount = {};
-  var tCharToRequiredCount = {};
+let minWindow = function (s, t) {
+  let lenS = s.length;
+  let lenT = t.length;
+  let tCharToFoundCount = {};
+  let tCharToRequiredCount = {};
 
-  for (var i = 0; i < lenT; i++) {
-    var c = t[i];
+  for (let i = 0; i < lenT; i++) {
+    let c = t[i];
     tCharToFoundCount[c] = 0;
     tCharToRequiredCount[c] = tCharToRequiredCount[c] || 0;
     tCharToRequiredCount[c]++;
   }
 
-  var windowBeg = -1;
-  var windowEnd = lenS;
-  var queue = [];
-  var hasFound = 0;
+  let windowBeg = -1;
+  let windowEnd = lenS;
+  let queue = [];
+  let hasFound = 0;
   for (i = 0; i < lenS; i++) {
     c = s[i];
     // skip unneeded char
@@ -122,7 +122,7 @@ var minWindow = function (s, t) {
       }
 
       if (hasFound === lenT) {
-        var k;
+        let k;
 
         do {
           k = queue.shift();

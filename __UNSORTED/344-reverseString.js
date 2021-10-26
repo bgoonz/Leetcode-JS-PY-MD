@@ -2,6 +2,6 @@
  * @param {string} s
  * @return {string}
  */
-var reverseString = function (s) {
+let reverseString = function (s) {
   return s.split("").reverse().join("");
 };

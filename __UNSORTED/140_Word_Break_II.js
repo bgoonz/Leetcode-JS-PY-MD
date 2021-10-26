@@ -6,13 +6,13 @@
  *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
  * @return {string[]}
  */
-var wordBreak = function (s, wordDict) {
-  var result = [];
-  var solutions = [];
-  var len = s.length;
-  var possible = [];
+let wordBreak = function (s, wordDict) {
+  let result = [];
+  let solutions = [];
+  let len = s.length;
+  let possible = [];
 
-  for (var i = 0; i <= s.length; i++) {
+  for (let i = 0; i <= s.length; i++) {
     possible.push(true);
   }
 
@@ -27,14 +27,14 @@ function getAllSolutions(start, s, wordDict, result, solutions, possible) {
   }
 
   // loop through string from i to s.length
-  for (var i = start; i < s.length; i++) {
-    var piece = s.substring(start, i + 1);
+  for (let i = start; i < s.length; i++) {
+    let piece = s.substring(start, i + 1);
 
     // possible is to mark step whether i+1 to s.length have any possible words
     if (wordDict.has(piece) && possible[i + 1]) {
       // eliminate unnecessary search
       result.push(piece);
-      var beforeChange = solutions.length;
+      let beforeChange = solutions.length;
       getAllSolutions(i + 1, s, wordDict, result, solutions, possible);
       if (solutions.length === beforeChange) {
         possible[i + 1] = false;
@@ -44,7 +44,7 @@ function getAllSolutions(start, s, wordDict, result, solutions, possible) {
   }
 }
 
-var dict = new Set();
+let dict = new Set();
 dict.add("leet");
 dict.add("code");
 dict.add("cod");

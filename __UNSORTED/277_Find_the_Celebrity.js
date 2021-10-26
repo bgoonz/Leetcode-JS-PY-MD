@@ -24,18 +24,18 @@
  * @param {function} knows()
  * @return {function}
  */
-var solution = function (knows) {
+let solution = function (knows) {
   /**
    * @param {integer} n Total people
    * @return {integer} The celebrity
    */
   return function (n) {
-    var candidate = 0;
+    let candidate = 0;
 
     // iterate through the list,
     // if candidate is known by i -> continue
     // if i doesnt know candidate, i becomes the candidate
-    for (var i = 1; i < n; i++) {
+    for (let i = 1; i < n; i++) {
       if (!knows(i, candidate)) {
         candidate = i;
       }

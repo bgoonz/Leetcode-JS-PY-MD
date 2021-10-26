@@ -13,19 +13,19 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function (strs) {
-  var hash = {};
+let groupAnagrams = function (strs) {
+  let hash = {};
 
-  for (var i = 0; i < strs.length; i++) {
-    var str = strs[i];
+  for (let i = 0; i < strs.length; i++) {
+    let str = strs[i];
 
-    var key = sort(str);
+    let key = sort(str);
 
     hash[key] = hash[key] || [];
     hash[key].push(str);
   }
 
-  var result = [];
+  let result = [];
   for (i in hash) {
     result.push(hash[i]);
   }
@@ -33,8 +33,8 @@ var groupAnagrams = function (strs) {
   return result;
 };
 
-var sort = function (s) {
-  var arr = s.split("");
+let sort = function (s) {
+  let arr = s.split("");
 
   arr.sort((a, b) => (a > b ? 1 : -1));
   return arr.join("");
@@ -46,23 +46,23 @@ var sort = function (s) {
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function (strs) {
-  var hash = {};
-  var base = "a".charCodeAt(0);
+let groupAnagrams = function (strs) {
+  let hash = {};
+  let base = "a".charCodeAt(0);
 
-  for (var i = 0; i < strs.length; i++) {
-    var arr = Array(26).fill(0);
-    for (var j = 0; j < str.length; j++) {
-      var code = str[j].charCodeAt(0) - base;
+  for (let i = 0; i < strs.length; i++) {
+    let arr = Array(26).fill(0);
+    for (let j = 0; j < str.length; j++) {
+      let code = str[j].charCodeAt(0) - base;
       arr[code]++;
     }
 
-    var key = arr.join("");
+    let key = arr.join("");
     hash[key] = hash[key] || [];
     hash[key].push(strs[i]);
   }
 
-  var res = [];
+  let res = [];
 
   for (i in hash) {
     res.push(hash[i]);

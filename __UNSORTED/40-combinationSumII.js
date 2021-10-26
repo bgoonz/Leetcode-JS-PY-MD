@@ -3,9 +3,9 @@
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function (candidates, target) {
-  var result = [];
-  var results = [];
+let combinationSum2 = function (candidates, target) {
+  let result = [];
+  let results = [];
 
   candidates.sort(function (a, b) {
     return a - b;
@@ -14,7 +14,7 @@ var combinationSum2 = function (candidates, target) {
   return results;
 };
 
-var combinationSum2Helper = function (
+let combinationSum2Helper = function (
   candidates,
   result,
   results,
@@ -26,7 +26,7 @@ var combinationSum2Helper = function (
     return;
   }
 
-  for (var i = start; i < candidates.length; i++) {
+  for (let i = start; i < candidates.length; i++) {
     if (target < 0) break;
     if (i > start && candidates[i] === candidates[i - 1]) {
       continue;

@@ -18,8 +18,8 @@ Note: Do not use the eval built-in library function.
  * @param {string} s
  * @return {number}
  */
-// var calculate = function(s) {
-//     var stack = [],
+//  let calculate = function(s) {
+//      let stack = [],
 //         len = s.length,
 //         sum = 0,
 //         num,
@@ -74,12 +74,12 @@ Note: Do not use the eval built-in library function.
  */
 
 console.log(calculate("10+20-((2-4)*6-5)*6"));
-var calculate = function (s) {};
+let calculate = function (s) {};
 
 function helper(s, i, sign, finalSum, currentSum) {
   while (i < s.length) {
     if (s[i].match(/[0-9]/)) {
-      var num = 0;
+      let num = 0;
 
       while (i < s.length) {
         if (s[i].match(/[0-9]/)) {

@@ -2,11 +2,11 @@
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function (num) {
-  var M = ["", "M", "MM", "MMM"];
-  var C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-  var X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
-  var I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+let intToRoman = function (num) {
+  let M = ["", "M", "MM", "MMM"];
+  let C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+  let X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+  let I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
   return (
     M[Math.floor(num / 1000)] +
     C[Math.floor((num % 1000) / 100)] +
@@ -16,8 +16,8 @@ var intToRoman = function (num) {
 };
 
 // this is awkward because the order of object keys is not reserved
-var intToRoman = function (num) {
-  var map = {
+let intToRoman = function (num) {
+  let map = {
     1000: "M",
     900: "CM",
     500: "D",
@@ -32,7 +32,7 @@ var intToRoman = function (num) {
     4: "IV",
     1: "I",
   };
-  var romanStr = "";
+  let romanStr = "";
 
   Object.keys(map)
     .sort(function (a, b) {
@@ -49,9 +49,9 @@ var intToRoman = function (num) {
 };
 
 // although you can use two arrays to do it.
-var intToRoman = function (num) {
-  var vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  var strs = [
+let intToRoman = function (num) {
+  let vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  let strs = [
     "M",
     "CM",
     "D",
@@ -66,7 +66,7 @@ var intToRoman = function (num) {
     "IV",
     "I",
   ];
-  var romanStr = "";
+  let romanStr = "";
 
   vals.forEach(function (val, index) {
     while (num >= val) {

@@ -4,13 +4,13 @@
  * @param {number[]} cost
  * @return {number}
  */
-var canCompleteCircuit = function (gas, cost) {
-  var total = 0;
-  var sumRemaining = 0;
-  var start = 0;
+let canCompleteCircuit = function (gas, cost) {
+  let total = 0;
+  let sumRemaining = 0;
+  let start = 0;
 
-  for (var i = 0; i < gas.length; i++) {
-    var remaining = gas[i] - cost[i];
+  for (let i = 0; i < gas.length; i++) {
+    let remaining = gas[i] - cost[i];
     // track total remaining gas until i
     if (sumRemaining >= 0) {
       sumRemaining += remaining;

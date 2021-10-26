@@ -6,22 +6,22 @@
  * @param {number} n
  * @return {number[][]}
  */
-var combinationSum3 = function (k, n) {
-  var nums = [];
-  for (var i = 1; i <= 9; i++) nums[i] = i;
-  var result = [];
-  var results = [];
+let combinationSum3 = function (k, n) {
+  let nums = [];
+  for (let i = 1; i <= 9; i++) nums[i] = i;
+  let result = [];
+  let results = [];
   helper(0, k, n, nums, result, results);
   return results;
 };
 
-var helper = function (start, k, n, nums, result, results) {
+let helper = function (start, k, n, nums, result, results) {
   if (n === 0 && k === 0) {
     results.push(result.slice());
     return results;
   }
 
-  for (var i = start; i < nums.length; i++) {
+  for (let i = start; i < nums.length; i++) {
     if (n < 0) break;
     result.push(nums[i]);
     helper(i + 1, k - 1, n - nums[i], nums, result, results);

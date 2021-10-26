@@ -4,8 +4,8 @@
  */
 
 // my own solution
-var numberToWords = function (num) {
-  var dict = {
+let numberToWords = function (num) {
+  let dict = {
     1: "One",
     2: "Two",
     3: "Three",
@@ -34,14 +34,14 @@ var numberToWords = function (num) {
     80: "Eighty",
     90: "Ninety",
   };
-  var str = "";
+  let str = "";
 
   if (num === 0) {
     return "Zero";
   }
 
-  for (var i = 9; i >= 0; ) {
-    var most = Math.floor(num / Math.pow(10, i));
+  for (let i = 9; i >= 0; ) {
+    let most = Math.floor(num / Math.pow(10, i));
     num = num % Math.pow(10, i);
 
     if (i === 9 && most > 0) {
@@ -71,10 +71,10 @@ var numberToWords = function (num) {
   return str;
 };
 
-var threeDigits = function (num, dict) {
-  var hundred = 0;
-  var rem = 0;
-  var str = "";
+let threeDigits = function (num, dict) {
+  let hundred = 0;
+  let rem = 0;
+  let str = "";
 
   if (num === 0) {
     return "";
@@ -95,10 +95,10 @@ var threeDigits = function (num, dict) {
   return str;
 };
 
-var twoDigits = function twoDigits(num, dict) {
-  var str = "";
-  var least = Math.floor(num % 10);
-  var most = num - least;
+let twoDigits = function twoDigits(num, dict) {
+  let str = "";
+  let least = Math.floor(num % 10);
+  let most = num - least;
 
   if (least === 0 || num <= 20) {
     str += dict[num];
@@ -110,7 +110,7 @@ var twoDigits = function twoDigits(num, dict) {
 };
 
 // a more concise way
-var zeroToTwenty = [
+let zeroToTwenty = [
   "",
   "One",
   "Two",
@@ -133,7 +133,7 @@ var zeroToTwenty = [
   "Nineteen",
   "Twenty",
 ];
-var twentyToNinety = [
+let twentyToNinety = [
   "",
   "Twenty",
   "Thirty",
@@ -144,17 +144,17 @@ var twentyToNinety = [
   "Eighty",
   "Ninety",
 ];
-var thousand = ["", "Thousand", "Million", "Billion"];
+let thousand = ["", "Thousand", "Million", "Billion"];
 
-var numberToWords = function (num) {
-  var str = "";
+let numberToWords = function (num) {
+  let str = "";
 
   if (num === 0) {
     return "Zero";
   }
 
-  for (var i = 0; num > 0; i++) {
-    var h = num % 1000;
+  for (let i = 0; num > 0; i++) {
+    let h = num % 1000;
     if (h > 0) {
       // in case 1,000,000
       str = helper(h) + thousand[i] + " " + str;
@@ -171,10 +171,10 @@ function helper(num) {
   } else if (num <= 20) {
     return zeroToTwenty[num] + " ";
   } else if (num < 100) {
-    var h = Math.floor(num / 10);
+    let h = Math.floor(num / 10);
     return twentyToNinety[h - 1] + " " + helper(num % 10);
   } else {
-    var h = Math.floor(num / 100);
+    let h = Math.floor(num / 100);
     return zeroToTwenty[h] + " Hundred " + helper(num % 100);
   }
 }

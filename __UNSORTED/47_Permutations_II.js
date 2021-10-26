@@ -15,17 +15,17 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permuteUnique = function (nums) {
+let permuteUnique = function (nums) {
   nums.sort((a, b) => (a > b ? 1 : -1));
 
-  var result = [];
-  var visited = Array(nums.length).fill(false);
+  let result = [];
+  let visited = Array(nums.length).fill(false);
   generatePermute(nums, 0, [], visited, result);
 
   return result;
 };
 
-var generatePermute = function (
+let generatePermute = function (
   nums,
   step,
   currentResult,
@@ -39,7 +39,7 @@ var generatePermute = function (
     return;
   }
 
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (!visited[i]) {
       // !!! important: nums[i] === nums[i-1] && !visited[i-1]
       if (i > 0 && nums[i] === nums[i - 1] && !visited[i - 1]) {
@@ -47,7 +47,7 @@ var generatePermute = function (
       }
 
       visited[i] = true;
-      var num = nums[i];
+      let num = nums[i];
       currentResult.push(num);
       generatePermute(nums, step + 1, currentResult, visited, finalResult);
       currentResult.pop();
@@ -57,24 +57,24 @@ var generatePermute = function (
 };
 
 //Another Solution, similar approach that Permutation.js
-var permuteUnique = function (nums) {
+let permuteUnique = function (nums) {
   return permut(nums.sort(), []);
 };
 
-var permut = function (nums, partial) {
+let permut = function (nums, partial) {
   if (nums.length === 0) {
     return [partial];
   }
-  var listSol = [];
-  for (var i = 0; i < nums.length; i++) {
-    var endRepeated = i;
+  let listSol = [];
+  for (let i = 0; i < nums.length; i++) {
+    let endRepeated = i;
     while (endRepeated < nums.length && nums[i] === nums[endRepeated]) {
       endRepeated++;
     }
 
-    var arrayWithoutI = nums.slice(0, i).concat(nums.slice(i + 1, nums.length));
-    var partialSol = partial.concat([nums[i]]);
-    var sol = permut(arrayWithoutI, partialSol);
+    let arrayWithoutI = nums.slice(0, i).concat(nums.slice(i + 1, nums.length));
+    let partialSol = partial.concat([nums[i]]);
+    let sol = permut(arrayWithoutI, partialSol);
     if (sol.length > 0) {
       listSol = listSol.concat(sol);
     }

@@ -2,7 +2,7 @@
  * initialize your data structure here
  * @constructor
  */
-var TwoSum = function () {
+let TwoSum = function () {
   this.hashmap = new Map();
 };
 
@@ -22,8 +22,8 @@ TwoSum.prototype.add = function (input) {
  * @returns {boolean}
  */
 TwoSum.prototype.find = function (val) {
-  for (var key in this.hashmap) {
-    var diff = val - parseInt(key);
+  for (let key in this.hashmap) {
+    let diff = val - parseInt(key);
 
     if (diff === parseInt(key)) {
       if (this.hashmap[diff] >= 2) {
@@ -39,7 +39,7 @@ TwoSum.prototype.find = function (val) {
 
 /**
  * Your TwoSum object will be instantiated and called as such:
- * var twoSum = new TwoSum();
+ *  let twoSum = new TwoSum();
  * twoSum.add(number);
  * twoSum.find(value);
  */

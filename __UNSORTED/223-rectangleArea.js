@@ -11,16 +11,16 @@
  * @param {number} H
  * @return {number}
  */
-var computeArea = function (A, B, C, D, E, F, G, H) {
-  var areaA = (C - A) * (D - B);
-  var areaB = (G - E) * (H - F);
+let computeArea = function (A, B, C, D, E, F, G, H) {
+  let areaA = (C - A) * (D - B);
+  let areaB = (G - E) * (H - F);
 
-  var left = Math.max(A, E);
-  var right = Math.min(C, G);
-  var top = Math.min(D, H);
-  var bottom = Math.max(B, F);
+  let left = Math.max(A, E);
+  let right = Math.min(C, G);
+  let top = Math.min(D, H);
+  let bottom = Math.max(B, F);
 
-  var overlapArea = 0;
+  let overlapArea = 0;
   if (right > left && top > bottom) {
     overlapArea = (right - left) * (top - bottom);
   }

@@ -9,10 +9,10 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var maxDepth = function (root) {
-  var max = 0;
-  var lmax = maxDepth(root.left);
-  var rmax = maxDepth(root.right);
+ let maxDepth = function (root) {
+   let max = 0;
+   let lmax = maxDepth(root.left);
+   let rmax = maxDepth(root.right);
   if (lmax > rmax) {
     root = root.left;
     max = lmax;
@@ -24,15 +24,15 @@ var maxDepth = function (root) {
 };
 
 // second try
-var maxDepth = function (root) {
+ let maxDepth = function (root) {
   if (!root) return 0;
-  var lHeight = maxDepth(root.left) + 1;
-  var rHeight = maxDepth(root.right) + 1;
+   let lHeight = maxDepth(root.left) + 1;
+   let rHeight = maxDepth(root.right) + 1;
   return lHeight > rHeight ? lHeight : rHeight;
 };
 
 // simplist
-var maxDepth = function (root) {
+ let maxDepth = function (root) {
   if (!root) {
     return 0;
   }

@@ -18,16 +18,16 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var rob = function (root) {
-  var result = robDFS(root);
+let rob = function (root) {
+  let result = robDFS(root);
   return Math.max(result[0], result[1]);
 };
 
-var robDFS = function (root) {
+let robDFS = function (root) {
   if (!root) return [0, 0];
-  var result = [];
-  var leftResults = robDFS(root.left);
-  var rightResults = robDFS(root.right);
+  let result = [];
+  let leftResults = robDFS(root.left);
+  let rightResults = robDFS(root.right);
   result[0] = root.val + leftResults[1] + rightResults[1];
   result[1] =
     Math.max(leftResults[0], leftResults[1]) +
@@ -36,17 +36,17 @@ var robDFS = function (root) {
 };
 
 // not right, why?
-var rob = function (root) {
-  var cachedResult = {};
+let rob = function (root) {
+  let cachedResult = {};
   return robHelper(root, cachedResult);
 };
 
-var robHelper = function (root, cachedResult) {
+let robHelper = function (root, cachedResult) {
   if (!root) return 0;
   if (cachedResult.hasOwnProperty(root)) {
     return cachedResult[root];
   }
-  var val = 0;
+  let val = 0;
 
   if (root.left !== null) {
     val +=

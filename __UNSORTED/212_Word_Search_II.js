@@ -26,12 +26,12 @@
  * @param {string[]} words
  * @return {string[]}
  */
-var findWords = function (board, words) {
-  var root = buildTrie(words);
-  var result = [];
+let findWords = function (board, words) {
+  let root = buildTrie(words);
+  let result = [];
 
-  for (var i = 0; i < board.length; i++) {
-    for (var j = 0; j < board[0].length; j++) {
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[0].length; j++) {
       searchWord(result, root, board, i, j);
     }
   }
@@ -53,7 +53,7 @@ function searchWord(result, root, board, i, j) {
     return;
   }
 
-  var ch = board[i][j];
+  let ch = board[i][j];
   board[i][j] = "#";
 
   searchWord(result, root.children[ch], board, i + 1, j);
@@ -65,14 +65,14 @@ function searchWord(result, root, board, i, j) {
 }
 
 function buildTrie(words) {
-  var root = new TrieNode();
+  let root = new TrieNode();
 
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    var node = root;
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    let node = root;
 
-    for (var j = 0; j < word.length; j++) {
-      var ch = word[j];
+    for (let j = 0; j < word.length; j++) {
+      let ch = word[j];
 
       node.children[ch] = node.children[ch] || new TrieNode();
       node = node.children[ch];

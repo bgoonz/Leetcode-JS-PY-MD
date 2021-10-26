@@ -13,25 +13,25 @@
  * @param {number} n
  * @return {ListNode}
  */
-var reverseBetween = function (head, m, n) {
+let reverseBetween = function (head, m, n) {
   if (m >= n) {
     return head;
   }
 
-  var dummy = new ListNode(0);
+  let dummy = new ListNode(0);
   dummy.next = head;
   head = dummy;
 
   // move head to m - 1 node;
-  for (var i = 0; i < m - 1; i++) {
+  for (let i = 0; i < m - 1; i++) {
     head = head.next;
   }
 
-  var pre = head.next;
-  var cur = pre.next;
+  let pre = head.next;
+  let cur = pre.next;
 
   for (i = 0; i < n - m; i++) {
-    var tmp = cur.next;
+    let tmp = cur.next;
     cur.next = pre;
     pre = cur;
     cur = tmp;

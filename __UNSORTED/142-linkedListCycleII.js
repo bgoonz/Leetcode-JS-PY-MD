@@ -20,10 +20,10 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var detectCycle = function (head) {
+let detectCycle = function (head) {
   if (!head || !head.next) return null;
-  var slow = head;
-  var fast = head;
+  let slow = head;
+  let fast = head;
 
   while (slow.next && fast.next && fast.next.next) {
     slow = slow.next;

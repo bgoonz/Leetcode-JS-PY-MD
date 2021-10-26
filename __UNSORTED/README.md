@@ -2179,7 +2179,7 @@ Statements appear as instructions that do something but don’t produce values.
 ```js
 
     // Assign `x` to the absolute value of `y`.
-    var x;
+     let x;
     if (y >= 0) {
       x = y;
     } else {
@@ -2202,7 +2202,7 @@ There is an equivalent version of the set of statements used before as an expres
 ```js
 
     // Assign `x` as the absolute value of `y`.
-    var x = y >= 0 ? y : -y;
+     let x = y >= 0 ? y : -y;
 
 This is both an expression and a statement, because we are declaring a variable `x` (statement) as an evaluation (expression).
 
@@ -2522,10 +2522,10 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 ### What will the console log in this example?
 
-    var foo = 1;
-    var foobar = function () {
+     let foo = 1;
+     let foobar = function () {
       console.log(foo);
-      var foo = 2;
+       let foo = 2;
     };
     foobar();
 
@@ -2550,11 +2550,11 @@ Due to hoisting, the local variable `foo` is declared before the `console.log` m
 Hoisting is a JavaScript mechanism where variable and function declarations are put into memory during the compile phase. This means that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local. However, the value is not hoisted with the declaration. The following snippet:
 
     console.log(hoist);
-    var hoist = "value";
+     let hoist = "value";
 
 is equivalent to:
 
-    var hoist;
+     let hoist;
     console.log(hoist);
     hoist = "value";
 
@@ -2568,7 +2568,7 @@ Therefore logging `hoist` outputs `undefined` to the console, not `"value"`. Hoi
 But be wary of function expressions that are assigned to a variable:
 
     myFunction(); // Error: `myFunction` is not a function
-    var myFunction = function () {
+     let myFunction = function () {
       console.log("hello");
     };
 
@@ -2712,7 +2712,7 @@ This technique is very common in JavaScript libraries. It creates a closure arou
 ````js
 
     const myLibrary = (function () {
-      var privateVariable = 2;
+       let privateVariable = 2;
       return {
         publicMethod: () => privateVariable,
       };
@@ -3078,14 +3078,14 @@ Advantages include:
 - Having a consistent API leads to more adoption
 - Ability to easily adapt a callback pattern that will lead to more maintainable code As you can see from below example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an Error object, which then becomes the callback’s only parameter. The callback function allows a user to easily know whether or not an error occurred. This practice is also called the _Node.js error convention_, and this kind of callback implementations are called _error-first callbacks_.
 
-  var isTrue = function (value, callback) {
+   let isTrue = function (value, callback) {
   if (value === true) {
   callback(null, "Value was true.");
   } else {
   callback(new Error("Value is not true!"));
   }
   };
-  var callback = function (error, retval) {
+   let callback = function (error, retval) {
   if (error) {
   console.log(error);
   return;
@@ -3833,7 +3833,7 @@ The `this` keyword is an object that represents the context of an executing func
 `this` refers to the object itself inside regular functions if the object precedes the invocation of the function. Properties set as `this` do not refer to the object.
 
 ```js
-var myObject = {
+ let myObject = {
   property: this,
   regularFunction: function () {
     return this;
@@ -3886,7 +3886,7 @@ const myExample = new Example();
 
 With `call()` and `apply()`, `this` refers to the object passed as the first argument.
 
-    var myFunction = function () {
+     let myFunction = function () {
       return this;
     };
     myFunction.call({ customThis: true }); // { customThis: true }
@@ -3896,7 +3896,7 @@ With `call()` and `apply()`, `this` refers to the object passed as the first arg
 Because `this` can change depending on the scope, it can have unexpected values when using regular functions.
 
 ```js
-var obj = {
+ let obj = {
   arr: [1, 2, 3],
   doubleArr() {
     return this.arr.map(function (value) {
@@ -4004,19 +4004,19 @@ When no keyword exists before a variable assignment, it is either assigning a gl
 `var` was the default statement to declare a variable until ES2015. It creates a function-scoped variable that can be reassigned and redeclared. However, due to its lack of block scoping, it can cause issues if the variable is being reused in a loop that contains an asynchronous callback because the variable will continue to exist outside of the block scope. Below, by the time the the `setTimeout` callback executes, the loop has already finished and the `i` variable is `10`, so all ten callbacks reference the same variable available in the function scope.
 
 ```js
-for (var i = 0; i < 10; i++) {
+for ( let i = 0; i < 10; i++) {
   setTimeout(() => {
     // logs `10` ten times
     console.log(i);
   });
 }
 /* Solutions with `var` */
-for (var i = 0; i < 10; i++) {
+for ( let i = 0; i < 10; i++) {
   // Passed as an argument will use the value as-is in
   // that point in time
   setTimeout(console.log, 0, i);
 }
-for (var i = 0; i < 10; i++) {
+for ( let i = 0; i < 10; i++) {
   // Create a new function scope that will use the value
   // as-is in that point in time
   ((i) => {
@@ -4430,7 +4430,7 @@ function isDeepEqual(obj1, obj2, testPrototypes = false) {
     if (true) {
     }
     // Assign `x` to the absolute value of `y`.
-    var x
+     let x
     if (y >= 0) {
       x = y
     } else {
@@ -4440,7 +4440,7 @@ function isDeepEqual(obj1, obj2, testPrototypes = false) {
     lastCharacter("input") // => "t"
     true === true // => true
     // Assign `x` as the absolute value of `y`.
-    var x = y >= 0 ? y : -y
+     let x = y >= 0 ? y : -y
     Boolean("") // false
     Boolean([]) // true
     !!"" // false
@@ -4498,15 +4498,15 @@ function isDeepEqual(obj1, obj2, testPrototypes = false) {
       );
     };
     const EnhancedComponent = higherOrderComponent(WrappedComponent)
-    var foo = 1
-    var foobar = function() {
+     let foo = 1
+     let foobar = function() {
       console.log(foo)
-      var foo = 2
+       let foo = 2
     }
     foobar()
     console.log(hoist)
-    var hoist = "value"
-    var hoist
+     let hoist = "value"
+     let hoist
     console.log(hoist)
     hoist = "value"
     myFunction() // No error; logs "hello"
@@ -4514,7 +4514,7 @@ function isDeepEqual(obj1, obj2, testPrototypes = false) {
       console.log("hello")
     }
     myFunction() // Error: `myFunction` is not a function
-    var myFunction = function() {
+     let myFunction = function() {
       console.log("hello")
     }
 
@@ -4524,7 +4524,7 @@ function isDeepEqual(obj1, obj2, testPrototypes = false) {
 
 ```js
 const myLibrary = (function () {
-  var privateVariable = 2;
+   let privateVariable = 2;
   return {
     publicMethod: () => privateVariable,
   };
@@ -4620,14 +4620,14 @@ const memoize = (fn) => {
       // use the data object
       console.log(data)
     })
-    var isTrue = function(value, callback) {
+     let isTrue = function(value, callback) {
       if (value === true) {
         callback(null, "Value was true.")
       } else {
         callback(new Error("Value is not true!"))
       }
     }
-    var callback = function(error, retval) {
+     let callback = function(error, retval) {
       if (error) {
         console.log(error)
         return
@@ -4849,7 +4849,7 @@ Array.prototype.push; // instance method of Array
 const arr = [1, 2, 3];
 arr.push(4);
 Array.push(arr, 4);
-var myObject = {
+ let myObject = {
   property: this,
   regularFunction: function () {
     return this;
@@ -4882,11 +4882,11 @@ class Example {
 
 ```js
 const myExample = new Example();
-var myFunction = function () {
+ let myFunction = function () {
   return this;
 };
 myFunction.call({ customThis: true }); // { customThis: true }
-var obj = {
+ let obj = {
   arr: [1, 2, 3],
   doubleArr() {
     return this.arr.map(function (value) {
@@ -4900,19 +4900,19 @@ var obj = {
 };
 obj.doubleArr(); // Uncaught TypeError: this.double is not a function
 typeof typeof 0;
-for (var i = 0; i < 10; i++) {
+for ( let i = 0; i < 10; i++) {
   setTimeout(() => {
     // logs `10` ten times
     console.log(i);
   });
 }
 /* Solutions with `var` */
-for (var i = 0; i < 10; i++) {
+for ( let i = 0; i < 10; i++) {
   // Passed as an argument will use the value as-is in
   // that point in time
   setTimeout(console.log, 0, i);
 }
-for (var i = 0; i < 10; i++) {
+for ( let i = 0; i < 10; i++) {
   // Create a new function scope that will use the value
   // as-is in that point in time
   ((i) => {

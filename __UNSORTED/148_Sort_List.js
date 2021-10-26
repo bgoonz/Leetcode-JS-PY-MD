@@ -12,27 +12,27 @@
  * @return {ListNode}
  */
 
-var sortList = function (head) {
+let sortList = function (head) {
   if (head === null) {
     return null;
   }
 
-  var len = 0;
-  var p = head;
+  let len = 0;
+  let p = head;
 
   while (p) {
     len++;
     p = p.next;
   }
 
-  var newHead = sort(len);
+  let newHead = sort(len);
 
   return newHead;
 
   function sort(len) {
     // there will be no case of len = 0 which is caused by 1/2
     if (len === 1) {
-      var temp = head;
+      let temp = head;
       // !!! important: moving pointer to the next
       // e.g. 1->2->3->4
       // head-> 1
@@ -42,16 +42,16 @@ var sortList = function (head) {
       return temp;
     }
     // there will be no case of len = 0 which is caused by 1/2
-    var leftHead = sort(parseInt(len / 2));
-    var rightHead = sort(len - parseInt(len / 2));
-    var newHead = merge(leftHead, rightHead);
+    let leftHead = sort(parseInt(len / 2));
+    let rightHead = sort(len - parseInt(len / 2));
+    let newHead = merge(leftHead, rightHead);
 
     return newHead;
   }
 
   function merge(first, second) {
-    var h = new ListNode(-1);
-    var cur = h;
+    let h = new ListNode(-1);
+    let cur = h;
 
     while (first && second) {
       if (first.val <= second.val) {

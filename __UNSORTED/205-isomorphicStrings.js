@@ -13,10 +13,10 @@
  * @param {string} t
  * @return {boolean}
  */
-var isIsomorphic = function (s, t) {
-  var map = {};
-  for (var i = 0; i < s.length; i++) {
-    var key = map.getKeyByValue(t[i]);
+let isIsomorphic = function (s, t) {
+  let map = {};
+  for (let i = 0; i < s.length; i++) {
+    let key = map.getKeyByValue(t[i]);
     if (key && s[i] !== key) {
       return false;
     } else if (s[i] in map) {
@@ -31,7 +31,7 @@ var isIsomorphic = function (s, t) {
 };
 
 Object.prototype.getKeyByValue = function (value) {
-  for (var prop in this) {
+  for (let prop in this) {
     if (this.hasOwnProperty(prop)) {
       if (this[prop] === value) return prop;
     }
@@ -39,11 +39,11 @@ Object.prototype.getKeyByValue = function (value) {
 };
 
 // a better solution, use array
-var isIsomorphic = function (s, t) {
-  var arrS = [],
+let isIsomorphic = function (s, t) {
+  let arrS = [],
     arrT = [];
 
-  for (var i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     if (arrS[s.charCodeAt(i)] !== arrT[t.charCodeAt(i)]) {
       return false;
     }

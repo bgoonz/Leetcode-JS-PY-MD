@@ -35,8 +35,8 @@
  * @param {UndirectedGraphNode} graph
  * @return {UndirectedGraphNode}
  */
-var cloneGraph = function (graph) {
-  var visited = {};
+let cloneGraph = function (graph) {
+  let visited = {};
 
   if (graph === null) {
     return graph;
@@ -45,13 +45,13 @@ var cloneGraph = function (graph) {
   }
 
   function dfs(node) {
-    var newNode = visited[node.label]
+    let newNode = visited[node.label]
       ? visited[node.label]
       : new UndirectedGraphNode(node.label);
     visited[node.label] = newNode;
 
-    for (var i = 0; i < node.neighbors.length; i++) {
-      var newNeighbor = visited[node.neighbors[i].label]
+    for (let i = 0; i < node.neighbors.length; i++) {
+      let newNeighbor = visited[node.neighbors[i].label]
         ? visited[node.neighbors[i].label]
         : dfs(node.neighbors[i]);
       newNode.neighbors.push(newNeighbor);
@@ -60,7 +60,7 @@ var cloneGraph = function (graph) {
   }
 };
 
-var cloneGraph = function (graph) {
+let cloneGraph = function (graph) {
   if (!graph) {
     return graph;
   } else {
@@ -68,11 +68,11 @@ var cloneGraph = function (graph) {
   }
 
   function dfs(node, visited) {
-    var newNode = (visited[node.label] =
+    let newNode = (visited[node.label] =
       visited[node.label] || new UndirectedGraphNode(node.label));
 
-    for (var i = 0; i < node.neighbors.length; i++) {
-      var neighbor = node.neighbors[i];
+    for (let i = 0; i < node.neighbors.length; i++) {
+      let neighbor = node.neighbors[i];
       newNode.neighbors[i] = visited[neighbor.label] =
         visited[neighbor.label] || dfs(neighbor, visited);
     }

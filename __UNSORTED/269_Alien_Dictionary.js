@@ -24,7 +24,7 @@
  * @param {string[]} words
  * @return {string}
  */
-var alienOrder = function (words) {
+let alienOrder = function (words) {
   if (words.length === 0) {
     return "";
   }
@@ -97,7 +97,7 @@ var alienOrder = function (words) {
     result.push(rootChar);
 
     for (i = 0; i < requiredCharMap[rootChar].length; i++) {
-      var charRequiresRoot = requiredCharMap[rootChar][i];
+      let charRequiresRoot = requiredCharMap[rootChar][i];
       charPreReqCount[charRequiresRoot]--;
 
       if (charPreReqCount[charRequiresRoot] === 0) {
@@ -115,7 +115,7 @@ var alienOrder = function (words) {
   return hasCycle ? "" : result.join("");
 };
 
-// var words = [
+//  let words = [
 //   "wrt",
 //   "wrf",
 //   "er",
@@ -123,6 +123,6 @@ var alienOrder = function (words) {
 //   "rftt"
 // ];
 
-var words = ["wert", "woo"];
+let words = ["wert", "woo"];
 
 console.log("ans", alienOrder(words));

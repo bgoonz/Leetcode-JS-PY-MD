@@ -3,10 +3,10 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function (numbers, target) {
-  var left = 0;
-  var right = numbers.length - 1;
-  var results = [];
+let twoSum = function (numbers, target) {
+  let left = 0;
+  let right = numbers.length - 1;
+  let results = [];
 
   while (left < right) {
     if (numbers[left] + numbers[right] === target) {

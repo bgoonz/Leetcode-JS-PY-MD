@@ -12,10 +12,10 @@
  */
 // BFS, level order Traversal, set a dummy head at the beginnig of each level.
 // Is it O(1) space?
-var connect = function (root) {
+let connect = function (root) {
   while (root) {
-    var leftDummy = new TreeLinkNode(0);
-    var currChild = leftDummy;
+    let leftDummy = new TreeLinkNode(0);
+    let currChild = leftDummy;
     while (root) {
       if (root.left) {
         currChild.next = root.left;
@@ -41,13 +41,13 @@ var connect = function (root) {
  */
 
 // BFS too, but constant space
-var connect = function (root) {
+let connect = function (root) {
   // next level's head (beginnig)
-  var head = root;
+  let head = root;
   // next level's last visited node
-  var prev;
+  let prev;
   // curr level's currently visiting node
-  var curr;
+  let curr;
   while (head) {
     curr = head;
     prev = null;
@@ -70,13 +70,13 @@ var connect = function (root) {
 
 // doesn't work, wrong answer. e.g. {1,2,3,4,5,#,6,7,#,#,#,#,8},
 // the common parent is one more level up
-var connect = function (root) {
+let connect = function (root) {
   if (!root) return;
 
   while (root) {
-    var pNode = root;
+    let pNode = root;
     while (pNode) {
-      var child = null;
+      let child = null;
       if (pNode.left && pNode.right) {
         pNode.left.next = pNode.right;
         child = pNode.right;

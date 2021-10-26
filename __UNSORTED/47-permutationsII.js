@@ -3,23 +3,23 @@
  * @return {number[][]}
  */
 // First try, Memory Limit Exceeded
-var permuteUnique = function (nums) {
+let permuteUnique = function (nums) {
   if (nums.length === 0) return nums;
   nums.sort(function (a, b) {
     a - b;
   });
-  var results = [];
+  let results = [];
   permutation(results, nums, 0);
   return results;
 };
 
-var permutation = function (results, nums, start) {
+let permutation = function (results, nums, start) {
   if (start >= nums.length) {
     results.push(nums.slice());
     return;
   }
 
-  for (var i = start; i < nums.length; i++) {
+  for (let i = start; i < nums.length; i++) {
     if (i > start && nums[i] === nums[i - 1]) continue;
     swap(nums, i, start);
     permutation(results, nums, start + 1);
@@ -27,9 +27,9 @@ var permutation = function (results, nums, start) {
   }
 };
 
-var swap = function (nums, i, j) {
+let swap = function (nums, i, j) {
   if (i === j) return;
-  var tmp = nums[i];
+  let tmp = nums[i];
   nums[i] = nums[j];
   nums[j] = tmp;
 };
@@ -41,17 +41,17 @@ var swap = function (nums, i, j) {
 // step1: [1]
 // step2: inserst 2 to [1], two possibilities: [2,1], [1,2]
 // step3: inserst 2 to [1,2] and [2,1]? but there is a 2 in each array, so skip this number and return
-var permuteUnique = function (nums) {
+let permuteUnique = function (nums) {
   if (nums.length === 0) return nums;
   nums.sort(function (a, b) {
     return a - b;
   });
-  var results = [[nums[0]]];
-  for (var i = 1; i < nums.length; i++) {
-    var newResults = [];
-    for (var m = 0; m < results.length; m++) {
-      for (var j = 0; j <= i; j++) {
-        var list = results[m].slice();
+  let results = [[nums[0]]];
+  for (let i = 1; i < nums.length; i++) {
+    let newResults = [];
+    for (let m = 0; m < results.length; m++) {
+      for (let j = 0; j <= i; j++) {
+        let list = results[m].slice();
         list.splice(j, 0, nums[i]);
         newResults.push(list);
         if (results[m][j] === nums[i]) break;

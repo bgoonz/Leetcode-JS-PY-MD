@@ -12,9 +12,9 @@
 
 // tricky question!
 
-var isOneEditDistance = function (s, t) {
+let isOneEditDistance = function (s, t) {
   if (s.length > t.length) {
-    var tmp = s;
+    let tmp = s;
     s = t;
     t = tmp;
   }
@@ -23,9 +23,9 @@ var isOneEditDistance = function (s, t) {
     return false;
   }
 
-  var found = false;
+  let found = false;
 
-  for (var i = 0, j = 0; i < s.length; i++, j++) {
+  for (let i = 0, j = 0; i < s.length; i++, j++) {
     if (s[i] !== t[j]) {
       if (found) {
         return false;
@@ -42,9 +42,9 @@ var isOneEditDistance = function (s, t) {
   return found || s.length < t.length;
 };
 
-var isOneEditDistance = function (s, t) {
+let isOneEditDistance = function (s, t) {
   if (s.length > t.length) {
-    var tmp = s;
+    let tmp = s;
     s = t;
     t = tmp;
   }
@@ -53,9 +53,9 @@ var isOneEditDistance = function (s, t) {
     return false;
   }
 
-  var i = 0;
-  var j = 0;
-  var diff = 0;
+  let i = 0;
+  let j = 0;
+  let diff = 0;
 
   while (i < s.length && j < t.length) {
     if (s[i] !== t[j]) {

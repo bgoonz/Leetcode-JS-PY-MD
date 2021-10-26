@@ -10,18 +10,18 @@
  * @param {TreeNode} q
  * @return {boolean}
  */
-var isSameTree = function (p, q) {
-  var queue1 = [];
-  var queue2 = [];
+ let isSameTree = function (p, q) {
+   let queue1 = [];
+   let queue2 = [];
 
   queue1.push(p);
   queue2.push(q);
 
   while (queue1.length && queue2.length) {
-    var node1 = queue1.shift();
-    var node2 = queue2.shift();
-    var val1;
-    var val2;
+     let node1 = queue1.shift();
+     let node2 = queue2.shift();
+     let val1;
+     let val2;
 
     if (node1 === null) {
       val1 = null;

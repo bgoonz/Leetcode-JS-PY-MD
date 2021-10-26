@@ -3,18 +3,18 @@
  * @param {number} n
  * @return {number}
  */
-var uniquePaths = function (m, n) {
+let uniquePaths = function (m, n) {
   if (m === 0 || n === 0) {
     return 0;
   }
 
-  var dp = [[1]];
+  let dp = [[1]];
 
-  for (var i = 1; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     dp[0][i] = 1;
   }
 
-  for (var j = 1; j < m; j++) {
+  for (let j = 1; j < m; j++) {
     dp.push([]);
     dp[j][0] = 1;
   }

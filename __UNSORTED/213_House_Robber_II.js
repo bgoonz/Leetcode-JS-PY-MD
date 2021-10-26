@@ -9,15 +9,15 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function (nums) {
+let rob = function (nums) {
   // same as house robber I, but we cannot rob first and last house at the same time.
 
   function robHouses(nums) {
-    var odd = 0;
-    var even = 0;
+    let odd = 0;
+    let even = 0;
 
-    for (var i = 0; i < nums.length; i++) {
-      var num = nums[i];
+    for (let i = 0; i < nums.length; i++) {
+      let num = nums[i];
       if (i % 2 === 0) {
         even = Math.max(even + num, odd);
       } else {
@@ -32,7 +32,7 @@ var rob = function (nums) {
     return robHouses(nums);
   }
 
-  var robHousesExceptLast = robHouses(nums.slice(0, -1));
-  var robHousesExceptFirst = robHouses(nums.slice(1));
+  let robHousesExceptLast = robHouses(nums.slice(0, -1));
+  let robHousesExceptFirst = robHouses(nums.slice(1));
   return Math.max(robHousesExceptLast, robHousesExceptFirst);
 };

@@ -7,12 +7,12 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var nextPermutation = function (nums) {
+let nextPermutation = function (nums) {
   if (!nums || nums.length === 1) return;
-  var p = nums.length - 1;
-  var q = nums.length - 1;
+  let p = nums.length - 1;
+  let q = nums.length - 1;
 
-  for (var i = p - 1; i >= 0; i--) {
+  for (let i = p - 1; i >= 0; i--) {
     if (nums[i + 1] > nums[i]) {
       p = i;
       break;
@@ -20,9 +20,9 @@ var nextPermutation = function (nums) {
     p--;
   }
 
-  for (var i = q; i > p; i--) {
+  for (let i = q; i > p; i--) {
     if (nums[i] > nums[p]) {
-      var tmp = nums[p];
+      let tmp = nums[p];
       nums[p] = nums[i];
       nums[i] = tmp;
       break;
@@ -38,10 +38,10 @@ var nextPermutation = function (nums) {
   reverse(nums, p + 1);
 };
 
-var reverse = function (nums, i) {
-  var j = nums.length - 1;
+let reverse = function (nums, i) {
+  let j = nums.length - 1;
   while (i < j) {
-    var tmp = nums[i];
+    let tmp = nums[i];
     nums[i] = nums[j];
     nums[j] = tmp;
     i++;

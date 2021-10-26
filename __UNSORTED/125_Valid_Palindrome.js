@@ -17,10 +17,10 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function (s) {
+let isPalindrome = function (s) {
   s = s.toLowerCase();
-  var beg = 0;
-  var end = s.length - 1;
+  let beg = 0;
+  let end = s.length - 1;
 
   while (beg < end) {
     if (!s[beg].match(/[a-z0-9]/)) {
@@ -42,9 +42,9 @@ var isPalindrome = function (s) {
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function (s) {
-  var head = 0;
-  var tail = s.length - 1;
+let isPalindrome = function (s) {
+  let head = 0;
+  let tail = s.length - 1;
 
   s = s.toLowerCase();
 

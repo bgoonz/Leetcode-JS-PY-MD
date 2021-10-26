@@ -31,24 +31,24 @@
  *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
  * @return {number}
  */
-var ladderLength = function(beginWord, endWord, wordList) {
-    var visited = new Set();
-    var queue = [];
-    var level = 1;
-    var letters = 'abcdefghijklmnopqrstuvwxyz';
+ let ladderLength = function(beginWord, endWord, wordList) {
+     let visited = new Set();
+     let queue = [];
+     let level = 1;
+     let letters = 'abcdefghijklmnopqrstuvwxyz';
     queue.push(beginWord);
     visited.add(beginWord);    
     
     while(queue.length > 0) {
         
-        var len = queue.length;
+         let len = queue.length;
         
-        for(var i = 0; i < len; i++) {
-            var word = queue.shift();
+        for( let i = 0; i < len; i++) {
+             let word = queue.shift();
             
-            for(var j = 0; j < word.length; j++) {
-                for(var k = 0; k < letters.length; k++) {
-                    var newWord = word.substring(0, j) + letters[k] + word.substring(j + 1);
+            for( let j = 0; j < word.length; j++) {
+                for( let k = 0; k < letters.length; k++) {
+                     let newWord = word.substring(0, j) + letters[k] + word.substring(j + 1);
                     
                     if(newWord === endWord) {
                         return level + 1;
@@ -68,28 +68,28 @@ var ladderLength = function(beginWord, endWord, wordList) {
 };
 
 // will time exceeded. javascript hash is slower than set
-var ladderLength = function(beginWord, endWord, wordList) {
+ let ladderLength = function(beginWord, endWord, wordList) {
     if(beginWord === endWord) {
         return 0;
     }
     
-    var queue = [];
-    var visited = {};
-    var count = 1;
-    var baseCharCode = 'a'.charCodeAt(0);
+     let queue = [];
+     let visited = {};
+     let count = 1;
+     let baseCharCode = 'a'.charCodeAt(0);
     
     queue.push(beginWord);
     
     while(queue.length) {
-        var len = queue.length;
+         let len = queue.length;
         
-        for(var i = 0; i < len; i++) {
-            var word = queue.shift();
+        for( let i = 0; i < len; i++) {
+             let word = queue.shift();
             
-            for(var j = 0; j < word.length; j++) {
-                for(var k = 0; k < 26; k++) {
-                    var newChar = String.fromCharCode(baseCharCode + k);
-                    var newWord = word.substring(0, j) + newChar + word.substring(j + 1);
+            for( let j = 0; j < word.length; j++) {
+                for( let k = 0; k < 26; k++) {
+                     let newChar = String.fromCharCode(baseCharCode + k);
+                     let newWord = word.substring(0, j) + newChar + word.substring(j + 1);
                     
                     if(newWord === endWord) {
                         return count + 1;
