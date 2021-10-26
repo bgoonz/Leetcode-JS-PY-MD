@@ -4,8 +4,16 @@
 
 ---
 
+<<<<<<< HEAD
 
 #### Easy
+=======
+---
+
+---
+
+##### Easy
+>>>>>>> 93d2013b354e497fc2999fe8e184139c80f91e2b
 
 - [7. Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/) - [Solution](./Easy/7-reverseInteger.js)
 - [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) - [Solution](./Easy/8-stringToInteger.js)
