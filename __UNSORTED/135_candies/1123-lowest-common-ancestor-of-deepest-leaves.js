@@ -9,29 +9,29 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const lcaDeepestLeaves = function(root) {
-  if (root === null) return null
-  const getHeight = root => {
-    if (root === null) return 0
-    const res = Math.max(getHeight(root.left), getHeight(root.right)) + 1
-    return res
-  }
+const lcaDeepestLeaves = function (root) {
+  if (root === null) return null;
+  const getHeight = (root) => {
+    if (root === null) return 0;
+    const res = Math.max(getHeight(root.left), getHeight(root.right)) + 1;
+    return res;
+  };
   if (getHeight(root.left) === getHeight(root.right)) {
-    return root
+    return root;
   } else if (getHeight(root.left) > getHeight(root.right)) {
-    return lcaDeepestLeaves(root.left)
+    return lcaDeepestLeaves(root.left);
   } else {
-    return lcaDeepestLeaves(root.right)
+    return lcaDeepestLeaves(root.right);
   }
-}
+};
 
 // BFS
 
-const lcaDeepestLeaves = function(root) {
+const lcaDeepestLeaves = function (root) {
   let current = [root];
   let level = 0;
   let last = [];
-  while(current.length) {
+  while (current.length) {
     let next = [];
     for (var i = 0; i < current.length; i++) {
       if (current[i].left) {
@@ -50,7 +50,7 @@ const lcaDeepestLeaves = function(root) {
   if (!parent) {
     return last[0];
   }
-  while(last.length > 1) {
+  while (last.length > 1) {
     let next = [];
     for (var i = 0; i < last.length; i++) {
       newParent = last[i].parent;
@@ -60,5 +60,5 @@ const lcaDeepestLeaves = function(root) {
     }
     last = next;
   }
-  return last[0]; 
+  return last[0];
 };

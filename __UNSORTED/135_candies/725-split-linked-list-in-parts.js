@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {ListNode[]}
  */
-const splitListToParts = function(root, k) {
+const splitListToParts = function (root, k) {
   let cur = root;
   let N = 0;
   while (cur != null) {

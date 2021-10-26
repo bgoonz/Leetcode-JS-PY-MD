@@ -2,7 +2,7 @@
  * @param {number[][]} board
  * @return {number}
  */
-const slidingPuzzle = function(board) {
+const slidingPuzzle = function (board) {
   const target = "123450";
   let start = "";
   for (let i = 0; i < board.length; i++) {
@@ -12,7 +12,14 @@ const slidingPuzzle = function(board) {
   }
   const visited = {};
   // all the positions 0 can be swapped to
-  const dirs = [[1, 3], [0, 2, 4], [1, 5], [0, 4], [1, 3, 5], [2, 4]];
+  const dirs = [
+    [1, 3],
+    [0, 2, 4],
+    [1, 5],
+    [0, 4],
+    [1, 3, 5],
+    [2, 4],
+  ];
   const queue = [];
   queue.push(start);
   visited[start] = true;

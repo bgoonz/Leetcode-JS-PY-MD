@@ -32,19 +32,19 @@ After applying operation [0,2,-2]:
  * @param {number[][]} updates
  * @return {number[]}
  */
-const getModifiedArray = function(length, updates) {
-  const res = new Array(length).fill(0)
+const getModifiedArray = function (length, updates) {
+  const res = new Array(length).fill(0);
   for (let update of updates) {
-    let value = update[2]
-    let start = update[0]
-    let end = update[1]
-    res[start] += value
-    if (end < length - 1) res[end + 1] -= value
+    let value = update[2];
+    let start = update[0];
+    let end = update[1];
+    res[start] += value;
+    if (end < length - 1) res[end + 1] -= value;
   }
-  let sum = 0
+  let sum = 0;
   for (let i = 0; i < length; i++) {
-    sum += res[i]
-    res[i] = sum
+    sum += res[i];
+    res[i] = sum;
   }
-  return res
-}
+  return res;
+};

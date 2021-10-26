@@ -2,7 +2,7 @@
  * @param {number[]} arr
  * @return {number}
  */
-const maxChunksToSorted = function(arr) {
+const maxChunksToSorted = function (arr) {
   const clonedArr = arr.slice(0);
   let sum1 = 0;
   let sum2 = 0;

@@ -12,10 +12,10 @@
  */
 const invertTree = function (root) {
   if (root) {
-    ;[root.left, root.right] = [invertTree(root.right), invertTree(root.left)]
+    [root.left, root.right] = [invertTree(root.right), invertTree(root.left)];
   }
-  return root
-}
+  return root;
+};
 
 // another
 
@@ -32,19 +32,19 @@ const invertTree = function (root) {
  * @return {TreeNode}
  */
 const invertTree = function (root) {
-  if (!root) return root
-  let queue = [root]
+  if (!root) return root;
+  let queue = [root];
   while (queue.length) {
-    let node = queue.shift()
+    let node = queue.shift();
     if (node.left) {
-      queue.push(node.left)
+      queue.push(node.left);
     }
     if (node.right) {
-      queue.push(node.right)
+      queue.push(node.right);
     }
-    let left = node.left
-    node.left = node.right
-    node.right = left
+    let left = node.left;
+    node.left = node.right;
+    node.right = left;
   }
-  return root
-}
+  return root;
+};

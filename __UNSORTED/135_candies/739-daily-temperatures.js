@@ -2,7 +2,7 @@
  * @param {number[]} T
  * @return {number[]}
  */
-const dailyTemperatures = function(T) {
+const dailyTemperatures = function (T) {
   const n = T.length;
   const sk = [];
   const res = new Array(n).fill(0);

@@ -3,7 +3,7 @@
  * @param {string} s2
  * @return {number}
  */
-const minimumDeleteSum = function(s1, s2) {
+const minimumDeleteSum = function (s1, s2) {
   const l1 = s1.length;
   const l2 = s2.length;
   const dp = [];

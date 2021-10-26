@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number}
  */
-const combinationSum4 = function(nums, target) {
+const combinationSum4 = function (nums, target) {
   const comb = [1];
   for (let i = 1; i <= target; i++) {
     comb[i] || (comb[i] = 0);

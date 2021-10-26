@@ -3,8 +3,8 @@
  * @param {number} K
  * @return {number}
  */
-const maxSumAfterPartitioning = function(A, K) {
-  const N = A.length
+const maxSumAfterPartitioning = function (A, K) {
+  const N = A.length;
   const dp = new Array(N).fill(0);
   for (let i = 0; i < N; ++i) {
     let curMax = 0;

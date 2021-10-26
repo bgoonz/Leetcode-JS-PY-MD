@@ -5,12 +5,12 @@
  * @param {number} c0
  * @return {number[][]}
  */
-const allCellsDistOrder = function(R, C, r0, c0) {
-  const matrix = Array.from({ length: R }, () => new Array(C))
-  const arr = []
+const allCellsDistOrder = function (R, C, r0, c0) {
+  const matrix = Array.from({ length: R }, () => new Array(C));
+  const arr = [];
   for (let i = 0; i < R; i++) {
     for (let j = 0; j < C; j++) {
-      arr.push([i, j])
+      arr.push([i, j]);
     }
   }
 
@@ -19,5 +19,5 @@ const allCellsDistOrder = function(R, C, r0, c0) {
       Math.abs(a[0] - r0) +
       Math.abs(a[1] - c0) -
       (Math.abs(b[0] - r0) + Math.abs(b[1] - c0))
-  )
-}
+  );
+};

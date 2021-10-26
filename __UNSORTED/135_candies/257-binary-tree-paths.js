@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {string[]}
  */
-const binaryTreePaths = function(root) {
+const binaryTreePaths = function (root) {
   const res = [];
   traverse(root, res, []);
   return res;

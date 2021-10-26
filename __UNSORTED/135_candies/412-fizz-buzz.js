@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {string[]}
  */
-const fizzBuzz = function(n) {
+const fizzBuzz = function (n) {
   const res = [];
   for (let i = 1; i <= n; i++) {
     res.push(single(i));

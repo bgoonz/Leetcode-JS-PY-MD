@@ -31,19 +31,19 @@ Note:
  * @param {number} K
  * @return {number}
  */
-const twoSumLessThanK = function(A, K) {
-  A.sort((a, b) => a - b)
+const twoSumLessThanK = function (A, K) {
+  A.sort((a, b) => a - b);
   let max = -1,
     i = 0,
-    j = A.length - 1
+    j = A.length - 1;
   while (i < j) {
-    const sum = A[i] + A[j]
+    const sum = A[i] + A[j];
     if (sum < K) {
-      max = Math.max(max, sum)
-      i++
+      max = Math.max(max, sum);
+      i++;
     } else {
-      j--
+      j--;
     }
   }
-  return max
-}
+  return max;
+};

@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {boolean}
  */
-const isHappy = function(n) {
+const isHappy = function (n) {
   const arr = [];
   let tmp = n;
   while (arr.indexOf(tmp) === -1) {

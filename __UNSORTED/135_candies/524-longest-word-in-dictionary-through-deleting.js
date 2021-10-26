@@ -3,7 +3,7 @@
  * @param {string[]} d
  * @return {string}
  */
-const findLongestWord = function(s, d) {
+const findLongestWord = function (s, d) {
   let results = [];
   let maxLen = 0;
   for (const word of d) {
@@ -22,10 +22,10 @@ const findLongestWord = function(s, d) {
       results.push(word);
     }
   }
-  
+
   let result = results[0];
   for (let i = 1; i < results.length; i++) {
     if (results[i] < result) result = results[i];
   }
-  return result || '';
-}
+  return result || "";
+};

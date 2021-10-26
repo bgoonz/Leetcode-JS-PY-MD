@@ -3,7 +3,7 @@
  * @param {string} t
  * @return {boolean}
  */
-const isAnagram = function(s, t) {
+const isAnagram = function (s, t) {
   if (s.length !== t.length) return false;
   const sh = strHash(s);
   const th = strHash(t);

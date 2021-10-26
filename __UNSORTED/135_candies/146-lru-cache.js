@@ -6,7 +6,7 @@ class Node {
   }
 }
 
-const LRUCache = function(capacity) {
+const LRUCache = function (capacity) {
   this.capacity = capacity;
   this.count = 0;
   this.start = new Node(-1, -1);
@@ -17,7 +17,7 @@ const LRUCache = function(capacity) {
 };
 
 // insert node into the next of the start
-const insertAfter = function(start, node) {
+const insertAfter = function (start, node) {
   let next = start.next;
   start.next = node;
   node.pre = start;
@@ -25,7 +25,7 @@ const insertAfter = function(start, node) {
   next.pre = node;
 };
 
-const detach = function(node) {
+const detach = function (node) {
   let pre = node.pre,
     next = node.next;
   pre.next = next;
@@ -37,7 +37,7 @@ const detach = function(node) {
  * @param {number} key
  * @return {number}
  */
-LRUCache.prototype.get = function(key) {
+LRUCache.prototype.get = function (key) {
   let node = this.map[key];
   if (node != undefined) {
     detach(node);
@@ -53,7 +53,7 @@ LRUCache.prototype.get = function(key) {
  * @param {number} value
  * @return {void}
  */
-LRUCache.prototype.put = function(key, value) {
+LRUCache.prototype.put = function (key, value) {
   let node = this.map[key];
   if (!node) {
     if (this.count == this.capacity) {
@@ -86,42 +86,42 @@ LRUCache.prototype.put = function(key, value) {
 /**
  * @param {number} capacity
  */
-const LRUCache = function(capacity) {
-  this.m = new Map()
-  this.l = capacity
+const LRUCache = function (capacity) {
+  this.m = new Map();
+  this.l = capacity;
 };
 
-/** 
+/**
  * @param {number} key
  * @return {number}
  */
-LRUCache.prototype.get = function(key) {
-  if(!this.m.has(key)) return -1
-  const v = this.m.get(key)
-  this.m.delete(key)
-  this.m.set(key, v)
-  return v
+LRUCache.prototype.get = function (key) {
+  if (!this.m.has(key)) return -1;
+  const v = this.m.get(key);
+  this.m.delete(key);
+  this.m.set(key, v);
+  return v;
 };
 
-/** 
- * @param {number} key 
+/**
+ * @param {number} key
  * @param {number} value
  * @return {void}
  */
-LRUCache.prototype.put = function(key, value) {
-  if(this.m.has(key)) {
-    this.m.delete(key)
-    this.m.set(key, value)
+LRUCache.prototype.put = function (key, value) {
+  if (this.m.has(key)) {
+    this.m.delete(key);
+    this.m.set(key, value);
   } else {
-    if(this.m.size >= this.l) {
-      const k = this.m.keys().next().value
-      this.m.delete(k)
+    if (this.m.size >= this.l) {
+      const k = this.m.keys().next().value;
+      this.m.delete(k);
     }
-    this.m.set(key, value)
+    this.m.set(key, value);
   }
 };
 
-/** 
+/**
  * Your LRUCache object will be instantiated and called as such:
  * var obj = new LRUCache(capacity)
  * var param_1 = obj.get(key)

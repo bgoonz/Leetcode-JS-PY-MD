@@ -3,7 +3,7 @@
  * @param {number} R
  * @return {number}
  */
-const countPrimeSetBits = function(L, R) {
+const countPrimeSetBits = function (L, R) {
   let res = 0;
   for (let i = L; i <= R; i++) {
     if (chkPrime(i)) {

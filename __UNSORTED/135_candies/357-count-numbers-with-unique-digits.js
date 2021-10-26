@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {number}
  */
-const countNumbersWithUniqueDigits = function(n) {
+const countNumbersWithUniqueDigits = function (n) {
   if (n === 0) return 1;
   let res = 10;
   let tmp = 9;

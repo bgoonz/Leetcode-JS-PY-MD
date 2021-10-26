@@ -3,7 +3,7 @@
  * @param {number[][]} edges
  * @return {number[]}
  */
-const findMinHeightTrees = function(n, edges) {
+const findMinHeightTrees = function (n, edges) {
   if (n === 1) {
     return [0];
   }

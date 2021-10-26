@@ -2,7 +2,7 @@
  * @param {character[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-const solve = function(board) {
+const solve = function (board) {
   if (!board || board.length < 3 || board[0].length < 3) return;
   let r = board.length;
   let c = board[0].length;
@@ -42,7 +42,7 @@ const solve = (board) => {
   if (!board || board.length === 0 || board[0].length === 0) return;
   const n = board.length;
   const m = board[0].length;
-    const dirs = [
+  const dirs = [
     [-1, 0],
     [1, 0],
     [0, -1],

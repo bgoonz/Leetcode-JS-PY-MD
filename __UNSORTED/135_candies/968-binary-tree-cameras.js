@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const minCameraCover = function(root) {
+const minCameraCover = function (root) {
   if (root === null) return 0;
   let max = 0;
   return (helper(root) < 1 ? 1 : 0) + max;
@@ -26,21 +26,21 @@ const minCameraCover = function(root) {
   }
 };
 
- // another
+// another
 
 /**
  * @param {TreeNode} root
  * @return {number}
  */
-const minCameraCover = function(root) {
-  let ans = 0
-  const covered = new Set([null])
-  dfs(root, null)
-  return ans
+const minCameraCover = function (root) {
+  let ans = 0;
+  const covered = new Set([null]);
+  dfs(root, null);
+  return ans;
   function dfs(node, parent) {
     if (node) {
-      dfs(node.left, node)
-      dfs(node.right, node)
+      dfs(node.left, node);
+      dfs(node.right, node);
       if (
         !(
           (parent || covered.has(node)) &&
@@ -48,12 +48,8 @@ const minCameraCover = function(root) {
           covered.has(node.right)
         )
       ) {
-        ans += 1
-        covered
-          .add(node)
-          .add(parent)
-          .add(node.left)
-          .add(node.right)
+        ans += 1;
+        covered.add(node).add(parent).add(node.left).add(node.right);
       }
     }
   }

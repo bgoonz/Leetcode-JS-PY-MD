@@ -8,7 +8,7 @@ class TrieNode {
   }
 }
 
-const WordDictionary = function() {
+const WordDictionary = function () {
   this.root = new TrieNode();
   this.aCode = "a".charCodeAt(0);
 };
@@ -18,7 +18,7 @@ const WordDictionary = function() {
  * @param {string} word
  * @return {void}
  */
-WordDictionary.prototype.addWord = function(word) {
+WordDictionary.prototype.addWord = function (word) {
   let node = this.root;
   for (let c of word.split("")) {
     let code = c.charCodeAt(0);
@@ -35,10 +35,10 @@ WordDictionary.prototype.addWord = function(word) {
  * @param {string} word
  * @return {boolean}
  */
-WordDictionary.prototype.search = function(word) {
+WordDictionary.prototype.search = function (word) {
   return this._match(word.split(""), 0, this.root);
 };
-WordDictionary.prototype._match = function(arr, k, node) {
+WordDictionary.prototype._match = function (arr, k, node) {
   if (k == arr.length) {
     return node && node.isWord;
   }
@@ -53,7 +53,8 @@ WordDictionary.prototype._match = function(arr, k, node) {
     }
   } else {
     return (
-      node != null && node.children[arr[k].charCodeAt(0) - this.aCode] != null &&
+      node != null &&
+      node.children[arr[k].charCodeAt(0) - this.aCode] != null &&
       this._match(arr, k + 1, node.children[arr[k].charCodeAt(0) - this.aCode])
     );
   }

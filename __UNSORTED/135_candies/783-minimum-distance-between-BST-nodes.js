@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const minDiffInBST = function(root) {
+const minDiffInBST = function (root) {
   if (root === null) return 0;
   let min = Number.MAX_SAFE_INTEGER,
     res = [];

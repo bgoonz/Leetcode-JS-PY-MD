@@ -9,20 +9,20 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-const averageOfLevels = function(root) {
+const averageOfLevels = function (root) {
   const res = [];
   layer(res, [root]);
-  return res.map(el => el.val / el.num);
+  return res.map((el) => el.val / el.num);
 };
 
 function layer(arr, args) {
   const item = {
     val: args.reduce((ac, el) => ac + el.val, 0),
-    num: args.length
+    num: args.length,
   };
   arr.push(item);
   const children = [];
-  args.forEach(el => {
+  args.forEach((el) => {
     el.left === null ? null : children.push(el.left);
     el.right === null ? null : children.push(el.right);
   });

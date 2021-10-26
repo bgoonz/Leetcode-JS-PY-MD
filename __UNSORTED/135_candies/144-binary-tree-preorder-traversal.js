@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-const preorderTraversal = function(root) {
+const preorderTraversal = function (root) {
   const res = [];
   traversal(root, res);
   return res;

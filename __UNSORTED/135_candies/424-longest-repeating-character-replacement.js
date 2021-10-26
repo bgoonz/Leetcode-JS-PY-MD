@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {number}
  */
-const characterReplacement = function(s, k) {
+const characterReplacement = function (s, k) {
   const len = s.length;
   const count = Array(26).fill(0);
   let start = 0,

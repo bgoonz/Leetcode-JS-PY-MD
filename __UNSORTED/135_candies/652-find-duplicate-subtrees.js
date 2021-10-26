@@ -11,17 +11,17 @@
  */
 const findDuplicateSubtrees = function (root) {
   const obj = {},
-    res = []
-  preOrder(root, obj, res)
-  return res
-}
+    res = [];
+  preOrder(root, obj, res);
+  return res;
+};
 
 function preOrder(root, map, res) {
-  if (root === null) return '#'
+  if (root === null) return "#";
   const str =
-    root.val + preOrder(root.left, map, res) + preOrder(root.right, map, res)
-  if (!map[str]) map[str] = 0
-  map[str]++
-  if (map[str] === 2) res.push(root)
-  return str
+    root.val + preOrder(root.left, map, res) + preOrder(root.right, map, res);
+  if (!map[str]) map[str] = 0;
+  map[str]++;
+  if (map[str] === 2) res.push(root);
+  return str;
 }

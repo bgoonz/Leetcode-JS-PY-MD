@@ -4,7 +4,7 @@
  * @param {string[][]} queries
  * @return {number[]}
  */
-const calcEquation = function(equations, values, queries) {
+const calcEquation = function (equations, values, queries) {
   const m = {};
   for (let i = 0; i < values.length; i++) {
     if (!m.hasOwnProperty(equations[i][0])) m[equations[i][0]] = {};

@@ -2,8 +2,9 @@
  * @param {number[]} arr
  * @return {number}
  */
-const mctFromLeafValues = function(arr) {
-  let res = 0, n = arr.length;
+const mctFromLeafValues = function (arr) {
+  let res = 0,
+    n = arr.length;
   let stack = new Array();
   stack.push(Number.MAX_VALUE);
   for (let a of arr) {
@@ -16,5 +17,5 @@ const mctFromLeafValues = function(arr) {
   while (stack.length > 2) {
     res += stack.pop() * stack[stack.length - 1];
   }
-  return res;   
+  return res;
 };

@@ -29,15 +29,15 @@ If there exists multiple answers, you can return any of them.
  * @param {number[]} post
  * @return {TreeNode}
  */
-const constructFromPrePost = function(pre, post) {
+const constructFromPrePost = function (pre, post) {
   let i = 0,
-    j = 0
+    j = 0;
   return (function dfs() {
-    let val = pre[i++]
-    let node = new TreeNode(val)
-    if (val !== post[j]) node.left = dfs()
-    if (val !== post[j]) node.right = dfs()
-    j++
-    return node
-  })()
-}
+    let val = pre[i++];
+    let node = new TreeNode(val);
+    if (val !== post[j]) node.left = dfs();
+    if (val !== post[j]) node.right = dfs();
+    j++;
+    return node;
+  })();
+};

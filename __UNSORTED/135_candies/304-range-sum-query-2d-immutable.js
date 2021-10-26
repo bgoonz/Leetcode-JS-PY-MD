@@ -1,7 +1,7 @@
 /**
  * @param {number[][]} matrix
  */
-const NumMatrix = function(matrix) {
+const NumMatrix = function (matrix) {
   const dp = [];
   if (matrix.length == 0 || matrix[0].length == 0) return;
   for (let i = 0; i <= matrix.length; i++) {
@@ -25,7 +25,7 @@ const NumMatrix = function(matrix) {
  * @param {number} col2
  * @return {number}
  */
-NumMatrix.prototype.sumRegion = function(row1, col1, row2, col2) {
+NumMatrix.prototype.sumRegion = function (row1, col1, row2, col2) {
   const dp = this.cache;
   return (
     dp[row2 + 1][col2 + 1] -

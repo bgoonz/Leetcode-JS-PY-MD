@@ -24,39 +24,39 @@ The answer with the calculation error less than 10-5 will be accepted.
  * @param {number} k
  * @return {number}
  */
-const findMaxAverage = function(nums, k) {
-  let left = nums[0]
-  let right = nums[0]
-  nums.forEach(num => {
-    left = Math.min(left, num)
-    right = Math.max(right, num)
-  })
-  const check = average => {
-    let rightSum = 0
-    let leftSum = 0
-    let minLeftSum = 0
+const findMaxAverage = function (nums, k) {
+  let left = nums[0];
+  let right = nums[0];
+  nums.forEach((num) => {
+    left = Math.min(left, num);
+    right = Math.max(right, num);
+  });
+  const check = (average) => {
+    let rightSum = 0;
+    let leftSum = 0;
+    let minLeftSum = 0;
     for (let i = 0; i < k; i++) {
-      rightSum += nums[i] - average
+      rightSum += nums[i] - average;
     }
     for (let i = k; i <= nums.length; i++) {
       if (rightSum - minLeftSum >= 0) {
-        return true
+        return true;
       }
       if (i < nums.length) {
-        rightSum += nums[i] - average
-        leftSum += nums[i - k] - average
-        minLeftSum = Math.min(leftSum, minLeftSum)
+        rightSum += nums[i] - average;
+        leftSum += nums[i - k] - average;
+        minLeftSum = Math.min(leftSum, minLeftSum);
       }
     }
-    return false
-  }
+    return false;
+  };
   while (left + 1e-5 < right) {
-    let mid = (left + right) / 2
+    let mid = (left + right) / 2;
     if (check(mid)) {
-      left = mid
+      left = mid;
     } else {
-      right = mid
+      right = mid;
     }
   }
-  return left
-}
+  return left;
+};

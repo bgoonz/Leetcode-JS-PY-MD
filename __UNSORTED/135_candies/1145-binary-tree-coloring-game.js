@@ -11,7 +11,7 @@
  * @param {number} x
  * @return {boolean}
  */
-const btreeGameWinningMove = function(root, n, x) {
+const btreeGameWinningMove = function (root, n, x) {
   let tl, tr;
   function dfs(node) {
     if (node == null) return 0;

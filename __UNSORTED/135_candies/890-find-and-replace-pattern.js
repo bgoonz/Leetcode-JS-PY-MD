@@ -33,7 +33,7 @@ const findAndReplacePattern = (words, pattern) => {
  * @param {string} pattern
  * @return {string[]}
  */
-const findAndReplacePattern = function(words, pattern) {
+const findAndReplacePattern = function (words, pattern) {
   const p = helper(pattern);
   const res = [];
   for (let w of words) {

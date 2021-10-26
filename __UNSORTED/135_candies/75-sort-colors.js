@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-const sortColors = function(nums) {
+const sortColors = function (nums) {
   let j = 0;
   let k = nums.length - 1;
   const swap = (a, b) => {

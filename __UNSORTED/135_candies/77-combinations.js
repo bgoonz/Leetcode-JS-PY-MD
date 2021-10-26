@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {number[][]}
  */
-const combine = function(n, k) {
+const combine = function (n, k) {
   const res = [];
   bt(res, [], 1, n, k);
   return res;

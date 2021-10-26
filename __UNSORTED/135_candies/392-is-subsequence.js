@@ -3,16 +3,16 @@
  * @param {string} t
  * @return {boolean}
  */
-const isSubsequence = function(s, t) {
-  const sl = s.length
-  const tl = t.length
-  if(sl > tl) return false
-  if(sl === 0) return true
-  let si = 0
-  for(let i = 0; i < tl && si < sl; i++) {
-    if(s[si] === t[i]) si++
+const isSubsequence = function (s, t) {
+  const sl = s.length;
+  const tl = t.length;
+  if (sl > tl) return false;
+  if (sl === 0) return true;
+  let si = 0;
+  for (let i = 0; i < tl && si < sl; i++) {
+    if (s[si] === t[i]) si++;
   }
-  return si === sl
+  return si === sl;
 };
 
 // another
@@ -22,26 +22,26 @@ const isSubsequence = function(s, t) {
  * @param {string} t
  * @return {boolean}
  */
-const isSubsequence = function(s, t) {
-  let ti = 0
-  let tmp = 0
+const isSubsequence = function (s, t) {
+  let ti = 0;
+  let tmp = 0;
   for (let i = 0; i < s.length; i++) {
     if ((tmp = chk(t, ti, s.charAt(i))) === -1) {
-      return false
+      return false;
     } else {
-      ti = tmp + 1
+      ti = tmp + 1;
     }
   }
 
-  return true
-}
+  return true;
+};
 
 function chk(str, start, target) {
-  let idx = start
+  let idx = start;
   for (let i = start; i < str.length; i++) {
     if (str.charAt(i) === target) {
-      return i
+      return i;
     }
   }
-  return -1
+  return -1;
 }

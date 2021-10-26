@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {string[]}
  */
-const generateParenthesis = function(n) {
+const generateParenthesis = function (n) {
   const res = [];
   backtrack(res, "", 0, 0, n);
   return res;

@@ -2,7 +2,7 @@
  * @param {number} x
  * @return {boolean}
  */
-const isPalindrome = function(x) {
+const isPalindrome = function (x) {
   if (x < 0) return false;
   const rev = reverseNum(x);
   return x === rev;

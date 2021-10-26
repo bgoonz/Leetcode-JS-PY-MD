@@ -17,8 +17,8 @@ const movesToChessboard = function (b) {
     if (b[i][0] === i % 2) rowSwap++;
     if (b[0][i] === i % 2) colSwap++;
   }
-  if (rowSum !== ((N / 2) >> 0) && rowSum !== ((N + 1) / 2)>>0 ) return -1;
-  if (colSum !== ((N / 2) >> 0) && colSum !== ((N + 1) / 2)>>0 ) return -1;
+  if (rowSum !== (N / 2) >> 0 && rowSum !== ((N + 1) / 2) >> 0) return -1;
+  if (colSum !== (N / 2) >> 0 && colSum !== ((N + 1) / 2) >> 0) return -1;
   if (N % 2 === 1) {
     if (colSwap % 2 === 1) colSwap = N - colSwap;
     if (rowSwap % 2 === 1) rowSwap = N - rowSwap;

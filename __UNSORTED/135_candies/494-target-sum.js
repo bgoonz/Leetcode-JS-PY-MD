@@ -3,7 +3,7 @@
  * @param {number} S
  * @return {number}
  */
-const findTargetSumWays = function(nums, s) {
+const findTargetSumWays = function (nums, s) {
   const sum = nums.reduce((p, n) => p + n, 0);
   return sum < s || (s + sum) % 2 > 0 ? 0 : subsetSum(nums, (s + sum) >>> 1);
 };

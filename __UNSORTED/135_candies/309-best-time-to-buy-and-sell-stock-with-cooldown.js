@@ -2,16 +2,16 @@
  * @param {number[]} prices
  * @return {number}
  */
-const maxProfit = function(prices) {
+const maxProfit = function (prices) {
   if (prices === null || prices.length < 1) {
     return 0;
   }
 
   const length = prices.length;
   // buy[i]: max profit if the first "i" days end with a "buy" day
-  const buy = Array(length + 1).fill(0); 
+  const buy = Array(length + 1).fill(0);
   // buy[i]: max profit if the first "i" days end with a "sell" day
-  const sell = Array(length + 1).fill(0); 
+  const sell = Array(length + 1).fill(0);
 
   buy[1] = -prices[0];
 

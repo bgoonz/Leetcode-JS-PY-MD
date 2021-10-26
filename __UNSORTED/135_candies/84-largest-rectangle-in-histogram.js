@@ -2,7 +2,7 @@
  * @param {number[]} heights
  * @return {number}
  */
-const largestRectangleArea = function(heights) {
+const largestRectangleArea = function (heights) {
   let height = heights;
   if (height == null || height.length == 0) {
     return 0;
@@ -35,14 +35,13 @@ const largestRectangleArea = function(heights) {
   return maxArea;
 };
 
-
 // another
 
 /**
  * @param {number[]} heights
  * @return {number}
  */
-const largestRectangleArea = function(heights) {
+const largestRectangleArea = function (heights) {
   if (!heights.length) return 0;
   let stack = [];
   let max = 0;

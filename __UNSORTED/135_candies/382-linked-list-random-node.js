@@ -10,7 +10,7 @@
         Note that the head is guaranteed to be not null, so it contains at least one node.
  * @param {ListNode} head
  */
-const Solution = function(head) {
+const Solution = function (head) {
   this.list = head;
   this.arr = [];
   loop(head, this.arr);
@@ -20,7 +20,7 @@ const Solution = function(head) {
  * Returns a random node's value.
  * @return {number}
  */
-Solution.prototype.getRandom = function() {
+Solution.prototype.getRandom = function () {
   const len = this.arr.length;
   return this.arr[Math.floor(Math.random() * len)].val;
 };

@@ -2,7 +2,7 @@
  * @param {number} rowIndex
  * @return {number[]}
  */
-const getRow = function(rowIndex) {
+const getRow = function (rowIndex) {
   if (!rowIndex) return [1];
   if (rowIndex === 1) return [1, 1];
   const res = [1, 1];

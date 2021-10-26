@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-const swapPairs = function(node) {
+const swapPairs = function (node) {
   const head = new ListNode(-1);
   let cur = head;
 

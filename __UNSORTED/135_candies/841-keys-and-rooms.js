@@ -2,7 +2,7 @@
  * @param {number[][]} rooms
  * @return {boolean}
  */
-const canVisitAllRooms = function(rooms) {
+const canVisitAllRooms = function (rooms) {
   const stack = [];
   const seen = [];
   for (let i = 0; i < rooms.length; i++) {

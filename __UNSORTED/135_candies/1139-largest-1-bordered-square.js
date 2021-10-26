@@ -2,7 +2,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-const largest1BorderedSquare = function(grid) {
+const largest1BorderedSquare = function (grid) {
   let A = grid;
   let m = A.length,
     n = A[0].length;
@@ -23,7 +23,7 @@ const largest1BorderedSquare = function(grid) {
       while (small > max) {
         if (ver[i][j - small + 1] >= small && hori[i - small + 1][j] >= small) {
           max = small;
-          break
+          break;
         }
         small--;
       }
@@ -31,4 +31,3 @@ const largest1BorderedSquare = function(grid) {
   }
   return max * max;
 };
-

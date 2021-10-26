@@ -32,7 +32,7 @@ Explanation: We can replace '0' with '1' to get t.
  * @param {string} t
  * @return {boolean}
  */
-const isOneEditDistance = function(s, t) {
+const isOneEditDistance = function (s, t) {
   const m = s.length,
     n = t.length;
   if (m > n) {

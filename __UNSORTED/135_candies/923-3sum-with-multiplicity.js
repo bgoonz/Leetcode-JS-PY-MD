@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number}
  */
-const threeSumMulti = function(A, target) {
+const threeSumMulti = function (A, target) {
   const d = {};
   let res = 0;
   const mod = Math.pow(10, 9) + 7;

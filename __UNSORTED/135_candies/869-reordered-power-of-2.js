@@ -2,7 +2,7 @@
  * @param {number} N
  * @return {boolean}
  */
-const reorderedPowerOf2 = function(N) {
+const reorderedPowerOf2 = function (N) {
   const A = count(N);
   for (let i = 0; i < 31; i++) {
     if (arrayEqual(A, count(1 << i))) return true;

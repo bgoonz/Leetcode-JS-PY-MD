@@ -2,18 +2,18 @@
  * @param {string[]} board
  * @return {boolean}
  */
-const validTicTacToe = function(board) {
-  if (board.length == 0) return false
+const validTicTacToe = function (board) {
+  if (board.length == 0) return false;
   // turns = 0 represents 'X' will move, otherwise, 'O' will move
-  let turns = 0
+  let turns = 0;
   // check whether 'X' wins or 'O' wins, or no players win
-  let xWin = isGameOver(board, 'X')
-  let oWin = isGameOver(board, 'O')
+  let xWin = isGameOver(board, "X");
+  let oWin = isGameOver(board, "O");
 
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[0].length; j++) {
-      if (board[i].charAt(j) == 'X') turns++
-      else if (board[i].charAt(j) == 'O') turns--
+      if (board[i].charAt(j) == "X") turns++;
+      else if (board[i].charAt(j) == "O") turns--;
     }
   }
 
@@ -27,9 +27,9 @@ const validTicTacToe = function(board) {
    * over, 'X' cannot play again, then number of 'X' CANNOT greater than 'O'
    * */
   if (turns < 0 || turns > 1 || (turns == 0 && xWin) || (turns == 1 && oWin))
-    return false
-  return true
-}
+    return false;
+  return true;
+};
 
 function isGameOver(board, player) {
   // check horizontal
@@ -39,7 +39,7 @@ function isGameOver(board, player) {
       board[i].charAt(0) === board[i].charAt(1) &&
       board[i].charAt(1) === board[i].charAt(2)
     ) {
-      return true
+      return true;
     }
   }
 
@@ -50,7 +50,7 @@ function isGameOver(board, player) {
       board[0].charAt(j) == board[1].charAt(j) &&
       board[1].charAt(j) == board[2].charAt(j)
     ) {
-      return true
+      return true;
     }
   }
 
@@ -62,7 +62,7 @@ function isGameOver(board, player) {
       (board[0].charAt(2) == board[1].charAt(1) &&
         board[1].charAt(1) == board[2].charAt(0)))
   ) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }

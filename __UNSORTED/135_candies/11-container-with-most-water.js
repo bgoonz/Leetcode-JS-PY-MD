@@ -2,7 +2,7 @@
  * @param {number[]} height
  * @return {number}
  */
-const maxArea = function(height) {
+const maxArea = function (height) {
   const arr = [];
   const arr_len = height.length;
   for (let i = 0, j = arr_len - 1; i < j; ) {

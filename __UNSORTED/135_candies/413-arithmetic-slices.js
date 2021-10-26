@@ -2,7 +2,7 @@
  * @param {number[]} A
  * @return {number}
  */
-const numberOfArithmeticSlices = function(A) {
+const numberOfArithmeticSlices = function (A) {
   const arr = [];
   let count = 0;
   for (let i = 1; i < A.length - 1; i++) {

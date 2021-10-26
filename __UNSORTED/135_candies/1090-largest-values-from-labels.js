@@ -5,11 +5,11 @@
  * @param {number} use_limit
  * @return {number}
  */
-const largestValsFromLabels = function(values, labels, num_wanted, use_limit) {
+const largestValsFromLabels = function (values, labels, num_wanted, use_limit) {
   return Object.entries(
     labels.reduce((ret, l, i) => {
-      ret[l] = (ret[l] || []).concat(values[i])
-      return ret
+      ret[l] = (ret[l] || []).concat(values[i]);
+      return ret;
     }, {})
   )
     .reduce(
@@ -19,5 +19,5 @@ const largestValsFromLabels = function(values, labels, num_wanted, use_limit) {
     )
     .sort((a, b) => b - a)
     .slice(0, num_wanted)
-    .reduce((ret, n) => ret + n, 0)
+    .reduce((ret, n) => ret + n, 0);
 };

@@ -3,7 +3,7 @@
  * @param {number} n
  * @return {number[][]}
  */
-const combinationSum3 = function(k, n) {
+const combinationSum3 = function (k, n) {
   const ans = [];
   combination(ans, [], k, 1, n);
   return ans;

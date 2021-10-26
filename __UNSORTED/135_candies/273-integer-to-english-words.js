@@ -2,7 +2,7 @@
  * @param {number} num
  * @return {string}
  */
-const numberToWords = function(num) {
+const numberToWords = function (num) {
   if (num === 0) return "Zero";
   if (num <= 20) return translations.get(num);
   const result = [];
@@ -55,5 +55,5 @@ const translations = new Map([
   [4, "Four"],
   [3, "Three"],
   [2, "Two"],
-  [1, "One"]
+  [1, "One"],
 ]);

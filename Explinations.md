@@ -51,7 +51,8 @@ Mind the last carry.
 
       return prehead.next
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -163,12 +164,14 @@ Same goes `nums1[i-1] <= nums2[j] <= nums1[i]`.
         }
       }
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -241,49 +244,56 @@ We need to count the items between matrix\[row\]\[col\] and matrix\[row\]\[col+1
 If row == 1 or row == numRows, skip the odd columns.
 
     next_i = i + numRows + (numRows - 2), if col is even && (row == 1 || row == numRows)
+
 ```js
-    /**
-     * @param {string} s
-     * @param {number} numRows
-     * @return {string}
-     */
-    let convert = function(s, numRows) {
-      if (numRows <= 1) { return s }
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+let convert = function (s, numRows) {
+  if (numRows <= 1) {
+    return s;
+  }
 
-      const pairs = Math.floor(s.length / (numRows + numRows - 2))
-      const width = pairs * 2 + Math.ceil((s.length - pairs * (numRows + numRows - 2)) / numRows)
+  const pairs = Math.floor(s.length / (numRows + numRows - 2));
+  const width =
+    pairs * 2 +
+    Math.ceil((s.length - pairs * (numRows + numRows - 2)) / numRows);
 
-      let result = ''
+  let result = "";
 
-      for (let row = 1; row <= numRows; row++) {
-        let i = row - 1
-        result += s[i] || ''
-        for (let col = 0; col < width; col++) {
-          if (row === 1 || row === numRows) {
-            if (col % 2 === 0) {
-              i += numRows + (numRows - 2)
-            } else {
-              continue
-            }
-          } else {
-            if (col % 2 === 0) {
-              i += (numRows - row) + (numRows - row)
-            } else {
-              i += row - 2 + row
-            }
-          }
-          result += s[i] || ''
+  for (let row = 1; row <= numRows; row++) {
+    let i = row - 1;
+    result += s[i] || "";
+    for (let col = 0; col < width; col++) {
+      if (row === 1 || row === numRows) {
+        if (col % 2 === 0) {
+          i += numRows + (numRows - 2);
+        } else {
+          continue;
+        }
+      } else {
+        if (col % 2 === 0) {
+          i += numRows - row + (numRows - row);
+        } else {
+          i += row - 2 + row;
         }
       }
+      result += s[i] || "";
+    }
+  }
 
-      return result
-    };
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -323,42 +333,48 @@ Assume we are dealing with an environment which could only store integers within
 #### ONE
 
 This is a JavaScript specific solution. It is esay to write but slow to run because it generates O(n) space. This could end up a huge array.
-```js
-    /**
-     * @param {number} x
-     * @return {number}
-     */
-    let reverse = function(x) {
-      let n = Math.abs(x).toString().split('').reverse().join('')
-      if (n > 2147483647) { return 0 }
-      return (x < 0? -1: 1) * n
-    };
 
+```js
+/**
+ * @param {number} x
+ * @return {number}
+ */
+let reverse = function (x) {
+  let n = Math.abs(x).toString().split("").reverse().join("");
+  if (n > 2147483647) {
+    return 0;
+  }
+  return (x < 0 ? -1 : 1) * n;
+};
 ```
+
 ---
 
 #### TWO
 
 Pure mathamatical solution.
+
 ```js
-    /**
-     * @param {number} x
-     * @return {number}
-     */
-    let reverse = function(x) {
-      let result = 0
-      while (x) {
-        result = result * 10 + x % 10
-        x = x / 10 | 0
-      }
-      return Math.abs(result) > 2147483647 ? 0 : result
-    };
+/**
+ * @param {number} x
+ * @return {number}
+ */
+let reverse = function (x) {
+  let result = 0;
+  while (x) {
+    result = result * 10 + (x % 10);
+    x = (x / 10) | 0;
+  }
+  return Math.abs(result) > 2147483647 ? 0 : result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -423,74 +439,87 @@ Assume we are dealing with an environment which could only store integers within
 ### Solution:
 
 #### ONE
+
 ```js
-    /**
-     * @param {string} str
-     * @return {number}
-     */
-    let myAtoi = function (str) {
-      return Math.min(2147483647, Math.max(-2147483648, parseInt(str))) || 0
-    };
+/**
+ * @param {string} str
+ * @return {number}
+ */
+let myAtoi = function (str) {
+  return Math.min(2147483647, Math.max(-2147483648, parseInt(str))) || 0;
+};
 ```
+
 #### TWO
 
 Looks like `Number()` is faster than `parseInt()`.
-```js
-    /**
-     * @param {string} str
-     * @return {number}
-     */
-    let myAtoi = function (str) {
-      return Math.min(2147483647, Math.max(-2147483648, (/^ *[-+]?\d+/.exec(str) || [0])[0]))
-    };
 
+```js
+/**
+ * @param {string} str
+ * @return {number}
+ */
+let myAtoi = function (str) {
+  return Math.min(
+    2147483647,
+    Math.max(-2147483648, (/^ *[-+]?\d+/.exec(str) || [0])[0])
+  );
+};
 ```
+
 ---
 
 #### THREE
 
 General solution.
+
 ```js
-    /**
-     * @param {string} str
-     * @return {number}
-     */
-    let myAtoi = function (str) {
-      let sign = 1
-      let i = 0
+/**
+ * @param {string} str
+ * @return {number}
+ */
+let myAtoi = function (str) {
+  let sign = 1;
+  let i = 0;
 
-      while (i < str.length) {
-        const cc = str.charCodeAt(i++)
-        if (cc === 45) { // -
-          sign = -1
-          break
-        } else if (cc === 43) { // +
-          break
-        } else if (cc >= 48 && cc <= 57) { // 0-9
-          i--
-          break
-        } else if (cc !== 32) { // space
-          return 0
-        }
-      }
+  while (i < str.length) {
+    const cc = str.charCodeAt(i++);
+    if (cc === 45) {
+      // -
+      sign = -1;
+      break;
+    } else if (cc === 43) {
+      // +
+      break;
+    } else if (cc >= 48 && cc <= 57) {
+      // 0-9
+      i--;
+      break;
+    } else if (cc !== 32) {
+      // space
+      return 0;
+    }
+  }
 
-      let result = 0
-      while (i < str.length) {
-        const digit = str.charCodeAt(i++) - 48
-        if (digit < 0 || digit > 9) {
-          break
-        }
-        result = result * 10 + digit
-      }
+  let result = 0;
+  while (i < str.length) {
+    const digit = str.charCodeAt(i++) - 48;
+    if (digit < 0 || digit > 9) {
+      break;
+    }
+    result = result * 10 + digit;
+  }
 
-      return Math.min(2147483647, Math.max(-2147483648, result * sign))
-    };
+  return Math.min(2147483647, Math.max(-2147483648, result * sign));
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -533,74 +562,81 @@ Coud you solve it without converting the integer to a string?
 #### ONE
 
 Easy to write but slow since it generates an array.
-```js
-    /**
-     * @param {number} x
-     * @return {boolean}
-     */
-    let isPalindrome = function(x) {
-      return x == String(x).split('').reverse().join('')
-    };
 
+```js
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+let isPalindrome = function (x) {
+  return x == String(x).split("").reverse().join("");
+};
 ```
+
 ---
 
 #### TWO
 
 A bit faster.
-```js
-    /**
-     * @param {number} x
-     * @return {boolean}
-     */
-    let isPalindrome = function(x) {
-      const s = String(x)
-      for (let i = 0, j = s.length -1; i < j; i++, j--) {
-        if (s[i] !== s[j]) {
-          return false
-        }
-      }
-      return true
-    };
 
+```js
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+let isPalindrome = function (x) {
+  const s = String(x);
+  for (let i = 0, j = s.length - 1; i < j; i++, j--) {
+    if (s[i] !== s[j]) {
+      return false;
+    }
+  }
+  return true;
+};
 ```
+
 ---
 
 #### THREE
 
 General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/007.%20Reverse%20Integer.md).
+
 ```js
-    /**
-     * @param {number} x
-     * @return {boolean}
-     */
-    let isPalindrome = function(x) {
-      if (x < 0) { return false }
-      return x === reverse(x)
-    };
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+let isPalindrome = function (x) {
+  if (x < 0) {
+    return false;
+  }
+  return x === reverse(x);
+};
 ```
 
 ---
 
 ```js
-    /**
-     * @param {number} x
-     * @return {number}
-     */
-    function reverse (x) {
-      let result = 0
-      while (x) {
-        result = result * 10 + x % 10
-        x = x / 10 | 0
-      }
-      return result
-    };
+/**
+ * @param {number} x
+ * @return {number}
+ */
+function reverse(x) {
+  let result = 0;
+  while (x) {
+    result = result * 10 + (x % 10);
+    x = (x / 10) | 0;
+  }
+  return result;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -671,23 +707,27 @@ The matching should cover the **entire** input string (not partial).
 #### ONE
 
 Cheating with real RegExp matching.
-```js
-    /**
-     * @param {string} s
-     * @param {string} p
-     * @return {boolean}
-     */
-    let isMatch = function(s, p) {
-      if (p[0] === '*') { return false }
-      return new RegExp(`^${p}$`).test(s)
-    };
 
+```js
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {boolean}
+ */
+let isMatch = function (s, p) {
+  if (p[0] === "*") {
+    return false;
+  }
+  return new RegExp(`^${p}$`).test(s);
+};
 ```
+
 ---
 
 #### TWO
 
 Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
+
 ```js
     f(0, j) =
         j == 0 || // empty
@@ -705,50 +745,54 @@ Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
             f(i-1, j-1) && s[i-1] == p[j-1]
 
 ```
+
 ---
 
 ```js
-    /**
-     * @param {string} s
-     * @param {string} p
-     * @return {boolean}
-     */
-    let isMatch = function(s, p) {
-      if (p[0] === '*') {
-        return false
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {boolean}
+ */
+let isMatch = function (s, p) {
+  if (p[0] === "*") {
+    return false;
+  }
+
+  const dp = [[true]];
+
+  for (let j = 2; j <= p.length; j++) {
+    dp[0][j] = p[j - 1] === "*" && dp[0][j - 2];
+  }
+
+  for (let i = 1; i <= s.length; i++) {
+    dp[i] = [];
+    for (let j = 1; j <= p.length; j++) {
+      switch (p[j - 1]) {
+        case ".":
+          dp[i][j] = dp[i - 1][j - 1];
+          break;
+        case "*":
+          dp[i][j] =
+            dp[i][j - 2] ||
+            (dp[i - 1][j] && (p[j - 2] === "." || s[i - 1] === p[j - 2]));
+          break;
+        default:
+          dp[i][j] = dp[i - 1][j - 1] && s[i - 1] === p[j - 1];
       }
-
-      const dp = [[true]]
-
-      for (let j = 2; j <= p.length; j++) {
-        dp[0][j] = p[j-1] === '*' && dp[0][j-2]
-      }
-
-      for (let i = 1; i <= s.length; i++) {
-        dp[i] = []
-        for (let j = 1; j <= p.length; j++) {
-          switch (p[j-1]) {
-            case '.':
-              dp[i][j] = dp[i-1][j-1]
-              break
-            case '*':
-              dp[i][j] = dp[i][j-2] ||
-                dp[i-1][j] && (p[j-2] === '.' || s[i-1] === p[j-2])
-              break
-            default:
-              dp[i][j] = dp[i-1][j-1] && s[i-1] === p[j-1]
-          }
-        }
-      }
-
-      return !!dp[s.length][p.length]
     }
+  }
+
+  return !!dp[s.length][p.length];
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -782,29 +826,32 @@ If `height[l] < height[r]`, we know that the height of the area will never be gr
 Here we conclude rule NO.1: Get rid of the smaller one.
 
 What if `height[l] == height[r]`? It is safe to get rid of both. We do not need any of them to constrain the max height of the rest points.
+
 ```js
-    /**
-     * @param {number[]} height
-     * @return {number}
-     */
-    let maxArea = function (height) {
-      let max = 0
-      for (let l = 0, r = height.length - 1; l < r; l++, r--) {
-        max = Math.max(max, (r - l) * Math.min(height[l], height[r]))
-        if (height[l] < height[r]) {
-          r++
-        } else {
-          l--
-        }
-      }
-      return max
-    };
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+let maxArea = function (height) {
+  let max = 0;
+  for (let l = 0, r = height.length - 1; l < r; l++, r--) {
+    max = Math.max(max, (r - l) * Math.min(height[l], height[r]));
+    if (height[l] < height[r]) {
+      r++;
+    } else {
+      l--;
+    }
+  }
+  return max;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -870,32 +917,49 @@ Given an integer, convert it to a roman numeral. Input is guaranteed to be withi
 ### Solution:
 
 Treat 4, 40, 400 and 9, 90, 900 specially.
-```js
-    /**
-     * @param {number} num
-     * @return {string}
-     */
-    let intToRoman = function(num) {
-      const e = [1000, 900,  500, 400,  100, 90,   50,  40,   10,  9,    5,   4,    1  ]
-      const s = ["M",  "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 
-      let result = ''
-      for (let i = 0; num; i++) {
-        const d = e[i]
-        const v = s[i]
-        while (num >= d) {
-          num -= d
-          result += v
-        }
-      }
-      return result
-    };
+```js
+/**
+ * @param {number} num
+ * @return {string}
+ */
+let intToRoman = function (num) {
+  const e = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const s = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
+
+  let result = "";
+  for (let i = 0; num; i++) {
+    const d = e[i];
+    const v = s[i];
+    while (num >= d) {
+      num -= d;
+      result += v;
+    }
+  }
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -961,36 +1025,39 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 ### Solution:
 
 Normally we just add up the digits, except when the digit is greater than its left (e.g. IV). In that case we need to fallback and remove the last digit then combine the two as new digit. That is why we subtract the last digit twice.
-```js
-    /**
-     * @param {string} s
-     * @return {number}
-     */
-    let romanToInt = function (s) {
-      const rdigit = {
-        I: 1,
-        V: 5,
-        X: 10,
-        L: 50,
-        C: 100,
-        D: 500,
-        M: 1000,
-      }
 
-      let result = 0
-      for (let i = 0, lastDigit = Infinity; i < s.length; i++) {
-        let digit = rdigit[s[i]]
-        result += digit <= lastDigit ? digit : digit - lastDigit * 2
-        lastDigit = digit
-      }
-      return result
-    };
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+let romanToInt = function (s) {
+  const rdigit = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  let result = 0;
+  for (let i = 0, lastDigit = Infinity; i < s.length; i++) {
+    let digit = rdigit[s[i]];
+    result += digit <= lastDigit ? digit : digit - lastDigit * 2;
+    lastDigit = digit;
+  }
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1029,77 +1096,86 @@ All given inputs are in lowercase letters `a-z`.
 #### ONE
 
 JavaScript specific solution. Get the min len then narrow down the prefix.
-```js
-    /**
-     * @param {string[]} strs
-     * @return {string}
-     */
-    let longestCommonPrefix = function (strs) {
-      if (strs.length > 0) {
-        let minLen = Math.min(...strs.map(s => s.length))
-        const anyStr = strs[0]
-        while (minLen) {
-          const prefix = anyStr.slice(0, minLen--)
-          if (strs.every(s => s.startsWith(prefix))) {
-            return prefix
-          }
-        }
-      }
-      return ''
-    };
 
+```js
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+let longestCommonPrefix = function (strs) {
+  if (strs.length > 0) {
+    let minLen = Math.min(...strs.map((s) => s.length));
+    const anyStr = strs[0];
+    while (minLen) {
+      const prefix = anyStr.slice(0, minLen--);
+      if (strs.every((s) => s.startsWith(prefix))) {
+        return prefix;
+      }
+    }
+  }
+  return "";
+};
 ```
+
 ---
 
 #### TWO
+
 ```js
-    /**
-     * @param {string[]} strs
-     * @return {string}
-     */
-    let longestCommonPrefix = function(strs) {
-      if (strs.length <= 0) { return '' }
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+let longestCommonPrefix = function (strs) {
+  if (strs.length <= 0) {
+    return "";
+  }
 
-      let i = 0
-      while (strs.every(s => s[i] && s[i] === strs[0][i])) {
-        i++
-      }
-      return strs[0].slice(0, i)
-    };
-
+  let i = 0;
+  while (strs.every((s) => s[i] && s[i] === strs[0][i])) {
+    i++;
+  }
+  return strs[0].slice(0, i);
+};
 ```
+
 ---
 
 #### THREE
 
 General solution. Build up the prefix.
+
 ```js
-    /**
-     * @param {string[]} strs
-     * @return {string}
-     */
-    let longestCommonPrefix = function (strs) {
-      let prefix = ''
-      if (strs.length > 0) {
-        for (let i = 0; ; i++) {
-          const c = strs[0][i]
-          if (!c) { return prefix }
-          for (let j = 0; j < strs.length; j++) {
-            if (strs[j][i] !== c) {
-              return prefix
-            }
-          }
-          prefix += c
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+let longestCommonPrefix = function (strs) {
+  let prefix = "";
+  if (strs.length > 0) {
+    for (let i = 0; ; i++) {
+      const c = strs[0][i];
+      if (!c) {
+        return prefix;
+      }
+      for (let j = 0; j < strs.length; j++) {
+        if (strs[j][i] !== c) {
+          return prefix;
         }
       }
-      return prefix
-    };
+      prefix += c;
+    }
+  }
+  return prefix;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1144,53 +1220,56 @@ Let `l = i + 1`, `r = len(sorted) - 1`, we want to narrow them down to enumerate
 - `r--` if `sorted[i] + sorted[l] + sorted[r] < 0`.
 
 Skip any duplicate number as we iterate to avoid duplicate triplets.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number[][]}
-     */
-    let threeSum = function (nums) {
-      const len = nums.length
-      const sorted = nums.sort((a, b) => a - b)
-      const result = []
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+let threeSum = function (nums) {
+  const len = nums.length;
+  const sorted = nums.sort((a, b) => a - b);
+  const result = [];
 
-      if (sorted[0] > 0 || sorted[len-1] < 0) {
-        return result
+  if (sorted[0] > 0 || sorted[len - 1] < 0) {
+    return result;
+  }
+
+  for (let i = 0; i < len - 2; i++) {
+    if (sorted[i] > 0) {
+      break;
+    }
+
+    if (i > 0 && sorted[i] === sorted[i - 1]) {
+      continue;
+    }
+
+    const twoSum = 0 - sorted[i];
+
+    for (let l = i + 1, r = len - 1; l < r; ) {
+      const diff = twoSum - sorted[l] - sorted[r];
+      if (diff > 0) {
+        l++;
+      } else if (diff < 0) {
+        r--;
+      } else {
+        result.push([sorted[i], sorted[l], sorted[r]]);
+        while (++l < r && sorted[l] === sorted[l - 1]);
+        while (--r > l && sorted[r] === sorted[r + 1]);
       }
+    }
+  }
 
-      for (let i = 0; i < len - 2; i++) {
-        if (sorted[i] > 0) {
-          break
-        }
-
-        if (i > 0 && sorted[i] === sorted[i-1]) {
-          continue
-        }
-
-        const twoSum = 0 - sorted[i]
-
-        for (let l = i + 1, r = len - 1; l < r;) {
-          const diff = twoSum - sorted[l] - sorted[r]
-          if (diff > 0) {
-            l++
-          } else if (diff < 0) {
-            r--
-          } else {
-            result.push([sorted[i], sorted[l], sorted[r]])
-            while (++l < r && sorted[l] === sorted[l - 1]);
-            while (--r > l && sorted[r] === sorted[r + 1]);
-          }
-        }
-      }
-
-      return result
-    };
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1216,51 +1295,54 @@ Given an array `nums` of _n_ integers and an integer `target`, find three intege
 ### Solution:
 
 Simplified version of [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/015.%203Sum.md).
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {number}
-     */
-    let threeSumClosest = function(nums, target) {
-      const len = nums.length
-      const sorted = nums.sort((a, b) => a - b)
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+let threeSumClosest = function (nums, target) {
+  const len = nums.length;
+  const sorted = nums.sort((a, b) => a - b);
 
-      let minDiff = Infinity
+  let minDiff = Infinity;
 
-      for (let i = 0; i < len - 2; i++) {
-        if (i > 0 && sorted[i] === sorted[i-1]) {
-          continue
+  for (let i = 0; i < len - 2; i++) {
+    if (i > 0 && sorted[i] === sorted[i - 1]) {
+      continue;
+    }
+
+    const twoSum = target - sorted[i];
+
+    for (let l = i + 1, r = len - 1; l < r; ) {
+      const diff = twoSum - sorted[l] - sorted[r];
+      if (diff === 0) {
+        return target;
+      } else {
+        if (diff > 0) {
+          l++;
+        } else {
+          r--;
         }
 
-        const twoSum = target - sorted[i]
-
-        for (let l = i + 1, r = len - 1; l < r;) {
-          const diff = twoSum - sorted[l] - sorted[r]
-          if (diff === 0) {
-            return target
-          } else {
-            if (diff > 0) {
-              l++
-            } else {
-              r--
-            }
-
-            if (Math.abs(diff) < Math.abs(minDiff)) {
-              minDiff = diff
-            }
-          }
+        if (Math.abs(diff) < Math.abs(minDiff)) {
+          minDiff = diff;
         }
       }
+    }
+  }
 
-      return target - minDiff
-    };
+  return target - minDiff;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1299,75 +1381,92 @@ JavaScript specific optimization.
 `Array.prototype.push` accepts arbitrary arguments which enables tighter loops.
 
 Also, appending string is faster than prepending.
+
 ```js
-    /**
-     * @param {string} digits
-     * @return {string[]}
-     */
-    let letterCombinations = function(digits) {
-      if (digits.length <= 0) { return [] }
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+let letterCombinations = function (digits) {
+  if (digits.length <= 0) {
+    return [];
+  }
 
-      const letters = [
-        ,
-        ,
-        ['a', 'b', 'c'],
-        ['d', 'e', 'f'],
-        ['g', 'h', 'i'],
-        ['j', 'k', 'l'],
-        ['m', 'n', 'o'],
-        ['p', 'q', 'r', 's'],
-        ['t', 'u', 'v'],
-        ['w', 'x', 'y', 'z'],
-      ]
+  const letters = [
+    ,
+    ,
+    ["a", "b", "c"],
+    ["d", "e", "f"],
+    ["g", "h", "i"],
+    ["j", "k", "l"],
+    ["m", "n", "o"],
+    ["p", "q", "r", "s"],
+    ["t", "u", "v"],
+    ["w", "x", "y", "z"],
+  ];
 
-      let result = ['']
+  let result = [""];
 
-      for (let i = 0; i < digits.length; i++) {
-        const arr = letters[digits[i]]
-        let newResult = []
-        arr.forEach(c => newResult.push(...result.map(r => r + c)))
-        result = newResult
-      }
+  for (let i = 0; i < digits.length; i++) {
+    const arr = letters[digits[i]];
+    let newResult = [];
+    arr.forEach((c) => newResult.push(...result.map((r) => r + c)));
+    result = newResult;
+  }
 
-      return result
-    };
-
+  return result;
+};
 ```
+
 ---
 
 #### TWO
 
 General recursive DFS solution.
-```js
-    /**
-     * @param {string} digits
-     * @return {string[]}
-     */
-    let letterCombinations = function(digits) {
-      const letters = [,, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
-      const result = []
-      if (digits.length > 0) {
-        dfs(digits, 0, '', letters, result)
-      }
-      return result
-    };
 
-    function dfs (digits, idigit, path, letters, result) {
-      if (idigit >= digits.length) {
-        result.push(path)
-        return
-      }
-      const str = letters[digits[idigit]]
-      for (let i = 0; i < str.length; i++) {
-        dfs(digits, idigit + 1, path + str[i], letters, result)
-      }
-    };
+```js
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+let letterCombinations = function (digits) {
+  const letters = [
+    ,
+    ,
+    "abc",
+    "def",
+    "ghi",
+    "jkl",
+    "mno",
+    "pqrs",
+    "tuv",
+    "wxyz",
+  ];
+  const result = [];
+  if (digits.length > 0) {
+    dfs(digits, 0, "", letters, result);
+  }
+  return result;
+};
+
+function dfs(digits, idigit, path, letters, result) {
+  if (idigit >= digits.length) {
+    result.push(path);
+    return;
+  }
+  const str = letters[digits[idigit]];
+  for (let i = 0; i < str.length; i++) {
+    dfs(digits, idigit + 1, path + str[i], letters, result);
+  }
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1402,54 +1501,57 @@ The solution set must not contain duplicate quadruplets.
 ### Solution:
 
 Like [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/015.%203Sum.md) and [16. 3Sum Closest](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/016.%203Sum%20Closest.md). Wrap one more loop.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {number[][]}
-     */
-    let fourSum = function(nums, target) {
-      const len = nums.length
-      const sorted = nums.sort((a, b) => a - b)
-      const result = []
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[][]}
+ */
+let fourSum = function (nums, target) {
+  const len = nums.length;
+  const sorted = nums.sort((a, b) => a - b);
+  const result = [];
 
-      for (let k = 0; k < len - 3; k++) {
-        if (k > 0 && sorted[k] === sorted[k-1]) {
-          continue
-        }
+  for (let k = 0; k < len - 3; k++) {
+    if (k > 0 && sorted[k] === sorted[k - 1]) {
+      continue;
+    }
 
-        const threeSum = target - sorted[k]
+    const threeSum = target - sorted[k];
 
-        for (let i = k+1; i < len - 2; i++) {
-          if (i > k+1 && sorted[i] === sorted[i-1]) {
-            continue
-          }
-
-          const twoSum = threeSum - sorted[i]
-
-          for (let l = i + 1, r = len - 1; l < r;) {
-            const diff = twoSum - sorted[l] - sorted[r]
-            if (diff > 0) {
-              l++
-            } else if (diff < 0) {
-              r--
-            } else {
-              result.push([sorted[k], sorted[i], sorted[l], sorted[r]])
-              while (++l < r && sorted[l] === sorted[l - 1]);
-              while (--r > l && sorted[r] === sorted[r + 1]);
-            }
-          }
-        }
+    for (let i = k + 1; i < len - 2; i++) {
+      if (i > k + 1 && sorted[i] === sorted[i - 1]) {
+        continue;
       }
 
-      return result
-    };
+      const twoSum = threeSum - sorted[i];
+
+      for (let l = i + 1, r = len - 1; l < r; ) {
+        const diff = twoSum - sorted[l] - sorted[r];
+        if (diff > 0) {
+          l++;
+        } else if (diff < 0) {
+          r--;
+        } else {
+          result.push([sorted[k], sorted[i], sorted[l], sorted[r]]);
+          while (++l < r && sorted[l] === sorted[l - 1]);
+          while (--r > l && sorted[r] === sorted[r + 1]);
+        }
+      }
+    }
+  }
+
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1522,7 +1624,8 @@ Boundaries that should be awared of:
 
       return head
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1609,12 +1712,14 @@ And since there is only bracket characters, the last open bracket happens to be 
       }
       return stack.length <= 0
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1674,7 +1779,8 @@ Keep tracking the head of two lists and keep moving the pointer of smaller one t
 
       return prehead.next
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1739,58 +1845,66 @@ Recursive DFS backtracking.
       }
     };
 
-```
+````
+
 ---
 
 #### TWO
 
 BFS.
+
 ```js
-    /**
-     * @param {number} n
-     * @return {string[]}
-     */
-    let generateParenthesis = function(n) {
-      if (n <= 0) { return [] }
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+let generateParenthesis = function (n) {
+  if (n <= 0) {
+    return [];
+  }
 
-      const queue = [{
-        path: '(',
-        open: 1,
-        close: 0,
-      }]
+  const queue = [
+    {
+      path: "(",
+      open: 1,
+      close: 0,
+    },
+  ];
 
-      while (true) {
-        const { path, open, close } = queue.shift()
-        if (open + close === n * 2) {
-          queue.unshift({ path, open, close })
-          break
-        }
+  while (true) {
+    const { path, open, close } = queue.shift();
+    if (open + close === n * 2) {
+      queue.unshift({ path, open, close });
+      break;
+    }
 
-        if (open < n) {
-          queue.push({
-            path: path + '(',
-            open: open + 1,
-            close,
-          })
-        }
+    if (open < n) {
+      queue.push({
+        path: path + "(",
+        open: open + 1,
+        close,
+      });
+    }
 
-        if (close < open) {
-          queue.push({
-            path: path + ')',
-            open,
-            close: close + 1,
-          })
-        }
-      }
+    if (close < open) {
+      queue.push({
+        path: path + ")",
+        open,
+        close: close + 1,
+      });
+    }
+  }
 
-      return queue.map(x => x.path)
-    };
+  return queue.map((x) => x.path);
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1889,7 +2003,8 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
 
       return prehead.next
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1952,12 +2067,14 @@ Given a linked list, swap every two adjacent nodes and return its head.
 
       return prehead.next
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2044,7 +2161,8 @@ For _k_ = 3, you should return: `3->2->1->4->5`
       }
       return prev
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2118,12 +2236,14 @@ The result array can only be shorter. That is why we can build the array in-plac
       }
       return len
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2182,27 +2302,30 @@ Internally you can think of this:
 ### Solution:
 
 The order does not matter. So just take the last number to fill the vacancy.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} val
-     * @return {number}
-     */
-    let removeElement = function(nums, val) {
-      let len = nums.length
-      for (let i = 0; i < len; i++) {
-        if (nums[i] === val) {
-          nums[i--] = nums[--len]
-        }
-      }
-      return len
-    };
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+let removeElement = function (nums, val) {
+  let len = nums.length;
+  for (let i = 0; i < len; i++) {
+    if (nums[i] === val) {
+      nums[i--] = nums[--len];
+    }
+  }
+  return len;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2244,47 +2367,54 @@ The integer division should truncate toward zero.
 Every decimal number can be represented as `a0*2^0 + a1*2^1 + a2*2^2 + ... + an*2^n`.
 
 Replace multiplication and division with binary shifting.
+
 ```js
-    /**
-     * @param {number} dividend
-     * @param {number} divisor
-     * @return {number}
-     */
-    let divide = function(dividend, divisor) {
-      if (divisor === 0 ||
-          divisor === -1 && dividend < -2147483647 ||
-          dividend > 2147483647 ||
-          dividend < -2147483648
-      ) {
-        return 2147483647
-      }
+/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */
+let divide = function (dividend, divisor) {
+  if (
+    divisor === 0 ||
+    (divisor === -1 && dividend < -2147483647) ||
+    dividend > 2147483647 ||
+    dividend < -2147483648
+  ) {
+    return 2147483647;
+  }
 
-      const isNegative = dividend < 0 && divisor >= 0 || dividend >= 0 && divisor < 0
-      const pDividend = Math.abs(dividend)
-      const pDivisor = Math.abs(divisor)
+  const isNegative =
+    (dividend < 0 && divisor >= 0) || (dividend >= 0 && divisor < 0);
+  const pDividend = Math.abs(dividend);
+  const pDivisor = Math.abs(divisor);
 
-      if (dividend === 0 || pDividend < pDivisor) { return 0 }
+  if (dividend === 0 || pDividend < pDivisor) {
+    return 0;
+  }
 
-      let doubling = pDivisor
-      let count = 1
-      while (doubling < pDividend && !(doubling & (1 << 30))) {
-        doubling <<= 1
-        count <<= 1
-      }
-      if (doubling > pDividend) {
-        doubling >>>= 1
-        count >>>= 1
-      }
+  let doubling = pDivisor;
+  let count = 1;
+  while (doubling < pDividend && !(doubling & (1 << 30))) {
+    doubling <<= 1;
+    count <<= 1;
+  }
+  if (doubling > pDividend) {
+    doubling >>>= 1;
+    count >>>= 1;
+  }
 
-      const result = count + divide(pDividend - doubling, pDivisor)
-      return isNegative ? -result : result
-    };
+  const result = count + divide(pDividend - doubling, pDivisor);
+  return isNegative ? -result : result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2320,47 +2450,52 @@ Divide the list into two parts. The first half must be incremental and the secon
 Reverse the second half and find the smallest number in it that is greater the last number of the first half.
 
 Swap the two.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {void} Do not return anything, modify nums in-place instead.
-     */
-    let nextPermutation = function(nums) {
-      const len = nums.length
-      if (len <= 1) { return }
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+let nextPermutation = function (nums) {
+  const len = nums.length;
+  if (len <= 1) {
+    return;
+  }
 
-      for (let i = len - 1; i > 0; i--) {
-        if (nums[i] > nums[i-1]) {
-          let t
-          for (let s = i, e = len-1; s < e; s++, e--) {
-            t = nums[s]
-            nums[s] = nums[e]
-            nums[e]  = t
-          }
-
-          let j = len - 1
-          while (nums[j] <= nums[i-1]) {
-            j--
-          }
-
-          t = nums[j]
-          nums[j] = nums[i-1]
-          nums[i-1] = t
-
-          break
-        }
+  for (let i = len - 1; i > 0; i--) {
+    if (nums[i] > nums[i - 1]) {
+      let t;
+      for (let s = i, e = len - 1; s < e; s++, e--) {
+        t = nums[s];
+        nums[s] = nums[e];
+        nums[e] = t;
       }
 
-      if (i === 0) {
-        nums.reverse()
+      let j = len - 1;
+      while (nums[j] <= nums[i - 1]) {
+        j--;
       }
-    };
+
+      t = nums[j];
+      nums[j] = nums[i - 1];
+      nums[i - 1] = t;
+
+      break;
+    }
+  }
+
+  if (i === 0) {
+    nums.reverse();
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2411,51 +2546,54 @@ Whenever we choose a pivot, it must be in one of the two sorted parts of the rot
 - Otherwise the pivot is in the right part. We know that the end of the right part to the pivot are sorted.
 
 <!-- -->
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {number}
-     */
-    let search = function(nums, target) {
-      let s = 0
-      let e = nums.length - 1
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+let search = function (nums, target) {
+  let s = 0;
+  let e = nums.length - 1;
 
-      while (s <= e) {
-        const p = (e + s) / 2 | 0
-        const pivot = nums[p]
+  while (s <= e) {
+    const p = ((e + s) / 2) | 0;
+    const pivot = nums[p];
 
-        if (pivot === target) {
-          return p
-        }
+    if (pivot === target) {
+      return p;
+    }
 
-        if (pivot < nums[e]) {
-          // right half is sorted
-          if (target > pivot  && target <= nums[e]) {
-            // target is inside the right half
-            s = p + 1
-          } else {
-            e = p - 1
-          }
-        } else {
-          // left half is sorted
-          if (target < pivot && target >= nums[s]) {
-            // target is inside the left half
-            e = p - 1
-          } else {
-            s = p + 1
-          }
-        }
+    if (pivot < nums[e]) {
+      // right half is sorted
+      if (target > pivot && target <= nums[e]) {
+        // target is inside the right half
+        s = p + 1;
+      } else {
+        e = p - 1;
       }
+    } else {
+      // left half is sorted
+      if (target < pivot && target >= nums[s]) {
+        // target is inside the left half
+        e = p - 1;
+      } else {
+        s = p + 1;
+      }
+    }
+  }
 
-      return -1
-    };
+  return -1;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2493,68 +2631,71 @@ Implement two variations of binary search to get the first and last matching pos
 They are basically the same as simple binary search except when we got the match, we mark the index and keep moving forward.
 
 If we want to get the first, we dump the right half. Vice versa.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {number[]}
-     */
-    let searchRange = function(nums, target) {
-      let s = 0
-      let e = nums.length - 1
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+let searchRange = function (nums, target) {
+  let s = 0;
+  let e = nums.length - 1;
 
-      const first = searchFirst(nums, target, 0, nums.length - 1)
+  const first = searchFirst(nums, target, 0, nums.length - 1);
 
-      if (first === -1) {
-        return [-1, -1]
-      }
+  if (first === -1) {
+    return [-1, -1];
+  }
 
-      return [first, searchLast(nums, target, first, nums.length - 1)]
-    };
+  return [first, searchLast(nums, target, first, nums.length - 1)];
+};
 
-    function searchFirst (nums, target, s, e) {
-      let result = -1
+function searchFirst(nums, target, s, e) {
+  let result = -1;
 
-      while (s <= e) {
-        const p = (s + e) / 2 | 0
-        const diff = nums[p] - target
-        if (diff === 0) {
-          result = p
-          e = p - 1
-        } else if (diff > 0) {
-          e = p - 1
-        } else {
-          s = s + 1
-        }
-      }
+  while (s <= e) {
+    const p = ((s + e) / 2) | 0;
+    const diff = nums[p] - target;
+    if (diff === 0) {
+      result = p;
+      e = p - 1;
+    } else if (diff > 0) {
+      e = p - 1;
+    } else {
+      s = s + 1;
+    }
+  }
 
-      return result
-    };
+  return result;
+}
 
-    function searchLast (nums, target, s, e) {
-      let result = -1
+function searchLast(nums, target, s, e) {
+  let result = -1;
 
-      while (s <= e) {
-        const p = (s + e) / 2 | 0
-        const diff = nums[p] - target
-        if (diff === 0) {
-          result = p
-          s = p + 1
-        } else if (diff > 0) {
-          e = p - 1
-        } else {
-          s = s + 1
-        }
-      }
+  while (s <= e) {
+    const p = ((s + e) / 2) | 0;
+    const diff = nums[p] - target;
+    if (diff === 0) {
+      result = p;
+      s = p + 1;
+    } else if (diff > 0) {
+      e = p - 1;
+    } else {
+      s = s + 1;
+    }
+  }
 
-      return result
-    };
+  return result;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2596,36 +2737,39 @@ You may assume no duplicates in the array.
 ### Solution:
 
 Same as simple binary search except it returns the start index when does not find a match.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {number}
-     */
-    let searchInsert = function(nums, target) {
-      let s = 0
-      let e = nums.length - 1
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+let searchInsert = function (nums, target) {
+  let s = 0;
+  let e = nums.length - 1;
 
-      while (s <= e) {
-        const p = (s + e) / 2 | 0
-        const diff = nums[p] - target
-        if (diff === 0) {
-          return p
-        } else if (diff < 0) {
-          s = p + 1
-        } else {
-          e = p - 1
-        }
-      }
+  while (s <= e) {
+    const p = ((s + e) / 2) | 0;
+    const diff = nums[p] - target;
+    if (diff === 0) {
+      return p;
+    } else if (diff < 0) {
+      s = p + 1;
+    } else {
+      e = p - 1;
+    }
+  }
 
-      return s
-    };
+  return s;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2696,48 +2840,56 @@ The Sudoku board could be partially filled, where empty cells are filled with th
 ### Solution:
 
 Scan the board once.
+
 ```js
-    /**
-     * @param {character[][]} board
-     * @return {boolean}
-     */
-    let isValidSudoku = function(board) {
-      if (!board || board.length !== 9) { return false }
+/**
+ * @param {character[][]} board
+ * @return {boolean}
+ */
+let isValidSudoku = function (board) {
+  if (!board || board.length !== 9) {
+    return false;
+  }
 
-      const newArray = () => []
-      const col = board.map(newArray)
-      const row = board.map(newArray)
-      const sub = board.map(newArray)
+  const newArray = () => [];
+  const col = board.map(newArray);
+  const row = board.map(newArray);
+  const sub = board.map(newArray);
 
-      for (let r = 0; r < 9; r++) {
-        if (board[r].length !== 9) { return false }
+  for (let r = 0; r < 9; r++) {
+    if (board[r].length !== 9) {
+      return false;
+    }
 
-        for (let c = 0; c < 9; c++) {
-          const num = board[r][c]
-          const subOffset = 3 * (r / 3 | 0) + (c / 3 | 0)
-          if (num !== '.') {
-            if (!(num >= 1 && num <= 9) ||
-                row[r][num] ||
-                col[c][num] ||
-                sub[subOffset][num]
-            ) {
-              return false
-            }
-            row[r][num] = true
-            col[c][num] = true
-            sub[subOffset][num] = true
-          }
+    for (let c = 0; c < 9; c++) {
+      const num = board[r][c];
+      const subOffset = 3 * ((r / 3) | 0) + ((c / 3) | 0);
+      if (num !== ".") {
+        if (
+          !(num >= 1 && num <= 9) ||
+          row[r][num] ||
+          col[c][num] ||
+          sub[subOffset][num]
+        ) {
+          return false;
         }
+        row[r][num] = true;
+        col[c][num] = true;
+        sub[subOffset][num] = true;
       }
+    }
+  }
 
-      return true
-    };
+  return true;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2785,69 +2937,74 @@ Every time we reach a position, we pick a possible solution and move on to the n
 If the next position fails, we come back and try the next possible solution of the current position.
 
 If all possible solutions fail, we just dump the current position and go back to the last position.
+
 ```js
-    /**
-     * @param {character[][]} board
-     * @return {void} Do not return anything, modify board in-place instead.
-     */
-    let solveSudoku = function(board) {
-      const newArray = () => []
-      const col = board.map(newArray)
-      const row = board.map(newArray)
-      const sub = board.map(newArray)
+/**
+ * @param {character[][]} board
+ * @return {void} Do not return anything, modify board in-place instead.
+ */
+let solveSudoku = function (board) {
+  const newArray = () => [];
+  const col = board.map(newArray);
+  const row = board.map(newArray);
+  const sub = board.map(newArray);
 
-      for (let r = 0; r < 9; r++) {
-        for (let c = 0; c < 9; c++) {
-          const num = +board[r][c]
-          if (num) {
-            const subOffset = 3 * (r / 3 | 0) + (c / 3 | 0)
-            row[r][num] = true
-            col[c][num] = true
-            sub[subOffset][num] = true
-          }
-        }
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
+      const num = +board[r][c];
+      if (num) {
+        const subOffset = 3 * ((r / 3) | 0) + ((c / 3) | 0);
+        row[r][num] = true;
+        col[c][num] = true;
+        sub[subOffset][num] = true;
       }
+    }
+  }
 
-      dfs(board, col, row, sub, 0)
-    };
+  dfs(board, col, row, sub, 0);
+};
 
-    function dfs (board, col, row, sub, pos) {
-      if  (pos >= 81) { return true }
+function dfs(board, col, row, sub, pos) {
+  if (pos >= 81) {
+    return true;
+  }
 
-      const r = pos / 9 | 0
-      const c = pos % 9
+  const r = (pos / 9) | 0;
+  const c = pos % 9;
 
-      if (board[r][c] !== '.') {
-        return dfs(board, col, row, sub, pos + 1)
+  if (board[r][c] !== ".") {
+    return dfs(board, col, row, sub, pos + 1);
+  }
+
+  const subOffset = 3 * ((r / 3) | 0) + ((c / 3) | 0);
+
+  for (let num = 1; num <= 9; num++) {
+    if (!(row[r][num] || col[c][num] || sub[subOffset][num])) {
+      row[r][num] = true;
+      col[c][num] = true;
+      sub[subOffset][num] = true;
+
+      if (dfs(board, col, row, sub, pos + 1)) {
+        board[r][c] = num + "";
+        return true;
+      } else {
+        row[r][num] = false;
+        col[c][num] = false;
+        sub[subOffset][num] = false;
       }
+    }
+  }
 
-      const subOffset = 3 * (r / 3 | 0) + (c / 3 | 0)
-
-      for (let num = 1; num <= 9; num++) {
-        if (!(row[r][num] || col[c][num] || sub[subOffset][num])) {
-          row[r][num] = true
-          col[c][num] = true
-          sub[subOffset][num] = true
-
-          if (dfs(board, col, row, sub, pos + 1)) {
-            board[r][c] = num + ''
-            return true
-          } else {
-            row[r][num] = false
-            col[c][num] = false
-            sub[subOffset][num] = false
-          }
-        }
-      }
-
-      return false
-    };
+  return false;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2895,54 +3052,61 @@ Just loop and grow the sequence.
 #### ONE
 
 JavaScript specific.
+
 ```js
-    /**
-     * @param {number} n
-     * @return {string}
-     */
-    let countAndSay = function(n) {
-      let num = '1'
+/**
+ * @param {number} n
+ * @return {string}
+ */
+let countAndSay = function (n) {
+  let num = "1";
 
-      while (--n > 0) {
-        num = num.match(/(\d)\1*/g).map(x => x.length + x[0]).join('')
-      }
+  while (--n > 0) {
+    num = num
+      .match(/(\d)\1*/g)
+      .map((x) => x.length + x[0])
+      .join("");
+  }
 
-      return num
-    };
-
+  return num;
+};
 ```
+
 ---
 
 #### TWO
 
 General solution.
+
 ```js
-    /**
-     * @param {number} n
-     * @return {string}
-     */
-    let countAndSay = function(n) {
-      let num = '1'
+/**
+ * @param {number} n
+ * @return {string}
+ */
+let countAndSay = function (n) {
+  let num = "1";
 
-      while (--n > 0) {
-        let newNum = ''
-        for (let i = 0, accu = 1; i < num.length; i++, accu++) {
-          if (num[i] !== num[i+1]) {
-            newNum += accu + num[i]
-            accu = 0
-          }
-        }
-        num = newNum
+  while (--n > 0) {
+    let newNum = "";
+    for (let i = 0, accu = 1; i < num.length; i++, accu++) {
+      if (num[i] !== num[i + 1]) {
+        newNum += accu + num[i];
+        accu = 0;
       }
+    }
+    num = newNum;
+  }
 
-      return num
-    };
+  return num;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2990,41 +3154,44 @@ The **same** repeated number may be chosen from `candidates` unlimited number o
 DFS + Backtracking.
 
 To prevent duplications, only loop the right side of the candidates.
+
 ```js
-    /**
-     * @param {number[]} candidates
-     * @param {number} target
-     * @return {number[][]}
-     */
-    let combinationSum = function(candidates, target) {
-      return dfs(candidates, target, [], [], 0)
-    };
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+let combinationSum = function (candidates, target) {
+  return dfs(candidates, target, [], [], 0);
+};
 
-    function dfs (candidates, target, result, path, start) {
-      for (let i = start; i < candidates.length; i++) {
-        const cand = candidates[i]
+function dfs(candidates, target, result, path, start) {
+  for (let i = start; i < candidates.length; i++) {
+    const cand = candidates[i];
 
-        if (cand > target) {
-          continue
-        }
+    if (cand > target) {
+      continue;
+    }
 
-        path.push(cand)
-        if (cand === target) {
-          result.push(path.slice())
-        } else {
-          dfs(candidates, target - cand, result, path, i)
-        }
-        path.pop(cand)
-      }
+    path.push(cand);
+    if (cand === target) {
+      result.push(path.slice());
+    } else {
+      dfs(candidates, target - cand, result, path, i);
+    }
+    path.pop(cand);
+  }
 
-      return result
-    };
+  return result;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3079,45 +3246,54 @@ We can also safely return when number is larger than the target.
 To prvent duplicate results, stop searching if the current number is same as the last.
 
 Notice the number at `start` is immune by the rule because we assume that the current group of candidates begins at `start`.
+
 ```js
-    /**
-     * @param {number[]} candidates
-     * @param {number} target
-     * @return {number[][]}
-     */
-    let combinationSum2 = function(candidates, target) {
-      return dfs(candidates.sort((a, b) => a - b), target, [], [], 0)
-    };
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+let combinationSum2 = function (candidates, target) {
+  return dfs(
+    candidates.sort((a, b) => a - b),
+    target,
+    [],
+    [],
+    0
+  );
+};
 
-    function dfs (candidates, target, result, path, start) {
-      for (let i = start; i < candidates.length; i++) {
-        const cand = candidates[i]
+function dfs(candidates, target, result, path, start) {
+  for (let i = start; i < candidates.length; i++) {
+    const cand = candidates[i];
 
-        if (cand > target) {
-          return result
-        }
+    if (cand > target) {
+      return result;
+    }
 
-        if (i > start && cand === candidates[i-1]) {
-          continue
-        }
+    if (i > start && cand === candidates[i - 1]) {
+      continue;
+    }
 
-        path.push(cand)
-        if (cand === target) {
-          result.push(path.slice())
-        } else {
-          dfs(candidates, target - cand, result, path, i + 1)
-        }
-        path.pop()
-      }
+    path.push(cand);
+    if (cand === target) {
+      result.push(path.slice());
+    } else {
+      dfs(candidates, target - cand, result, path, i + 1);
+    }
+    path.pop();
+  }
 
-      return result
-    };
+  return result;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3168,36 +3344,39 @@ Now if one of these integers is missing in the array, that integer **is** the sm
 If more than one are missing, pick the smallest.
 
 So here we reuse the array and keep trying to put integer `k` into the slot indexed `k-1` (via swapping).
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number}
-     */
-    let firstMissingPositive = function(nums) {
-      const n = nums.length
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+let firstMissingPositive = function (nums) {
+  const n = nums.length;
 
-      for (let i = 1; i < n; i++) {
-        while (nums[i] <= n && nums[i] !== nums[nums[i] - 1]) {
-          const t = nums[i]
-          nums[i] = nums[t - 1]
-          nums[t - 1] = t
-        }
-      }
+  for (let i = 1; i < n; i++) {
+    while (nums[i] <= n && nums[i] !== nums[nums[i] - 1]) {
+      const t = nums[i];
+      nums[i] = nums[t - 1];
+      nums[t - 1] = t;
+    }
+  }
 
-      for (let i = 0; i < n; i++) {
-        if (nums[i] !== i + 1) {
-          return i + 1
-        }
-      }
+  for (let i = 0; i < n; i++) {
+    if (nums[i] !== i + 1) {
+      return i + 1;
+    }
+  }
 
-      return n + 1
-    };
+  return n + 1;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3225,46 +3404,49 @@ The above elevation map is represented by array \[0,1,0,2,1,0,1,3,2,1,2,1\]. In 
 ### Solution:
 
 Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rain-water/> .
+
 ```js
-    /**
-     * @param {number[]} height
-     * @return {number}
-     */
-    let trap = function(height) {
-      let i = 0
-      let j = height.length - 1
-      let lMax = 0
-      let rMax = 0
-      let result = 0
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+let trap = function (height) {
+  let i = 0;
+  let j = height.length - 1;
+  let lMax = 0;
+  let rMax = 0;
+  let result = 0;
 
-      while (i < j) {
-        const left = height[i]
-        const right = height[j]
-        if (left < right) {
-          if (left < lMax) {
-            result += lMax - left
-          } else {
-            lMax = left
-          }
-          i++
-        } else {
-          if (right < rMax) {
-            result += rMax - right
-          } else {
-            rMax = right
-          }
-          j--
-        }
+  while (i < j) {
+    const left = height[i];
+    const right = height[j];
+    if (left < right) {
+      if (left < lMax) {
+        result += lMax - left;
+      } else {
+        lMax = left;
       }
+      i++;
+    } else {
+      if (right < rMax) {
+        result += rMax - right;
+      } else {
+        rMax = right;
+      }
+      j--;
+    }
+  }
 
-      return result
-    };
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3301,31 +3483,34 @@ Given two non-negative integers `num1` and `num2` represented as strings, return
 ### Solution:
 
 Same as we do multiplication on a paper.
+
 ```js
-    /**
-     * @param {string} num1
-     * @param {string} num2
-     * @return {string}
-     */
-    let multiply = function(num1, num2) {
-      const result = []
+/**
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
+ */
+let multiply = function (num1, num2) {
+  const result = [];
 
-      for (i = num1.length - 1; i >= 0; i--) {
-        for (j = num2.length - 1; j >= 0; j--) {
-          const sum = num1[i] * num2[j] + (result[i+j+1] || 0)
-          result[i+j] = (sum / 10 | 0) + (result[i+j] || 0)
-          result[i+j+1] = sum % 10
-        }
-      }
+  for (i = num1.length - 1; i >= 0; i--) {
+    for (j = num2.length - 1; j >= 0; j--) {
+      const sum = num1[i] * num2[j] + (result[i + j + 1] || 0);
+      result[i + j] = ((sum / 10) | 0) + (result[i + j] || 0);
+      result[i + j + 1] = sum % 10;
+    }
+  }
 
-      return result.join('').replace(/^0+(?=[0-9])/, '')
-    };
+  return result.join("").replace(/^0+(?=[0-9])/, "");
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3360,33 +3545,36 @@ You can assume that you can always reach the last index.
 ### Solution:
 
 Greedy. Always pick the one that would allow to jump to the rightest.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number}
-     */
-    let jump = function(nums) {
-      const len = nums.length
-      let jump = 0
-      for (let l = 0, r = 1; r < len; jump++) {
-        let rNext = r
-        for (let i = l; i < r; i++) {
-          const rNextAtmp = i + nums[i] + 1
-          if (rNextAtmp > rNext) {
-            rNext = rNextAtmp
-          }
-        }
-        l = r
-        r = rNext
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+let jump = function (nums) {
+  const len = nums.length;
+  let jump = 0;
+  for (let l = 0, r = 1; r < len; jump++) {
+    let rNext = r;
+    for (let i = l; i < r; i++) {
+      const rNextAtmp = i + nums[i] + 1;
+      if (rNextAtmp > rNext) {
+        rNext = rNextAtmp;
       }
-      return jump
-    };
+    }
+    l = r;
+    r = rNext;
+  }
+  return jump;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3419,41 +3607,44 @@ Given a collection of **distinct** integers, return all possible permutations.
 ### Solution:
 
 One position at a time, pick a number from the unused set and put it in that position (by swapping). Then move on to the next.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number[][]}
-     */
-    let permute = function(nums) {
-      const result = []
-      _permute(nums, 0, result)
-      return result
-    };
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+let permute = function (nums) {
+  const result = [];
+  _permute(nums, 0, result);
+  return result;
+};
 
-    function _permute (nums, start, result) {
-      if (start === nums.length) {
-        return result.push(nums.slice())
-      }
+function _permute(nums, start, result) {
+  if (start === nums.length) {
+    return result.push(nums.slice());
+  }
 
-      const begin = nums[start]
-      for (let i = start; i < nums.length; i++) {
-        const next = nums[i]
+  const begin = nums[start];
+  for (let i = start; i < nums.length; i++) {
+    const next = nums[i];
 
-        nums[start] = next
-        nums[i] = begin
+    nums[start] = next;
+    nums[i] = begin;
 
-        _permute(nums, start + 1, result)
+    _permute(nums, start + 1, result);
 
-        nums[start] = begin
-        nums[i] = next
-      }
-    };
+    nums[start] = begin;
+    nums[i] = next;
+  }
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3483,48 +3674,51 @@ Given a collection of numbers that might contain duplicates, return all possible
 ### Solution:
 
 Same as [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/046.%20Permutations.md). To avoid duplication, when picking a number for a position, only pick the unused. Either sort the `nums` or use a set to mark.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number[][]}
-     */
-    let permuteUnique = function(nums) {
-      const result = []
-      _permuteUnique(nums, 0, result)
-      return result
-    };
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+let permuteUnique = function (nums) {
+  const result = [];
+  _permuteUnique(nums, 0, result);
+  return result;
+};
 
-    function _permuteUnique (nums, start, result) {
-      if (start === nums.length) {
-        result.push(nums.slice())
-      }
+function _permuteUnique(nums, start, result) {
+  if (start === nums.length) {
+    result.push(nums.slice());
+  }
 
-      const used = new Set()
-      const begin = nums[start]
-      for (let i = start; i < nums.length; i++) {
-        const next = nums[i]
+  const used = new Set();
+  const begin = nums[start];
+  for (let i = start; i < nums.length; i++) {
+    const next = nums[i];
 
-        if (used.has(next)) {
-          continue
-        }
+    if (used.has(next)) {
+      continue;
+    }
 
-        used.add(next)
+    used.add(next);
 
-        nums[start] = next
-        nums[i] = begin
+    nums[start] = next;
+    nums[i] = begin;
 
-        _permuteUnique(nums, start + 1, result)
+    _permuteUnique(nums, start + 1, result);
 
-        nums[start] = begin
-        nums[i] = next
-      }
-    };
+    nums[start] = begin;
+    nums[i] = next;
+  }
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3584,36 +3778,39 @@ You have to rotate the image [**in-place**](https://en.wikipedia.org/wiki/In-pla
 ### Solution:
 
 Outside-in. Rotate one square at a time.
+
 ```js
-    /**
-     * @param {number[][]} matrix
-     * @return {void} Do not return anything, modify matrix in-place instead.
-     */
-    let rotate = function(matrix) {
-      if (!matrix || matrix.length <= 0) {
-        return
-      }
-      const width = matrix.length
-      const halfWidthFloor = Math.floor(width / 2)
-      const halfWidthCeil = Math.ceil(width / 2)
-      for (let i = 0; i < halfWidthFloor; i++) {
-        const iend = width - 1 - i
-        for (let j = 0; j < halfWidthCeil; j++) {
-          const jend = width - 1 - j
-          const tmp = matrix[i][j]
-          matrix[i][j] = matrix[jend][i];
-          matrix[jend][i] = matrix[iend][jend]
-          matrix[iend][jend] = matrix[j][iend]
-          matrix[j][iend] = tmp
-        }
-      }
-    };
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+let rotate = function (matrix) {
+  if (!matrix || matrix.length <= 0) {
+    return;
+  }
+  const width = matrix.length;
+  const halfWidthFloor = Math.floor(width / 2);
+  const halfWidthCeil = Math.ceil(width / 2);
+  for (let i = 0; i < halfWidthFloor; i++) {
+    const iend = width - 1 - i;
+    for (let j = 0; j < halfWidthCeil; j++) {
+      const jend = width - 1 - j;
+      const tmp = matrix[i][j];
+      matrix[i][j] = matrix[jend][i];
+      matrix[jend][i] = matrix[iend][jend];
+      matrix[iend][jend] = matrix[j][iend];
+      matrix[j][iend] = tmp;
+    }
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3652,22 +3849,23 @@ It's all about hashing the words.
 #### ONE
 
 Sort each word to get the key.
-```js
-    /**
-     * @param {string[]} strs
-     * @return {string[][]}
-     */
-    let groupAnagrams = function(strs) {
-      let result = {};
-      for (let i = 0; i < strs.length; i++) {
-        const hash = strs[i].split('').sort().join('');
-        result[hash] = result[hash] || []
-        result[hash].push(strs[i])
-      }
-      return Object.values(result)
-    };
 
+```js
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+let groupAnagrams = function (strs) {
+  let result = {};
+  for (let i = 0; i < strs.length; i++) {
+    const hash = strs[i].split("").sort().join("");
+    result[hash] = result[hash] || [];
+    result[hash].push(strs[i]);
+  }
+  return Object.values(result);
+};
 ```
+
 ---
 
 #### TWO
@@ -3675,30 +3873,33 @@ Sort each word to get the key.
 Use the product of prime numbers to generate unique keys.
 
     const prime = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101]
+
 ```js
-    /**
-     * @param {string[]} strs
-     * @return {string[][]}
-     */
-    let groupAnagrams = function(strs) {
-      const result = {};
-      for (let i = 0; i < strs.length; i++) {
-        const word = strs[i]
-        let hash = 1
-        for (let k = 0; k < word.length; k++) {
-          hash *= prime[word.charCodeAt(k) - 97]
-        }
-        result[hash] = result[hash] || []
-        result[hash].push(word)
-      }
-      return Object.values(result)
-    };
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+let groupAnagrams = function (strs) {
+  const result = {};
+  for (let i = 0; i < strs.length; i++) {
+    const word = strs[i];
+    let hash = 1;
+    for (let k = 0; k < word.length; k++) {
+      hash *= prime[word.charCodeAt(k) - 97];
+    }
+    result[hash] = result[hash] || [];
+    result[hash].push(word);
+  }
+  return Object.values(result);
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3747,29 +3948,38 @@ Corner cases:
 - n &lt; 0
 
 Note here we can not use any bitwise operator, `n = -2^31` might overflow.
+
 ```js
-    /**
-     * @param {number} x
-     * @param {number} n
-     * @return {number}
-     */
-    let myPow = function(x, n) {
-      if (n === 0) { return 1 }
-      if (n === 1) { return x }
-      if (n === -1) { return 1 / x }
-      if (n % 2 === 0) {
-        const res = myPow(x, n / 2)
-        return res * res
-      }
-      const res = myPow(x, (n - 1) / 2)
-      return x * res * res
-    };
+/**
+ * @param {number} x
+ * @param {number} n
+ * @return {number}
+ */
+let myPow = function (x, n) {
+  if (n === 0) {
+    return 1;
+  }
+  if (n === 1) {
+    return x;
+  }
+  if (n === -1) {
+    return 1 / x;
+  }
+  if (n % 2 === 0) {
+    const res = myPow(x, n / 2);
+    return res * res;
+  }
+  const res = myPow(x, (n - 1) / 2);
+  return x * res * res;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3815,7 +4025,8 @@ Allocate a `n`-length array `queens`. Each item represents a queen coordinate on
 Now use the permutation algorithm from [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/046.%20Permutations.md) to generate all possible queen positions, then test for diagonal.
 
 #### ONE
-```js
+
+````js
     /**
      * @param {number} n
      * @return {string[][]}
@@ -3921,12 +4132,14 @@ This is slow because we test diagonal in the end. We can do a tree pruning by mo
       }
       return board
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3967,54 +4180,60 @@ Given an integer *n*, return the number of distinct solutions to the *n*-quee
 ### Solution:
 
 Just modify [51. N-Queens](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/051.%20N-Queens.md).
+
 ```js
-    /**
-     * @param {number} n
-     * @return {string[][]}
-     */
-    let totalNQueens = function(n) {
-      return _totalNQueens([...new Array(n)].map((_, i) => i), 0)
-    };
+/**
+ * @param {number} n
+ * @return {string[][]}
+ */
+let totalNQueens = function (n) {
+  return _totalNQueens(
+    [...new Array(n)].map((_, i) => i),
+    0
+  );
+};
 
-    function _totalNQueens (queens, iStart, result) {
-      if (iStart === queens.length) {
-        return 1
-      }
+function _totalNQueens(queens, iStart, result) {
+  if (iStart === queens.length) {
+    return 1;
+  }
 
-      let count = 0
+  let count = 0;
 
-      const start = queens[iStart]
-      for (let i = iStart; i < queens.length; i++) {
-        const next = queens[i]
+  const start = queens[iStart];
+  for (let i = iStart; i < queens.length; i++) {
+    const next = queens[i];
 
-        queens[iStart] = next
-        queens[i] = start
+    queens[iStart] = next;
+    queens[i] = start;
 
-        if (_testDiagonal(queens, iStart)) {
-          count += _totalNQueens(queens, iStart + 1, result)
-        }
+    if (_testDiagonal(queens, iStart)) {
+      count += _totalNQueens(queens, iStart + 1, result);
+    }
 
-        queens[iStart] = start
-        queens[i] = next
-      }
+    queens[iStart] = start;
+    queens[i] = next;
+  }
 
-      return count
-    };
+  return count;
+}
 
-    function _testDiagonal(queens, iStart) {
-      for (let i = 0; i < iStart; i++) {
-        if (Math.abs(queens[iStart] - queens[i]) === iStart - i) {
-          return false
-        }
-      }
-      return true
-    };
+function _testDiagonal(queens, iStart) {
+  for (let i = 0; i < iStart; i++) {
+    if (Math.abs(queens[iStart] - queens[i]) === iStart - i) {
+      return false;
+    }
+  }
+  return true;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4053,7 +4272,8 @@ If `f(i-1)` is negative, then `nums[i]` must be greater than `f(i-1) + nums[i]`.
     f(i) = max( f(i-1), 0 ) + nums[i]
 
 Then return the largest one.
-```js
+
+````js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -4082,12 +4302,14 @@ We can also compress the dp array:
       }
       return max
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4127,47 +4349,54 @@ Given a matrix of _m_ x _n_ elements (_m_ rows, _n_ columns), return all element
 ### Solution:
 
 Loop outside-in. Break each cycle into four stages. Note that the last two stages need at least two rows/columns.
-```js
-    /**
-     * @param {number[][]} matrix
-     * @return {number[]}
-     */
-    let spiralOrder = function(matrix) {
-      const result = []
-      const height = matrix.length
-      if (height <= 1) { return matrix[0] || result }
-      const width = matrix[0].length
-      if (width <= 0) { return result }
 
-      const end = (Math.min(width, height) + 1) / 2 | 0
-      for (let start = 0; start < end; start++) {
-        const rowEnd = height - start - 1
-        const colEnd = width - start - 1
-        for (let col = start; col <= colEnd; col++) {
-          result.push(matrix[start][col])
-        }
-        for (let row = start + 1; row <= rowEnd; row++) {
-          result.push(matrix[row][colEnd])
-        }
-        if (rowEnd > start) {
-          for (let col = colEnd - 1; col >= start ; col--) {
-            result.push(matrix[rowEnd][col])
-          }
-        }
-        if (colEnd > start) {
-          for (let row = rowEnd - 1; row > start ; row--) {
-            result.push(matrix[row][start])
-          }
-        }
+```js
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+let spiralOrder = function (matrix) {
+  const result = [];
+  const height = matrix.length;
+  if (height <= 1) {
+    return matrix[0] || result;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return result;
+  }
+
+  const end = ((Math.min(width, height) + 1) / 2) | 0;
+  for (let start = 0; start < end; start++) {
+    const rowEnd = height - start - 1;
+    const colEnd = width - start - 1;
+    for (let col = start; col <= colEnd; col++) {
+      result.push(matrix[start][col]);
+    }
+    for (let row = start + 1; row <= rowEnd; row++) {
+      result.push(matrix[row][colEnd]);
+    }
+    if (rowEnd > start) {
+      for (let col = colEnd - 1; col >= start; col--) {
+        result.push(matrix[rowEnd][col]);
       }
-      return result
-    };
+    }
+    if (colEnd > start) {
+      for (let row = rowEnd - 1; row > start; row--) {
+        result.push(matrix[row][start]);
+      }
+    }
+  }
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4206,28 +4435,31 @@ Determine if you are able to reach the last index.
 #### ONE
 
 See [45. Jump Game II](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/045.%20Jump%20Game%20II.md). If the range does not expand at some point, we know it is stuck.
-```js
-    /**
-     * @param {number[]} nums
-     * @return {boolean}
-     */
-    let canJump = function(nums) {
-      for (let l = 0, r = 1; r < nums.length;) {
-        let rNext = r
-        for (let i = l; i < r; i++) {
-          const rNextAtmp = i + nums[i] + 1
-          if (rNextAtmp > rNext) {
-            rNext = rNextAtmp
-          }
-        }
-        if (rNext <= r) { return false }
-        l = r
-        r = rNext
-      }
-      return true
-    };
 
+```js
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+let canJump = function (nums) {
+  for (let l = 0, r = 1; r < nums.length; ) {
+    let rNext = r;
+    for (let i = l; i < r; i++) {
+      const rNextAtmp = i + nums[i] + 1;
+      if (rNextAtmp > rNext) {
+        rNext = rNextAtmp;
+      }
+    }
+    if (rNext <= r) {
+      return false;
+    }
+    l = r;
+    r = rNext;
+  }
+  return true;
+};
 ```
+
 ---
 
 #### TWO
@@ -4235,26 +4467,29 @@ See [45. Jump Game II](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/C
 If we view it backward, and if the range of `nums[n-2]` covers `nums[n-1]`, then we can safely make `n-2` the new destination point, and so on.
 
 If `nums[0]` can cover the last destination point, it is good.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {boolean}
-     */
-    let canJump = function(nums) {
-      let des = nums.length - 1
-      for (let i = des - 1; i > 0; i--) {
-        if (nums[i] + i >= des) {
-          des = i
-        }
-      }
-      return nums[0] >= des
-    };
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+let canJump = function (nums) {
+  let des = nums.length - 1;
+  for (let i = des - 1; i > 0; i--) {
+    if (nums[i] + i >= des) {
+      des = i;
+    }
+  }
+  return nums[0] >= des;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4314,7 +4549,8 @@ Sort then merge.
       }
       return result
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4389,12 +4625,14 @@ The logic of the solution is pretty straight forward. Just need to carefully thi
       }
       return [...result, p, ...intervals.slice(i)]
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4425,60 +4663,65 @@ Example:
 JavaScript specific solutions:
 
 #### ONE
-```js
-    /**
-     * @param {string} s
-     * @return {number}
-     */
-    let lengthOfLastWord = function(s) {
-      return (/\w+$/.exec(s) || [''])[0].length
-    };
 
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+let lengthOfLastWord = function (s) {
+  return (/\w+$/.exec(s) || [""])[0].length;
+};
 ```
+
 ---
 
 #### TWO
 
 Super fast. `split` will guarantee that there is at least one item in the resulted array.
-```js
-    /**
-     * @param {string} s
-     * @return {number}
-     */
-    let lengthOfLastWord = function(s) {
-      return s.trim().split(' ').pop().length
-    };
 
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+let lengthOfLastWord = function (s) {
+  return s.trim().split(" ").pop().length;
+};
 ```
+
 ---
 
 #### THREE
 
 General solution.
+
 ```js
-    /**
-     * @param {string} s
-     * @return {number}
-     */
-    let lengthOfLastWord = function(s) {
-      let end = s.length - 1
-      while (end >= 0 && s[end] === ' ') {
-        end--
-      }
+/**
+ * @param {string} s
+ * @return {number}
+ */
+let lengthOfLastWord = function (s) {
+  let end = s.length - 1;
+  while (end >= 0 && s[end] === " ") {
+    end--;
+  }
 
-      let start = end
-      while (start >= 0 && s[start] !== ' ') {
-        start--
-      }
+  let start = end;
+  while (start >= 0 && s[start] !== " ") {
+    start--;
+  }
 
-      return end - start
-    };
+  return end - start;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4508,38 +4751,41 @@ Given a positive integer _n_, generate a square matrix filled with elements from
 ### Solution:
 
 Straight-forward.
+
 ```js
-    /**
-     * @param {number} n
-     * @return {number[][]}
-     */
-    let generateMatrix = function(n) {
-      const matrix = [...new Array(n)].map(() => [])
-      const halfN = (n + 1) / 2 | 0
-      let count = 1
-      for (let start = 0; start < halfN; start++) {
-        const end = n - start - 1
-        for (let col = start; col <= end; col++) {
-          matrix[start][col] = count++
-        }
-        for (let row = start + 1; row <= end; row++) {
-          matrix[row][end] = count++
-        }
-        for (let col = end - 1; col >= start; col--) {
-          matrix[end][col] = count++
-        }
-        for (let row = end - 1; row > start; row--) {
-          matrix[row][start] = count++
-        }
-      }
-      return matrix
-    };
+/**
+ * @param {number} n
+ * @return {number[][]}
+ */
+let generateMatrix = function (n) {
+  const matrix = [...new Array(n)].map(() => []);
+  const halfN = ((n + 1) / 2) | 0;
+  let count = 1;
+  for (let start = 0; start < halfN; start++) {
+    const end = n - start - 1;
+    for (let col = start; col <= end; col++) {
+      matrix[start][col] = count++;
+    }
+    for (let row = start + 1; row <= end; row++) {
+      matrix[row][end] = count++;
+    }
+    for (let col = end - 1; col >= start; col--) {
+      matrix[end][col] = count++;
+    }
+    for (let row = end - 1; row > start; row--) {
+      matrix[row][start] = count++;
+    }
+  }
+  return matrix;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4589,38 +4835,41 @@ The order of the sequence is fixed hence can be calculated. We can view the proc
 Each digit appears `(n-1)!` times in `result[0]`. And for a fixed `result[0]` each digit appears `(n-2)!` times in `result[1]`. So on.
 
 We also need `k--` to convert `k` into index so that `k <= (n-1)!` maps `0` (and get `1` from the set).
+
 ```js
-    /**
-     * @param {number} n
-     * @param {number} k
-     * @return {string}
-     */
-    let getPermutation = function(n, k) {
-      const digits = []
-      let factorial = 1
-      for (let i = 1; i <= n; i++) {
-        digits.push(i)
-        factorial *= i
-      }
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {string}
+ */
+let getPermutation = function (n, k) {
+  const digits = [];
+  let factorial = 1;
+  for (let i = 1; i <= n; i++) {
+    digits.push(i);
+    factorial *= i;
+  }
 
-      k--
+  k--;
 
-      let result = ''
-      while (n > 0) {
-        factorial /= n
-        result += digits.splice(k / factorial | 0, 1)[0]
-        k %= factorial
-        n--
-      }
+  let result = "";
+  while (n > 0) {
+    factorial /= n;
+    result += digits.splice((k / factorial) | 0, 1)[0];
+    k %= factorial;
+    n--;
+  }
 
-      return result
-    };
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4710,7 +4959,8 @@ Locate the right pointer again with `k % len`.
 
       return head
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4783,12 +5033,14 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
       }
       return dp[m-1] || 1
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4828,34 +5080,41 @@ Define `f(i, j)` to be the min sum from `(0, 0)` to `(i, j)`.
     f(i, j) = min( f(i-1, j), f(i, j-1) ) + grid[i][j], j > 0 && i > 0
 
 Only two previous states are dependant. Use dynamic array to reduce memory allocation.
+
 ```js
-    /**
-     * @param {number[][]} grid
-     * @return {number}
-     */
-    let minPathSum = function(grid) {
-      const height = grid.length
-      if (height <= 0) { return 0 }
-      const width = grid[0].length
-      if (width <= 0) { return 0 }
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+let minPathSum = function (grid) {
+  const height = grid.length;
+  if (height <= 0) {
+    return 0;
+  }
+  const width = grid[0].length;
+  if (width <= 0) {
+    return 0;
+  }
 
-      const dp = new Array(width).fill(Infinity)
-      dp[0] = 0
-      for (let i = 0; i < height; i++) {
-        dp[0] += grid[i][0]
-        for (let j = 1; j < width; j++) {
-          dp[j] = Math.min(dp[j], dp[j-1]) + grid[i][j]
-        }
-      }
+  const dp = new Array(width).fill(Infinity);
+  dp[0] = 0;
+  for (let i = 0; i < height; i++) {
+    dp[0] += grid[i][0];
+    for (let j = 1; j < width; j++) {
+      dp[j] = Math.min(dp[j], dp[j - 1]) + grid[i][j];
+    }
+  }
 
-      return dp[width-1] || 0
-    };
+  return dp[width - 1] || 0;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4894,16 +5153,17 @@ JavaScript specific solutions:
 - `Math.abs(' ') === 0`.
 
 <!-- -->
-```js
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    let isNumber = function(s) {
-      return !!s.trim() && Math.abs(s) >= 0
-    };
 
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+let isNumber = function (s) {
+  return !!s.trim() && Math.abs(s) >= 0;
+};
 ```
+
 ---
 
 #### TWO
@@ -4912,16 +5172,17 @@ JavaScript specific solutions:
 - `isNaN(' ') === false`.
 
 <!-- -->
-```js
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    let isNumber = function(s) {
-      return !!s.trim() && !isNaN(s)
-    };
 
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+let isNumber = function (s) {
+  return !!s.trim() && !isNaN(s);
+};
 ```
+
 ---
 
 #### THREE
@@ -4959,7 +5220,8 @@ Similary, we can define our own syntax, which requires a few changes:
       - DecimalDigits
 
 Now implement the parser. It is much easier now because we have a clear mental map of the syntax.
-```js
+
+````js
     /**
      * @param {string} s
      * @return {boolean}
@@ -5062,12 +5324,14 @@ Now implement the parser. It is much easier now because we have a clear mental m
 
       return parseDecimalDigits(s, nextIndex)
     }
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5105,55 +5369,59 @@ You may assume the integer does not contain any leading zero, except the number 
 #### ONE
 
 JavaScript specific solution. Note that `unshift` is much slower that expanding.
-```js
-    /**
-     * @param {number[]} digits
-     * @return {number[]}
-     */
-    let plusOne = function(digits) {
-      for (let i = digits.length - 1; i >= 0; i--) {
-        if (digits[i] < 9) {
-          digits[i]++
-          return digits
-        }
-        digits[i] = 0
-      }
-      return [1, ...digits]
-    };
 
+```js
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+let plusOne = function (digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] < 9) {
+      digits[i]++;
+      return digits;
+    }
+    digits[i] = 0;
+  }
+  return [1, ...digits];
+};
 ```
+
 ---
 
 #### TWO
 
 General solution.
+
 ```js
-    /**
-     * @param {number[]} digits
-     * @return {number[]}
-     */
-    let plusOne = function(digits) {
-      for (let i = digits.length - 1; i >= 0; i--) {
-        if (digits[i] < 9) {
-          digits[i]++
-          return digits
-        }
-        digits[i] = 0
-      }
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+let plusOne = function (digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] < 9) {
+      digits[i]++;
+      return digits;
+    }
+    digits[i] = 0;
+  }
 
-      for (let i = digits.length; i > 0; i--) {
-        digits[i] = digits[i-1]
-      }
-      digits[0] = 1
+  for (let i = digits.length; i > 0; i--) {
+    digits[i] = digits[i - 1];
+  }
+  digits[0] = 1;
 
-      return digits
-    };
+  return digits;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5234,56 +5502,59 @@ For the last line of text, it should be left justified and no **extra** space is
 - Handle the last line.
 
 <!-- -->
+
 ```js
-    /**
-     * @param {string[]} words
-     * @param {number} maxWidth
-     * @return {string[]}
-     */
-    let fullJustify = function(words, maxWidth) {
-      let start = 0
-      let end = 1
-      let lineLen = words[start].length
-      const result = []
+/**
+ * @param {string[]} words
+ * @param {number} maxWidth
+ * @return {string[]}
+ */
+let fullJustify = function (words, maxWidth) {
+  let start = 0;
+  let end = 1;
+  let lineLen = words[start].length;
+  const result = [];
 
-      while (end < words.length) {
-        const newLen = words[end].length + 1 + lineLen
-        if (newLen <= maxWidth) {
-          lineLen = newLen
-        } else {
-          let line = ''
-          let nWords = end - start
-          if (nWords === 1) {
-            line = words[start].padEnd(maxWidth)
-          } else {
-            let nSpaces = maxWidth - (lineLen - (nWords - 1))
-            for (let i = start; i < end; i++) {
-              const gap = Math.ceil(nSpaces / (end - i - 1))
-              line += words[i] + ' '.repeat(gap)
-              nSpaces -= gap
-            }
-          }
-          result.push(line)
-          start = end
-          lineLen = words[start].length
+  while (end < words.length) {
+    const newLen = words[end].length + 1 + lineLen;
+    if (newLen <= maxWidth) {
+      lineLen = newLen;
+    } else {
+      let line = "";
+      let nWords = end - start;
+      if (nWords === 1) {
+        line = words[start].padEnd(maxWidth);
+      } else {
+        let nSpaces = maxWidth - (lineLen - (nWords - 1));
+        for (let i = start; i < end; i++) {
+          const gap = Math.ceil(nSpaces / (end - i - 1));
+          line += words[i] + " ".repeat(gap);
+          nSpaces -= gap;
         }
-        end++
       }
+      result.push(line);
+      start = end;
+      lineLen = words[start].length;
+    }
+    end++;
+  }
 
-      let lastline = words[start]
-      for (let i = start + 1; i < end; i++) {
-        lastline += ' ' + words[i]
-      }
-      result.push(lastline.padEnd(maxWidth))
+  let lastline = words[start];
+  for (let i = start + 1; i < end; i++) {
+    lastline += " " + words[i];
+  }
+  result.push(lastline.padEnd(maxWidth));
 
-      return result
-    };
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5319,33 +5590,36 @@ Since the return type is an integer, the decimal digits are truncated and only 
 ### Solution:
 
 Binary Search. The square root of x is within \[0...(x+1)/2\].
+
 ```js
-    /**
-     * @param {number} x
-     * @return {number}
-     */
-    let mySqrt = function(x) {
-      let max = Math.round(x / 2)
-      let min = 0
-      while (min <= max) {
-        const mid = Math.floor((min + max) / 2)
-        const diff = mid * mid - x
-        if (diff > 0) {
-          max = mid - 1
-        } else if (diff < 0) {
-          min = mid + 1
-        } else {
-          return mid
-        }
-      }
-      return max
-    };
+/**
+ * @param {number} x
+ * @return {number}
+ */
+let mySqrt = function (x) {
+  let max = Math.round(x / 2);
+  let min = 0;
+  while (min <= max) {
+    const mid = Math.floor((min + max) / 2);
+    const diff = mid * mid - x;
+    if (diff > 0) {
+      max = mid - 1;
+    } else if (diff < 0) {
+      min = mid + 1;
+    } else {
+      return mid;
+    }
+  }
+  return max;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5380,64 +5654,71 @@ Use stack to handle `/../`.
 #### ONE
 
 RegExp matching.
-```js
-    /**
-     * @param {string} path
-     * @return {string}
-     */
-    let simplifyPath = function(path) {
-      return '/' + (path.match(/[^\/]+/g) || [])
-        .reduce((stack, p) => {
-          if (p === '..') {
-            stack.pop()
-          } else if (p !== '.') {
-            stack.push(p)
-          }
-          return stack
-        }, [])
-        .join('/')
-    };
 
+```js
+/**
+ * @param {string} path
+ * @return {string}
+ */
+let simplifyPath = function (path) {
+  return (
+    "/" +
+    (path.match(/[^\/]+/g) || [])
+      .reduce((stack, p) => {
+        if (p === "..") {
+          stack.pop();
+        } else if (p !== ".") {
+          stack.push(p);
+        }
+        return stack;
+      }, [])
+      .join("/")
+  );
+};
 ```
+
 ---
 
 #### TWO
 
 Direct search.
+
 ```js
-    /**
-     * @param {string} path
-     * @return {string}
-     */
-    let simplifyPath = function(path) {
-      const len = path.length
-      const stack = []
-      let e = 0
-      while (e < len) {
-        while (e < len && path[e] === '/') {
-          e++
-        }
-        const s = e
-        while (e < len && path[e] !== '/') {
-          e++
-        }
-        if (s < e) {
-          const p = path.slice(s, e)
-          if (p === '..') {
-            stack.pop()
-          } else if (p !== '.') {
-            stack.push(p)
-          }
-        }
+/**
+ * @param {string} path
+ * @return {string}
+ */
+let simplifyPath = function (path) {
+  const len = path.length;
+  const stack = [];
+  let e = 0;
+  while (e < len) {
+    while (e < len && path[e] === "/") {
+      e++;
+    }
+    const s = e;
+    while (e < len && path[e] !== "/") {
+      e++;
+    }
+    if (s < e) {
+      const p = path.slice(s, e);
+      if (p === "..") {
+        stack.pop();
+      } else if (p !== ".") {
+        stack.push(p);
       }
-      return '/' + stack.join('/')
-    };
+    }
+  }
+  return "/" + stack.join("/");
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5494,48 +5775,51 @@ Define `f(i, j)` to be the min edit distance from `word1[0...i)` to `word2[0...j
       f(i-1, j) + 1 // delete
       f(i-1, j-1) + (word1[i-1] !== word2[j-1] ? 1 : 0) // replace or do nothing
     )
+
 ```js
-    /**
-     * @param {string} word1
-     * @param {string} word2
-     * @return {number}
-     */
-    let minDistance = function(word1, word2) {
-      const len1 = word1.length
-      const len2 = word2.length
+/**
+ * @param {string} word1
+ * @param {string} word2
+ * @return {number}
+ */
+let minDistance = function (word1, word2) {
+  const len1 = word1.length;
+  const len2 = word2.length;
 
-      if(len1 <= 0 || len2 <= 0) {
-        return len1 + len2
-      }
+  if (len1 <= 0 || len2 <= 0) {
+    return len1 + len2;
+  }
 
-      const dp = []
+  const dp = [];
 
-      for (let i = 0; i <= len1; i++) {
-        dp[i] = [i]
-      }
+  for (let i = 0; i <= len1; i++) {
+    dp[i] = [i];
+  }
 
-      for (let j = 0; j <= len2; j++) {
-        dp[0][j] = j
-      }
+  for (let j = 0; j <= len2; j++) {
+    dp[0][j] = j;
+  }
 
-      for (let i = 1; i <= len1; i++) {
-        for (let j = 1; j <= len2; j++) {
-          dp[i][j] = Math.min(
-            dp[i][j-1] + 1,
-            dp[i-1][j] + 1,
-            dp[i-1][j-1] + (word1[i-1] === word2[j-1] ? 0 : 1)
-          )
-        }
-      }
+  for (let i = 1; i <= len1; i++) {
+    for (let j = 1; j <= len2; j++) {
+      dp[i][j] = Math.min(
+        dp[i][j - 1] + 1,
+        dp[i - 1][j] + 1,
+        dp[i - 1][j - 1] + (word1[i - 1] === word2[j - 1] ? 0 : 1)
+      );
+    }
+  }
 
-      return dp[len1][len2]
-    };
+  return dp[len1][len2];
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5605,55 +5889,60 @@ Now scan the matrix and set 0 to the first row and column whenever a 0 is met.
 Walk the matrix again and set 0 according to the first row and column.
 
 Finally set the first row and column to 0 if needed.
+
 ```js
-    /**
-     * @param {number[][]} matrix
-     * @return {void} Do not return anything, modify matrix in-place instead.
-     */
-    let setZeroes = function(matrix) {
-      const height = matrix.length
-      if (height <= 0) { return }
-      const width = matrix[0].length
-      if (width <= 0) { return }
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+let setZeroes = function (matrix) {
+  const height = matrix.length;
+  if (height <= 0) {
+    return;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return;
+  }
 
-      const shouldClearFirstRow = matrix[0].some(x => x === 0)
-      const shouldClearFirstCol = matrix.some(row => row[0] === 0)
+  const shouldClearFirstRow = matrix[0].some((x) => x === 0);
+  const shouldClearFirstCol = matrix.some((row) => row[0] === 0);
 
+  for (let i = 1; i < height; i++) {
+    for (let j = 1; j < width; j++) {
+      if (matrix[i][j] === 0) {
+        matrix[i][0] = 0;
+        matrix[0][j] = 0;
+      }
+    }
+  }
+
+  for (let i = 1; i < height; i++) {
+    if (matrix[i][0] === 0) {
+      matrix[i].fill(0);
+    }
+  }
+
+  for (let j = 1; j < width; j++) {
+    if (matrix[0][j] === 0) {
       for (let i = 1; i < height; i++) {
-        for (let j = 1; j < width; j++) {
-          if (matrix[i][j] === 0) {
-            matrix[i][0] = 0
-            matrix[0][j] = 0
-          }
-        }
+        matrix[i][j] = 0;
       }
+    }
+  }
 
-      for (let i = 1; i < height; i++) {
-        if (matrix[i][0] === 0) {
-          matrix[i].fill(0)
-        }
-      }
+  if (shouldClearFirstRow) {
+    matrix[0].fill(0);
+  }
 
-      for (let j = 1; j < width; j++) {
-        if (matrix[0][j] === 0) {
-          for (let i = 1; i < height; i++) {
-            matrix[i][j] = 0
-          }
-        }
-      }
-
-      if (shouldClearFirstRow) {
-        matrix[0].fill(0)
-      }
-
-      if (shouldClearFirstCol) {
-        for (let i = 0; i < height; i++) {
-          matrix[i][0] = 0
-        }
-      }
-    };
-
+  if (shouldClearFirstCol) {
+    for (let i = 0; i < height; i++) {
+      matrix[i][0] = 0;
+    }
+  }
+};
 ```
+
 ---
 
 #### TWO
@@ -5661,49 +5950,58 @@ Finally set the first row and column to 0 if needed.
 Use `NaN` to mark cells that need to be set 0.
 
 Still constant space just a bit slower due to repeatedly setting overlapping `NaN`s.
+
 ```js
-    /**
-     * @param {number[][]} matrix
-     * @return {void} Do not return anything, modify matrix in-place instead.
-     */
-    let setZeroes = function(matrix) {
-      const height = matrix.length
-      if (height <= 0) { return }
-      const width = matrix[0].length
-      if (width <= 0) { return }
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+let setZeroes = function (matrix) {
+  const height = matrix.length;
+  if (height <= 0) {
+    return;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return;
+  }
 
-      for (let i = 0; i < height; i++) {
-        for (let j = 0; j < width; j++) {
-          if (matrix[i][j] !== 0) { continue }
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
+      if (matrix[i][j] !== 0) {
+        continue;
+      }
 
-          for (let jj = 0; jj < width; jj++) {
-            if (matrix[i][jj] !== 0) {
-              matrix[i][jj] = NaN
-            }
-          }
-
-          for (let ii = 0; ii < height; ii++) {
-            if (matrix[ii][j] !== 0) {
-              matrix[ii][j] = NaN
-            }
-          }
+      for (let jj = 0; jj < width; jj++) {
+        if (matrix[i][jj] !== 0) {
+          matrix[i][jj] = NaN;
         }
       }
 
-      for (let i = 0; i < height; i++) {
-        for (let j = 0; j < width; j++) {
-          if (isNaN(matrix[i][j])) {
-            matrix[i][j] = 0
-          }
+      for (let ii = 0; ii < height; ii++) {
+        if (matrix[ii][j] !== 0) {
+          matrix[ii][j] = NaN;
         }
       }
-    };
+    }
+  }
+
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
+      if (isNaN(matrix[i][j])) {
+        matrix[i][j] = 0;
+      }
+    }
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5750,35 +6048,40 @@ Write an efficient algorithm that searches for a value in an _m_ x _n_ matrix. T
 #### ONE
 
 Search from top-left to bottom-right. O(_n_).
+
 ```js
-    /**
-     * @param {number[][]} matrix
-     * @param {number} target
-     * @return {boolean}
-     */
-    let searchMatrix = function(matrix, target) {
-      const height = matrix.length
-      if (height <= 0) { return false }
-      const width = matrix[0].length
-      if (width <= 0) { return false }
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {boolean}
+ */
+let searchMatrix = function (matrix, target) {
+  const height = matrix.length;
+  if (height <= 0) {
+    return false;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return false;
+  }
 
-      let i = 0
-      let j = width - 1
-      while (i < height && j >= 0) {
-        const diff = matrix[i][j] - target
-        if (diff > 0) {
-          j--
-        } else if (diff < 0) {
-          i++
-        } else {
-          return true
-        }
-      }
+  let i = 0;
+  let j = width - 1;
+  while (i < height && j >= 0) {
+    const diff = matrix[i][j] - target;
+    if (diff > 0) {
+      j--;
+    } else if (diff < 0) {
+      i++;
+    } else {
+      return true;
+    }
+  }
 
-      return false
-    };
-
+  return false;
+};
 ```
+
 ---
 
 #### TWO
@@ -5788,40 +6091,47 @@ Binary search. O(log*n*).
 View the matrix as an sorted array that is cut into `n` slices.
 
 Take the algorithm from [35. Search Insert Position](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/035.%20Search%20Insert%20Position.md).
+
 ```js
-    /**
-     * @param {number[][]} matrix
-     * @param {number} target
-     * @return {boolean}
-     */
-    let searchMatrix = function(matrix, target) {
-      const height = matrix.length
-      if (height <= 0) { return false }
-      const width = matrix[0].length
-      if (width <= 0) { return false }
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {boolean}
+ */
+let searchMatrix = function (matrix, target) {
+  const height = matrix.length;
+  if (height <= 0) {
+    return false;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return false;
+  }
 
-      let s = 0
-      let e = width * height - 1
-      while (s <= e) {
-        const mid = Math.floor((s + e) / 2)
-        const diff = matrix[Math.floor(mid / width)][mid % width] - target
-        if (diff < 0) {
-          s = mid + 1
-        } else if (diff > 0) {
-          e = mid - 1
-        } else {
-          return true
-        }
-      }
+  let s = 0;
+  let e = width * height - 1;
+  while (s <= e) {
+    const mid = Math.floor((s + e) / 2);
+    const diff = matrix[Math.floor(mid / width)][mid % width] - target;
+    if (diff < 0) {
+      s = mid + 1;
+    } else if (diff > 0) {
+      e = mid - 1;
+    } else {
+      return true;
+    }
+  }
 
-      return false
-    };
+  return false;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5860,38 +6170,41 @@ One-pass algorithm.
 Take the idea of the partition algorithm from quick sort. Use `1` as pivot.
 
 Count the number of sorted `0`s and `2`s so that we know where to swap.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {void} Do not return anything, modify nums in-place instead.
-     */
-    let sortColors = function(nums) {
-      const len = nums.length
-      let zeroEnd = 0
-      let twoStart = len - 1
-      let i = 0
-      while (i <= twoStart) {
-        if (nums[i] === 0 && i !== zeroEnd) {
-          const t = nums[i]
-          nums[i] = nums[zeroEnd]
-          nums[zeroEnd] = t
-          zeroEnd++
-        } else if (nums[i] === 2 && i !== twoStart) {
-          const t = nums[i]
-          nums[i] = nums[twoStart]
-          nums[twoStart] = t
-          twoStart--
-        } else {
-          i++
-        }
-      }
-    };
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+let sortColors = function (nums) {
+  const len = nums.length;
+  let zeroEnd = 0;
+  let twoStart = len - 1;
+  let i = 0;
+  while (i <= twoStart) {
+    if (nums[i] === 0 && i !== zeroEnd) {
+      const t = nums[i];
+      nums[i] = nums[zeroEnd];
+      nums[zeroEnd] = t;
+      zeroEnd++;
+    } else if (nums[i] === 2 && i !== twoStart) {
+      const t = nums[i];
+      nums[i] = nums[twoStart];
+      nums[twoStart] = t;
+      twoStart--;
+    } else {
+      i++;
+    }
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5924,35 +6237,38 @@ Given two integers _n_ and _k_, return all possible combinations of _k_ numbers 
 ### Solution:
 
 Basic DFS + Backtracking.
+
 ```js
-    /**
-     * @param {number} n
-     * @param {number} k
-     * @return {number[][]}
-     */
-    let combine = function(n, k) {
-      const result = []
-      _combine(1, [], n, k, result)
-      return result
-    };
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {number[][]}
+ */
+let combine = function (n, k) {
+  const result = [];
+  _combine(1, [], n, k, result);
+  return result;
+};
 
-    function _combine (cur, path, n, k, result) {
-      if (path.length === k) {
-        return result.push(path.slice())
-      }
+function _combine(cur, path, n, k, result) {
+  if (path.length === k) {
+    return result.push(path.slice());
+  }
 
-      while (cur <= n) {
-        path.push(cur)
-        _combine(++cur, path, n, k, result)
-        path.pop()
-      }
-    }
+  while (cur <= n) {
+    path.push(cur);
+    _combine(++cur, path, n, k, result);
+    path.pop();
+  }
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5991,7 +6307,8 @@ Given a set of **distinct** integers, _nums_, return all possible subsets (the p
 #### ONE
 
 BFS.
-```js
+
+````js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -6016,37 +6333,41 @@ Or more imperative. Loop backward to avoid crossing the boundary.
       return result
     };
 
-```
+````
+
 ---
 
 #### TWO
 
 DFS + Backtracking.
-```js
-    /**
-     * @param {number[]} nums
-     * @return {number[][]}
-     */
-    let subsets = function(nums) {
-      const result = []
-      _subsets(nums, 0, [], result)
-      return result
-    };
 
-    function _subsets(nums, start, path, result) {
-      result.push(path.slice())
-      while (start < nums.length) {
-        path.push(nums[start])
-        _subsets(nums, ++start, path, result)
-        path.pop()
-      }
-    }
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+let subsets = function (nums) {
+  const result = [];
+  _subsets(nums, 0, [], result);
+  return result;
+};
+
+function _subsets(nums, start, path, result) {
+  result.push(path.slice());
+  while (start < nums.length) {
+    path.push(nums[start]);
+    _subsets(nums, ++start, path, result);
+    path.pop();
+  }
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6081,59 +6402,88 @@ The word can be constructed from letters of sequentially adjacent cell, where "a
 ### Solution:
 
 DFS + Backtracking. Replace the cell with `NaN` before proceeding to the next level and restore when backtracking.
+
 ```js
-    /**
-     * @param {character[][]} board
-     * @param {string} word
-     * @return {boolean}
-     */
-    let exist = function(board, word) {
-      const height = board.length
-      if (height <= 0) { return false }
-      const width = board[0].length
-      if (width <= 0) { return false }
+/**
+ * @param {character[][]} board
+ * @param {string} word
+ * @return {boolean}
+ */
+let exist = function (board, word) {
+  const height = board.length;
+  if (height <= 0) {
+    return false;
+  }
+  const width = board[0].length;
+  if (width <= 0) {
+    return false;
+  }
 
-      for (let row = 0; row < height; row++) {
-        for (let col = 0; col < width; col++) {
-          if (board[row][col] === word[0] &&
-              _exist(board, word, 0, [[-1, 0], [1, 0], [0, -1], [0, 1]], row, col)
-          ) {
-            return true
-          }
-        }
+  for (let row = 0; row < height; row++) {
+    for (let col = 0; col < width; col++) {
+      if (
+        board[row][col] === word[0] &&
+        _exist(
+          board,
+          word,
+          0,
+          [
+            [-1, 0],
+            [1, 0],
+            [0, -1],
+            [0, 1],
+          ],
+          row,
+          col
+        )
+      ) {
+        return true;
       }
-
-      return false
-    };
-
-    function _exist (board, word, iWord, directions, row, col) {
-      if (iWord === word.length) {
-        return true
-      }
-
-      if (!board[row] || word[iWord] !== board[row][col]) {
-        return false
-      }
-
-      const cell = board[row][col]
-      board[row][col] = NaN
-
-      for (let i = directions.length - 1; i >= 0; i--) {
-        if (_exist(board, word, iWord+1, directions, row+directions[i][0], col+directions[i][1])) {
-          return true
-        }
-      }
-
-      board[row][col] = cell
-
-      return false
     }
+  }
+
+  return false;
+};
+
+function _exist(board, word, iWord, directions, row, col) {
+  if (iWord === word.length) {
+    return true;
+  }
+
+  if (!board[row] || word[iWord] !== board[row][col]) {
+    return false;
+  }
+
+  const cell = board[row][col];
+  board[row][col] = NaN;
+
+  for (let i = directions.length - 1; i >= 0; i--) {
+    if (
+      _exist(
+        board,
+        word,
+        iWord + 1,
+        directions,
+        row + directions[i][0],
+        col + directions[i][1]
+      )
+    ) {
+      return true;
+    }
+  }
+
+  board[row][col] = cell;
+
+  return false;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6188,26 +6538,29 @@ Internally you can think of this:
 ### Solution:
 
 Similar to [26. Remove Duplicates from Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/026.%20Remove%20Duplicates%20from%20Sorted%20Array.md).
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number}
-     */
-    let removeDuplicates = function(nums) {
-      let len = 0
-      for (let i = 0; i < nums.length; i++) {
-        if (nums[i] !== nums[len-2]) {
-          nums[len++] = nums[i]
-        }
-      }
-      return len
-    };
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+let removeDuplicates = function (nums) {
+  let len = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== nums[len - 2]) {
+      nums[len++] = nums[i];
+    }
+  }
+  return len;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6246,49 +6599,52 @@ You are given a target value to search. If found in the array return `true`, oth
 ### Solution:
 
 See [33. Search in Rotated Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/033.%20Search%20in%20Rotated%20Sorted%20Array.md). The code is basically the same. Except with duplicates we can not tell which way to jump when `pivot == nums[e]`. The only thing we can do is to ditch `nums[e]`. SO worst case `O(*n*)`.
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @param {number} target
-     * @return {boolean}
-     */
-    let search = function(nums, target) {
-      let s = 0
-      let e = nums.length - 1
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {boolean}
+ */
+let search = function (nums, target) {
+  let s = 0;
+  let e = nums.length - 1;
 
-      while (s <= e) {
-        const p = (e + s) / 2 | 0
-        const pivot = nums[p]
+  while (s <= e) {
+    const p = ((e + s) / 2) | 0;
+    const pivot = nums[p];
 
-        if (target === pivot) {
-          return true
-        }
+    if (target === pivot) {
+      return true;
+    }
 
-        if (pivot < nums[e]) {
-          if (target > nums[p] && target <= nums[e]) {
-            s = p + 1
-          } else {
-            e = p - 1
-          }
-        } else if (pivot > nums[e]) {
-          if (target < nums[p] && target >= nums[s]) {
-            e = p - 1
-          } else {
-            s = p + 1
-          }
-        } else {
-          e--
-        }
+    if (pivot < nums[e]) {
+      if (target > nums[p] && target <= nums[e]) {
+        s = p + 1;
+      } else {
+        e = p - 1;
       }
+    } else if (pivot > nums[e]) {
+      if (target < nums[p] && target >= nums[s]) {
+        e = p - 1;
+      } else {
+        s = p + 1;
+      }
+    } else {
+      e--;
+    }
+  }
 
-      return false
-    };
+  return false;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6352,7 +6708,8 @@ The list is sorted so we only need `dupVal` to keep the latest duplicate value.
 
       return prehead.next
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6422,7 +6779,8 @@ Just like [82. Remove Duplicates from Sorted List II](file:///C:/MY-WEB-DEV/06-D
       return prehead.next
     };
 
-```
+````
+
 ---
 
 #### TWO
@@ -6454,7 +6812,8 @@ Just compare the next node. This is way more faster.
 
       return head
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6520,12 +6879,14 @@ To reduce O(_n^2_) to O(_n_), we use a stack to store incremental `b`s. Because 
       }
       return max
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6558,52 +6919,57 @@ Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle con
 #### ONE
 
 View every row as a base line then we just have to solve `height(matrix)` times the problem of [84. Largest Rectangle in Histogram](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/084.%20Largest%20Rectangle%20in%20Histogram.md).
+
 ```js
-    /**
-     * @param {character[][]} matrix
-     * @return {number}
-     */
-    let maximalRectangle = function(matrix) {
-      const height = matrix.length
-      if (height <= 0) { return 0 }
-      const width = matrix[0].length
-      if (width <= 0) { return 0 }
+/**
+ * @param {character[][]} matrix
+ * @return {number}
+ */
+let maximalRectangle = function (matrix) {
+  const height = matrix.length;
+  if (height <= 0) {
+    return 0;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return 0;
+  }
 
-      const heights = []
-      let max = 0
-      for (let row = 0; row < height; row++) {
-        for (let col = 0; col < width; col++) {
-          heights[col] = ((heights[col] || 0) + 1) * matrix[row][col]
-        }
-        max = Math.max(max, largestRectangleArea(heights))
-      }
+  const heights = [];
+  let max = 0;
+  for (let row = 0; row < height; row++) {
+    for (let col = 0; col < width; col++) {
+      heights[col] = ((heights[col] || 0) + 1) * matrix[row][col];
+    }
+    max = Math.max(max, largestRectangleArea(heights));
+  }
 
-      return max
-    };
+  return max;
+};
 ```
 
 ---
 
 ```js
-    /**
-     * @param {number[]} heights
-     * @return {number}
-     */
-    function largestRectangleArea (heights) {
-      const stack = [-1]
-      let max = 0
-      for (let i2 = 0; i2 <= heights.length; i2++) {
-        while ((heights[i2] || 0) < heights[stack[stack.length-1]]) {
-          const i = stack.pop()
-          const i1 = stack[stack.length-1]
-          max = Math.max(max, heights[i] * (i2 - i1 - 1))
-        }
-        stack.push(i2)
-      }
-      return max
-    };
-
+/**
+ * @param {number[]} heights
+ * @return {number}
+ */
+function largestRectangleArea(heights) {
+  const stack = [-1];
+  let max = 0;
+  for (let i2 = 0; i2 <= heights.length; i2++) {
+    while ((heights[i2] || 0) < heights[stack[stack.length - 1]]) {
+      const i = stack.pop();
+      const i1 = stack[stack.length - 1];
+      max = Math.max(max, heights[i] * (i2 - i1 - 1));
+    }
+    stack.push(i2);
+  }
+  return max;
+}
 ```
+
 ---
 
 #### TWO
@@ -6647,59 +7013,66 @@ With `conLeft` and `conRight` we can know if the rectangle on `(row, col)` shrin
     area(row, col) = (right(row, col) - left(row, col) + 1) * height(row, col)
 
 We only need to keep the last state. Use dynamic arrays to reduce space complexity.
+
 ```js
-    /**
-     * @param {character[][]} matrix
-     * @return {number}
-     */
-    let maximalRectangle = function(matrix) {
-      const height = matrix.length
-      if (height <= 0) { return 0 }
-      const width = matrix[0].length
-      if (width <= 0) { return 0 }
+/**
+ * @param {character[][]} matrix
+ * @return {number}
+ */
+let maximalRectangle = function (matrix) {
+  const height = matrix.length;
+  if (height <= 0) {
+    return 0;
+  }
+  const width = matrix[0].length;
+  if (width <= 0) {
+    return 0;
+  }
 
-      const heights = new Array(width).fill(0)
-      const lefts = new Array(width).fill(0)
-      const rights = new Array(width).fill(width)
+  const heights = new Array(width).fill(0);
+  const lefts = new Array(width).fill(0);
+  const rights = new Array(width).fill(width);
 
-      let max = 0
+  let max = 0;
 
-      for (let row = 0; row < height; row++) {
-        let conLeft = 0
-        let conRight = width - 1
-        for (let col = 0; col < width; col++) {
-          if (matrix[row][col] === '1') {
-            heights[col] = heights[col] + 1
-            lefts[col] = Math.max(lefts[col], conLeft)
-          } else {
-            heights[col] = 0
-            lefts[col] = 0
-            conLeft = col + 1
-          }
-        }
-
-        for (let col = width - 1; col >= 0; col--) {
-          if (matrix[row][col] === '1') {
-            rights[col] = Math.min(rights[col], conRight)
-          } else {
-            rights[col] = width
-            conRight = col - 1
-          }
-        }
-
-        for (let col = 0; col < width; col++) {
-          max = Math.max(max, (rights[col] - lefts[col] + 1) * heights[col])
-        }
+  for (let row = 0; row < height; row++) {
+    let conLeft = 0;
+    let conRight = width - 1;
+    for (let col = 0; col < width; col++) {
+      if (matrix[row][col] === "1") {
+        heights[col] = heights[col] + 1;
+        lefts[col] = Math.max(lefts[col], conLeft);
+      } else {
+        heights[col] = 0;
+        lefts[col] = 0;
+        conLeft = col + 1;
       }
+    }
 
-      return max
-    };
+    for (let col = width - 1; col >= 0; col--) {
+      if (matrix[row][col] === "1") {
+        rights[col] = Math.min(rights[col], conRight);
+      } else {
+        rights[col] = width;
+        conRight = col - 1;
+      }
+    }
+
+    for (let col = 0; col < width; col++) {
+      max = Math.max(max, (rights[col] - lefts[col] + 1) * heights[col]);
+    }
+  }
+
+  return max;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6764,7 +7137,8 @@ Take the second part out as a new list and connect it back.
 
       return prehead1.next
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6816,12 +7190,14 @@ Loop backward and keep picking the larger one. `nums1` is guaranteed longer than
         nums1[--len] = nums1[m] >= nums2[n] ? nums1[m--] : nums2[n--]
       }
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6876,27 +7252,30 @@ Given a non-negative integer _n_ representing the total number of bits in the co
 The pattern is self-evident. Reverse the result set and prepend '1' to each item.
 
 Use bitwise shift to speed up the calculation. It is unlikely to overflow since the result set is exponential.
+
 ```js
-    /**
-     * @param {number} n
-     * @return {number[]}
-     */
-    let grayCode = function(n) {
-      const result = [0]
-      for (let level = 0; level < n; level++) {
-        const prefix = 1 << level
-        for (let i = result.length - 1; i >= 0; i--) {
-          result.push(result[i] + prefix)
-        }
-      }
-      return result
-    };
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+let grayCode = function (n) {
+  const result = [0];
+  for (let level = 0; level < n; level++) {
+    const prefix = 1 << level;
+    for (let i = result.length - 1; i >= 0; i--) {
+      result.push(result[i] + prefix);
+    }
+  }
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6936,34 +7315,37 @@ See [78. Subsets](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTEN
 2.  Only consider each duplicate once, that is, when it is at the first slot.
 
 <!-- -->
-```js
-    /**
-     * @param {number[]} nums
-     * @return {number[][]}
-     */
-    let subsetsWithDup = function(nums) {
-      const result = []
-      _subsetsWithDup(nums.sort(), 0, [], result)
-      return result
-    };
 
-    function _subsetsWithDup(nums, start, path, result) {
-      result.push(path.slice())
-      for (let i = start; i < nums.length; i++) {
-        if(i > start && nums[i] === nums[i-1]) {
-          continue
-        }
-        path.push(nums[i])
-        _subsetsWithDup(nums, i + 1, path, result)
-        path.pop()
-      }
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+let subsetsWithDup = function (nums) {
+  const result = [];
+  _subsetsWithDup(nums.sort(), 0, [], result);
+  return result;
+};
+
+function _subsetsWithDup(nums, start, path, result) {
+  result.push(path.slice());
+  for (let i = start; i < nums.length; i++) {
+    if (i > start && nums[i] === nums[i - 1]) {
+      continue;
     }
+    path.push(nums[i]);
+    _subsetsWithDup(nums, i + 1, path, result);
+    path.pop();
+  }
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7012,36 +7394,39 @@ Note that there could be `'0'`.
            f(i-2), if i > 0 && s[i-1] !== '0' && s[i-1] * 10 + s[i] <= 26
 
 Only need to store the last two states. Init `f(-1) = 1` for easy calculation.
+
 ```js
-    /**
-     * @param {string} s
-     * @return {number}
-     */
-    let numDecodings = function(s) {
-      let dp = s[0] > 0 ? 1 : 0
-      let dp_1 = dp
-      let dp_2 = 1
+/**
+ * @param {string} s
+ * @return {number}
+ */
+let numDecodings = function (s) {
+  let dp = s[0] > 0 ? 1 : 0;
+  let dp_1 = dp;
+  let dp_2 = 1;
 
-      for (let i = 1; i < s.length; i++) {
-        dp = 0
-        if (s[i] !== '0') {
-          dp += dp_1
-        }
-        if (s[i-1] !== '0' && s[i-1] + s[i] <= 26) {
-          dp += dp_2
-        }
-        dp_2 = dp_1
-        dp_1 = dp
-      }
+  for (let i = 1; i < s.length; i++) {
+    dp = 0;
+    if (s[i] !== "0") {
+      dp += dp_1;
+    }
+    if (s[i - 1] !== "0" && s[i - 1] + s[i] <= 26) {
+      dp += dp_2;
+    }
+    dp_2 = dp_1;
+    dp_1 = dp;
+  }
 
-      return dp
-    };
+  return dp;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7109,7 +7494,8 @@ Break the list into 3 parts.
 
       return prehead.next
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7177,12 +7563,14 @@ Backtracking. Note that leading `'0'` is not allowed except just `'0'`.
 
       return result
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7217,36 +7605,46 @@ Define `f(i, j)` to be whether `s3[0...i+j-1)` can be formed by the interleaving
     f(i, j) = f(i-1, j) && s1[i-1] == s3[i+j-1] || f(i, j-1) && s2[j-1] == s3[i+j-1], 0 < i <= len(s1), 0 < j <= len(s2)
 
 Dynamic array can be used.
-```js
-    /**
-     * @param {string} s1
-     * @param {string} s2
-     * @param {string} s3
-     * @return {boolean}
-     */
-    let isInterleave = function(s1, s2, s3) {
-      const len1 = s1.length
-      const len2 = s2.length
-      const len3 = s3.length
-      if (len1 + len2 !== len3) { return false }
-      if (len1 <= 0) { return s2 === s3 }
-      if (len2 <= 0) { return s1 === s3 }
 
-      const dp = []
-      for (let i = 0; i <= len1; i++) {
-        for (let j = 0; j <= len2; j++) {
-          dp[j] = (i <= 0 || dp[j]) && s1[i-1] === s3[i+j-1] ||
-                  (j <= 0 || dp[j-1]) && s2[j-1] === s3[i+j-1]
-        }
-      }
-      return dp[len2]
-    };
+```js
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @param {string} s3
+ * @return {boolean}
+ */
+let isInterleave = function (s1, s2, s3) {
+  const len1 = s1.length;
+  const len2 = s2.length;
+  const len3 = s3.length;
+  if (len1 + len2 !== len3) {
+    return false;
+  }
+  if (len1 <= 0) {
+    return s2 === s3;
+  }
+  if (len2 <= 0) {
+    return s1 === s3;
+  }
+
+  const dp = [];
+  for (let i = 0; i <= len1; i++) {
+    for (let j = 0; j <= len2; j++) {
+      dp[j] =
+        ((i <= 0 || dp[j]) && s1[i - 1] === s3[i + j - 1]) ||
+        ((j <= 0 || dp[j - 1]) && s2[j - 1] === s3[i + j - 1]);
+    }
+  }
+  return dp[len2];
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7315,7 +7713,8 @@ The code should be self-evident.
       return p === null && q === null ||
         p !== null && q !== null && p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7353,7 +7752,7 @@ But the following `[1,2,2,null,3,null,3]` is not:
        \   \
        3    3
 
-Note:  
+Note:
 Bonus points if you could solve it both recursively and iteratively.
 
 ### Solution:
@@ -7378,22 +7777,28 @@ So just like [100. Same Tree](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO
     let isSymmetric = function(root) {
       return root === null || isSymmetricTree(root.left, root.right)
     };
-```
+````
 
 ---
 
 ```js
-    /**
-     * @param {TreeNode} p
-     * @param {TreeNode} q
-     * @return {boolean}
-     */
-    function isSymmetricTree (p, q) {
-      return p === null && q === null ||
-        p !== null && q !== null && p.val === q.val && isSymmetricTree(p.left, q.right) && isSymmetricTree(p.right, q.left)
-    };
-
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+function isSymmetricTree(p, q) {
+  return (
+    (p === null && q === null) ||
+    (p !== null &&
+      q !== null &&
+      p.val === q.val &&
+      isSymmetricTree(p.left, q.right) &&
+      isSymmetricTree(p.right, q.left))
+  );
+}
 ```
+
 ---
 
 #### TWO
@@ -7438,7 +7843,8 @@ Level order traversal. Check symmetry before entering the next level.
 
       return true
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7460,7 +7866,7 @@ Level order traversal. Check symmetry before entering the next level.
 
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
-For example:  
+For example:
 Given binary tree `[3,9,20,null,null,15,7]`,
 
     3
@@ -7510,12 +7916,14 @@ The code should be self-evident.
 
       return result
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7587,7 +7995,8 @@ Reverse the level when pushing to the reuslt.
 
       return result
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7645,12 +8054,14 @@ The code should be self-evident.
         ? 0
         : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7724,7 +8135,8 @@ Repeat the process on subtrees.
       }
       return node
     }
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7746,7 +8158,7 @@ Repeat the process on subtrees.
 
 Given inorder and postorder traversal of a tree, construct the binary tree.
 
-**Note:**  
+**Note:**
 You may assume that duplicates do not exist in the tree.
 
 For example, given
@@ -7803,12 +8215,14 @@ Repeat the process on subtrees.
       }
       return node
     }
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7875,7 +8289,8 @@ See [102. Binary Tree Level Order Traversal](file:///C:/MY-WEB-DEV/06-DS-ALGO-OU
 
       return result
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7954,12 +8369,14 @@ Get the depth of subtrees and compare. Prune the DFS tree by returning `-1`.
       if (rightDepth < 0) { return -1 }
       return Math.abs(leftDepth - rightDepth) <= 1 ? Math.max(leftDepth, rightDepth) + 1 : -1
     }
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8017,7 +8434,8 @@ Ignore `null` children.
         return minDepth(root.right) + 1
       }
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8076,12 +8494,14 @@ Note that node value could be negative so pruning can not be performed.
       if (root.left === null && root.right === null) { return root.val === sum }
       return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val)
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8152,7 +8572,8 @@ Simple backtracking.
 
       return result
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8214,35 +8635,39 @@ Return the leaf node of a flattened subtree for concatenation.
     let flatten = function(root) {
       _flatten(root)
     };
-```
+````
 
 ---
 
 ```js
-    /**
-     * @param {TreeNode} root
-     * @return {TreeNode} leaf node of a flattened subtree
-     */
-    function _flatten (root) {
-      if (!root) { return null }
-      const leftLeaf = _flatten(root.left)
-      const rightLeaf = _flatten(root.right)
-      if (leftLeaf !== null) {
-        leftLeaf.right = root.right
-        root.right = root.left
-      } else if (rightLeaf === null) {
-        return root
-      }
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode} leaf node of a flattened subtree
+ */
+function _flatten(root) {
+  if (!root) {
+    return null;
+  }
+  const leftLeaf = _flatten(root.left);
+  const rightLeaf = _flatten(root.right);
+  if (leftLeaf !== null) {
+    leftLeaf.right = root.right;
+    root.right = root.left;
+  } else if (rightLeaf === null) {
+    return root;
+  }
 
-      root.left = null
-      return rightLeaf || leftLeaf
-    }
+  root.left = null;
+  return rightLeaf || leftLeaf;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8308,32 +8733,35 @@ For `f(i, j)` you can always skip `S[i-1]`, but can only take it when `S[i-1] ==
     f(i, j) = f(i-1, j) + (S[i-1] === T[j-1] ? f(i-1, j-1) : 0)
 
 Dynamic array can be used.
+
 ```js
-    /**
-     * @param {string} s
-     * @param {string} t
-     * @return {number}
-     */
-    let numDistinct = function(s, t) {
-      const lens = s.length
-      const lent = t.length
-      const dp = new Array(lent + 1).fill(0)
-      dp[0] = 1
-      for (let i = 1; i <= lens; i++) {
-        for (let j = lent; j >= 1; j--) {
-          if (s[i-1] === t[j-1]) {
-            dp[j] += dp[j-1]
-          }
-        }
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {number}
+ */
+let numDistinct = function (s, t) {
+  const lens = s.length;
+  const lent = t.length;
+  const dp = new Array(lent + 1).fill(0);
+  dp[0] = 1;
+  for (let i = 1; i <= lens; i++) {
+    for (let j = lent; j >= 1; j--) {
+      if (s[i - 1] === t[j - 1]) {
+        dp[j] += dp[j - 1];
       }
-      return dp[lent]
-    };
+    }
+  }
+  return dp[lent];
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8404,26 +8832,29 @@ For every `node`:
      *     this.left = this.right = this.next = null;
      * }
      */
-```js
-    /**
-     * @param {TreeLinkNode} root
-     * @return {void} Do not return anything, modify tree in-place instead.
-     */
-    let connect = function(root) {
-      if (!root) { return }
-      if (root.left !== null) {
-        root.left.next = root.right
-        connect(root.left)
-      }
-      if (root.right !== null) {
-        if (root.next !== null) {
-          root.right.next = root.next.left
-        }
-        connect(root.right)
-      }
-    };
 
+```js
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} Do not return anything, modify tree in-place instead.
+ */
+let connect = function (root) {
+  if (!root) {
+    return;
+  }
+  if (root.left !== null) {
+    root.left.next = root.right;
+    connect(root.left);
+  }
+  if (root.right !== null) {
+    if (root.next !== null) {
+      root.right.next = root.next.left;
+    }
+    connect(root.right);
+  }
+};
 ```
+
 ---
 
 #### TWO
@@ -8437,34 +8868,43 @@ Level order traversal.
      *     this.left = this.right = this.next = null;
      * }
      */
-```js
-    /**
-     * @param {TreeLinkNode} root
-     * @return {void} Do not return anything, modify tree in-place instead.
-     */
-    let connect = function(root) {
-      if (!root) { return }
 
-      const queue = [NaN, root]
-      while (queue.length > 1) {
-        const node = queue.shift()
-        if (node !== node) {
-          for (let i = 0; i < queue.length; i++) {
-            queue[i].next = queue[i+1] || null
-          }
-          queue.push(NaN)
-        } else {
-          if (node.left !== null) { queue.push(node.left) }
-          if (node.right !== null) { queue.push(node.right) }
-        }
+```js
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} Do not return anything, modify tree in-place instead.
+ */
+let connect = function (root) {
+  if (!root) {
+    return;
+  }
+
+  const queue = [NaN, root];
+  while (queue.length > 1) {
+    const node = queue.shift();
+    if (node !== node) {
+      for (let i = 0; i < queue.length; i++) {
+        queue[i].next = queue[i + 1] || null;
       }
-    };
+      queue.push(NaN);
+    } else {
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8531,35 +8971,38 @@ This also means post-order traversal is required.
      *     this.left = this.right = this.next = null;
      * }
      */
-```js
-    /**
-     * @param {TreeLinkNode} root
-     * @return {void} Do not return anything, modify tree in-place instead.
-     */
-    let connect = function(root) {
-      if (!root) { return }
-      let next = null
-      for (let node = root.next; node !== null; node = node.next) {
-        if (node.left !== null) {
-          next = node.left
-          break
-        }
-        if (node.right !== null) {
-          next = node.right
-          break
-        }
-      }
-      if (root.right !== null) {
-        root.right.next = next
-      }
-      if (root.left !== null) {
-        root.left.next = root.right || next
-      }
-      connect(root.right)
-      connect(root.left)
-    };
 
+```js
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} Do not return anything, modify tree in-place instead.
+ */
+let connect = function (root) {
+  if (!root) {
+    return;
+  }
+  let next = null;
+  for (let node = root.next; node !== null; node = node.next) {
+    if (node.left !== null) {
+      next = node.left;
+      break;
+    }
+    if (node.right !== null) {
+      next = node.right;
+      break;
+    }
+  }
+  if (root.right !== null) {
+    root.right.next = next;
+  }
+  if (root.left !== null) {
+    root.left.next = root.right || next;
+  }
+  connect(root.right);
+  connect(root.left);
+};
 ```
+
 ---
 
 #### TWO
@@ -8573,34 +9016,43 @@ Level order traversal. Exact same as [116. Populating Next Right Pointers in Eac
      *     this.left = this.right = this.next = null;
      * }
      */
-```js
-    /**
-     * @param {TreeLinkNode} root
-     * @return {void} Do not return anything, modify tree in-place instead.
-     */
-    let connect = function(root) {
-      if (!root) { return }
 
-      const queue = [NaN, root]
-      while (queue.length > 1) {
-        const node = queue.shift()
-        if (node !== node) {
-          for (let i = 0; i < queue.length; i++) {
-            queue[i].next = queue[i+1] || null
-          }
-          queue.push(NaN)
-        } else {
-          if (node.left !== null) { queue.push(node.left) }
-          if (node.right !== null) { queue.push(node.right) }
-        }
+```js
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} Do not return anything, modify tree in-place instead.
+ */
+let connect = function (root) {
+  if (!root) {
+    return;
+  }
+
+  const queue = [NaN, root];
+  while (queue.length > 1) {
+    const node = queue.shift();
+    if (node !== node) {
+      for (let i = 0; i < queue.length; i++) {
+        queue[i].next = queue[i + 1] || null;
       }
-    };
+      queue.push(NaN);
+    } else {
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8636,33 +9088,38 @@ In Pascal's triangle, each number is the sum of the two numbers directly above i
 ### Solution:
 
 Dynamic Programming 101.
+
 ```js
-    /**
-     * @param {number} numRows
-     * @return {number[][]}
-     */
-    let generate = function(numRows) {
-      if (numRows <= 0) { return [] }
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+let generate = function (numRows) {
+  if (numRows <= 0) {
+    return [];
+  }
 
-      const result = [[1]]
-      for (let i = 1; i < numRows; i++) {
-        const lastRow = result[i-1]
-        const row = [1]
-        for (let j = 1; j < i; j++) {
-          row[j] = lastRow[j] + lastRow[j-1]
-        }
-        row.push(1)
-        result.push(row)
-      }
+  const result = [[1]];
+  for (let i = 1; i < numRows; i++) {
+    const lastRow = result[i - 1];
+    const row = [1];
+    for (let j = 1; j < i; j++) {
+      row[j] = lastRow[j] + lastRow[j - 1];
+    }
+    row.push(1);
+    result.push(row);
+  }
 
-      return result
-    };
+  return result;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8699,30 +9156,35 @@ Could you optimize your algorithm to use only _O_(_k_) extra space?
 Dynamic Programming 101 with dynamic array.
 
 State `(i, j)` depends on `(i-1, j)` and `(i-1, j-1)`. So to access `(i-1, j-1)` iteration must be from right to left.
+
 ```js
-    /**
-     * @param {number} rowIndex
-     * @return {number[]}
-     */
-    let getRow = function(rowIndex) {
-      if (rowIndex < 0) { return [] }
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+let getRow = function (rowIndex) {
+  if (rowIndex < 0) {
+    return [];
+  }
 
-      const row = [1]
-      for (let i = 1; i <= rowIndex; i++) {
-        for (let j = i - 1; j > 0; j--) {
-          row[j] += row[j-1]
-        }
-        row.push(1)
-      }
+  const row = [1];
+  for (let i = 1; i <= rowIndex; i++) {
+    for (let j = i - 1; j > 0; j--) {
+      row[j] += row[j - 1];
+    }
+    row.push(1);
+  }
 
-      return row
-    };
+  return row;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8763,30 +9225,35 @@ Define `f(i, j)` to be the minimum path sum from `triangle[0][0]` to `triangle[i
     f(i, i) = f(i-1, i-1) + triangle[i][i], i > 0
 
 Dynamic array can be used.
-```js
-    /**
-     * @param {number[][]} triangle
-     * @return {number}
-     */
-    let minimumTotal = function(triangle) {
-      if (triangle.length <= 0) { return 0 }
 
-      const dp = [triangle[0][0]]
-      for (let i = 1; i < triangle.length; i++) {
-        dp[i] = dp[i-1] + triangle[i][i]
-        for (let j = i - 1; j >= 1; j--) {
-          dp[j] = Math.min(dp[j], dp[j-1]) + triangle[i][j]
-        }
-        dp[0] += triangle[i][0]
-      }
-      return Math.min(...dp)
-    };
+```js
+/**
+ * @param {number[][]} triangle
+ * @return {number}
+ */
+let minimumTotal = function (triangle) {
+  if (triangle.length <= 0) {
+    return 0;
+  }
+
+  const dp = [triangle[0][0]];
+  for (let i = 1; i < triangle.length; i++) {
+    dp[i] = dp[i - 1] + triangle[i][i];
+    for (let j = i - 1; j >= 1; j--) {
+      dp[j] = Math.min(dp[j], dp[j - 1]) + triangle[i][j];
+    }
+    dp[0] += triangle[i][0];
+  }
+  return Math.min(...dp);
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8825,30 +9292,33 @@ Note that you cannot sell a stock before you buy one.
 Only care about positive profits. Take the frist item as base and scan to the right. If we encounter an item `j` whose price `price[j]` is lower than the base (which means if we sell now the profit would be negative), we sell `j-1` instead and make `j` the new base.
 
 Because `price[j]` is lower that the base, using `j` as new base is guaranteed to gain more profit comparing to the old one.
+
 ```js
-    /**
-     * @param {number[]} prices
-     * @return {number}
-     */
-    let maxProfit = function(prices) {
-      let max = 0
-      let base = prices[0]
-      for (let i = 1; i < prices.length; i++) {
-        const profit = prices[i] - base
-        if (profit > max) {
-          max = profit
-        } else if (profit < 0) {
-          base = prices[i]
-        }
-      }
-      return max
-    };
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+let maxProfit = function (prices) {
+  let max = 0;
+  let base = prices[0];
+  for (let i = 1; i < prices.length; i++) {
+    const profit = prices[i] - base;
+    if (profit > max) {
+      max = profit;
+    } else if (profit < 0) {
+      base = prices[i];
+    }
+  }
+  return max;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8893,26 +9363,29 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 ### Solution:
 
 Sell immediately after the price drops. Or in other perspective, it is the sum of all the incremental pairs (buy in then immediately sell out).
+
 ```js
-    /**
-     * @param {number[]} prices
-     * @return {number}
-     */
-    let maxProfit = function(prices) {
-      let max = 0
-      for (let i = 1; i < prices.length; i++) {
-        if (prices[i] > prices[i-1]) {
-          max += prices[i] - prices[i-1]
-        }
-      }
-      return max
-    };
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+let maxProfit = function (prices) {
+  let max = 0;
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] > prices[i - 1]) {
+      max += prices[i] - prices[i - 1];
+    }
+  }
+  return max;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8969,39 +9442,44 @@ Define `p2(i)` to be the max profit of day `[i...n-1]`. This is the mirror of `p
     p2(i) = max( p2(i+1), max(prices[i], ..., prices[n-1]) - prices[i] ), n-1 > i >= 0
 
 Define `f(k)` to be `p1(k) + p2(k)`. We need to get `max( f(0), ..., f(n-1) )`.
+
 ```js
-    /**
-     * @param {number[]} prices
-     * @return {number}
-     */
-    let maxProfit = function(prices) {
-      const len = prices.length
-      if (len <= 1) { return 0 }
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+let maxProfit = function (prices) {
+  const len = prices.length;
+  if (len <= 1) {
+    return 0;
+  }
 
-      const dp = [0]
+  const dp = [0];
 
-      let min = prices[0]
-      for (let i = 1; i < len; i++) {
-        dp[i] = Math.max(dp[i-1], prices[i] - min)
-        min = Math.min(prices[i], min)
-      }
+  let min = prices[0];
+  for (let i = 1; i < len; i++) {
+    dp[i] = Math.max(dp[i - 1], prices[i] - min);
+    min = Math.min(prices[i], min);
+  }
 
-      let p2 = 0
-      let max = prices[len-1]
-      for (let i = len-2; i >= 0; i--) {
-        max = Math.max(prices[i], max)
-        p2 = Math.max(p2, max - prices[i])
-        dp[i] += p2
-      }
+  let p2 = 0;
+  let max = prices[len - 1];
+  for (let i = len - 2; i >= 0; i--) {
+    max = Math.max(prices[i], max);
+    p2 = Math.max(p2, max - prices[i]);
+    dp[i] += p2;
+  }
 
-      return Math.max(...dp)
-    };
+  return Math.max(...dp);
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9075,7 +9553,8 @@ Define a function that returns two values. The max sum of a path that may or may
     let maxPathSum = function(root) {
       return Math.max(..._maxPathSum(root))
     };
-```
+
+````
 
 ---
 
@@ -9132,12 +9611,14 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
       global.max = Math.max(global.max, localMax, root.val + left + right)
       return localMax
     }
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9169,77 +9650,102 @@ Given a string, determine if it is a palindrome, considering only alphanumeric c
 ### Solution:
 
 #### ONE
-```js
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    let isPalindrome = function(s) {
-      const clean = s.toLowerCase().split(/[^a-z0-9]*/)
-      return clean.join('') === clean.reverse().join('')
-    };
 
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+let isPalindrome = function (s) {
+  const clean = s.toLowerCase().split(/[^a-z0-9]*/);
+  return clean.join("") === clean.reverse().join("");
+};
 ```
+
 ---
 
 #### TWO
 
 Remove non-alphanumeric characters then compare.
-```js
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    let isPalindrome = function(s) {
-      const clean = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
-      for (let i = 0, j = clean.length - 1; i < j; i++, j--) {
-        if (clean[i] !== clean[j]) { return false }
-      }
-      return true
-    };
 
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+let isPalindrome = function (s) {
+  const clean = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  for (let i = 0, j = clean.length - 1; i < j; i++, j--) {
+    if (clean[i] !== clean[j]) {
+      return false;
+    }
+  }
+  return true;
+};
 ```
+
 ---
 
 #### THREE
 
 Compare the char codes.
+
 ```js
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    let isPalindrome = function(s) {
-      for (let i = 0, j = s.length - 1; i < j; i++, j--) {
-        let left = s.charCodeAt(i)
-        while (i < j && (left < 48 || left > 57 && left < 65 || left > 90 && left < 97 || left > 122)) {
-          left = s.charCodeAt(++i)
-        }
-        if (i >= j) { return true }
-        if (left >= 65 && left <= 90) {
-          left += 32
-        }
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+let isPalindrome = function (s) {
+  for (let i = 0, j = s.length - 1; i < j; i++, j--) {
+    let left = s.charCodeAt(i);
+    while (
+      i < j &&
+      (left < 48 ||
+        (left > 57 && left < 65) ||
+        (left > 90 && left < 97) ||
+        left > 122)
+    ) {
+      left = s.charCodeAt(++i);
+    }
+    if (i >= j) {
+      return true;
+    }
+    if (left >= 65 && left <= 90) {
+      left += 32;
+    }
 
-        let right = s.charCodeAt(j)
-        while (i < j && (right < 48 || right > 57 && right < 65 || right > 90 && right < 97 || right > 122)) {
-          right = s.charCodeAt(--j)
-        }
-        if (i >= j) { return true }
-        if (right >= 65 && right <= 90) {
-          right += 32
-        }
+    let right = s.charCodeAt(j);
+    while (
+      i < j &&
+      (right < 48 ||
+        (right > 57 && right < 65) ||
+        (right > 90 && right < 97) ||
+        right > 122)
+    ) {
+      right = s.charCodeAt(--j);
+    }
+    if (i >= j) {
+      return true;
+    }
+    if (right >= 65 && right <= 90) {
+      right += 32;
+    }
 
-        if (left !== right) { return false }
-      }
+    if (left !== right) {
+      return false;
+    }
+  }
 
-      return true
-    };
+  return true;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9298,70 +9804,75 @@ This is just like [127. Word Ladder](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-
 The constrain still works, but instead of deleting the words right away, collect them and delete them all when a level ends, so that we can reuse the words (matching different parents in the same level).
 
 The items in the queue are not just words now. Parent nodes are also kept so that we can backtrack the path from the end.
+
 ```js
-    /**
-     * @param {string} beginWord
-     * @param {string} endWord
-     * @param {string[]} wordList
-     * @return {string[][]}
-     */
-    function findLadders (beginWord, endWord, wordList) {
-      wordList = new Set(wordList)
-      if (!wordList.has(endWord)) { return [] }
+/**
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {string[]} wordList
+ * @return {string[][]}
+ */
+function findLadders(beginWord, endWord, wordList) {
+  wordList = new Set(wordList);
+  if (!wordList.has(endWord)) {
+    return [];
+  }
 
-      const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+  const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
-      const result = []
-      let isEndWordFound = false
-      const levelWords = new Set()
-      const queue = [[beginWord, null], null]
-      while (queue.length > 1) {
-        const node = queue.shift()
+  const result = [];
+  let isEndWordFound = false;
+  const levelWords = new Set();
+  const queue = [[beginWord, null], null];
+  while (queue.length > 1) {
+    const node = queue.shift();
 
-        if (node === null) {
-          if (isEndWordFound) {
-            break
-          }
-          levelWords.forEach(word => wordList.delete(word))
-          levelWords.clear()
-          queue.push(null)
-          continue
-        }
+    if (node === null) {
+      if (isEndWordFound) {
+        break;
+      }
+      levelWords.forEach((word) => wordList.delete(word));
+      levelWords.clear();
+      queue.push(null);
+      continue;
+    }
 
-        const word = node[0]
+    const word = node[0];
 
-        for (let i = word.length - 1; i >= 0; i--) {
-          const head = word.slice(0, i)
-          const tail = word.slice(i+1)
+    for (let i = word.length - 1; i >= 0; i--) {
+      const head = word.slice(0, i);
+      const tail = word.slice(i + 1);
 
-          for (let c = 0; c < 26; c++) {
-            if (ALPHABET[c] !== word[i]) {
-              const w = head + ALPHABET[c] + tail
-              if (w === endWord) {
-                const path = [endWord]
-                for (let n = node; n !== null; n = n[1]) {
-                  path.unshift(n[0])
-                }
-                result.push(path)
-                isEndWordFound = true
-              }
-              if (wordList.has(w)) {
-                levelWords.add(w)
-                queue.push([w, node])
-              }
+      for (let c = 0; c < 26; c++) {
+        if (ALPHABET[c] !== word[i]) {
+          const w = head + ALPHABET[c] + tail;
+          if (w === endWord) {
+            const path = [endWord];
+            for (let n = node; n !== null; n = n[1]) {
+              path.unshift(n[0]);
             }
+            result.push(path);
+            isEndWordFound = true;
+          }
+          if (wordList.has(w)) {
+            levelWords.add(w);
+            queue.push([w, node]);
           }
         }
       }
+    }
+  }
 
-      return result
-    };
+  return result;
+}
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9421,56 +9932,61 @@ The best way control the depth (length of the shortest transformations) while bu
 We do not actually build the tree because it is expensive (astronomical if the list is huge). In fact, we only need one shortest path. So just like Dijkstra's algorithm, we say that the first time (level `i`) we encounter a word that turns out to be in a shortest path, then level `i` is the lowest level this word could ever get. We can safely remove it from the `wordList`.
 
 To find all the next words, instead of filtering the `wordList`, enumerate all 25 possible words and check if in `wordList`.
+
 ```js
-    /**
-     * @param {string} beginWord
-     * @param {string} endWord
-     * @param {string[]} wordList
-     * @return {number}
-     */
-    let ladderLength = function(beginWord, endWord, wordList) {
-      wordList = new Set(wordList)
-      if (!wordList.has(endWord)) { return 0 }
+/**
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {string[]} wordList
+ * @return {number}
+ */
+let ladderLength = function (beginWord, endWord, wordList) {
+  wordList = new Set(wordList);
+  if (!wordList.has(endWord)) {
+    return 0;
+  }
 
-      const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+  const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
-      let level = 1
-      const queue = [beginWord, null]
-      while (queue.length > 1) {
-        const word = queue.shift()
+  let level = 1;
+  const queue = [beginWord, null];
+  while (queue.length > 1) {
+    const word = queue.shift();
 
-        if (word === null) {
-          level++
-          queue.push(null)
-          continue
-        }
+    if (word === null) {
+      level++;
+      queue.push(null);
+      continue;
+    }
 
-        for (let i = word.length - 1; i >= 0; i--) {
-          const head = word.slice(0, i)
-          const tail = word.slice(i+1)
+    for (let i = word.length - 1; i >= 0; i--) {
+      const head = word.slice(0, i);
+      const tail = word.slice(i + 1);
 
-          for (let c = 0; c < 26; c++) {
-            if (ALPHABET[c] !== word[i]) {
-              const word = head + ALPHABET[c] + tail
-              if (word === endWord) {
-                return level + 1
-              }
-              if (wordList.delete(word)) {
-                queue.push(word)
-              }
-            }
+      for (let c = 0; c < 26; c++) {
+        if (ALPHABET[c] !== word[i]) {
+          const word = head + ALPHABET[c] + tail;
+          if (word === endWord) {
+            return level + 1;
+          }
+          if (wordList.delete(word)) {
+            queue.push(word);
           }
         }
       }
+    }
+  }
 
-      return 0
-    };
+  return 0;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9498,36 +10014,39 @@ Your algorithm should run in O(_n_) complexity.
 ### Solution:
 
 Build a Set from the list. Pick a number, find all it's adjacent numbers that are also in the Set. Count them and remove them all from the Set. Repeat until the Set is empty. Time complexity O(n + n) = O(n).
+
 ```js
-    /**
-     * @param {number[]} nums
-     * @return {number}
-     */
-    let longestConsecutive = function(nums) {
-      const numSet = new Set(nums)
-      let maxCount = 0
-      while (numSet.size > 0) {
-        const num = numSet.values().next().value
-        numSet.delete(num)
-        let count = 1
-        for (let n = num + 1; numSet.delete(n); n++) {
-          count++
-        }
-        for (let n = num - 1; numSet.delete(n); n--) {
-          count++
-        }
-        if (count > maxCount) {
-          maxCount = count
-        }
-      }
-      return maxCount
-    };
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+let longestConsecutive = function (nums) {
+  const numSet = new Set(nums);
+  let maxCount = 0;
+  while (numSet.size > 0) {
+    const num = numSet.values().next().value;
+    numSet.delete(num);
+    let count = 1;
+    for (let n = num + 1; numSet.delete(n); n++) {
+      count++;
+    }
+    for (let n = num - 1; numSet.delete(n); n--) {
+      count++;
+    }
+    if (count > maxCount) {
+      maxCount = count;
+    }
+  }
+  return maxCount;
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9597,7 +10116,8 @@ To write a clean solution for this promblem, use `0` as indicator of leaf node. 
       sum = sum * 10 + root.val
       return sumNumbers(root.left, sum) + sumNumbers(root.right, sum) || sum
     };
-```
+
+````
 
 ---
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9715,12 +10235,14 @@ So both BFS and DFS are good. I prefer BFS when pruning is not needed in favor o
         }
       }
     };
-```
+````
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9773,31 +10295,36 @@ DFS. Cache the visited node before entering the next recursion.
      *     this.neighbors = [];   // Array of UndirectedGraphNode
      * }
      */
-```js
-    /**
-     * @param {UndirectedGraphNode} graph
-     * @return {UndirectedGraphNode}
-     */
-    let cloneGraph = function(graph) {
-      const cache = {}
-      return _clone(graph)
 
-      function _clone (graph) {
-        if (!graph) { return graph }
-        const label = graph.label
-        if (!cache[label]) {
-          cache[label] = new UndirectedGraphNode(label)
-          cache[label].neighbors = graph.neighbors.map(_clone)
-        }
-        return cache[label]
-      }
-    };
+```js
+/**
+ * @param {UndirectedGraphNode} graph
+ * @return {UndirectedGraphNode}
+ */
+let cloneGraph = function (graph) {
+  const cache = {};
+  return _clone(graph);
+
+  function _clone(graph) {
+    if (!graph) {
+      return graph;
+    }
+    const label = graph.label;
+    if (!cache[label]) {
+      cache[label] = new UndirectedGraphNode(label);
+      cache[label].neighbors = graph.neighbors.map(_clone);
+    }
+    return cache[label];
+  }
+};
 ```
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9848,7 +10375,8 @@ DFS. Cache the visited node before entering the next recursion.
     }
 
 ![alt text](./completeLEETCODE_files/maximum-sum-circular-subarray.png "maximum-sum-circular-subarray")
-```js
+
+````js
     /**
      * @param {number[]} A
      * @return {number}
@@ -9884,7 +10412,7 @@ For this problem, a height-balanced binary tree is defined as:
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">1</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>  
+                  "></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">1</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>
 **Output:** true
 
 **Example 2:**
@@ -9896,12 +10424,12 @@ For this problem, a height-balanced binary tree is defined as:
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span></span></span></span></span>  
+                  "></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span></span></span></span></span>
 **Output:** false
 
 **Example 3:**
 
-**Input:** root = \[\]  
+**Input:** root = \[\]
 **Output:** true
 
 **Constraints:**
@@ -9936,8 +10464,8 @@ One possible answer is: <span class="katex-display"><span class="katex"><span cl
       0
      / \\
 
--3 9  
-/ /  
+-3 9
+/ /
 -10 5
 
 [Source](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)\# Delete Node in a BST
@@ -9962,26 +10490,26 @@ Basically, the deletion can be divided into two stages:
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, key = 3  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, key = 3
 **Output:** <span class="katex-display"><span class="katex"><span class="katex-mathml">
 5, 4, 6, 2, *n**u**l\*\*l*, *n**u**l\*\*l*, 7
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>  
-**Explanation:** Given key to delete is 3. So we find the node with value 3 and delete it.  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>
+**Explanation:** Given key to delete is 3. So we find the node with value 3 and delete it.
 One valid answer is <span class="katex-display"><span class="katex"><span class="katex-mathml">
 5, 4, 6, 2, *n**u**l\*\*l*, *n**u**l\*\*l*, 7
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, shown in the above BST.  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, shown in the above BST.
 Please notice that another valid answer is <span class="katex-display"><span class="katex"><span class="katex-mathml">
 5, 2, 6, *n**u**l\*\*l*, 4, *n**u**l\*\*l*, 7
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span> and it's also accepted.  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span> and it's also accepted.
 ![](./completeLEETCODE_files/del_node_supp.jpg)
 
 **Example 2:**
@@ -9991,18 +10519,18 @@ Please notice that another valid answer is <span class="katex-display"><span cla
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, key = 0  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, key = 0
 **Output:** <span class="katex-display"><span class="katex"><span class="katex-mathml">
 5, 3, 6, 2, 4, *n**u**l\*\*l*, 7
 </span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>
 **Explanation:** The tree does not contain a node with value = 0.
 
 **Example 3:**
 
-**Input:** root = \[\], key = 0  
+**Input:** root = \[\], key = 0
 **Output:** \[\]
 
 **Constraints:**
@@ -10013,7 +10541,7 @@ Please notice that another valid answer is <span class="katex-display"><span cla
 - `root` is a valid binary search tree.
 - `-105 <= key <= 105`
 
-[Source](https://leetcode.com/problems/delete-node-in-a-bst/)![alt text](./completeLEETCODE_files/meeting-room-ii-0.jpg "meeting-room-ii")  
+[Source](https://leetcode.com/problems/delete-node-in-a-bst/)![alt text](./completeLEETCODE_files/meeting-room-ii-0.jpg "meeting-room-ii")
 ![alt text](./completeLEETCODE_files/meeting-room-ii-1.jpg "meeting-room-ii")
 ```js
     /**
@@ -10437,3 +10965,4 @@ Please notice that another valid answer is <span class="katex-display"><span cla
 - [Balanced Binary Tree - LeetCode](file:///C:/Users/bryan/Downloads/LEETCODE.html#balanced-binary-tree-leetcode)
 
 <span id="sidebar-toc-btn">≡</span>
+````

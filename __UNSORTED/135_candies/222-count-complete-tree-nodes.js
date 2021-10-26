@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const countNodes = function(root) {
+const countNodes = function (root) {
   if (root == null) return 0;
   const payload = { depth: 0, numOfLast: 0, total: 0 };
   traverse([root], 0, payload);
@@ -35,7 +35,7 @@ function traverse(row, depth, obj) {
  * @param {TreeNode} root
  * @return {number}
  */
-const countNodes = function(root) {
+const countNodes = function (root) {
   if (!root) {
     return 0;
   }

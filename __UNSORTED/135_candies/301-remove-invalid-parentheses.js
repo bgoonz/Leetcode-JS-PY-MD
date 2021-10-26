@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string[]}
  */
-const removeInvalidParentheses = function(s) {
+const removeInvalidParentheses = function (s) {
   const ans = [];
   remove(s, ans, 0, 0, ["(", ")"]);
   return ans;
@@ -23,10 +23,7 @@ function remove(s, ans, last_i, last_j, par) {
     }
     return;
   }
-  const reversed = s
-    .split("")
-    .reverse()
-    .join("");
+  const reversed = s.split("").reverse().join("");
   if (par[0] === "(") {
     remove(reversed, ans, 0, 0, [")", "("]);
   } else {

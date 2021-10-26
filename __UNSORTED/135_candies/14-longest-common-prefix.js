@@ -2,7 +2,7 @@
  * @param {string[]} strs
  * @return {string}
  */
-const longestCommonPrefix = function(strs) {
+const longestCommonPrefix = function (strs) {
   const A = strs.concat().sort(),
     a1 = A[0] || "",
     a2 = A[A.length - 1] || "",

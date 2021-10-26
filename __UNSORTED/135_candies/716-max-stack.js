@@ -1,47 +1,47 @@
 /**
  * initialize your data structure here.
  */
-const MaxStack = function() {
-  this.stack = []
-}
+const MaxStack = function () {
+  this.stack = [];
+};
 
 /**
  * @param {number} x
  * @return {void}
  */
-MaxStack.prototype.push = function(x) {
-  this.stack.push(x)
-}
+MaxStack.prototype.push = function (x) {
+  this.stack.push(x);
+};
 
 /**
  * @return {number}
  */
-MaxStack.prototype.pop = function() {
-  return this.stack.pop()
-}
+MaxStack.prototype.pop = function () {
+  return this.stack.pop();
+};
 
 /**
  * @return {number}
  */
-MaxStack.prototype.top = function() {
-  return this.stack[this.stack.length - 1]
-}
+MaxStack.prototype.top = function () {
+  return this.stack[this.stack.length - 1];
+};
 
 /**
  * @return {number}
  */
-MaxStack.prototype.peekMax = function() {
-  return Math.max(...this.stack)
-}
+MaxStack.prototype.peekMax = function () {
+  return Math.max(...this.stack);
+};
 
 /**
  * @return {number}
  */
-MaxStack.prototype.popMax = function() {
-  const elem = Math.max(...this.stack)
-  const index = this.stack.lastIndexOf(elem)
-  return this.stack.splice(index, 1)[0]
-}
+MaxStack.prototype.popMax = function () {
+  const elem = Math.max(...this.stack);
+  const index = this.stack.lastIndexOf(elem);
+  return this.stack.splice(index, 1)[0];
+};
 
 /**
  * Your MaxStack object will be instantiated and called as such:

@@ -2,7 +2,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-const swimInWater = function(grid) {
+const swimInWater = function (grid) {
   let n = grid.length;
   let low = grid[0][0],
     hi = n * n - 1;
@@ -16,7 +16,7 @@ const swimInWater = function(grid) {
 
 function valid(grid, waterHeight) {
   let n = grid.length;
-  const visited = Array.from(new Array(n), el => new Array(n).fill(0));
+  const visited = Array.from(new Array(n), (el) => new Array(n).fill(0));
   const dir = [-1, 0, 1, 0, -1];
   return dfs(grid, visited, dir, waterHeight, 0, 0, n);
 }
@@ -46,8 +46,13 @@ function dfs(grid, visited, dir, waterHeight, row, col, n) {
  * @param {number[][]} grid
  * @return {number}
  */
-const dirs = [[-1, 0], [1, 0], [0, 1], [0, -1]];
-const swimInWater = grid => {
+const dirs = [
+  [-1, 0],
+  [1, 0],
+  [0, 1],
+  [0, -1],
+];
+const swimInWater = (grid) => {
   let time = 0;
   let N = grid.length;
   const visited = new Set();
@@ -74,7 +79,6 @@ function dfs(grid, i, j, time, visited) {
     dfs(grid, i + dir[0], j + dir[1], time, visited);
   }
 }
-
 
 // another
 
@@ -105,7 +109,7 @@ class UnionFind {
     this.id[this.root(p)] = this.root(q);
   }
 }
-const swimInWater = grid => {
+const swimInWater = (grid) => {
   const N = grid.length;
   const uf = new UnionFind(N * N);
   let time = 0;

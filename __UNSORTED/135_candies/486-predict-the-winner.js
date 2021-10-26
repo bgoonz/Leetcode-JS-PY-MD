@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-const PredictTheWinner = function(nums) {
+const PredictTheWinner = function (nums) {
   // The dp[i][j] saves how much more scores that the first-in-action player will get from i to j than the second player.
   const dp = [];
   for (let i = 0; i <= nums.length; i++) {

@@ -2,11 +2,11 @@
  * @param {string} s
  * @return {number}
  */
-const strongPasswordChecker = function(s) {
+const strongPasswordChecker = function (s) {
   let n = s.length,
     toAdd = Math.max(0, 6 - n),
     toDel = Math.max(n - 20, 0),
-    repeat = Array.from({ length: 3 }, _ => []),
+    repeat = Array.from({ length: 3 }, (_) => []),
     lower = 1,
     upper = 1,
     digit = 1,
@@ -46,4 +46,3 @@ const strongPasswordChecker = function(s) {
     : (rep += del - toDel);
   return toDel + Math.max(digit + lower + upper, rep + toAdd);
 };
-

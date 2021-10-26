@@ -2,7 +2,7 @@
  * @param {string} S
  * @return {number[][]}
  */
-const largeGroupPositions = function(S) {
+const largeGroupPositions = function (S) {
   if (S.length === 0) return [];
   let prevChar = S[0];
   let curChar = S[0];

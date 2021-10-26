@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const maxCoins = iNums => {
+const maxCoins = (iNums) => {
   const nums = new Array(iNums.length + 2);
   let n = 1;
   for (let x of iNums) if (x > 0) nums[n++] = x;

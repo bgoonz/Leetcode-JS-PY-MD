@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-const findFrequentTreeSum = function(root) {
+const findFrequentTreeSum = function (root) {
   if (root == null) return [];
   const valArr = [];
   calc(root, valArr);

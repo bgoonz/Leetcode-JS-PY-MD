@@ -1,7 +1,7 @@
 /**
  * @param {number[]} nums
  */
-const Solution = function(nums) {
+const Solution = function (nums) {
   this.nums = nums;
 };
 
@@ -9,7 +9,7 @@ const Solution = function(nums) {
  * @param {number} target
  * @return {number}
  */
-Solution.prototype.pick = function(target) {
+Solution.prototype.pick = function (target) {
   const res = [];
   for (let i = 0; i < this.nums.length; i++) {
     if (this.nums[i] === target) {

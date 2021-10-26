@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-const checkPossibility = function(nums) {
+const checkPossibility = function (nums) {
   let count = 0;
   let idx;
   if (nums.length === 1) return true;

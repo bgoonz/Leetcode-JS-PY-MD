@@ -3,7 +3,7 @@
  * @param {string} target
  * @return {number}
  */
-const openLock = function(deadends, target, count = 0) {
+const openLock = function (deadends, target, count = 0) {
   let deadSet = new Set(deadends);
   let visited = new Set();
   if (deadSet.has("0000")) {

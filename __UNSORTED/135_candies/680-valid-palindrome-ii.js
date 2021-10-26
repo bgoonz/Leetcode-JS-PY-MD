@@ -3,11 +3,11 @@
  * @return {boolean}
  */
 
-const validPalindrome = function(s) {
+const validPalindrome = function (s) {
   let start = 0;
   let end = s.length - 1;
 
-  const isPalindrome = function(start, end, removed) {
+  const isPalindrome = function (start, end, removed) {
     while (start <= end) {
       if (s[start] !== s[end]) {
         if (removed) {

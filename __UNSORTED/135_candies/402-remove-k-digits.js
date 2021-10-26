@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {string}
  */
-const removeKdigits = function(num, k) {
+const removeKdigits = function (num, k) {
   const digits = num.length - k;
   const stk = new Array(num.length);
   let top = 0;
@@ -25,7 +25,6 @@ const removeKdigits = function(num, k) {
   return idx === digits ? "0" : stk.slice(idx, digits + idx).join("");
 };
 
-
 // another
 
 /**
@@ -33,26 +32,26 @@ const removeKdigits = function(num, k) {
  * @param {number} k
  * @return {string}
  */
-const removeKdigits = function(num, k) {
-  const len = num.length
-  if(k === len) return '0'
-  const stack = []
-  let i = 0
-  while(i < len) {
-    while(k > 0 && stack.length && stack[stack.length - 1] > num[i]) {
-      stack.pop()
-      k--
+const removeKdigits = function (num, k) {
+  const len = num.length;
+  if (k === len) return "0";
+  const stack = [];
+  let i = 0;
+  while (i < len) {
+    while (k > 0 && stack.length && stack[stack.length - 1] > num[i]) {
+      stack.pop();
+      k--;
     }
-    stack.push(num[i])
-    i++
+    stack.push(num[i]);
+    i++;
   }
-  while(k > 0) {
-    stack.pop()
-    k--
+  while (k > 0) {
+    stack.pop();
+    k--;
   }
-  let res = ''
-  while(stack.length) res += stack.pop()
-  res = res.split('').reverse()
-  while(res.length > 1 && res[0] === '0') res.shift()
-  return res.join('')
+  let res = "";
+  while (stack.length) res += stack.pop();
+  res = res.split("").reverse();
+  while (res.length > 1 && res[0] === "0") res.shift();
+  return res.join("");
 };

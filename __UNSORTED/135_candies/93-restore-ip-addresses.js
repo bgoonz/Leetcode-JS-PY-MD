@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string[]}
  */
-const restoreIpAddresses = function(s) {
+const restoreIpAddresses = function (s) {
   if (s.length < 4 || s.length > 12) return [];
   const res = [];
   let ans = "";
@@ -17,7 +17,8 @@ const restoreIpAddresses = function(s) {
             let D = +s.substr(a + b + c, d);
             if (A <= 255 && B <= 255 && C <= 255 && D <= 255) {
               if (
-                ((ans = A + "." + B + "." + C + "." + D).length === s.length + 3)
+                (ans = A + "." + B + "." + C + "." + D).length ===
+                s.length + 3
               ) {
                 res.push(ans);
               }
@@ -36,7 +37,7 @@ const restoreIpAddresses = function(s) {
  * @param {string} s
  * @return {string[]}
  */
-const restoreIpAddresses = function(s) {
+const restoreIpAddresses = function (s) {
   const ans = [];
   const stack = [];
   let ipstr;

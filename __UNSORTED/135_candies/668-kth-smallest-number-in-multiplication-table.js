@@ -4,7 +4,7 @@
  * @param {number} k
  * @return {number}
  */
-const findKthNumber = function(m, n, k) {
+const findKthNumber = function (m, n, k) {
   let left = 1;
   let right = m * n;
   while (left < right) {

@@ -2,7 +2,7 @@
  * @param {number[]} hours
  * @return {number}
  */
-const longestWPI = function(hours) {
+const longestWPI = function (hours) {
   const N = hours.length;
   const seen = new Map();
   let res = 0;

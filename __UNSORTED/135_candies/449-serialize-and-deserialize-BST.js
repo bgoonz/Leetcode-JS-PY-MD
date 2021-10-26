@@ -13,7 +13,7 @@ const splitter = ",";
  * @param {TreeNode} root
  * @return {string}
  */
-const serialize = function(root) {
+const serialize = function (root) {
   const sb = [];
   buildString(root, sb);
   sb.pop();
@@ -32,7 +32,7 @@ function buildString(node, sb) {
  * @param {string} data
  * @return {TreeNode}
  */
-const deserialize = function(data) {
+const deserialize = function (data) {
   if (data.length === 0) return null;
   const pos = [0];
   return buildTree(

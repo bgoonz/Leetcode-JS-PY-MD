@@ -3,7 +3,7 @@
  * @param {string} version2
  * @return {number}
  */
-const compareVersion = function(version1, version2) {
+const compareVersion = function (version1, version2) {
   const fa = version1.split(".");
   const sa = version2.split(".");
   const len = Math.max(fa.length, sa.length);

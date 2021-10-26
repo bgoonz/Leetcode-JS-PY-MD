@@ -2,7 +2,7 @@
  * @param {number} numRows
  * @return {number[][]}
  */
-const generate = function(numRows) {
+const generate = function (numRows) {
   // row 0 => [1] length 0
   // row 1 => [1, 1] length 1
   // row 2 => [1, 2, 1] length 2

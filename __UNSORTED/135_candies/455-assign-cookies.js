@@ -3,7 +3,7 @@
  * @param {number[]} s
  * @return {number}
  */
-const findContentChildren = function(g, s) {
+const findContentChildren = function (g, s) {
   s.sort((a, b) => a - b);
   g.sort((a, b) => a - b);
 

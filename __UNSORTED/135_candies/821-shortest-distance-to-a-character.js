@@ -3,7 +3,7 @@
  * @param {character} C
  * @return {number[]}
  */
-const shortestToChar = function(S, C) {
+const shortestToChar = function (S, C) {
   const res = [];
   const idxArr = [];
   for (let i = 0; i < S.length; i++) {

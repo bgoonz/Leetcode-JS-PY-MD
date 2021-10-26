@@ -3,11 +3,12 @@
  * @param {string} t
  * @return {character}
  */
-const findTheDifference = function(s, t) {
-  let xor = 0
-  for(let i = 0, len = s.length; i < len; i++) xor = xor ^ s.charCodeAt(i) ^ t.charCodeAt(i)
-  xor = xor ^ t.charCodeAt(t.length - 1)
-  return String.fromCharCode(xor)
+const findTheDifference = function (s, t) {
+  let xor = 0;
+  for (let i = 0, len = s.length; i < len; i++)
+    xor = xor ^ s.charCodeAt(i) ^ t.charCodeAt(i);
+  xor = xor ^ t.charCodeAt(t.length - 1);
+  return String.fromCharCode(xor);
 };
 
 // another
@@ -17,7 +18,7 @@ const findTheDifference = function(s, t) {
  * @param {string} t
  * @return {character}
  */
-const findTheDifference = function(s, t) {
+const findTheDifference = function (s, t) {
   const arr = s.split("");
   let idx;
   for (let i = 0; i < t.length; i++) {

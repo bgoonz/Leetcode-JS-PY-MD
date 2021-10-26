@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number[]}
  */
-const twoSum = function(numbers, target) {
+const twoSum = function (numbers, target) {
   const res = [];
   let remaining;
   let next = 0;

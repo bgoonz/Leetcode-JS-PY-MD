@@ -1,41 +1,41 @@
 /**
  * Initialize your data structure here.
  */
-const Trie = function() {
-  this.root = {}
+const Trie = function () {
+  this.root = {};
 };
 
 /**
- * Inserts a word into the trie. 
+ * Inserts a word into the trie.
  * @param {string} word
  * @return {void}
  */
-Trie.prototype.insert = function(word) {
-  let curr = this.root
-  word.split('').forEach(ch => (curr = curr[ch] = curr[ch] || {}))
-  curr.isWord = true
+Trie.prototype.insert = function (word) {
+  let curr = this.root;
+  word.split("").forEach((ch) => (curr = curr[ch] = curr[ch] || {}));
+  curr.isWord = true;
 };
 
 /**
- * Returns if the word is in the trie. 
+ * Returns if the word is in the trie.
  * @param {string} word
  * @return {boolean}
  */
-Trie.prototype.search = function(word) {
-  let node = this.traverse(word)
-  return !!node && !!node.isWord   
+Trie.prototype.search = function (word) {
+  let node = this.traverse(word);
+  return !!node && !!node.isWord;
 };
 
 /**
- * Returns if there is any word in the trie that starts with the given prefix. 
+ * Returns if there is any word in the trie that starts with the given prefix.
  * @param {string} prefix
  * @return {boolean}
  */
-Trie.prototype.startsWith = function(prefix) {
-   return !!this.traverse(prefix)   
+Trie.prototype.startsWith = function (prefix) {
+  return !!this.traverse(prefix);
 };
 
-/** 
+/**
  * Your Trie object will be instantiated and called as such:
  * var obj = new Trie()
  * obj.insert(word)
@@ -43,14 +43,14 @@ Trie.prototype.startsWith = function(prefix) {
  * var param_3 = obj.startsWith(prefix)
  */
 
-Trie.prototype.traverse = function(word) {
-  let curr = this.root
+Trie.prototype.traverse = function (word) {
+  let curr = this.root;
   for (let i = 0; i < word.length; i++) {
-    if (!curr) return null
-    curr = curr[word[i]]
+    if (!curr) return null;
+    curr = curr[word[i]];
   }
-  return curr
-}
+  return curr;
+};
 
 // another
 
@@ -90,8 +90,8 @@ class Trie {
  * Initialize your data structure here.
  */
 const Trie = function () {
-  this.root = new Node(null)
-}
+  this.root = new Node(null);
+};
 
 /**
  * Inserts a word into the trie.
@@ -99,13 +99,13 @@ const Trie = function () {
  * @return {void}
  */
 Trie.prototype.insert = function (word) {
-  let cur = this.root
+  let cur = this.root;
   for (let i = 0, len = word.length; i < len; i++) {
-    if (!cur.children.has(word[i])) cur.children.set(word[i], new Node(null))
-    cur = cur.children.get(word[i])
-    if (i === len - 1) cur.word = true
+    if (!cur.children.has(word[i])) cur.children.set(word[i], new Node(null));
+    cur = cur.children.get(word[i]);
+    if (i === len - 1) cur.word = true;
   }
-}
+};
 
 /**
  * Returns if the word is in the trie.
@@ -113,13 +113,13 @@ Trie.prototype.insert = function (word) {
  * @return {boolean}
  */
 Trie.prototype.search = function (word) {
-  let cur = this.root
+  let cur = this.root;
   for (let i = 0, len = word.length; i < len; i++) {
-    if (cur.children.has(word[i])) cur = cur.children.get(word[i])
-    else return false
-    if (i === len - 1) return cur.word === true
+    if (cur.children.has(word[i])) cur = cur.children.get(word[i]);
+    else return false;
+    if (i === len - 1) return cur.word === true;
   }
-}
+};
 
 /**
  * Returns if there is any word in the trie that starts with the given prefix.
@@ -127,19 +127,19 @@ Trie.prototype.search = function (word) {
  * @return {boolean}
  */
 Trie.prototype.startsWith = function (prefix) {
-  let cur = this.root
+  let cur = this.root;
   for (let i = 0, len = prefix.length; i < len; i++) {
-    if (cur.children.has(prefix[i])) cur = cur.children.get(prefix[i])
-    else return false
-    if (i === len - 1) return true
+    if (cur.children.has(prefix[i])) cur = cur.children.get(prefix[i]);
+    else return false;
+    if (i === len - 1) return true;
   }
-}
+};
 
 class Node {
   constructor(v) {
-    this.val = v
-    this.word = false
-    this.children = new Map()
+    this.val = v;
+    this.word = false;
+    this.children = new Map();
   }
 }
 

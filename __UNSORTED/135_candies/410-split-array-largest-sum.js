@@ -4,68 +4,66 @@
  * @return {number}
  */
 function doable(nums, cuts, max) {
-    let acc = 0
-    for(let num of nums) {
-        if(num > max) return false
-        else if(acc + num <= max) acc += num
-        else {
-            --cuts;
-            acc = num;
-            if(cuts < 0) return false
-        }
+  let acc = 0;
+  for (let num of nums) {
+    if (num > max) return false;
+    else if (acc + num <= max) acc += num;
+    else {
+      --cuts;
+      acc = num;
+      if (cuts < 0) return false;
     }
-    return true
+  }
+  return true;
 }
-
 
 function splitArray(nums, m) {
-    let left = 0
-    let right = 0
-    for(let num of nums) {
-        left = Math.max(left, num)
-        right += num
-    }
-    while(left < right) {
-        let mid = Math.floor(left + (right - left) / 2)
-        if(doable(nums, m - 1, mid)) right = mid
-        else left = mid + 1 
-    }
-    return left
+  let left = 0;
+  let right = 0;
+  for (let num of nums) {
+    left = Math.max(left, num);
+    right += num;
+  }
+  while (left < right) {
+    let mid = Math.floor(left + (right - left) / 2);
+    if (doable(nums, m - 1, mid)) right = mid;
+    else left = mid + 1;
+  }
+  return left;
 }
-
 
 /**
  * @param {number[]} nums
  * @param {number} m
  * @return {number}
  */
-const splitArray = function(nums, m) {
+const splitArray = function (nums, m) {
   let l = 0,
-    r = 0
+    r = 0;
   for (let el of nums) {
-    if (el > l) l = el
-    r += el
+    if (el > l) l = el;
+    r += el;
   }
   while (l < r) {
-    let mid = Math.floor((l + r) / 2)
-    if (numOfSubArrLessOrEqualThanM(nums, mid, m)) r = mid
-     else l = mid + 1
+    let mid = Math.floor((l + r) / 2);
+    if (numOfSubArrLessOrEqualThanM(nums, mid, m)) r = mid;
+    else l = mid + 1;
   }
-  return l
-}
+  return l;
+};
 
 function numOfSubArrLessOrEqualThanM(nums, target, m) {
   let sum = 0,
-    count = 1
+    count = 1;
   for (let el of nums) {
-    sum += el
+    sum += el;
     if (sum > target) {
-      sum = el
-      count++
+      sum = el;
+      count++;
     }
-    if (count > m) return false
+    if (count > m) return false;
   }
-  return true
+  return true;
 }
 
 /**

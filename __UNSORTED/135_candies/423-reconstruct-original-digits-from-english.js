@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string}
  */
-const originalDigits = function(s) {
+const originalDigits = function (s) {
   const count = new Array(10).fill(0);
   for (let i = 0; i < s.length; i++) {
     let c = s.charAt(i);

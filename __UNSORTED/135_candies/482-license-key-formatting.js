@@ -3,7 +3,7 @@
  * @param {number} K
  * @return {string}
  */
-const licenseKeyFormatting = function(S, K) {
+const licenseKeyFormatting = function (S, K) {
   if (S == null || S === "") return "";
   const newStr = S.replace(/-/g, "").toUpperCase();
   const arr = newStr.split("");

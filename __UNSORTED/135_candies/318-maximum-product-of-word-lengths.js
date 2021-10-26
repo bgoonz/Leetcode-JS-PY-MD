@@ -2,7 +2,7 @@
  * @param {string[]} words
  * @return {number}
  */
-const maxProduct = function(words) {
+const maxProduct = function (words) {
   if (words == null || words.length === 0) return 0;
   let len = words.length;
   let value = [];

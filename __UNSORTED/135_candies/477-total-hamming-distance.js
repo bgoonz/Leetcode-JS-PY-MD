@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const totalHammingDistance = function(nums) {
+const totalHammingDistance = function (nums) {
   let total = 0,
     n = nums.length;
   for (let j = 0; j < 32; j++) {

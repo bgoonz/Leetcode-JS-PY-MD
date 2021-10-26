@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {number}
  */
-const longestSubstring = function(s, k) {
+const longestSubstring = function (s, k) {
   if (s == null || s.length === 0) return 0;
   const chars = new Array(26).fill(0);
   const aCode = "a".charCodeAt(0);

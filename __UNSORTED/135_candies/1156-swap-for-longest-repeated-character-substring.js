@@ -2,7 +2,7 @@
  * @param {string} text
  * @return {number}
  */
-const maxRepOpt1 = function(text) {
+const maxRepOpt1 = function (text) {
   const count = [...text].reduce((a, c) => {
     a[c] = a[c] || 0;
     a[c]++;

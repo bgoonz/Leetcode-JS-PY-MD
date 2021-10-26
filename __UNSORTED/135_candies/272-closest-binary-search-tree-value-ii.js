@@ -26,7 +26,6 @@ less than O(n) runtime (where n = total nodes)?
 
 */
 
-
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -40,25 +39,25 @@ less than O(n) runtime (where n = total nodes)?
  * @param {number} k
  * @return {number[]}
  */
-const closestKValues = function(root, target, k) {
-  const res = []
-  let node = root
-  const stack = []
+const closestKValues = function (root, target, k) {
+  const res = [];
+  let node = root;
+  const stack = [];
   while (node || stack.length) {
     if (node) {
-      stack.push(node)
-      node = node.left
+      stack.push(node);
+      node = node.left;
     } else {
-      node = stack.pop()
+      node = stack.pop();
       if (res.length === k) {
         if (Math.abs(res[0] - target) <= Math.abs(node.val - target)) {
-          return res
+          return res;
         }
-        res.shift()
+        res.shift();
       }
-      res.push(node.val)
-      node = node.right
+      res.push(node.val);
+      node = node.right;
     }
   }
-  return res
-}
+  return res;
+};

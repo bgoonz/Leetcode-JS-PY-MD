@@ -2,9 +2,9 @@
  * @param {number[]} A
  * @return {number}
  */
-const longestArithSeqLength = function(A) {
-  let a = A
-  let n = A.length
+const longestArithSeqLength = function (A) {
+  let a = A;
+  let n = A.length;
   if (n <= 2) return n;
 
   let i, j, k, d;

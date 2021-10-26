@@ -3,7 +3,7 @@
  * @param {string[]} list2
  * @return {string[]}
  */
-const findRestaurant = function(list1, list2) {
+const findRestaurant = function (list1, list2) {
   const hash = {};
   for (let i = 0; i < list1.length; i++) {
     if (!hash.hasOwnProperty(list1[i])) {
@@ -17,7 +17,7 @@ const findRestaurant = function(list1, list2) {
     }
   }
   const resHash = {};
-  resArr.forEach(el => {
+  resArr.forEach((el) => {
     if (resHash.hasOwnProperty(el[1])) {
       resHash[el[1]].push(el[0]);
     } else {

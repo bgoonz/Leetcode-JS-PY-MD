@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-const subsetsWithDup = function(nums) {
+const subsetsWithDup = function (nums) {
   nums.sort((a, b) => a - b);
   const res = [];
   bt(res, nums, [], 0);

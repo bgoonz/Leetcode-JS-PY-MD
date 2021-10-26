@@ -3,7 +3,7 @@
  * @param {number[]} shifts
  * @return {string}
  */
-const shiftingLetters = function(S, shifts) {
+const shiftingLetters = function (S, shifts) {
   let suffixSum = 0,
     result = "";
   for (let i = S.length - 1; i >= 0; i--) {

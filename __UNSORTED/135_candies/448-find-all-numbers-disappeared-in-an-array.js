@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const findDisappearedNumbers = function(nums) {
+const findDisappearedNumbers = function (nums) {
   const res = [];
   nums.forEach((el, idx) => {
     res[el - 1] = 1;

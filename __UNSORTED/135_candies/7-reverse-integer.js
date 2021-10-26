@@ -2,7 +2,7 @@
  * @param {number} x
  * @return {number}
  */
-const reverse = function(num) {
+const reverse = function (num) {
   let negative = false;
   let result = 0;
   if (num < 0) {

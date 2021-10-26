@@ -2,7 +2,7 @@
  * @param {number[][]} wall
  * @return {number}
  */
-const leastBricks = function(wall) {
+const leastBricks = function (wall) {
   const hash = {};
   let row;
   let rowSum = 0;
@@ -17,7 +17,7 @@ const leastBricks = function(wall) {
   return (
     wall.length -
     (Object.keys(hash).length > 0
-      ? Math.max(...Object.keys(hash).map(key => hash[key]))
+      ? Math.max(...Object.keys(hash).map((key) => hash[key]))
       : 0)
   );
 };

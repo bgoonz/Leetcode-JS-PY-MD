@@ -9,29 +9,31 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const upsideDownBinaryTree = function(root) {
-  let node = root, parent = null, right = null
-  while(node !== null) {
-    const left = node.left
-    node.left = right
-    right = node.right
-    node.right = parent
-    parent = node
-    node = left
+const upsideDownBinaryTree = function (root) {
+  let node = root,
+    parent = null,
+    right = null;
+  while (node !== null) {
+    const left = node.left;
+    node.left = right;
+    right = node.right;
+    node.right = parent;
+    parent = node;
+    node = left;
   }
-  return parent
+  return parent;
 };
 
 // another
 
-const upsideDownBinaryTree = function(root) {
+const upsideDownBinaryTree = function (root) {
   if (root == null || root.left == null) {
-    return root
+    return root;
   }
-  const newRoot = upsideDownBinaryTree(root.left)
-  root.left.left = root.right
-  root.left.right = root
-  root.left = null
-  root.right = null
-  return newRoot
-}
+  const newRoot = upsideDownBinaryTree(root.left);
+  root.left.left = root.right;
+  root.left.right = root;
+  root.left = null;
+  root.right = null;
+  return newRoot;
+};

@@ -3,8 +3,13 @@
  * @param {string} word
  * @return {boolean}
  */
-const exist = function(board, word) {
-  const dirs = [[0, 1], [0, -1], [-1, 0], [1, 0]];
+const exist = function (board, word) {
+  const dirs = [
+    [0, 1],
+    [0, -1],
+    [-1, 0],
+    [1, 0],
+  ];
   for (let j = 0; j < board.length; j++) {
     for (let i = 0; i < board[0].length; i++) {
       let res = dfs(board, i, j, dirs, word, 0);
@@ -45,19 +50,24 @@ function dfs(board, x, y, dirs, word, start) {
  * @param {string} word
  * @return {boolean}
  */
-const exist = function(board, word) {
-  if (!word || !board || board.length === 0) return false
-  const dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+const exist = function (board, word) {
+  if (!word || !board || board.length === 0) return false;
+  const dirs = [
+    [-1, 0],
+    [1, 0],
+    [0, -1],
+    [0, 1],
+  ];
   for (let row = 0; row < board.length; row++) {
     for (let col = 0; col < board[row].length; col++) {
-      if (searchWord(board, row, col, word, 0, dirs)) return true
+      if (searchWord(board, row, col, word, 0, dirs)) return true;
     }
   }
-  return false
-}
+  return false;
+};
 
 const searchWord = (board, row, col, word, widx, dirs) => {
-  if (widx === word.length) return true
+  if (widx === word.length) return true;
   if (
     row < 0 ||
     col < 0 ||
@@ -65,15 +75,16 @@ const searchWord = (board, row, col, word, widx, dirs) => {
     col === board[0].length ||
     board[row][col] === null ||
     board[row][col] !== word[widx]
-  ) return false
+  )
+    return false;
 
-  const ch = board[row][col]
-  board[row][col] = null // mark visited
+  const ch = board[row][col];
+  board[row][col] = null; // mark visited
 
   for (let dir of dirs) {
     if (searchWord(board, row + dir[0], col + dir[1], word, widx + 1, dirs)) {
-      return true
+      return true;
     }
   }
-  board[row][col] = ch // recover
-}
+  board[row][col] = ch; // recover
+};

@@ -2,7 +2,7 @@
  * @param {number[]} ratings
  * @return {number}
  */
-const candy = function(ratings) {
+const candy = function (ratings) {
   const candies = new Array(ratings.length).fill(1);
   for (let i = 1; i < candies.length; i++) {
     if (ratings[i] > ratings[i - 1]) {

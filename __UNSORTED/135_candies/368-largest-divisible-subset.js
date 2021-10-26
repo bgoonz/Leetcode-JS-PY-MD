@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const largestDivisibleSubset = function(nums) {
+const largestDivisibleSubset = function (nums) {
   let len = nums.length;
   let maxSize = 0;
   let maxSizeLastIdx;

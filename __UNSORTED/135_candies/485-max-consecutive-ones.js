@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const findMaxConsecutiveOnes = function(nums) {
+const findMaxConsecutiveOnes = function (nums) {
   let sum = 0,
     max = 0;
 

@@ -3,7 +3,7 @@
  * @param {number} k
  * @return {number}
  */
-const kConcatenationMaxSum = function(arr, k) {
+const kConcatenationMaxSum = function (arr, k) {
   const MOD = 1e9 + 7,
     INF = 1e4 + 1;
   const kadane = (A, sum = 0, ans = -INF) => {

@@ -2,7 +2,7 @@
  * @param {number[]} A
  * @return {boolean}
  */
-const validMountainArray = function(A) {
+const validMountainArray = function (A) {
   if (A.length < 3) return false;
   let start = 0;
   let end = A.length - 1;

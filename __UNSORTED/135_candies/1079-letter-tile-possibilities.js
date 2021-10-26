@@ -2,7 +2,7 @@
  * @param {string} tiles
  * @return {number}
  */
-const numTilePossibilities = function(tiles) {
+const numTilePossibilities = function (tiles) {
   const obj = { count: 0 };
   dfs(tiles, new Array(tiles.length).fill(false), new Set(), "", obj);
   return obj.count;
@@ -10,7 +10,7 @@ const numTilePossibilities = function(tiles) {
 
 function dfs(tiles, used, visited, path, obj) {
   if (path !== "" && !visited.has(path)) obj.count++;
-  visited.add(path)
+  visited.add(path);
 
   for (let i = 0; i < tiles.length; i++) {
     if (used[i]) continue;
@@ -26,7 +26,7 @@ function dfs(tiles, used, visited, path, obj) {
  * @param {string} tiles
  * @return {number}
  */
-const numTilePossibilities = function(tiles) {
+const numTilePossibilities = function (tiles) {
   let used = new Array(tiles.length).fill(false);
   let visited = new Set();
   let cnt = 0;
@@ -41,8 +41,8 @@ const numTilePossibilities = function(tiles) {
       dfs(path + tiles[i]);
       used[i] = false;
     }
-  }
-  dfs('');
+  };
+  dfs("");
   return cnt;
 };
 
@@ -52,23 +52,23 @@ const numTilePossibilities = function(tiles) {
  * @param {string} tiles
  * @return {number}
  */
-const numTilePossibilities = function(tiles) {
-  const count = new Array(26).fill(0)
-  const ACode = 'A'.charCodeAt(0)
+const numTilePossibilities = function (tiles) {
+  const count = new Array(26).fill(0);
+  const ACode = "A".charCodeAt(0);
   for (let i = 0, len = tiles.length; i < len; i++) {
-    count[tiles.charCodeAt(i) - ACode]++
+    count[tiles.charCodeAt(i) - ACode]++;
   }
-  return dfs(count)
-}
+  return dfs(count);
+};
 
 function dfs(arr) {
-  let sum = 0
+  let sum = 0;
   for (let i = 0; i < 26; i++) {
-    if (arr[i] === 0) continue
-    sum++
-    arr[i]--
-    sum += dfs(arr)
-    arr[i]++
+    if (arr[i] === 0) continue;
+    sum++;
+    arr[i]--;
+    sum += dfs(arr);
+    arr[i]++;
   }
-  return sum
+  return sum;
 }

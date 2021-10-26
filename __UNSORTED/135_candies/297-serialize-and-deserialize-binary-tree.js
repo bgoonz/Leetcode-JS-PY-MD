@@ -12,7 +12,7 @@
  * @param {TreeNode} root
  * @return {string}
  */
-const serialize = function(root) {
+const serialize = function (root) {
   return rserialize(root, "");
 };
 
@@ -33,8 +33,8 @@ function rserialize(root, str) {
  * @param {string} data
  * @return {TreeNode}
  */
-const deserialize = function(data) {
-  let data_array = data.split(",").filter(el => el !== "");
+const deserialize = function (data) {
+  let data_array = data.split(",").filter((el) => el !== "");
   return rdeserialize(data_array);
 };
 

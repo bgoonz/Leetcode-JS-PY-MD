@@ -3,8 +3,13 @@
  * @param {number} target
  * @return {number[][]}
  */
-const fourSum = function(nums, target) {
-  return nSum(nums.sort((a, b) => a - b), target, 4, 0);
+const fourSum = function (nums, target) {
+  return nSum(
+    nums.sort((a, b) => a - b),
+    target,
+    4,
+    0
+  );
 };
 
 function nSum(nums, target, k, start) {
@@ -33,7 +38,7 @@ function nSum(nums, target, k, start) {
     for (let i = start; i < nums.length - k + 1; i++) {
       if (i === start || (i > start && nums[i] !== nums[i - 1])) {
         let temp = nSum(nums, target - nums[i], k - 1, i + 1);
-        temp.forEach(t => {
+        temp.forEach((t) => {
           t.push(nums[i]);
           res.push(t);
         });

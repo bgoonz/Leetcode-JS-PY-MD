@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const findBottomLeftValue = function(root) {
+const findBottomLeftValue = function (root) {
   const res = [];
   single(root, 0, res);
   return res[res.length - 1][0].val;

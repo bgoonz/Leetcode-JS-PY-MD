@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {number}
  */
-const integerBreak = function(n) {
+const integerBreak = function (n) {
   if (n <= 2) return 1;
 
   const maxArr = [];

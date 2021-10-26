@@ -3,7 +3,7 @@
  * @param {number} fee
  * @return {number}
  */
-const maxProfit = function(prices, fee) {
+const maxProfit = function (prices, fee) {
   let cash = 0,
     hold = -prices[0];
   for (let i = 1; i < prices.length; i++) {

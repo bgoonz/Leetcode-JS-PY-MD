@@ -2,10 +2,10 @@
  * @param {number} capacity
  */
 const DinnerPlates = function (capacity) {
-  this.capacity = capacity
-  this.stacks = []
-  this.pq = new PriorityQueue()
-}
+  this.capacity = capacity;
+  this.stacks = [];
+  this.pq = new PriorityQueue();
+};
 
 /**
  * @param {number} val
@@ -17,16 +17,16 @@ DinnerPlates.prototype.push = function (val) {
       this.stacks.length > 0 &&
       this.stacks[this.stacks.length - 1].length < this.capacity
     ) {
-      this.stacks[this.stacks.length - 1].push(val)
+      this.stacks[this.stacks.length - 1].push(val);
     } else {
-      this.stacks.push([])
-      this.stacks[this.stacks.length - 1].push(val)
+      this.stacks.push([]);
+      this.stacks[this.stacks.length - 1].push(val);
     }
   } else {
-    const num = this.pq.pop()
-    this.stacks[num].push(val)
+    const num = this.pq.pop();
+    this.stacks[num].push(val);
   }
-}
+};
 
 /**
  * @return {number}
@@ -36,33 +36,33 @@ DinnerPlates.prototype.pop = function () {
     this.stacks.length > 0 &&
     this.stacks[this.stacks.length - 1].length === 0
   ) {
-    const len = this.stacks.length - 1
+    const len = this.stacks.length - 1;
     while (!this.pq.isEmpty() && this.pq.peek() >= len) {
-      this.pq.pop()
+      this.pq.pop();
     }
-    this.stacks.pop()
+    this.stacks.pop();
   }
   if (this.stacks.length === 0) {
-    return -1
+    return -1;
   } else {
-    return this.stacks[this.stacks.length - 1].pop()
+    return this.stacks[this.stacks.length - 1].pop();
   }
-}
+};
 
 /**
  * @param {number} index
  * @return {number}
  */
 DinnerPlates.prototype.popAtStack = function (index) {
-  const st = this.stacks[index]
+  const st = this.stacks[index];
 
   if (st && st.length > 0) {
-    this.pq.push(index)
-    return st.pop()
+    this.pq.push(index);
+    return st.pop();
   }
 
-  return -1
-}
+  return -1;
+};
 
 /**
  * Your DinnerPlates object will be instantiated and called as such:
@@ -74,72 +74,72 @@ DinnerPlates.prototype.popAtStack = function (index) {
 class PriorityQueue {
   constructor(len, compare) {
     this.compare = (a, b) => {
-      return a < b
-    }
-    this.last = 0
-    this.arr = []
+      return a < b;
+    };
+    this.last = 0;
+    this.arr = [];
   }
   push(val) {
-    this.last++
-    this.arr[this.last] = val
-    this.up(this.last)
+    this.last++;
+    this.arr[this.last] = val;
+    this.up(this.last);
   }
   pop() {
     if (this.isEmpty()) {
-      return null
+      return null;
     }
-    const res = this.arr[1]
-    this.swap(1, this.last)
-    this.last--
-    this.down(1)
-    return res
+    const res = this.arr[1];
+    this.swap(1, this.last);
+    this.last--;
+    this.down(1);
+    return res;
   }
   up(lo) {
     while (lo > 1) {
-      const currEl = this.arr[lo]
-      const parent = Math.floor(lo / 2)
-      const parentEl = this.arr[parent]
+      const currEl = this.arr[lo];
+      const parent = Math.floor(lo / 2);
+      const parentEl = this.arr[parent];
       if (this.compare(currEl, parentEl)) {
-        this.swap(lo, parent)
+        this.swap(lo, parent);
       } else {
-        break
+        break;
       }
-      lo = parent
+      lo = parent;
     }
   }
   down(hi) {
     while (hi * 2 <= this.last) {
-      const currEl = this.arr[hi]
-      let nextEl = this.arr[hi * 2]
-      let nextIndex = hi * 2
+      const currEl = this.arr[hi];
+      let nextEl = this.arr[hi * 2];
+      let nextIndex = hi * 2;
       if (
         hi * 2 + 1 <= this.last &&
         this.compare(this.arr[hi * 2 + 1], nextEl)
       ) {
-        nextIndex = hi * 2 + 1
-        nextEl = this.arr[nextIndex]
+        nextIndex = hi * 2 + 1;
+        nextEl = this.arr[nextIndex];
       }
       if (this.compare(nextEl, currEl)) {
-        this.swap(hi, nextIndex)
+        this.swap(hi, nextIndex);
       } else {
-        break
+        break;
       }
-      hi = nextIndex
+      hi = nextIndex;
     }
   }
   swap(i, j) {
-    const temp = this.arr[i]
-    this.arr[i] = this.arr[j]
-    this.arr[j] = temp
+    const temp = this.arr[i];
+    this.arr[i] = this.arr[j];
+    this.arr[j] = temp;
   }
   peek() {
     if (this.isEmpty()) {
-      return null
+      return null;
     }
-    return this.arr[1]
+    return this.arr[1];
   }
   isEmpty() {
-    return this.last < 1
+    return this.last < 1;
   }
 }
 
@@ -149,11 +149,11 @@ class PriorityQueue {
  * @param {number} capacity
  */
 const DinnerPlates = function (capacity) {
-  this.pushIndex = 0
-  this.popIndex = 0
-  this.capacity = capacity
-  this.stacks = [[]]
-}
+  this.pushIndex = 0;
+  this.popIndex = 0;
+  this.capacity = capacity;
+  this.stacks = [[]];
+};
 
 /**
  * @param {number} val
@@ -164,17 +164,17 @@ DinnerPlates.prototype.push = function (val) {
     this.pushIndex < this.stacks.length &&
     this.stacks[this.pushIndex].length === this.capacity
   ) {
-    this.pushIndex++
+    this.pushIndex++;
   }
   if (this.stacks.length === this.pushIndex) {
-    this.stacks[this.pushIndex] = [val]
+    this.stacks[this.pushIndex] = [val];
   } else {
-    this.stacks[this.pushIndex].push(val)
+    this.stacks[this.pushIndex].push(val);
   }
   if (this.popIndex < this.pushIndex) {
-    this.popIndex = this.pushIndex
+    this.popIndex = this.pushIndex;
   }
-}
+};
 
 /**
  * @return {number}
@@ -182,27 +182,27 @@ DinnerPlates.prototype.push = function (val) {
 DinnerPlates.prototype.pop = function () {
   while (this.stacks[this.popIndex].length === 0) {
     if (this.popIndex > 0) {
-      this.popIndex--
+      this.popIndex--;
     } else {
-      return -1
+      return -1;
     }
   }
-  const valueAtIndex = this.stacks[this.popIndex].pop()
+  const valueAtIndex = this.stacks[this.popIndex].pop();
   if (this.pushIndex > this.popIndex) {
-    this.pushIndex = this.popIndex
+    this.pushIndex = this.popIndex;
   }
-  return valueAtIndex
-}
+  return valueAtIndex;
+};
 
 /**
  * @param {number} index
  * @return {number}
  */
 DinnerPlates.prototype.popAtStack = function (index) {
-  if (index >= this.stacks.length) return -1
-  if (index < this.pushIndex) this.pushIndex = index
-  return this.stacks[index].length > 0 ? this.stacks[index].pop() : -1
-}
+  if (index >= this.stacks.length) return -1;
+  if (index < this.pushIndex) this.pushIndex = index;
+  return this.stacks[index].length > 0 ? this.stacks[index].pop() : -1;
+};
 
 /**
  * Your DinnerPlates object will be instantiated and called as such:
@@ -211,4 +211,3 @@ DinnerPlates.prototype.popAtStack = function (index) {
  * var param_2 = obj.pop()
  * var param_3 = obj.popAtStack(index)
  */
-

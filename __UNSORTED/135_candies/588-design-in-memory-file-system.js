@@ -1,39 +1,39 @@
 const FileSystem = function () {
-  this.items = new Map()
-}
+  this.items = new Map();
+};
 
 /**
  * @param {string} path
  * @return {string[]}
  */
 FileSystem.prototype.ls = function (path) {
-  const paths = path.split('/').filter((p) => !!p.length)
-  let curr = this.items
-  let last = ''
+  const paths = path.split("/").filter((p) => !!p.length);
+  let curr = this.items;
+  let last = "";
 
   for (const p of paths) {
-    curr = curr.get(p)
-    last = p
+    curr = curr.get(p);
+    last = p;
   }
-  const list = Array.from(curr.keys()).filter((e) => e !== 'content')
-  if (curr.has('content')) list.push(last)
-  return list.sort()
-}
+  const list = Array.from(curr.keys()).filter((e) => e !== "content");
+  if (curr.has("content")) list.push(last);
+  return list.sort();
+};
 
 /**
  * @param {string} path
  * @return {void}
  */
 FileSystem.prototype.mkdir = function (path) {
-  const paths = path.split('/').filter((p) => !!p.length)
-  let curr = this.items
+  const paths = path.split("/").filter((p) => !!p.length);
+  let curr = this.items;
   for (const p of paths) {
     if (!curr.has(p)) {
-      curr.set(p, new Map())
+      curr.set(p, new Map());
     }
-    curr = curr.get(p)
+    curr = curr.get(p);
   }
-}
+};
 
 /**
  * @param {string} filePath
@@ -41,29 +41,29 @@ FileSystem.prototype.mkdir = function (path) {
  * @return {void}
  */
 FileSystem.prototype.addContentToFile = function (filePath, content) {
-  const paths = filePath.split('/').filter((p) => !!p.length)
-  let curr = this.items
+  const paths = filePath.split("/").filter((p) => !!p.length);
+  let curr = this.items;
   for (const p of paths) {
     if (!curr.has(p)) {
-      curr.set(p, new Map())
+      curr.set(p, new Map());
     }
-    curr = curr.get(p)
+    curr = curr.get(p);
   }
-  curr.set('content', (curr.get('content') || '') + content)
-}
+  curr.set("content", (curr.get("content") || "") + content);
+};
 
 /**
  * @param {string} filePath
  * @return {string}
  */
 FileSystem.prototype.readContentFromFile = function (filePath) {
-  const paths = filePath.split('/').filter((p) => !!p.length)
-  let curr = this.items
+  const paths = filePath.split("/").filter((p) => !!p.length);
+  let curr = this.items;
   for (const p of paths) {
-    curr = curr.get(p)
+    curr = curr.get(p);
   }
-  return curr.get('content')
-}
+  return curr.get("content");
+};
 
 /**
  * Your FileSystem object will be instantiated and called as such:

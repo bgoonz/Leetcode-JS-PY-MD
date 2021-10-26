@@ -3,7 +3,7 @@
  * @param {number[]} B
  * @return {number}
  */
-const findLength = function(A, B) {
+const findLength = function (A, B) {
   let ans = 0;
   let memo = [];
   for (let i = 0; i < A.length + 1; i++) {

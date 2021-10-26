@@ -2,7 +2,7 @@
  * @param {number[][]} matrix
  * @return {number}
  */
-const maxEqualRowsAfterFlips = function(matrix) {
+const maxEqualRowsAfterFlips = function (matrix) {
   let n = matrix.length,
     m = matrix[0].length;
   let ret = 0;

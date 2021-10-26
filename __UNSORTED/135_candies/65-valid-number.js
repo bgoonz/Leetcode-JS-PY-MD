@@ -2,7 +2,7 @@
  * @param {string} str
  * @returns {boolean}
  */
-const isNumber = function(str) {
+const isNumber = function (str) {
   let i = 0;
   let s = str;
   // 跳过前导空格

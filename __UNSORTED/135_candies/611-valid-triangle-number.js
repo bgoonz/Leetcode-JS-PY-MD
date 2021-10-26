@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const triangleNumber = function(nums) {
+const triangleNumber = function (nums) {
   nums.sort((a, b) => a - b);
   let count = 0;
   let n = nums.length;

@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const findLengthOfLCIS = function(nums) {
+const findLengthOfLCIS = function (nums) {
   if (nums.length == 1) {
     return 1;
   }

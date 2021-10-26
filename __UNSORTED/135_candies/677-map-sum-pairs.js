@@ -1,7 +1,7 @@
 /**
  * Initialize your data structure here.
  */
-const MapSum = function() {
+const MapSum = function () {
   this.hash = {};
 };
 
@@ -10,7 +10,7 @@ const MapSum = function() {
  * @param {number} val
  * @return {void}
  */
-MapSum.prototype.insert = function(key, val) {
+MapSum.prototype.insert = function (key, val) {
   this.hash[key] = val;
 };
 
@@ -18,9 +18,9 @@ MapSum.prototype.insert = function(key, val) {
  * @param {string} prefix
  * @return {number}
  */
-MapSum.prototype.sum = function(prefix) {
+MapSum.prototype.sum = function (prefix) {
   let res = 0;
-  Object.keys(this.hash).forEach(el => {
+  Object.keys(this.hash).forEach((el) => {
     if (el.indexOf(prefix) === 0) {
       res += this.hash[el];
     }

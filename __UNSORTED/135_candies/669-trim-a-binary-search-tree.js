@@ -11,7 +11,7 @@
  * @param {number} R
  * @return {TreeNode}
  */
-const trimBST = function(root, L, R) {
+const trimBST = function (root, L, R) {
   return single(root, L, R);
 };
 

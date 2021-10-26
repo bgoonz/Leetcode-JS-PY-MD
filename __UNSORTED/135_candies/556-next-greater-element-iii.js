@@ -2,9 +2,9 @@
  * @param {number} n
  * @return {number}
  */
-const nextGreaterElement = function(n) {
+const nextGreaterElement = function (n) {
   let i, j;
-  const arr = (n + "").split("").map(el => +el);
+  const arr = (n + "").split("").map((el) => +el);
   for (i = arr.length - 2; i >= 0; i--) {
     if (arr[i] < arr[i + 1]) {
       break;
@@ -19,7 +19,7 @@ const nextGreaterElement = function(n) {
   reverse(arr, i + 1, arr.length - 1);
 
   const res = arr.reduce((ac, el) => ac + el, "");
-  return res > Math.pow(2, 31) - 1 ? -1 : +res
+  return res > Math.pow(2, 31) - 1 ? -1 : +res;
 };
 
 function swap(arr, i, j) {

@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {number}
  */
-const countPrimes = function(n) {
+const countPrimes = function (n) {
   /**
    * if n = 2, the prime 2 is not less than n,
    * so there are no primes less than n

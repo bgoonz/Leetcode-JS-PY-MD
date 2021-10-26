@@ -1,7 +1,7 @@
 /**
  * @param {number} capacity
  */
-const LFUCache = function(capacity) {
+const LFUCache = function (capacity) {
   this.min = -1;
   this.capacity = capacity;
   this.keyToVal = {};
@@ -13,7 +13,7 @@ const LFUCache = function(capacity) {
  * @param {number} key
  * @return {number}
  */
-LFUCache.prototype.get = function(key) {
+LFUCache.prototype.get = function (key) {
   if (!this.keyToVal.hasOwnProperty(key)) return -1;
   let count = this.keyToCount[key];
   let idx = this.countToLRUKeys[count].indexOf(key);
@@ -28,7 +28,7 @@ LFUCache.prototype.get = function(key) {
  * @param {number} value
  * @return {void}
  */
-LFUCache.prototype.put = function(key, value) {
+LFUCache.prototype.put = function (key, value) {
   if (this.capacity <= 0) return;
 
   if (this.keyToVal.hasOwnProperty(key)) {

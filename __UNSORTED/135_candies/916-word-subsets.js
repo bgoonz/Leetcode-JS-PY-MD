@@ -3,7 +3,7 @@
  * @param {string[]} B
  * @return {string[]}
  */
-const wordSubsets = function(A, B) {
+const wordSubsets = function (A, B) {
   function counter(s) {
     let count = Array(26).fill(0);
     for (let i = 0; i < s.length; i++) count[s.charCodeAt(i) - 97]++;

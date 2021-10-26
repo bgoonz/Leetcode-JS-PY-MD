@@ -3,7 +3,7 @@
  * @param {number[]} arr2
  * @return {number[]}
  */
-const addNegabinary = function(arr1, arr2) {
+const addNegabinary = function (arr1, arr2) {
   let ret = [];
   arr1.reverse();
   arr2.reverse();

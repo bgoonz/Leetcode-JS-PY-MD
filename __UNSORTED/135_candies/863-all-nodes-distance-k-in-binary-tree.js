@@ -11,7 +11,7 @@
  * @param {number} K
  * @return {number[]}
  */
-const distanceK = function(root, target, K) {
+const distanceK = function (root, target, K) {
   const map = new Map();
   const res = [];
   if (target == null || K < 0 || root == null) return res;
@@ -68,36 +68,36 @@ const distanceK = function(root, target, K) {
  * @param {number} K
  * @return {number[]}
  */
-const distanceK = function(root, target, K) {
-  let res = []
-  dfs(root, target, K, res)
-  return res
-}
+const distanceK = function (root, target, K) {
+  let res = [];
+  dfs(root, target, K, res);
+  return res;
+};
 
 function dfs(node, target, k, res) {
-  if (node === null) return -1
+  if (node === null) return -1;
   if (node === target) {
-    getRes(node, 0, k, res)
-    return 1
+    getRes(node, 0, k, res);
+    return 1;
   }
-  let left = dfs(node.left, target, k, res)
-  let right = dfs(node.right, target, k, res)
+  let left = dfs(node.left, target, k, res);
+  let right = dfs(node.right, target, k, res);
   if (left !== -1) {
-    if (left === k) res.push(node.val)
-    getRes(node.right, left + 1, k, res)
-    return left + 1
+    if (left === k) res.push(node.val);
+    getRes(node.right, left + 1, k, res);
+    return left + 1;
   }
   if (right !== -1) {
-    if (right === k) res.push(node.val)
-    getRes(node.left, right + 1, k, res)
-    return right + 1
+    if (right === k) res.push(node.val);
+    getRes(node.left, right + 1, k, res);
+    return right + 1;
   }
-  return -1
+  return -1;
 }
 
 function getRes(node, dist, k, res) {
-  if (node === null) return
-  if (dist === k) return res.push(node.val)
-  getRes(node.left, dist + 1, k, res)
-  getRes(node.right, dist + 1, k, res)
+  if (node === null) return;
+  if (dist === k) return res.push(node.val);
+  getRes(node.left, dist + 1, k, res);
+  getRes(node.right, dist + 1, k, res);
 }

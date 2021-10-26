@@ -11,14 +11,14 @@
  * @return {number}
  */
 const maxSumBST = function (root) {
-  let maxSum = 0
-  postOrderTraverse(root)
-  return maxSum
+  let maxSum = 0;
+  postOrderTraverse(root);
+  return maxSum;
 
   function postOrderTraverse(root) {
-    if (root == null) return [Number.MAX_VALUE, -Infinity, 0] // {min, max, sum}, initialize min=MAX_VALUE, max=MIN_VALUE
-    let left = postOrderTraverse(root.left)
-    let right = postOrderTraverse(root.right)
+    if (root == null) return [Number.MAX_VALUE, -Infinity, 0]; // {min, max, sum}, initialize min=MAX_VALUE, max=MIN_VALUE
+    let left = postOrderTraverse(root.left);
+    let right = postOrderTraverse(root.right);
     // The BST is the tree:
     if (
       !(
@@ -29,11 +29,11 @@ const maxSumBST = function (root) {
       )
     )
       // the root's key must lower than minimum keys of the right subtree
-      return null
-    let sum = root.val + left[2] + right[2] // now it's a BST make `root` as root
-    maxSum = Math.max(maxSum, sum)
-    let min = Math.min(root.val, left[0])
-    let max = Math.max(root.val, right[1])
-    return [min, max, sum]
+      return null;
+    let sum = root.val + left[2] + right[2]; // now it's a BST make `root` as root
+    maxSum = Math.max(maxSum, sum);
+    let min = Math.min(root.val, left[0]);
+    let max = Math.max(root.val, right[1]);
+    return [min, max, sum];
   }
-}
+};

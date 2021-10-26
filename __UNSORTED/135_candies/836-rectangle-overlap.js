@@ -3,7 +3,7 @@
  * @param {number[]} rec2
  * @return {boolean}
  */
-const isRectangleOverlap = function(rec1, rec2) {
+const isRectangleOverlap = function (rec1, rec2) {
   return !(
     chkOverlap(rec1, rec2) === false || chkOverlap(rec2, rec1) === false
   );

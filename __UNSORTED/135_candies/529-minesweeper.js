@@ -3,7 +3,7 @@
  * @param {number[]} click
  * @return {character[][]}
  */
-const updateBoard = function(board, click) {
+const updateBoard = function (board, click) {
   const visited = new Set();
   const [clickRow, clickCol] = click;
   if (board[clickRow][clickCol] === "M") {
@@ -18,7 +18,7 @@ const updateBoard = function(board, click) {
     [-1, -1], // top left
     [1, 1], // bottom right
     [-1, 1], // top right
-    [1, -1] // bottom left
+    [1, -1], // bottom left
   ];
 
   function dfs(row, col) {
@@ -55,4 +55,3 @@ const updateBoard = function(board, click) {
   dfs(clickRow, clickCol);
   return board;
 };
-

@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const nextGreaterElements = function(nums) {
+const nextGreaterElements = function (nums) {
   const res = [];
   for (let i = 0; i < nums.length; i++) {
     res.push(single(i, nums));

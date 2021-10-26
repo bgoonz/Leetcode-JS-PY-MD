@@ -2,7 +2,7 @@
  * @param {number} N
  * @return {number}
  */
-const numDupDigitsAtMostN = function(N) {
+const numDupDigitsAtMostN = function (N) {
   const L = [];
   for (let x = N + 1; x > 0; x = Math.floor(x / 10)) L.unshift(x % 10);
 

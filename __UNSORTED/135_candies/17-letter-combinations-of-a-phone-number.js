@@ -2,7 +2,7 @@
  * @param {string} digits
  * @return {string[]}
  */
-const letterCombinations = function(digits) {
+const letterCombinations = function (digits) {
   if (digits === "") {
     return [];
   }
@@ -14,7 +14,7 @@ const letterCombinations = function(digits) {
     6: ["m", "n", "o"],
     7: ["p", "q", "r", "s"],
     8: ["t", "u", "v"],
-    9: ["w", "x", "y", "z"]
+    9: ["w", "x", "y", "z"],
   };
   const res = [];
   const matrix = [];

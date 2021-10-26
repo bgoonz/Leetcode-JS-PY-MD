@@ -4,7 +4,7 @@
  * @param {number} W
  * @return {number}
  */
-const new21Game = function(N, K, W) {
+const new21Game = function (N, K, W) {
   if (K === 0 || N >= K + W) {
     return 1;
   }

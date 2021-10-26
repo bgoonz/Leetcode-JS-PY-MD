@@ -3,7 +3,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const nextGreaterElement = function(findNums, nums) {
+const nextGreaterElement = function (findNums, nums) {
   const map = {};
   const stack = [];
   for (let num of nums) {

@@ -22,19 +22,19 @@ You may assume that word1 does not equal to word2, and word1 and word2 are both 
  * @param {string} word2
  * @return {number}
  */
-const shortestDistance = function(words, word1, word2) {
-  let w1 = -1
-  let w2 = -1
-  let min = Number.MAX_VALUE
+const shortestDistance = function (words, word1, word2) {
+  let w1 = -1;
+  let w2 = -1;
+  let min = Number.MAX_VALUE;
   for (let i = 0; i < words.length; i++) {
     if (words[i] === word1) {
-      w1 = i
+      w1 = i;
     } else if (words[i] === word2) {
-      w2 = i
+      w2 = i;
     }
     if (w1 >= 0 && w2 >= 0) {
-      min = Math.min(min, Math.abs(w1 - w2))
+      min = Math.min(min, Math.abs(w1 - w2));
     }
   }
-  return min
-}
+  return min;
+};

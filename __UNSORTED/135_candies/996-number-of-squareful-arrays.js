@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const numSquarefulPerms = function(A) {
+const numSquarefulPerms = function (A) {
   const cntMap = {};
   const squareMap = {};
   let cnt = 0;

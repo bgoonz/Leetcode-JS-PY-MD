@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string}
  */
-const decodeString = function(s) {
+const decodeString = function (s) {
   const repeated = [];
   const sbStack = [];
 

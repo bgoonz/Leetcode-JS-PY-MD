@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const subtreeWithAllDeepest = function(root) {
+const subtreeWithAllDeepest = function (root) {
   return dfs(root).node;
 };
 

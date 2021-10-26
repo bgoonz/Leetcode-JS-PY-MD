@@ -4,16 +4,16 @@
  * @return {number}
  */
 const longestOnes = function (A, K) {
-  let i = 0
-  let j = 0
-  const len = A.length
+  let i = 0;
+  let j = 0;
+  const len = A.length;
   while (j < len) {
-    if (A[j] === 0) K--
+    if (A[j] === 0) K--;
     if (K < 0) {
-      if (A[i] === 0) K++
-      i++
+      if (A[i] === 0) K++;
+      i++;
     }
-    j++
+    j++;
   }
-  return j - i
-}
+  return j - i;
+};

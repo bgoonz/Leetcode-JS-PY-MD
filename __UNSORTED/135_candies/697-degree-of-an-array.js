@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const findShortestSubArray = function(nums) {
+const findShortestSubArray = function (nums) {
   const left = {};
   const right = {};
   const count = {};
@@ -14,7 +14,7 @@ const findShortestSubArray = function(nums) {
     right[nums[i]] = i;
     count[nums[i]] = count[nums[i]] ? count[nums[i]] + 1 : 1;
   }
-  const degree = Math.max(...Object.keys(count).map(el => count[el]));
+  const degree = Math.max(...Object.keys(count).map((el) => count[el]));
   let res = nums.length;
   for (let el in count) {
     if (count.hasOwnProperty(el) && count[el] === degree) {

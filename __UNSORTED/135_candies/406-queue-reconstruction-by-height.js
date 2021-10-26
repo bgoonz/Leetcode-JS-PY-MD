@@ -3,15 +3,15 @@
  * @return {number[][]}
  */
 const reconstructQueue = function (people) {
-  const h = 0
-  const k = 1
-  people.sort((a, b) => (a[h] == b[h] ? a[k] - b[k] : b[h] - a[h]))
-  let queue = []
+  const h = 0;
+  const k = 1;
+  people.sort((a, b) => (a[h] == b[h] ? a[k] - b[k] : b[h] - a[h]));
+  let queue = [];
   for (let person of people) {
-    queue.splice(person[k], 0, person)
+    queue.splice(person[k], 0, person);
   }
-  return queue
-}
+  return queue;
+};
 
 // another
 
@@ -19,7 +19,7 @@ const reconstructQueue = function (people) {
  * @param {number[][]} people
  * @return {number[][]}
  */
-const reconstructQueue = function(people) {
+const reconstructQueue = function (people) {
   if (!people) return [];
   const peopledct = {};
   let height = [];
@@ -43,4 +43,13 @@ const reconstructQueue = function(people) {
   return res;
 };
 
-console.log(reconstructQueue([[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]]));
+console.log(
+  reconstructQueue([
+    [7, 0],
+    [4, 4],
+    [7, 1],
+    [5, 0],
+    [6, 1],
+    [5, 2],
+  ])
+);

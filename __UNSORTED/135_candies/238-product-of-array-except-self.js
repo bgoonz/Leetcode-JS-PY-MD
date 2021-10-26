@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const productExceptSelf = function(nums) {
+const productExceptSelf = function (nums) {
   const zeroIdx = new Set();
   const p = nums.reduce((ac, el, idx) => {
     if (el === 0) {
@@ -24,4 +24,3 @@ const productExceptSelf = function(nums) {
   }
   return res;
 };
-

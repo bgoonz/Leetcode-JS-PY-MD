@@ -9,7 +9,7 @@
  * @param {number[]} preorder
  * @return {TreeNode}
  */
-const bstFromPreorder = function(preorder) {
+const bstFromPreorder = function (preorder) {
   let i = 0;
   return bstFromPreorder(preorder, Number.MAX_VALUE);
   function bstFromPreorder(A, bound) {

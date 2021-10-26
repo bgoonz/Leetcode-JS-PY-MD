@@ -3,7 +3,7 @@
  * @param {string} str2
  * @return {string}
  */
-const gcdOfStrings = function(str1, str2) {
+const gcdOfStrings = function (str1, str2) {
   let res = "";
 
   if (str1[0] !== str2[0]) return res;

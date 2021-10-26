@@ -1,56 +1,56 @@
 /**
  * Initialize your data structure here.
  */
-const RandomizedCollection = function() {
-  this.map = new Map()
-  this.list = []
-}
+const RandomizedCollection = function () {
+  this.map = new Map();
+  this.list = [];
+};
 
 /**
  * Inserts a value to the collection. Returns true if the collection did not already contain the specified element.
  * @param {number} val
  * @return {boolean}
  */
-RandomizedCollection.prototype.insert = function(val) {
-  const index = this.list.length
-  const node = { val, index }
-  this.list[index] = node
+RandomizedCollection.prototype.insert = function (val) {
+  const index = this.list.length;
+  const node = { val, index };
+  this.list[index] = node;
 
-  const nodeList = this.map.get(val)
-  const isNew = nodeList === undefined || nodeList.length === 0
+  const nodeList = this.map.get(val);
+  const isNew = nodeList === undefined || nodeList.length === 0;
   if (nodeList === undefined) {
-    this.map.set(val, [node])
+    this.map.set(val, [node]);
   } else {
-    nodeList.push(node)
+    nodeList.push(node);
   }
-  return isNew
-}
+  return isNew;
+};
 
 /**
  * Removes a value from the collection. Returns true if the collection contained the specified element.
  * @param {number} val
  * @return {boolean}
  */
-RandomizedCollection.prototype.remove = function(val) {
-  const nodeList = this.map.get(val)
-  if (!nodeList || nodeList.length === 0) return false
-  const node = nodeList.pop()
-  const replacement = this.list.pop()
+RandomizedCollection.prototype.remove = function (val) {
+  const nodeList = this.map.get(val);
+  if (!nodeList || nodeList.length === 0) return false;
+  const node = nodeList.pop();
+  const replacement = this.list.pop();
   if (replacement.index !== node.index) {
-    replacement.index = node.index
-    this.list[replacement.index] = replacement
+    replacement.index = node.index;
+    this.list[replacement.index] = replacement;
   }
-  return true
-}
+  return true;
+};
 
 /**
  * Get a random element from the collection.
  * @return {number}
  */
-RandomizedCollection.prototype.getRandom = function() {
-  const index = Math.floor(Math.random() * this.list.length)
-  return this.list[index].val
-}
+RandomizedCollection.prototype.getRandom = function () {
+  const index = Math.floor(Math.random() * this.list.length);
+  return this.list[index].val;
+};
 
 /**
  * Your RandomizedCollection object will be instantiated and called as such:

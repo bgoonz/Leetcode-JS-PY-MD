@@ -2,7 +2,7 @@
  * @param {number} num
  * @return {boolean}
  */
-const checkPerfectNumber = function(num) {
+const checkPerfectNumber = function (num) {
   if (num === 1) return false;
   return chk(num);
 };

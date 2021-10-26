@@ -3,7 +3,7 @@
  * @param {string} t
  * @return {boolean}
  */
-const isIsomorphic = function(s, t) {
+const isIsomorphic = function (s, t) {
   if (s.length !== t.length) {
     return false;
   }
@@ -19,7 +19,6 @@ const isIsomorphic = function(s, t) {
     }
 
     if (smap[s[i]] !== t[i] || tmap[t[i]] !== s[i]) return false;
-
   }
 
   return true;

@@ -39,37 +39,37 @@ Note: The length of each dimension in the given grid does not exceed 50.
  * @param {number[][]} grid
  * @return {number}
  */
-const numDistinctIslands = function(grid) {
-  const set = new Set()
+const numDistinctIslands = function (grid) {
+  const set = new Set();
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[0].length; j++) {
       if (grid[i][j] === 1) {
-        const tempArr = []
-        helper(i, j, grid, tempArr)
-        const x = tempArr[0][0] - 0
-        const y = tempArr[0][1] - 0
-        let str = ''
+        const tempArr = [];
+        helper(i, j, grid, tempArr);
+        const x = tempArr[0][0] - 0;
+        const y = tempArr[0][1] - 0;
+        let str = "";
         for (let k = 0; k < tempArr.length; k++) {
-          str += '#' + (tempArr[k][0] - x) + '#' + (tempArr[k][1] - y)
+          str += "#" + (tempArr[k][0] - x) + "#" + (tempArr[k][1] - y);
         }
-        set.add(str)
+        set.add(str);
       }
     }
   }
-  return set.size
-}
+  return set.size;
+};
 
 function helper(i, j, arr, tempArr) {
-  tempArr.push([i, j])
-  arr[i][j] = 0
+  tempArr.push([i, j]);
+  arr[i][j] = 0;
 
-  if (arr[i][j - 1] === 1) helper(i, j - 1, arr, tempArr)
-  if (arr[i][j + 1] === 1) helper(i, j + 1, arr, tempArr)
+  if (arr[i][j - 1] === 1) helper(i, j - 1, arr, tempArr);
+  if (arr[i][j + 1] === 1) helper(i, j + 1, arr, tempArr);
   if (arr[i - 1]) {
-    if (arr[i - 1][j] === 1) helper(i - 1, j, arr, tempArr)
+    if (arr[i - 1][j] === 1) helper(i - 1, j, arr, tempArr);
   }
   if (arr[i + 1]) {
-    if (arr[i + 1][j] === 1) helper(i + 1, j, arr, tempArr)
+    if (arr[i + 1][j] === 1) helper(i + 1, j, arr, tempArr);
   }
 }
 
@@ -79,7 +79,7 @@ function helper(i, j, arr, tempArr) {
  * @param {number[][]} grid
  * @return {number}
  */
-const numDistinctIslands = function(grid) {
+const numDistinctIslands = function (grid) {
   if (!grid.length) return 0;
   const pattern = new Set();
   grid.forEach((rows, row) => {

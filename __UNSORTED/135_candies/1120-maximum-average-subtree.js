@@ -33,7 +33,7 @@ Answers will be accepted as correct if they are within 10^-5 of the correct answ
  * @param {TreeNode} root
  * @return {number}
  */
-const maximumAverageSubtree = function(root) {
+const maximumAverageSubtree = function (root) {
   let max = -Number.MIN_VALUE;
   function helper(root) {
     if (!root) return [0, 0]; // [value, number of nodes]

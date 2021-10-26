@@ -27,44 +27,44 @@ Constraints:
  * @param {number[]} sticks
  * @return {number}
  */
-const connectSticks = function(sticks) {
-  if (sticks.length < 1) return 0
-  let size = sticks.length - 1
-  let i = Math.floor(sticks.length / 2)
+const connectSticks = function (sticks) {
+  if (sticks.length < 1) return 0;
+  let size = sticks.length - 1;
+  let i = Math.floor(sticks.length / 2);
   for (; i >= 0; i--) {
-    heapify(sticks, i, size)
+    heapify(sticks, i, size);
   }
-  let cost = 0
+  let cost = 0;
   while (size >= 1) {
-    const temp = sticks[0]
-    sticks[0] = sticks[size--]
-    heapify(sticks, 0, size)
-    sticks[0] = sticks[0] + temp
-    cost += sticks[0]
-    heapify(sticks, 0, size)
+    const temp = sticks[0];
+    sticks[0] = sticks[size--];
+    heapify(sticks, 0, size);
+    sticks[0] = sticks[0] + temp;
+    cost += sticks[0];
+    heapify(sticks, 0, size);
   }
-  return cost
-}
+  return cost;
+};
 const heapify = (arr, index, size) => {
-  let smallest = index
-  let l = index * 2 + 1
-  let r = index * 2 + 2
+  let smallest = index;
+  let l = index * 2 + 1;
+  let r = index * 2 + 2;
   if (l <= size && arr[l] < arr[smallest]) {
-    smallest = l
+    smallest = l;
   }
   if (r <= size && arr[r] < arr[smallest]) {
-    smallest = r
+    smallest = r;
   }
   if (smallest != index) {
-    swap(arr, index, smallest)
-    heapify(arr, smallest, size)
+    swap(arr, index, smallest);
+    heapify(arr, smallest, size);
   }
-}
+};
 const swap = (arr, i, j) => {
-  const temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
-}
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+};
 
 // another
 
@@ -72,27 +72,27 @@ const swap = (arr, i, j) => {
  * @param {number[]} sticks
  * @return {number}
  */
-const connectSticks = function(sticks) {
-  if (sticks.length === 1) return 0
-  sticks.sort((a, b) => a - b)
+const connectSticks = function (sticks) {
+  if (sticks.length === 1) return 0;
+  sticks.sort((a, b) => a - b);
   let sum = [],
-    result = 0
+    result = 0;
   while (sticks.length || sum.length > 1) {
-    let cur = 0
+    let cur = 0;
     for (let i = 0; i < 2; i++) {
       if (sticks[0] && (sum[0] === undefined || sticks[0] < sum[0])) {
-        cur += sticks[0]
-        sticks.shift()
+        cur += sticks[0];
+        sticks.shift();
       } else {
-        cur += sum[0]
-        sum.shift()
+        cur += sum[0];
+        sum.shift();
       }
     }
-    sum.push(cur)
-    result += cur
+    sum.push(cur);
+    result += cur;
   }
-  return result
-}
+  return result;
+};
 
 // another
 
@@ -100,28 +100,26 @@ const connectSticks = function(sticks) {
  * @param {number[]} sticks
  * @return {number}
  */
-const connectSticks = function(sticks) {
-  sticks.sort((a, b) => a - b)
-  const sums = []
-  let result = 0
-  if (sticks.length < 2) return result
+const connectSticks = function (sticks) {
+  sticks.sort((a, b) => a - b);
+  const sums = [];
+  let result = 0;
+  if (sticks.length < 2) return result;
   const getMin = () => {
-    const stick = sticks.length ? sticks[0] : Infinity
-    const sum = sums.length ? sums[0] : Infinity
+    const stick = sticks.length ? sticks[0] : Infinity;
+    const sum = sums.length ? sums[0] : Infinity;
     if (sum < stick) {
-      return sums.shift()
+      return sums.shift();
     } else {
-      return sticks.shift()
+      return sticks.shift();
     }
-  }
+  };
   while (sticks.length || sums.length > 1) {
-    const tmp1 = getMin()
-    const tmp2 = getMin()
-    const curr = tmp1 + tmp2
-    result += curr
-    sums.push(curr)
+    const tmp1 = getMin();
+    const tmp2 = getMin();
+    const curr = tmp1 + tmp2;
+    result += curr;
+    sums.push(curr);
   }
-  return result
-}
-
-
+  return result;
+};

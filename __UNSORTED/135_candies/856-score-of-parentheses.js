@@ -2,7 +2,7 @@
  * @param {string} S
  * @return {number}
  */
-const scoreOfParentheses = function(S) {
+const scoreOfParentheses = function (S) {
   let res = 0,
     bal = 0;
   for (let i = 0; i < S.length; i++) {

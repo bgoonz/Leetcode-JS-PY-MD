@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string}
  */
-const frequencySort = function(s) {
+const frequencySort = function (s) {
   const charMap = {};
   for (let i = 0; i < s.length; i++) {
     const index = s.charAt(i);
@@ -12,7 +12,7 @@ const frequencySort = function(s) {
     .sort((a, b) => {
       return b[1] - a[1];
     })
-    .map(x => {
+    .map((x) => {
       return x[0].repeat(x[1]);
     })
     .join("");

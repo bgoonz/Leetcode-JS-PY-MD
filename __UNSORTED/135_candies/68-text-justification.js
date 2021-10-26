@@ -3,7 +3,7 @@
  * @param {number} L
  * @returns {string[]}
  */
-const fullJustify = function(words, L) {
+const fullJustify = function (words, L) {
   const res = [""];
   if (words.length === 0 || L === 0) {
     return res;

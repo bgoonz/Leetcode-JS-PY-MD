@@ -49,7 +49,7 @@ Therefore, person #1 only need to give person #0 $4, and all debt is settled.
  * @param {number[][]} transactions
  * @return {number}
  */
-const minTransfers = function(transactions) {
+const minTransfers = function (transactions) {
   if (transactions.length === 0) return 0;
   const map = new Map();
   for (let [a, b, m] of transactions) {
@@ -58,7 +58,7 @@ const minTransfers = function(transactions) {
     map.set(a, map.get(a) - m);
     map.set(b, map.get(b) + m);
   }
-  const debts = [...map.values()].filter(debt => debt !== 0);
+  const debts = [...map.values()].filter((debt) => debt !== 0);
   const len = debts.length;
   const dfs = (id, d) => {
     if (id >= d.length) return 0;

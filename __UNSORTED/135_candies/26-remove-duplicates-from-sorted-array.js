@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const removeDuplicates = function(nums) {
+const removeDuplicates = function (nums) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return 1;
   let pre = nums[0];

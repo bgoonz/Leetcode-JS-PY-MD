@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-const largestValues = function(root) {
+const largestValues = function (root) {
   const res = [];
   single(root, 0, res);
   return res;

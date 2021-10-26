@@ -2,7 +2,7 @@
  * @param {number} num
  * @return {number}
  */
-const addDigits = function(num) {
+const addDigits = function (num) {
   let arr = ("" + num).split("");
   let res = num;
 
@@ -19,8 +19,8 @@ const addDigits = function(num) {
  * @param {number} num
  * @return {number}
  */
-const addDigits = function(num) {
-  return 1 + (num - 1) % 9;
+const addDigits = function (num) {
+  return 1 + ((num - 1) % 9);
 };
 
 console.log(addDigits(0));

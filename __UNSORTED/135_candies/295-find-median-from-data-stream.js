@@ -1,15 +1,15 @@
 /**
  * initialize your data structure here.
  */
-const MedianFinder = function() {
+const MedianFinder = function () {
   this.arr = [];
 };
 /**
  * @param {number} num
  * @return {void}
  */
-MedianFinder.prototype.addNum = function(num) {
-  const bs = n => {
+MedianFinder.prototype.addNum = function (num) {
+  const bs = (n) => {
     let start = 0;
     let end = this.arr.length;
     while (start < end) {
@@ -26,7 +26,7 @@ MedianFinder.prototype.addNum = function(num) {
 /**
  * @return {number}
  */
-MedianFinder.prototype.findMedian = function() {
+MedianFinder.prototype.findMedian = function () {
   const mid = ~~(this.arr.length / 2);
   return this.arr.length % 2 === 0
     ? (this.arr[mid - 1] + this.arr[mid]) / 2

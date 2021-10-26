@@ -2,17 +2,17 @@
  * @param {string[]} ops
  * @return {number}
  */
-const calPoints = function(ops) {
+const calPoints = function (ops) {
   const opArr = ["C", "D", "+"];
   const arr = [];
   ops.forEach((el, idx) => {
     const item = {
       value: 0,
-      valid: true
+      valid: true,
     };
     switch (el) {
       case "C":
-        findValid(arr, idx, 1).forEach(el => {
+        findValid(arr, idx, 1).forEach((el) => {
           el.value = 0;
           el.valid = false;
         });

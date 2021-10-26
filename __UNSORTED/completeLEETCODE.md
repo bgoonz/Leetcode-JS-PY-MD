@@ -51,9 +51,11 @@ Mind the last carry.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -162,9 +164,11 @@ Same goes `nums1[i-1] <= nums2[j] <= nums1[i]`.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -276,9 +280,11 @@ If row == 1 or row == numRows, skip the odd columns.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -347,9 +353,11 @@ Pure mathamatical solution.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -475,9 +483,11 @@ General solution.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -574,9 +584,11 @@ General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALG
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -714,9 +726,11 @@ Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -769,9 +783,11 @@ What if `height[l] == height[r]`? It is safe to get rid of both. We do not need 
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -859,9 +875,11 @@ Treat 4, 40, 400 and 9, 90, 900 specially.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -953,9 +971,11 @@ Normally we just add up the digits, except when the digit is greater than its le
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1055,9 +1075,11 @@ General solution. Build up the prefix.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1145,9 +1167,11 @@ Skip any duplicate number as we iterate to avoid duplicate triplets.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1214,9 +1238,11 @@ Simplified version of [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-A
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1317,9 +1343,11 @@ General recursive DFS solution.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1398,9 +1426,11 @@ Like [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1475,9 +1505,11 @@ Boundaries that should be awared of:
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1561,9 +1593,11 @@ And since there is only bracket characters, the last open bracket happens to be 
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1625,9 +1659,11 @@ Keep tracking the head of two lists and keep moving the pointer of smaller one t
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1732,9 +1768,11 @@ BFS.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1835,9 +1873,11 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1897,9 +1937,11 @@ Given a linked list, swap every two adjacent nodes and return its head.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -1988,9 +2030,11 @@ For _k_ = 3, you should return: `3->2->1->4->5`
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2061,9 +2105,11 @@ The result array can only be shorter. That is why we can build the array in-plac
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2139,9 +2185,11 @@ The order does not matter. So just take the last number to fill the vacancy.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2220,9 +2268,11 @@ Replace multiplication and division with binary shifting.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2295,9 +2345,11 @@ Swap the two.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2389,9 +2441,11 @@ Whenever we choose a pivot, it must be in one of the two sorted parts of the rot
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2487,9 +2541,11 @@ If we want to get the first, we dump the right half. Vice versa.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2557,9 +2613,11 @@ Same as simple binary search except it returns the start index when does not fin
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2668,9 +2726,11 @@ Scan the board once.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2777,9 +2837,11 @@ If all possible solutions fail, we just dump the current position and go back to
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2868,9 +2930,11 @@ General solution.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -2949,9 +3013,11 @@ To prevent duplications, only loop the right side of the candidates.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3041,9 +3107,11 @@ Notice the number at `start` is immune by the rule because we assume that the cu
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3120,9 +3188,11 @@ So here we reuse the array and keep trying to put integer `k` into the slot inde
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3186,9 +3256,11 @@ Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rai
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3246,9 +3318,11 @@ Same as we do multiplication on a paper.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3306,9 +3380,11 @@ Greedy. Always pick the one that would allow to jump to the rightest.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3372,9 +3448,11 @@ One position at a time, pick a number from the unused set and put it in that pos
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3442,9 +3520,11 @@ Same as [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3530,9 +3610,11 @@ Outside-in. Rotate one square at a time.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3611,9 +3693,11 @@ Use the product of prime numbers to generate unique keys.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3681,9 +3765,11 @@ Note here we can not use any bitwise operator, `n = -2^31` might overflow.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3837,9 +3923,11 @@ This is slow because we test diagonal in the end. We can do a tree pruning by mo
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3924,9 +4012,11 @@ Just modify [51. N-Queens](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -3996,9 +4086,11 @@ We can also compress the dp array:
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4075,9 +4167,11 @@ Loop outside-in. Break each cycle into four stages. Note that the last two stage
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4158,9 +4252,11 @@ If `nums[0]` can cover the last destination point, it is good.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4222,9 +4318,11 @@ Sort then merge.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4296,9 +4394,11 @@ The logic of the solution is pretty straight forward. Just need to carefully thi
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4373,9 +4473,11 @@ General solution.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4433,9 +4535,11 @@ Straight-forward.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4513,9 +4617,11 @@ We also need `k--` to convert `k` into index so that `k <= (n-1)!` maps `0` (and
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4607,9 +4713,11 @@ Locate the right pointer again with `k % len`.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4679,9 +4787,11 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4745,9 +4855,11 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -4950,9 +5062,11 @@ Now implement the parser. It is much easier now because we have a clear mental m
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5032,9 +5146,11 @@ General solution.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5161,9 +5277,11 @@ For the last line of text, it should be left justified and no **extra** space is
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5222,9 +5340,11 @@ Binary Search. The square root of x is within \[0...(x+1)/2\].
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5310,9 +5430,11 @@ Direct search.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5407,9 +5529,11 @@ Define `f(i, j)` to be the min edit distance from `word1[0...i)` to `word2[0...j
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5571,9 +5695,11 @@ Still constant space just a bit slower due to repeatedly setting overlapping `Na
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5685,9 +5811,11 @@ Take the algorithm from [35. Search Insert Position](file:///C:/MY-WEB-DEV/06-DS
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5754,9 +5882,11 @@ Count the number of sorted `0`s and `2`s so that we know where to swap.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5814,9 +5944,11 @@ Basic DFS + Backtracking.
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5904,9 +6036,11 @@ DFS + Backtracking.
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -5990,9 +6124,11 @@ DFS + Backtracking. Replace the cell with `NaN` before proceeding to the next le
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6063,9 +6199,11 @@ Similar to [26. Remove Duplicates from Sorted Array](file:///C:/MY-WEB-DEV/06-DS
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6143,9 +6281,11 @@ See [33. Search in Rotated Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6211,9 +6351,11 @@ The list is sorted so we only need `dupVal` to keep the latest duplicate value.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6309,9 +6451,11 @@ Just compare the next node. This is way more faster.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6374,9 +6518,11 @@ To reduce O(_n^2_) to O(_n_), we use a stack to store incremental `b`s. Because 
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6540,9 +6686,11 @@ We only need to keep the last state. Use dynamic arrays to reduce space complexi
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6609,9 +6757,11 @@ Take the second part out as a new list and connect it back.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6660,9 +6810,11 @@ Loop backward and keep picking the larger one. `nums1` is guaranteed longer than
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6734,9 +6886,11 @@ Use bitwise shift to speed up the calculation. It is unlikely to overflow since 
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6800,9 +6954,11 @@ See [78. Subsets](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTEN
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6877,9 +7033,11 @@ Only need to store the last two states. Init `f(-1) = 1` for easy calculation.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -6949,9 +7107,11 @@ Break the list into 3 parts.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7016,9 +7176,11 @@ Backtracking. Note that leading `'0'` is not allowed except just `'0'`.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7079,9 +7241,11 @@ Dynamic array can be used.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7152,9 +7316,11 @@ The code should be self-evident.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7267,9 +7433,11 @@ Level order traversal. Check symmetry before entering the next level.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7338,9 +7506,11 @@ The code should be self-evident.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7414,9 +7584,11 @@ Reverse the level when pushing to the reuslt.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7471,9 +7643,11 @@ The code should be self-evident.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7549,9 +7723,11 @@ Repeat the process on subtrees.
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7627,9 +7803,11 @@ Repeat the process on subtrees.
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7698,9 +7876,11 @@ See [102. Binary Tree Level Order Traversal](file:///C:/MY-WEB-DEV/06-DS-ALGO-OU
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7776,9 +7956,11 @@ Get the depth of subtrees and compare. Prune the DFS tree by returning `-1`.
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7838,9 +8020,11 @@ Ignore `null` children.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7896,9 +8080,11 @@ Note that node value could be negative so pruning can not be performed.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -7971,9 +8157,11 @@ Simple backtracking.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8051,9 +8239,11 @@ Return the leaf node of a flattened subtree for concatenation.
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8141,9 +8331,11 @@ Dynamic array can be used.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8268,9 +8460,11 @@ Level order traversal.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8400,9 +8594,11 @@ Level order traversal. Exact same as [116. Populating Next Right Pointers in Eac
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8461,9 +8657,11 @@ Dynamic Programming 101.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8520,9 +8718,11 @@ State `(i, j)` depends on `(i-1, j)` and `(i-1, j-1)`. So to access `(i-1, j-1)`
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8583,9 +8783,11 @@ Dynamic array can be used.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8644,9 +8846,11 @@ Because `price[j]` is lower that the base, using `j` as new base is guaranteed t
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8707,9 +8911,11 @@ Sell immediately after the price drops. Or in other perspective, it is the sum o
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8795,9 +9001,11 @@ Define `f(k)` to be `p1(k) + p2(k)`. We need to get `max( f(0), ..., f(n-1) )`.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -8926,9 +9134,11 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
     }
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9021,9 +9231,11 @@ Compare the char codes.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9142,9 +9354,11 @@ The items in the queue are not just words now. Parent nodes are also kept so tha
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9250,9 +9464,11 @@ To find all the next words, instead of filtering the `wordList`, enumerate all 2
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9306,9 +9522,11 @@ Build a Set from the list. Pick a number, find all it's adjacent numbers that ar
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9380,9 +9598,11 @@ To write a clean solution for this promblem, use `0` as indicator of leaf node. 
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9497,9 +9717,11 @@ So both BFS and DFS are good. I prefer BFS when pruning is not needed in favor o
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
@@ -9573,9 +9795,11 @@ DFS. Cache the visited node before entering the next recursion.
     };
 
 ---
+
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
 
 ---
+
 ---
 
 ☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆

@@ -4,27 +4,34 @@
  * @param {number[]} target
  * @return {boolean}
  */
-const isEscapePossible = function(blocked, source, target) {
-  const blockedSet = new Set()
+const isEscapePossible = function (blocked, source, target) {
+  const blockedSet = new Set();
   for (let el of blocked) {
-    let key = el[0] + "," + el[1]
-    blockedSet.add(key)
+    let key = el[0] + "," + el[1];
+    blockedSet.add(key);
   }
-  return canVisit(blockedSet, source, target) && canVisit(blockedSet, target, source)
-}
+  return (
+    canVisit(blockedSet, source, target) && canVisit(blockedSet, target, source)
+  );
+};
 
 function canVisit(blocked, start, end) {
-  const visited = new Set()
-  return dfs(blocked, start[0], start[1], end[0], end[1], visited)
+  const visited = new Set();
+  return dfs(blocked, start[0], start[1], end[0], end[1], visited);
 }
 function dfs(blocked, i, j, m, n, visited) {
-  visited.add(i + "," + j)
-  const dirs = [[i - 1, j], [i + 1, j], [i, j + 1], [i, j - 1]]
+  visited.add(i + "," + j);
+  const dirs = [
+    [i - 1, j],
+    [i + 1, j],
+    [i, j + 1],
+    [i, j - 1],
+  ];
   if ((i == m && j == n) || visited.size >= 20000) {
-    return true
+    return true;
   }
   for (let dir of dirs) {
-    let nextKey = dir[0] + "," + dir[1]
+    let nextKey = dir[0] + "," + dir[1];
     if (
       dir[0] >= 0 &&
       dir[1] >= 0 &&
@@ -34,11 +41,11 @@ function dfs(blocked, i, j, m, n, visited) {
       !visited.has(nextKey)
     ) {
       if (dfs(blocked, dir[0], dir[1], m, n, visited)) {
-        return true
+        return true;
       }
     }
   }
-  return false
+  return false;
 }
 
 // another
@@ -49,51 +56,56 @@ function dfs(blocked, i, j, m, n, visited) {
  * @param {number[]} target
  * @return {boolean}
  */
-const isEscapePossible = function(blocked, source, target) {
+const isEscapePossible = function (blocked, source, target) {
   if (blocked.length < 2) {
-    return true
+    return true;
   }
-//   if (blocked[0][0] == 100025) {
-//     return false
-//   }
+  //   if (blocked[0][0] == 100025) {
+  //     return false
+  //   }
   const blockSet = new Set(
-    blocked.map(el => {
-      return el[0] + "," + el[1]
+    blocked.map((el) => {
+      return el[0] + "," + el[1];
     })
-  )
-  let targetR, targetC, curR, curC
-  ;[targetR, targetC] = target
-  let visited = new Set([])
-  let DIRS = [[0, 1], [-1, 0], [0, -1], [1, 0]],
-    queue = [source]
+  );
+  let targetR, targetC, curR, curC;
+  [targetR, targetC] = target;
+  let visited = new Set([]);
+  let DIRS = [
+      [0, 1],
+      [-1, 0],
+      [0, -1],
+      [1, 0],
+    ],
+    queue = [source];
   const inBound = (r, c) => {
-    return r >= 0 && c >= 0 && r < 1000000 && c < 1000000
-  }
-  let count = 0
+    return r >= 0 && c >= 0 && r < 1000000 && c < 1000000;
+  };
+  let count = 0;
   while (queue.length > 0) {
-    count++
-    ;[curR, curC] = queue.shift()
+    count++;
+    [curR, curC] = queue.shift();
 
     if (count > 20000) {
-      return true
+      return true;
     }
     for (let dir of DIRS) {
       const newR = curR + dir[0],
-        newC = curC + dir[1]
+        newC = curC + dir[1];
       if (
         !inBound(newR, newC) ||
         blockSet.has(newR + "," + newC) ||
         visited.has(newR + "," + newC)
       ) {
-        continue
+        continue;
       }
 
       if (newR == targetR && newC == targetC) {
-        return true
+        return true;
       }
-      visited.add(newR + "," + newC)
-      queue.push([newR, newC])
+      visited.add(newR + "," + newC);
+      queue.push([newR, newC]);
     }
   }
-  return false
-}
+  return false;
+};

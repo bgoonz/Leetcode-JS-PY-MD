@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-const circularArrayLoop = function(nums) {
+const circularArrayLoop = function (nums) {
   let n = nums.length;
   for (let i = 0; i < n; i++) {
     if (nums[i] == 0) {

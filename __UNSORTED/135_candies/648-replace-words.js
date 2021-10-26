@@ -3,7 +3,7 @@
  * @param {string} sentence
  * @return {string}
  */
-const replaceWords = function(dict, sentence) {
+const replaceWords = function (dict, sentence) {
   dict.sort();
   const unsortedParts = sentence.split(" ");
   const parts = unsortedParts.slice();

@@ -2,7 +2,7 @@
  * @param {string} target
  * @return {string}
  */
-const alphabetBoardPath = function(target) {
+const alphabetBoardPath = function (target) {
   let sx = 0,
     sy = 0;
   let dir = "";

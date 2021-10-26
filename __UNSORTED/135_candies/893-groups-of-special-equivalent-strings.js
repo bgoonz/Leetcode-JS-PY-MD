@@ -2,9 +2,9 @@
  * @param {string[]} A
  * @return {number}
  */
-const numSpecialEquivGroups = function(A) {
+const numSpecialEquivGroups = function (A) {
   return new Set(
-    A.map(word =>
+    A.map((word) =>
       [...word]
         .reduce((counter, c, i) => {
           counter[c.charCodeAt(0) - "a".charCodeAt(0) + 26 * (i % 2)]++;
@@ -21,7 +21,7 @@ const numSpecialEquivGroups = function(A) {
  * @param {string[]} A
  * @return {number}
  */
-const numSpecialEquivGroups = function(A) {
+const numSpecialEquivGroups = function (A) {
   const result = new Set();
   for (let i of A) {
     let arr = i.split("");

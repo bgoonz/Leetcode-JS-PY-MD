@@ -1,7 +1,7 @@
 /**
  * Initialize your data structure here.
  */
-const MagicDictionary = function(dict) {
+const MagicDictionary = function (dict) {
   this.dict = [];
 };
 
@@ -10,7 +10,7 @@ const MagicDictionary = function(dict) {
  * @param {string[]} dict
  * @return {void}
  */
-MagicDictionary.prototype.buildDict = function(dict) {
+MagicDictionary.prototype.buildDict = function (dict) {
   this.dict = dict;
 };
 
@@ -19,7 +19,7 @@ MagicDictionary.prototype.buildDict = function(dict) {
  * @param {string} word
  * @return {boolean}
  */
-MagicDictionary.prototype.search = function(word) {
+MagicDictionary.prototype.search = function (word) {
   return check(word, this.dict);
 };
 

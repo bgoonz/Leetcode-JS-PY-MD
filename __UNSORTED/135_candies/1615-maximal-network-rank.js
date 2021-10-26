@@ -44,7 +44,6 @@ const maximalNetworkRank = function (n, roads) {
       }
     }
   }
-  
 
   return maxRank;
 };

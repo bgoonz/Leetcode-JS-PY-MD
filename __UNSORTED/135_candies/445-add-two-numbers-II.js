@@ -10,7 +10,7 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-const addTwoNumbers = function(l1, l2) {
+const addTwoNumbers = function (l1, l2) {
   const s1 = [];
   const s2 = [];
   while (l1 !== null) {

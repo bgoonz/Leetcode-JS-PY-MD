@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number}
  */
-const threeSumClosest = function(nums, target) {
+const threeSumClosest = function (nums, target) {
   const nums = nums.sort((a, b) => a - b);
   let result;
   let lo;

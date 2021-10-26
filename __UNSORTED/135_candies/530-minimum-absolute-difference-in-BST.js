@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const getMinimumDifference = function(root) {
+const getMinimumDifference = function (root) {
   const arr = [];
   traversal(root, arr);
   let min = Number.MAX_SAFE_INTEGER;

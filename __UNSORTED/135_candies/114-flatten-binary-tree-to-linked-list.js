@@ -10,8 +10,8 @@
  * @return {void} Do not return anything, modify root in-place instead.
  */
 
-const flatten = function(root) {
-  let prev = null
+const flatten = function (root) {
+  let prev = null;
   function op(root) {
     if (root == null) return;
     op(root.right);
@@ -20,7 +20,5 @@ const flatten = function(root) {
     root.left = null;
     prev = root;
   }
-  op(root)
+  op(root);
 };
-
-

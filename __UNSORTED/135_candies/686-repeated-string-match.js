@@ -3,13 +3,17 @@
  * @param {string} B
  * @return {number}
  */
-const repeatedStringMatch = function(A, B) {
-    let count = Math.ceil(B.length / A.length);
-    let testString = A.repeat(count)
-    
-    return testString.includes(B) ? count : (testString + A).includes(B) ? count + 1 : -1
+const repeatedStringMatch = function (A, B) {
+  let count = Math.ceil(B.length / A.length);
+  let testString = A.repeat(count);
+
+  return testString.includes(B)
+    ? count
+    : (testString + A).includes(B)
+    ? count + 1
+    : -1;
 };
-// Form a string of length N from each index in A. 
+// Form a string of length N from each index in A.
 // If any of these string equals B, then B is a substring of A.
 // const repeatedStringMatch = function(A, B) {
 //     for (let i = 0; i < A.length; i++) {

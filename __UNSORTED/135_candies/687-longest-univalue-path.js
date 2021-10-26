@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const getCount = function(root, longest) {
+const getCount = function (root, longest) {
   if (!root) {
     return 0;
   }
@@ -29,7 +29,7 @@ const getCount = function(root, longest) {
   return Math.max(leftCount, rightCount);
 };
 
-const longestUnivaluePath = function(root) {
+const longestUnivaluePath = function (root) {
   let longest = { max: 0 };
   getCount(root, longest);
   return longest.max;

@@ -3,7 +3,7 @@
  * @param {number[][]} paths
  * @return {number[]}
  */
-const gardenNoAdj = function(N, paths) {
+const gardenNoAdj = function (N, paths) {
   const map = {};
   for (let i = 0; i < N; i++) {
     map[i] = [];
@@ -29,5 +29,5 @@ const gardenNoAdj = function(N, paths) {
       }
     }
   }
-  return result.map(i => ++i);
+  return result.map((i) => ++i);
 };

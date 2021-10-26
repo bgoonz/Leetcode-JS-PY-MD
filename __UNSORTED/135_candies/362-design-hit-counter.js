@@ -36,14 +36,13 @@ What if the number of hits per second could be very large? Does your design scal
 
 */
 
-
 /**
  * Initialize your data structure here.
  */
-const HitCounter = function() {
-  this.times = []
-  this.hits = []
-}
+const HitCounter = function () {
+  this.times = [];
+  this.hits = [];
+};
 
 /**
  * Record a hit.
@@ -51,17 +50,17 @@ const HitCounter = function() {
  * @param {number} timestamp
  * @return {void}
  */
-HitCounter.prototype.hit = function(timestamp) {
-  const idx = timestamp % 300
-  const times = this.times
-  const hits = this.hits
+HitCounter.prototype.hit = function (timestamp) {
+  const idx = timestamp % 300;
+  const times = this.times;
+  const hits = this.hits;
   if (times[idx] !== timestamp) {
-    times[idx] = timestamp
-    hits[idx] = 1
+    times[idx] = timestamp;
+    hits[idx] = 1;
   } else {
-    hits[idx]++
+    hits[idx]++;
   }
-}
+};
 
 /**
  * Return the number of hits in the past 5 minutes.
@@ -69,17 +68,17 @@ HitCounter.prototype.hit = function(timestamp) {
  * @param {number} timestamp
  * @return {number}
  */
-HitCounter.prototype.getHits = function(timestamp) {
-  let total = 0
-  const times = this.times
-  const hits = this.hits
+HitCounter.prototype.getHits = function (timestamp) {
+  let total = 0;
+  const times = this.times;
+  const hits = this.hits;
   for (let i = 0; i < 300; i++) {
     if (timestamp - times[i] < 300) {
-      total += hits[i]
+      total += hits[i];
     }
   }
-  return total
-}
+  return total;
+};
 
 /**
  * Your HitCounter object will be instantiated and called as such:

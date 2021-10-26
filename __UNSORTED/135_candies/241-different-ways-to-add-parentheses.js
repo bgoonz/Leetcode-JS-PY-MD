@@ -2,7 +2,7 @@
  * @param {string} input
  * @return {number[]}
  */
-const diffWaysToCompute = function(input) {
+const diffWaysToCompute = function (input) {
   const res = [];
   let left;
   let right;

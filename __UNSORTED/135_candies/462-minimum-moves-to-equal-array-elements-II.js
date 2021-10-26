@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const minMoves2 = function(nums) {
+const minMoves2 = function (nums) {
   nums.sort((a, b) => a - b);
   let i = 0,
     j = nums.length - 1;

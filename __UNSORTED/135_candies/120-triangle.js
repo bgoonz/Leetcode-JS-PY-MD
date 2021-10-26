@@ -2,7 +2,7 @@
  * @param {number[][]} triangle
  * @return {number}
  */
-const minimumTotal = function(triangle) {
+const minimumTotal = function (triangle) {
   const n = triangle.length;
   for (let i = n - 2; i >= 0; i--) {
     for (let j = 0; j < n; j++) {

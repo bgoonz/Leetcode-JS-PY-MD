@@ -3,7 +3,7 @@
  * @param {number} K
  * @return {number}
  */
-const largestSumAfterKNegations = function(A, K) {
+const largestSumAfterKNegations = function (A, K) {
   if (A.length === 0) return 0;
   A.sort((a, b) => a - b);
   let res = 0;

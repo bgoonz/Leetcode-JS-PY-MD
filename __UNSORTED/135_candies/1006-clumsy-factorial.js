@@ -2,7 +2,7 @@
  * @param {number} N
  * @return {number}
  */
-const clumsy = function(N) {
+const clumsy = function (N) {
   const ops = ["*", "/", "+", "-"];
   const arr = [];
   arr.push(N);

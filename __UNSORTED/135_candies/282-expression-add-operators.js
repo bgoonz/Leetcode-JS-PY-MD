@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {string[]}
  */
-const addOperators = function(num, target) {
+const addOperators = function (num, target) {
   let res = [];
   let n = num.length;
   function recursive(k, str, add, mul, last) {

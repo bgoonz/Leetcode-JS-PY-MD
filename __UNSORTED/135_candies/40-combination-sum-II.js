@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number[][]}
  */
-const combinationSum2 = function(candidates, target) {
+const combinationSum2 = function (candidates, target) {
   candidates.sort((a, b) => a - b);
   const res = [];
   bt(candidates, target, res, [], 0);

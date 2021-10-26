@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {number[][]}
  */
-const generateMatrix = function(n) {
+const generateMatrix = function (n) {
   const res = [];
   for (let i = 0; i < n; i++) {
     res[i] = [];

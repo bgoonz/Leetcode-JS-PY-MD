@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-const permuteUnique = function(nums) {
+const permuteUnique = function (nums) {
   const result = [];
   if (nums == null || nums.length === 0) {
     return result;

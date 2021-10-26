@@ -2,7 +2,7 @@
  * @param {number[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-const gameOfLife = function(board) {
+const gameOfLife = function (board) {
   const DIRECTIONS = [
     [1, 0],
     [1, 1],
@@ -11,16 +11,16 @@ const gameOfLife = function(board) {
     [-1, 0],
     [-1, -1],
     [0, -1],
-    [1, -1]
+    [1, -1],
   ];
 
-  const isValid = function(x, y) {
+  const isValid = function (x, y) {
     if (x >= 0 && y >= 0 && x < board.length && y < board[0].length)
       return true;
     else return false;
   };
 
-  const getAliveNeighbors = function(x, y) {
+  const getAliveNeighbors = function (x, y) {
     let aliveNeighs = 0;
     for (let dir of DIRECTIONS) {
       let newX = x + dir[0];

@@ -1,7 +1,7 @@
 /**
  * Initialize your data structure here.
  */
-const TwoSum = function() {
+const TwoSum = function () {
   this.hm = new Map();
 };
 
@@ -10,7 +10,7 @@ const TwoSum = function() {
  * @param {number} number
  * @return {void}
  */
-TwoSum.prototype.add = function(number) {
+TwoSum.prototype.add = function (number) {
   this.hm.set(number, (this.hm.get(number) || 0) + 1);
 };
 
@@ -19,7 +19,7 @@ TwoSum.prototype.add = function(number) {
  * @param {number} value
  * @return {boolean}
  */
-TwoSum.prototype.find = function(value) {
+TwoSum.prototype.find = function (value) {
   for (let item of this.hm) {
     let target = value - item[0];
     if (this.hm.has(target)) {

@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {number}
  */
-const countSubstrings = function(s) {
+const countSubstrings = function (s) {
   let count = 0;
 
   if (s == null || s.length === 0) {

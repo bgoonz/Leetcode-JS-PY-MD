@@ -3,33 +3,33 @@
  * @param {number[][]} prerequisites
  * @return {boolean}
  */
-const canFinish = function(numCourses, prerequisites) {
-  const seen = new Set()
-  const seeing = new Set()
-  const adj = [...Array(numCourses)].map(r => [])
+const canFinish = function (numCourses, prerequisites) {
+  const seen = new Set();
+  const seeing = new Set();
+  const adj = [...Array(numCourses)].map((r) => []);
   for (let [u, v] of prerequisites) {
-    adj[v].push(u)
+    adj[v].push(u);
   }
   for (let c = 0; c < numCourses; c++) {
     if (!dfs(c)) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
   function dfs(v) {
-    if (seen.has(v)) return true
-    if (seeing.has(v)) return false
-    seeing.add(v)
+    if (seen.has(v)) return true;
+    if (seeing.has(v)) return false;
+    seeing.add(v);
     for (let nv of adj[v]) {
       if (!dfs(nv)) {
-        return false
+        return false;
       }
     }
-    seeing.delete(v)
-    seen.add(v)
-    return true
+    seeing.delete(v);
+    seen.add(v);
+    return true;
   }
-}
+};
 
 // another
 
@@ -38,37 +38,37 @@ const canFinish = function(numCourses, prerequisites) {
  * @param {number[][]} prerequisites
  * @return {boolean}
  */
-const canFinish = function(vertices, edges) {
-  const sortedOrder = []
+const canFinish = function (vertices, edges) {
+  const sortedOrder = [];
   if (vertices <= 0) {
-    return sortedOrder
+    return sortedOrder;
   }
-  const inDegree = Array(vertices).fill(0)
+  const inDegree = Array(vertices).fill(0);
   const graph = Array(vertices)
     .fill(0)
-    .map(() => Array())
-  edges.forEach(edge => {
-    let parent = edge[0]
-    let child = edge[1]
-    graph[parent].push(child)
-    inDegree[child]++
-  })
-  const sources = []
+    .map(() => Array());
+  edges.forEach((edge) => {
+    let parent = edge[0];
+    let child = edge[1];
+    graph[parent].push(child);
+    inDegree[child]++;
+  });
+  const sources = [];
   for (let i = 0; i < inDegree.length; i++) {
     if (inDegree[i] === 0) {
-      sources.push(i)
+      sources.push(i);
     }
   }
   while (sources.length > 0) {
-    const vertex = sources.shift()
-    sortedOrder.push(vertex)
+    const vertex = sources.shift();
+    sortedOrder.push(vertex);
 
-    graph[vertex].forEach(child => {
-      inDegree[child] -= 1
+    graph[vertex].forEach((child) => {
+      inDegree[child] -= 1;
       if (inDegree[child] === 0) {
-        sources.push(child)
+        sources.push(child);
       }
-    })
+    });
   }
-  return sortedOrder.length === vertices ? true : false
-}
+  return sortedOrder.length === vertices ? true : false;
+};

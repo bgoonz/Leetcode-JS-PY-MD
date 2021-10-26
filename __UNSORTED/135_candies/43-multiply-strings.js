@@ -3,7 +3,7 @@
  * @param {string} num2
  * @return {string}
  */
-const multiply = function(num1, num2) {
+const multiply = function (num1, num2) {
   let m = num1.length,
     n = num2.length;
   let pos = new Array(m + n).fill(0);

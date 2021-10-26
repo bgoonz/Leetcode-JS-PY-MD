@@ -1,7 +1,7 @@
 /**
  * @param {number} length
  */
-const SnapshotArray = function(length) {
+const SnapshotArray = function (length) {
   this.arr = new Array(length).fill(0);
   this.snaps = new Array(length);
   this.count = 0;
@@ -12,7 +12,7 @@ const SnapshotArray = function(length) {
  * @param {number} val
  * @return {void}
  */
-SnapshotArray.prototype.set = function(index, val) {
+SnapshotArray.prototype.set = function (index, val) {
   if (this.snaps[index] == undefined) {
     this.snaps[index] = {};
   }
@@ -23,7 +23,7 @@ SnapshotArray.prototype.set = function(index, val) {
 /**
  * @return {number}
  */
-SnapshotArray.prototype.snap = function() {
+SnapshotArray.prototype.snap = function () {
   return this.count++;
 };
 
@@ -32,7 +32,7 @@ SnapshotArray.prototype.snap = function() {
  * @param {number} snap_id
  * @return {number}
  */
-SnapshotArray.prototype.get = function(index, snap_id) {
+SnapshotArray.prototype.get = function (index, snap_id) {
   if (this.snaps[index] == undefined) return 0;
 
   let res = 0;

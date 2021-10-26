@@ -2,22 +2,22 @@
  * @param {string} s
  * @return {string}
  */
-const lastSubstring = function(s) {
-  let ans = '',
-    max = 'a'
+const lastSubstring = function (s) {
+  let ans = "",
+    max = "a";
   for (let i = 0; i < s.length; ) {
     let j = i,
-      sub = s.slice(i)
+      sub = s.slice(i);
     if (max < s[i] || ans < sub) {
-      max = s[i]
-      ans = sub
+      max = s[i];
+      ans = sub;
     }
     while (i < s.length && s[i + 1] === s[i]) {
-      i++
+      i++;
     }
     if (j === i) {
-      i++
+      i++;
     }
   }
-  return ans
-}
+  return ans;
+};

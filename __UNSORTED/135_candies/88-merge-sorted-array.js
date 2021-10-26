@@ -5,7 +5,7 @@
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
-const merge = function(nums1, m, nums2, n) {
+const merge = function (nums1, m, nums2, n) {
   if (nums2.length === 0) return nums1;
   let fi = 0;
   let si = 0;

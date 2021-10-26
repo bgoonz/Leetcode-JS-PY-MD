@@ -2,7 +2,7 @@
  * @param {number} k
  * @param {number[]} nums
  */
-const KthLargest = function(k, nums) {
+const KthLargest = function (k, nums) {
   this.sorted = nums.sort((a, b) => a - b);
   this.k = k;
 };
@@ -11,7 +11,7 @@ const KthLargest = function(k, nums) {
  * @param {number} val
  * @return {number}
  */
-KthLargest.prototype.add = function(val) {
+KthLargest.prototype.add = function (val) {
   let left = 0;
   let right = this.sorted.length - 1;
   let insertIndex = left;
@@ -32,7 +32,7 @@ KthLargest.prototype.add = function(val) {
   return this.sorted[this.sorted.length - this.k];
 };
 
-/** 
+/**
  * Your KthLargest object will be instantiated and called as such:
  * var obj = new KthLargest(k, nums)
  * var param_1 = obj.add(val)

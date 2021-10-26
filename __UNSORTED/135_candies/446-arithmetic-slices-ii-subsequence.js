@@ -2,7 +2,7 @@
  * @param {number[]} A
  * @return {number}
  */
-const numberOfArithmeticSlices = function(A) {
+const numberOfArithmeticSlices = function (A) {
   if (!A || A.length < 3) return 0;
   let res = 0;
   const dp = Array(A.length);

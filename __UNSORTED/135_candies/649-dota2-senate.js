@@ -5,23 +5,23 @@
 const predictPartyVictory = function (senate) {
   const m = senate.length,
     radiant = [],
-    dire = []
+    dire = [];
   for (let i = 0; i < m; i++) {
-    if (senate[i] === 'R') {
-      radiant.push(i)
+    if (senate[i] === "R") {
+      radiant.push(i);
     } else {
-      dire.push(i)
+      dire.push(i);
     }
   }
 
   while (radiant.length && dire.length) {
     let r = radiant.shift(),
-      d = dire.shift()
+      d = dire.shift();
     if (r < d) {
-      radiant.push(r + m)
+      radiant.push(r + m);
     } else {
-      dire.push(d + m)
+      dire.push(d + m);
     }
   }
-  return radiant.length > dire.length ? 'Radiant' : 'Dire'
-}
+  return radiant.length > dire.length ? "Radiant" : "Dire";
+};

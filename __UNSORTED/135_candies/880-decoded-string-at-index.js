@@ -4,7 +4,7 @@
  * @return {string}
  */
 
-const decodeAtIndex = function(S, K) {
+const decodeAtIndex = function (S, K) {
   let n = S.length;
   let dp = Array(n + 1).fill(0);
   for (let i = 0; i < n; i++) {

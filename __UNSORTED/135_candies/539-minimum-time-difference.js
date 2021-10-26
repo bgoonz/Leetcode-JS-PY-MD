@@ -2,9 +2,9 @@
  * @param {string[]} timePoints
  * @return {number}
  */
-const findMinDifference = function(timePoints) {
+const findMinDifference = function (timePoints) {
   const sortedArr = timePoints
-    .map(el => {
+    .map((el) => {
       const arr = el.trim().split(":");
       return arr[0] === "00" && arr[1] === "00"
         ? 24 * 60

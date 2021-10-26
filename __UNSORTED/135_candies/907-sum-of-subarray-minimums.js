@@ -2,7 +2,7 @@
  * @param {number[]} A
  * @return {number}
  */
-const sumSubarrayMins = function(A) {
+const sumSubarrayMins = function (A) {
   let n = A.length;
   let s1 = [];
   let s2 = [];

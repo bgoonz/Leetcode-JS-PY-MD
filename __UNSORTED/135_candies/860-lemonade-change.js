@@ -2,7 +2,7 @@
  * @param {number[]} bills
  * @return {boolean}
  */
-const lemonadeChange = function(bills) {
+const lemonadeChange = function (bills) {
   let five = 0;
   let ten = 0;
   for (let el of bills) {

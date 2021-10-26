@@ -3,7 +3,7 @@
  * @param {number} divisor
  * @return {number}
  */
-const divide = function(dividend, divisor) {
+const divide = function (dividend, divisor) {
   if (!divisor || (dividend === Number.MIN_SAFE_INTEGER && divisor === -1)) {
     return Number.MAX_SAFE_INTEGER;
   }

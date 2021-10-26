@@ -2,11 +2,16 @@
  * @param {string} s
  * @return {string[]}
  */
-const findRepeatedDnaSequences = function(s) {
+const findRepeatedDnaSequences = function (s) {
   if (!s || s.length < 10) {
     return [];
   }
-  const map = new Map([["A", 0], ["C", 1], ["G", 2], ["T", 3]]);
+  const map = new Map([
+    ["A", 0],
+    ["C", 1],
+    ["G", 2],
+    ["T", 3],
+  ]);
   const dna = new Set();
   const repeated = new Set();
   const mask = 0xfffff;
@@ -35,15 +40,16 @@ const findRepeatedDnaSequences = function(s) {
  * @param {string} s
  * @return {string[]}
  */
-const findRepeatedDnaSequences = function(s) {
-    let store = new Set(), result = new Set()
-    for(let i = 0; i < s.length - 9; i++) {
-        const str = s.substring(i, i + 10)
-        if(store.has(str)) {
-            result.add(str)
-        } else {
-            store.add(str)
-        }
+const findRepeatedDnaSequences = function (s) {
+  let store = new Set(),
+    result = new Set();
+  for (let i = 0; i < s.length - 9; i++) {
+    const str = s.substring(i, i + 10);
+    if (store.has(str)) {
+      result.add(str);
+    } else {
+      store.add(str);
     }
-    return Array.from(result)
+  }
+  return Array.from(result);
 };

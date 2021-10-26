@@ -3,10 +3,10 @@
  * @param {string} p
  * @return {boolean}
  */
-const isMatch = function(s, p) {
+const isMatch = function (s, p) {
   let memory = new Array(s.length + 1)
     .fill(0)
-    .map(e => new Array(p.length + 1).fill(-1));
+    .map((e) => new Array(p.length + 1).fill(-1));
   return memorySearch(s, 0, p, 0, memory);
 };
 

@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {number}
  */
-const totalNQueens = function(n) {
+const totalNQueens = function (n) {
   //Keeps track of the # of valid solutions
   let count = 0;
 
@@ -10,7 +10,7 @@ const totalNQueens = function(n) {
   const done = Math.pow(2, n) - 1;
 
   //Checks all possible board configurations
-  const innerRecurse = function(ld, col, rd) {
+  const innerRecurse = function (ld, col, rd) {
     //All columns are occupied,
     //so the solution must be complete
     if (col === done) {

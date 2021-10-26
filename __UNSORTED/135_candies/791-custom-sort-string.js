@@ -3,7 +3,7 @@
  * @param {string} T
  * @return {string}
  */
-const customSortString = function(S, T) {
+const customSortString = function (S, T) {
   const arr = [];
   const remaining = [];
   const hash = {};

@@ -4,12 +4,12 @@
  * @param {number} c
  * @return {number[][]}
  */
-const matrixReshape = function(nums, r, c) {
+const matrixReshape = function (nums, r, c) {
   if (isValid(nums, r, c) === false) {
     return nums;
   }
   const arr = [];
-  nums.forEach(el => arr.push(...el));
+  nums.forEach((el) => arr.push(...el));
   const res = [];
   for (let start = 0; start < arr.length; start = start + c) {
     res.push(arr.slice(start, start + c));
@@ -25,5 +25,23 @@ function isValid(matrix, r, c) {
   }
 }
 
-console.log(matrixReshape([[1, 2], [3, 4]], 1, 4));
-console.log(matrixReshape([[1, 2], [3, 4]], 2, 4));
+console.log(
+  matrixReshape(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    1,
+    4
+  )
+);
+console.log(
+  matrixReshape(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    2,
+    4
+  )
+);

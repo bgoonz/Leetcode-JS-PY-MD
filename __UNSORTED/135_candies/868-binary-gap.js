@@ -2,7 +2,7 @@
  * @param {number} N
  * @return {number}
  */
-const binaryGap = function(N) {
+const binaryGap = function (N) {
   const bin = (N >>> 0).toString(2);
   const idxArr = [];
   for (let i = 0; i < bin.length; i++) {

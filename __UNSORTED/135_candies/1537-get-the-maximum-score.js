@@ -55,9 +55,14 @@ nums1 and nums2 are strictly increasing.
  * @param {number[]} nums2
  * @return {number}
  */
-const maxSum = function(nums1, nums2) {
-  let i = 0, j = 0, n = nums1.length, m = nums2.length;
-  let a = 0, b = 0, mod = 10 ** 9 + 7;
+const maxSum = function (nums1, nums2) {
+  let i = 0,
+    j = 0,
+    n = nums1.length,
+    m = nums2.length;
+  let a = 0,
+    b = 0,
+    mod = 10 ** 9 + 7;
   while (i < n || j < m) {
     if (i < n && (j === m || nums1[i] < nums2[j])) {
       a += nums1[i++];
@@ -65,7 +70,8 @@ const maxSum = function(nums1, nums2) {
       b += nums2[j++];
     } else {
       a = b = Math.max(a, b) + nums1[i];
-      i++; j++;
+      i++;
+      j++;
     }
   }
   return Math.max(a, b) % mod;

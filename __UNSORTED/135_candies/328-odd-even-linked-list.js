@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-const oddEvenList = function(head) {
+const oddEvenList = function (head) {
   if (head === null) return null;
   let odd = head,
     even = head.next,

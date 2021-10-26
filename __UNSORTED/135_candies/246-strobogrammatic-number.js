@@ -2,7 +2,7 @@
  * @param {string} num
  * @return {boolean}
  */
-const isStrobogrammatic = function(num) {
+const isStrobogrammatic = function (num) {
   const m = {
     0: 0,
     1: 1,
@@ -13,32 +13,33 @@ const isStrobogrammatic = function(num) {
     6: 9,
     7: null,
     8: 8,
-    9: 6
+    9: 6,
+  };
+  const arr = num.split("");
+  for (let i = 0, len = arr.length; i < len; i++) {
+    if (m[arr[i]] === null) return false;
+    else arr[i] = m[arr[i]];
   }
-  const arr = num.split('')
-  for(let i = 0, len = arr.length; i < len; i++) {
-    if(m[arr[i]] === null) return false
-    else arr[i] = m[arr[i]]
-  }
-  return num === arr.reverse().join('')
+  return num === arr.reverse().join("");
 };
 
 // another
 
-const isStrobogrammatic = function(num) {
-  const map = { 0: '0', 1: '1', 8: '8', 6: '9', 9: '6' }
-  let left = 0
-  let right = num.length - 1
+const isStrobogrammatic = function (num) {
+  const map = { 0: "0", 1: "1", 8: "8", 6: "9", 9: "6" };
+  let left = 0;
+  let right = num.length - 1;
 
   while (left < right) {
-    const leftNum = num[left]
-    const rightNum = num[right]
-    if (map[leftNum] != rightNum) return false
-    left++
-    right--
+    const leftNum = num[left];
+    const rightNum = num[right];
+    if (map[leftNum] != rightNum) return false;
+    left++;
+    right--;
   }
   if (right == left) {
-    if (!map[num[right]] || num[right] == '9' || num[right] == '6') return false
+    if (!map[num[right]] || num[right] == "9" || num[right] == "6")
+      return false;
   }
-  return true
-}
+  return true;
+};

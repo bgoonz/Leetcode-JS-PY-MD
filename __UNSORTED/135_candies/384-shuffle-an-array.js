@@ -1,14 +1,14 @@
 /**
  * @param {number[]} nums
  */
-const Solution = function(nums) {
+const Solution = function (nums) {
   this.original = nums;
 };
 /**
  * Resets the array to its original configuration and return it.
  * @return {number[]}
  */
-Solution.prototype.reset = function() {
+Solution.prototype.reset = function () {
   return this.original;
 };
 
@@ -16,7 +16,7 @@ Solution.prototype.reset = function() {
  * Returns a random shuffling of the array.
  * @return {number[]}
  */
-Solution.prototype.shuffle = function() {
+Solution.prototype.shuffle = function () {
   const res = [];
   const len = this.original.length;
   let idx = 0;

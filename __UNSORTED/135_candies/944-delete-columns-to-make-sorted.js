@@ -2,7 +2,7 @@
  * @param {string[]} A
  * @return {number}
  */
-const minDeletionSize = function(A) {
+const minDeletionSize = function (A) {
   // increment this if we find a
   // column that is out of order
   let numColumnsToDelete = 0;
@@ -15,14 +15,14 @@ const minDeletionSize = function(A) {
   for (let i = 0; i < strLength; i++) {
     // inner loop checks the colunns
     for (let j = 0; j < A.length - 1; j++) {
-       const top = A[j][i];
-       const bottom = A[j + 1][i];
+      const top = A[j][i];
+      const bottom = A[j + 1][i];
 
-       if (top > bottom) {
-          numColumnsToDelete++;
-          break;
-        }
+      if (top > bottom) {
+        numColumnsToDelete++;
+        break;
       }
     }
-    return numColumnsToDelete;
+  }
+  return numColumnsToDelete;
 };

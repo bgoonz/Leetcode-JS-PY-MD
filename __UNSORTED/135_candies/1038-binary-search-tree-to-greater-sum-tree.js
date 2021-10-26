@@ -9,20 +9,20 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const bstToGst = function(root) {
-  const arr = []
-  dfs(root, arr)
-  let v = 0
-  for(let i = arr.length - 1; i >= 0; i--) {
-    arr[i].val = arr[i].val + v
-    v = arr[i].val
+const bstToGst = function (root) {
+  const arr = [];
+  dfs(root, arr);
+  let v = 0;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    arr[i].val = arr[i].val + v;
+    v = arr[i].val;
   }
-  return root
+  return root;
 };
 
 function dfs(node, arr) {
-  if(node == null) return
-  dfs(node.left, arr)
-  arr.push(node)
-  dfs(node.right, arr)
+  if (node == null) return;
+  dfs(node.left, arr);
+  arr.push(node);
+  dfs(node.right, arr);
 }
