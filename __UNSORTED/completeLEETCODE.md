@@ -50,7 +50,15 @@ Mind the last carry.
       return prehead.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -153,7 +161,15 @@ Same goes `nums1[i-1] <= nums2[j] <= nums1[i]`.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -259,7 +275,15 @@ If row == 1 or row == numRows, skip the odd columns.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -322,7 +346,15 @@ Pure mathamatical solution.
       return Math.abs(result) > 2147483647 ? 0 : result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -442,7 +474,15 @@ General solution.
       return Math.min(2147483647, Math.max(-2147483648, result * sign))
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -533,7 +573,15 @@ General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALG
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -665,7 +713,15 @@ Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
       return !!dp[s.length][p.length]
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -712,7 +768,15 @@ What if `height[l] == height[r]`? It is safe to get rid of both. We do not need 
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -794,7 +858,15 @@ Treat 4, 40, 400 and 9, 90, 900 specially.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -880,7 +952,15 @@ Normally we just add up the digits, except when the digit is greater than its le
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -974,7 +1054,15 @@ General solution. Build up the prefix.
       return prefix
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1056,7 +1144,15 @@ Skip any duplicate number as we iterate to avoid duplicate triplets.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1117,7 +1213,15 @@ Simplified version of [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-A
       return target - minDiff
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1212,7 +1316,15 @@ General recursive DFS solution.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1285,7 +1397,15 @@ Like [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1354,7 +1474,15 @@ Boundaries that should be awared of:
       return head
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1432,7 +1560,15 @@ And since there is only bracket characters, the last open bracket happens to be 
       return stack.length <= 0
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1488,7 +1624,15 @@ Keep tracking the head of two lists and keep moving the pointer of smaller one t
       return prehead.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1587,7 +1731,15 @@ BFS.
       return queue.map(x => x.path)
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1682,7 +1834,15 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
       return prehead.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1736,7 +1896,15 @@ Given a linked list, swap every two adjacent nodes and return its head.
       return prehead.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1819,7 +1987,15 @@ For _k_ = 3, you should return: `3->2->1->4->5`
       return prev
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1884,7 +2060,15 @@ The result array can only be shorter. That is why we can build the array in-plac
       return len
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1954,7 +2138,15 @@ The order does not matter. So just take the last number to fill the vacancy.
       return len
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2027,7 +2219,15 @@ Replace multiplication and division with binary shifting.
       return isNegative ? -result : result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2094,7 +2294,15 @@ Swap the two.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2180,7 +2388,15 @@ Whenever we choose a pivot, it must be in one of the two sorted parts of the rot
       return -1
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2270,7 +2486,15 @@ If we want to get the first, we dump the right half. Vice versa.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2332,7 +2556,15 @@ Same as simple binary search except it returns the start index when does not fin
       return s
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2435,7 +2667,15 @@ Scan the board once.
       return true
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2536,7 +2776,15 @@ If all possible solutions fail, we just dump the current position and go back to
       return false
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2619,7 +2867,15 @@ General solution.
       return num
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2692,7 +2948,15 @@ To prevent duplications, only loop the right side of the candidates.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2776,7 +3040,15 @@ Notice the number at `start` is immune by the rule because we assume that the cu
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2847,7 +3119,15 @@ So here we reuse the array and keep trying to put integer `k` into the slot inde
       return n + 1
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2905,7 +3185,15 @@ Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rai
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2957,7 +3245,15 @@ Same as we do multiplication on a paper.
       return result.join('').replace(/^0+(?=[0-9])/, '')
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3009,7 +3305,15 @@ Greedy. Always pick the one that would allow to jump to the rightest.
       return jump
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3067,7 +3371,15 @@ One position at a time, pick a number from the unused set and put it in that pos
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3129,7 +3441,15 @@ Same as [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3209,7 +3529,15 @@ Outside-in. Rotate one square at a time.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3282,7 +3610,15 @@ Use the product of prime numbers to generate unique keys.
       return Object.values(result)
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3344,7 +3680,15 @@ Note here we can not use any bitwise operator, `n = -2^31` might overflow.
       return x * res * res
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3492,7 +3836,15 @@ This is slow because we test diagonal in the end. We can do a tree pruning by mo
       return board
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3571,7 +3923,15 @@ Just modify [51. N-Queens](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
       return true
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3635,7 +3995,15 @@ We can also compress the dp array:
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3706,7 +4074,15 @@ Loop outside-in. Break each cycle into four stages. Note that the last two stage
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3781,7 +4157,15 @@ If `nums[0]` can cover the last destination point, it is good.
       return nums[0] >= des
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3837,7 +4221,15 @@ Sort then merge.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3903,7 +4295,15 @@ The logic of the solution is pretty straight forward. Just need to carefully thi
       return [...result, p, ...intervals.slice(i)]
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3972,7 +4372,15 @@ General solution.
       return end - start
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4024,7 +4432,15 @@ Straight-forward.
       return matrix
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4096,7 +4512,15 @@ We also need `k--` to convert `k` into index so that `k <= (n-1)!` maps `0` (and
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4182,7 +4606,15 @@ Locate the right pointer again with `k % len`.
       return head
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4246,7 +4678,15 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
       return dp[m-1] || 1
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4304,7 +4744,15 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
       return dp[width-1] || 0
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4501,7 +4949,15 @@ Now implement the parser. It is much easier now because we have a clear mental m
       return parseDecimalDigits(s, nextIndex)
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4575,7 +5031,15 @@ General solution.
       return digits
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4696,7 +5160,15 @@ For the last line of text, it should be left justified and no **extra** space is
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4749,7 +5221,15 @@ Binary Search. The square root of x is within \[0...(x+1)/2\].
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4829,7 +5309,15 @@ Direct search.
       return '/' + stack.join('/')
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4918,7 +5406,15 @@ Define `f(i, j)` to be the min edit distance from `word1[0...i)` to `word2[0...j
       return dp[len1][len2]
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5074,7 +5570,15 @@ Still constant space just a bit slower due to repeatedly setting overlapping `Na
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5180,7 +5684,15 @@ Take the algorithm from [35. Search Insert Position](file:///C:/MY-WEB-DEV/06-DS
       return false
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5241,7 +5753,15 @@ Count the number of sorted `0`s and `2`s so that we know where to swap.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5293,7 +5813,15 @@ Basic DFS + Backtracking.
       }
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5375,7 +5903,15 @@ DFS + Backtracking.
       }
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5453,7 +5989,15 @@ DFS + Backtracking. Replace the cell with `NaN` before proceeding to the next le
       return false
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5518,7 +6062,15 @@ Similar to [26. Remove Duplicates from Sorted Array](file:///C:/MY-WEB-DEV/06-DS
       return len
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5590,7 +6142,15 @@ See [33. Search in Rotated Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER
       return false
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5650,7 +6210,15 @@ The list is sorted so we only need `dupVal` to keep the latest duplicate value.
       return prehead.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5740,7 +6308,15 @@ Just compare the next node. This is way more faster.
       return head
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5797,7 +6373,15 @@ To reduce O(_n^2_) to O(_n_), we use a stack to store incremental `b`s. Because 
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5955,7 +6539,15 @@ We only need to keep the last state. Use dynamic arrays to reduce space complexi
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6016,7 +6608,15 @@ Take the second part out as a new list and connect it back.
       return prehead1.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6059,7 +6659,15 @@ Loop backward and keep picking the larger one. `nums1` is guaranteed longer than
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6125,7 +6733,15 @@ Use bitwise shift to speed up the calculation. It is unlikely to overflow since 
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6183,7 +6799,15 @@ See [78. Subsets](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTEN
       }
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6252,7 +6876,15 @@ Only need to store the last two states. Init `f(-1) = 1` for easy calculation.
       return dp
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6316,7 +6948,15 @@ Break the list into 3 parts.
       return prehead.next
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6375,7 +7015,15 @@ Backtracking. Note that leading `'0'` is not allowed except just `'0'`.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6430,7 +7078,15 @@ Dynamic array can be used.
       return dp[len2]
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6495,7 +7151,15 @@ The code should be self-evident.
         p !== null && q !== null && p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6602,7 +7266,15 @@ Level order traversal. Check symmetry before entering the next level.
       return true
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6665,7 +7337,15 @@ The code should be self-evident.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6733,7 +7413,15 @@ Reverse the level when pushing to the reuslt.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6782,7 +7470,15 @@ The code should be self-evident.
         : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6852,7 +7548,15 @@ Repeat the process on subtrees.
       return node
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6922,7 +7626,15 @@ Repeat the process on subtrees.
       return node
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6985,7 +7697,15 @@ See [102. Binary Tree Level Order Traversal](file:///C:/MY-WEB-DEV/06-DS-ALGO-OU
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7055,7 +7775,15 @@ Get the depth of subtrees and compare. Prune the DFS tree by returning `-1`.
       return Math.abs(leftDepth - rightDepth) <= 1 ? Math.max(leftDepth, rightDepth) + 1 : -1
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7109,7 +7837,15 @@ Ignore `null` children.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7159,7 +7895,15 @@ Note that node value could be negative so pruning can not be performed.
       return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val)
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7226,7 +7970,15 @@ Simple backtracking.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7298,7 +8050,15 @@ Return the leaf node of a flattened subtree for concatenation.
       return rightLeaf || leftLeaf
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7380,7 +8140,15 @@ Dynamic array can be used.
       return dp[lent]
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7499,7 +8267,15 @@ Level order traversal.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7623,7 +8399,15 @@ Level order traversal. Exact same as [116. Populating Next Right Pointers in Eac
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7676,7 +8460,15 @@ Dynamic Programming 101.
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7727,7 +8519,15 @@ State `(i, j)` depends on `(i-1, j)` and `(i-1, j-1)`. So to access `(i-1, j-1)`
       return row
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7782,7 +8582,15 @@ Dynamic array can be used.
       return Math.min(...dp)
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7835,7 +8643,15 @@ Because `price[j]` is lower that the base, using `j` as new base is guaranteed t
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7890,7 +8706,15 @@ Sell immediately after the price drops. Or in other perspective, it is the sum o
       return max
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7970,7 +8794,15 @@ Define `f(k)` to be `p1(k) + p2(k)`. We need to get `max( f(0), ..., f(n-1) )`.
       return Math.max(...dp)
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8093,7 +8925,15 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
       return localMax
     }
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8180,7 +9020,15 @@ Compare the char codes.
       return true
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8293,7 +9141,15 @@ The items in the queue are not just words now. Parent nodes are also kept so tha
       return result
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8393,7 +9249,15 @@ To find all the next words, instead of filtering the `wordList`, enumerate all 2
       return 0
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8441,7 +9305,15 @@ Build a Set from the list. Pick a number, find all it's adjacent numbers that ar
       return maxCount
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8507,7 +9379,15 @@ To write a clean solution for this promblem, use `0` as indicator of leaf node. 
       return sumNumbers(root.left, sum) + sumNumbers(root.right, sum) || sum
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8616,7 +9496,15 @@ So both BFS and DFS are good. I prefer BFS when pruning is not needed in favor o
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8684,7 +9572,15 @@ DFS. Cache the visited node before entering the next recursion.
       }
     };
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ![alt text](./completeLEETCODE_files/binary-tree-upside-down.webp "binary-tree-upside-down")
 

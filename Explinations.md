@@ -24,7 +24,7 @@ Mind the last carry.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} l1
      * @param {ListNode} l2
@@ -51,8 +51,17 @@ Mind the last carry.
 
       return prehead.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -101,7 +110,7 @@ Otherwise, if `nums1[i] <= nums2[j]` then we know `nums1[i] < nums2[j-1]` (becau
 - We Also have `nums1[i] < nums2[j]`, which means `nums2[j...n)` are after `nums3[i+j]`. So `nums2[j...n) > nums3[k]`.
 
 Same goes `nums1[i-1] <= nums2[j] <= nums1[i]`.
-
+```js
     /**
      * @param {number[]} nums1
      * @param {number[]} nums2
@@ -154,8 +163,17 @@ Same goes `nums1[i-1] <= nums2[j] <= nums1[i]`.
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -223,7 +241,7 @@ We need to count the items between matrix\[row\]\[col\] and matrix\[row\]\[col+1
 If row == 1 or row == numRows, skip the odd columns.
 
     next_i = i + numRows + (numRows - 2), if col is even && (row == 1 || row == numRows)
-
+```js
     /**
      * @param {string} s
      * @param {number} numRows
@@ -260,8 +278,17 @@ If row == 1 or row == numRows, skip the odd columns.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -296,7 +323,7 @@ Assume we are dealing with an environment which could only store integers within
 #### ONE
 
 This is a JavaScript specific solution. It is esay to write but slow to run because it generates O(n) space. This could end up a huge array.
-
+```js
     /**
      * @param {number} x
      * @return {number}
@@ -307,10 +334,13 @@ This is a JavaScript specific solution. It is esay to write but slow to run beca
       return (x < 0? -1: 1) * n
     };
 
+```
+---
+
 #### TWO
 
 Pure mathamatical solution.
-
+```js
     /**
      * @param {number} x
      * @return {number}
@@ -323,8 +353,17 @@ Pure mathamatical solution.
       }
       return Math.abs(result) > 2147483647 ? 0 : result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -384,7 +423,7 @@ Assume we are dealing with an environment which could only store integers within
 ### Solution:
 
 #### ONE
-
+```js
     /**
      * @param {string} str
      * @return {number}
@@ -392,11 +431,11 @@ Assume we are dealing with an environment which could only store integers within
     let myAtoi = function (str) {
       return Math.min(2147483647, Math.max(-2147483648, parseInt(str))) || 0
     };
-
+```
 #### TWO
 
 Looks like `Number()` is faster than `parseInt()`.
-
+```js
     /**
      * @param {string} str
      * @return {number}
@@ -405,10 +444,13 @@ Looks like `Number()` is faster than `parseInt()`.
       return Math.min(2147483647, Math.max(-2147483648, (/^ *[-+]?\d+/.exec(str) || [0])[0]))
     };
 
+```
+---
+
 #### THREE
 
 General solution.
-
+```js
     /**
      * @param {string} str
      * @return {number}
@@ -443,8 +485,17 @@ General solution.
 
       return Math.min(2147483647, Math.max(-2147483648, result * sign))
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -482,7 +533,7 @@ Coud you solve it without converting the integer to a string?
 #### ONE
 
 Easy to write but slow since it generates an array.
-
+```js
     /**
      * @param {number} x
      * @return {boolean}
@@ -491,10 +542,13 @@ Easy to write but slow since it generates an array.
       return x == String(x).split('').reverse().join('')
     };
 
+```
+---
+
 #### TWO
 
 A bit faster.
-
+```js
     /**
      * @param {number} x
      * @return {boolean}
@@ -509,10 +563,13 @@ A bit faster.
       return true
     };
 
+```
+---
+
 #### THREE
 
 General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/007.%20Reverse%20Integer.md).
-
+```js
     /**
      * @param {number} x
      * @return {boolean}
@@ -521,7 +578,11 @@ General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALG
       if (x < 0) { return false }
       return x === reverse(x)
     };
+```
 
+---
+
+```js
     /**
      * @param {number} x
      * @return {number}
@@ -534,8 +595,17 @@ General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALG
       }
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -601,7 +671,7 @@ The matching should cover the **entire** input string (not partial).
 #### ONE
 
 Cheating with real RegExp matching.
-
+```js
     /**
      * @param {string} s
      * @param {string} p
@@ -612,10 +682,13 @@ Cheating with real RegExp matching.
       return new RegExp(`^${p}$`).test(s)
     };
 
+```
+---
+
 #### TWO
 
 Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
-
+```js
     f(0, j) =
         j == 0 || // empty
         p[j-1] == '*' && f(i, j-2) // matches 0 time, which matches empty string
@@ -631,6 +704,10 @@ Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
         else
             f(i-1, j-1) && s[i-1] == p[j-1]
 
+```
+---
+
+```js
     /**
      * @param {string} s
      * @param {string} p
@@ -666,8 +743,17 @@ Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
 
       return !!dp[s.length][p.length]
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -696,7 +782,7 @@ If `height[l] < height[r]`, we know that the height of the area will never be gr
 Here we conclude rule NO.1: Get rid of the smaller one.
 
 What if `height[l] == height[r]`? It is safe to get rid of both. We do not need any of them to constrain the max height of the rest points.
-
+```js
     /**
      * @param {number[]} height
      * @return {number}
@@ -713,8 +799,17 @@ What if `height[l] == height[r]`? It is safe to get rid of both. We do not need 
       }
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -775,7 +870,7 @@ Given an integer, convert it to a roman numeral. Input is guaranteed to be withi
 ### Solution:
 
 Treat 4, 40, 400 and 9, 90, 900 specially.
-
+```js
     /**
      * @param {number} num
      * @return {string}
@@ -795,8 +890,17 @@ Treat 4, 40, 400 and 9, 90, 900 specially.
       }
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -857,7 +961,7 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 ### Solution:
 
 Normally we just add up the digits, except when the digit is greater than its left (e.g. IV). In that case we need to fallback and remove the last digit then combine the two as new digit. That is why we subtract the last digit twice.
-
+```js
     /**
      * @param {string} s
      * @return {number}
@@ -881,8 +985,17 @@ Normally we just add up the digits, except when the digit is greater than its le
       }
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -916,7 +1029,7 @@ All given inputs are in lowercase letters `a-z`.
 #### ONE
 
 JavaScript specific solution. Get the min len then narrow down the prefix.
-
+```js
     /**
      * @param {string[]} strs
      * @return {string}
@@ -935,8 +1048,11 @@ JavaScript specific solution. Get the min len then narrow down the prefix.
       return ''
     };
 
-#### TWO
+```
+---
 
+#### TWO
+```js
     /**
      * @param {string[]} strs
      * @return {string}
@@ -951,10 +1067,13 @@ JavaScript specific solution. Get the min len then narrow down the prefix.
       return strs[0].slice(0, i)
     };
 
+```
+---
+
 #### THREE
 
 General solution. Build up the prefix.
-
+```js
     /**
      * @param {string[]} strs
      * @return {string}
@@ -975,8 +1094,17 @@ General solution. Build up the prefix.
       }
       return prefix
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1016,7 +1144,7 @@ Let `l = i + 1`, `r = len(sorted) - 1`, we want to narrow them down to enumerate
 - `r--` if `sorted[i] + sorted[l] + sorted[r] < 0`.
 
 Skip any duplicate number as we iterate to avoid duplicate triplets.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -1057,8 +1185,17 @@ Skip any duplicate number as we iterate to avoid duplicate triplets.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1079,7 +1216,7 @@ Given an array `nums` of _n_ integers and an integer `target`, find three intege
 ### Solution:
 
 Simplified version of [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/015.%203Sum.md).
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} target
@@ -1118,8 +1255,17 @@ Simplified version of [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-A
 
       return target - minDiff
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1153,7 +1299,7 @@ JavaScript specific optimization.
 `Array.prototype.push` accepts arbitrary arguments which enables tighter loops.
 
 Also, appending string is faster than prepending.
-
+```js
     /**
      * @param {string} digits
      * @return {string[]}
@@ -1186,10 +1332,13 @@ Also, appending string is faster than prepending.
       return result
     };
 
+```
+---
+
 #### TWO
 
 General recursive DFS solution.
-
+```js
     /**
      * @param {string} digits
      * @return {string[]}
@@ -1213,8 +1362,17 @@ General recursive DFS solution.
         dfs(digits, idigit + 1, path + str[i], letters, result)
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1244,7 +1402,7 @@ The solution set must not contain duplicate quadruplets.
 ### Solution:
 
 Like [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/015.%203Sum.md) and [16. 3Sum Closest](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/016.%203Sum%20Closest.md). Wrap one more loop.
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} target
@@ -1286,8 +1444,17 @@ Like [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1331,7 +1498,7 @@ Boundaries that should be awared of:
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @param {number} n
@@ -1355,8 +1522,17 @@ Boundaries that should be awared of:
 
       return head
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1409,7 +1585,7 @@ Whenever we meet a close bracket, we want to compare it to the last open bracket
 That is why we use stack to store open brackets: first in, last out.
 
 And since there is only bracket characters, the last open bracket happens to be the last character.
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -1433,8 +1609,17 @@ And since there is only bracket characters, the last open bracket happens to be 
       }
       return stack.length <= 0
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1461,7 +1646,7 @@ Keep tracking the head of two lists and keep moving the pointer of smaller one t
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} l1
      * @param {ListNode} l2
@@ -1489,8 +1674,17 @@ Keep tracking the head of two lists and keep moving the pointer of smaller one t
 
       return prehead.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1517,7 +1711,7 @@ For example, given n = 3, a solution set is:
 #### ONE
 
 Recursive DFS backtracking.
-
+```js
     /**
      * @param {number} n
      * @return {string[]}
@@ -1545,10 +1739,13 @@ Recursive DFS backtracking.
       }
     };
 
+```
+---
+
 #### TWO
 
 BFS.
-
+```js
     /**
      * @param {number} n
      * @return {string[]}
@@ -1588,8 +1785,17 @@ BFS.
 
       return queue.map(x => x.path)
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1637,7 +1843,7 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode[]} lists
      * @return {ListNode}
@@ -1655,7 +1861,7 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} l1
      * @param {ListNode} l2
@@ -1683,8 +1889,17 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
 
       return prehead.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1718,7 +1933,7 @@ Given a linked list, swap every two adjacent nodes and return its head.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @return {ListNode}
@@ -1737,8 +1952,17 @@ Given a linked list, swap every two adjacent nodes and return its head.
 
       return prehead.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1780,7 +2004,7 @@ For _k_ = 3, you should return: `3->2->1->4->5`
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @param {number} k
@@ -1820,8 +2044,17 @@ For _k_ = 3, you should return: `3->2->1->4->5`
       }
       return prev
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1871,7 +2104,7 @@ Internally you can think of this:
 ### Solution:
 
 The result array can only be shorter. That is why we can build the array in-place with the new length.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -1885,8 +2118,17 @@ The result array can only be shorter. That is why we can build the array in-plac
       }
       return len
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1940,7 +2182,7 @@ Internally you can think of this:
 ### Solution:
 
 The order does not matter. So just take the last number to fill the vacancy.
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} val
@@ -1955,8 +2197,17 @@ The order does not matter. So just take the last number to fill the vacancy.
       }
       return len
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -1993,7 +2244,7 @@ The integer division should truncate toward zero.
 Every decimal number can be represented as `a0*2^0 + a1*2^1 + a2*2^2 + ... + an*2^n`.
 
 Replace multiplication and division with binary shifting.
-
+```js
     /**
      * @param {number} dividend
      * @param {number} divisor
@@ -2028,8 +2279,17 @@ Replace multiplication and division with binary shifting.
       const result = count + divide(pDividend - doubling, pDivisor)
       return isNegative ? -result : result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2060,7 +2320,7 @@ Divide the list into two parts. The first half must be incremental and the secon
 Reverse the second half and find the smallest number in it that is greater the last number of the first half.
 
 Swap the two.
-
+```js
     /**
      * @param {number[]} nums
      * @return {void} Do not return anything, modify nums in-place instead.
@@ -2095,8 +2355,17 @@ Swap the two.
         nums.reverse()
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2142,7 +2411,7 @@ Whenever we choose a pivot, it must be in one of the two sorted parts of the rot
 - Otherwise the pivot is in the right part. We know that the end of the right part to the pivot are sorted.
 
 <!-- -->
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} target
@@ -2181,8 +2450,17 @@ Whenever we choose a pivot, it must be in one of the two sorted parts of the rot
 
       return -1
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2215,7 +2493,7 @@ Implement two variations of binary search to get the first and last matching pos
 They are basically the same as simple binary search except when we got the match, we mark the index and keep moving forward.
 
 If we want to get the first, we dump the right half. Vice versa.
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} target
@@ -2271,8 +2549,17 @@ If we want to get the first, we dump the right half. Vice versa.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2309,7 +2596,7 @@ You may assume no duplicates in the array.
 ### Solution:
 
 Same as simple binary search except it returns the start index when does not find a match.
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} target
@@ -2333,8 +2620,17 @@ Same as simple binary search except it returns the start index when does not fin
 
       return s
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2400,7 +2696,7 @@ The Sudoku board could be partially filled, where empty cells are filled with th
 ### Solution:
 
 Scan the board once.
-
+```js
     /**
      * @param {character[][]} board
      * @return {boolean}
@@ -2436,8 +2732,17 @@ Scan the board once.
 
       return true
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2480,7 +2785,7 @@ Every time we reach a position, we pick a possible solution and move on to the n
 If the next position fails, we come back and try the next possible solution of the current position.
 
 If all possible solutions fail, we just dump the current position and go back to the last position.
-
+```js
     /**
      * @param {character[][]} board
      * @return {void} Do not return anything, modify board in-place instead.
@@ -2537,8 +2842,17 @@ If all possible solutions fail, we just dump the current position and go back to
 
       return false
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2581,7 +2895,7 @@ Just loop and grow the sequence.
 #### ONE
 
 JavaScript specific.
-
+```js
     /**
      * @param {number} n
      * @return {string}
@@ -2596,10 +2910,13 @@ JavaScript specific.
       return num
     };
 
+```
+---
+
 #### TWO
 
 General solution.
-
+```js
     /**
      * @param {number} n
      * @return {string}
@@ -2620,8 +2937,17 @@ General solution.
 
       return num
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2664,7 +2990,7 @@ The **same** repeated number may be chosen from `candidates` unlimited number o
 DFS + Backtracking.
 
 To prevent duplications, only loop the right side of the candidates.
-
+```js
     /**
      * @param {number[]} candidates
      * @param {number} target
@@ -2693,8 +3019,17 @@ To prevent duplications, only loop the right side of the candidates.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2744,7 +3079,7 @@ We can also safely return when number is larger than the target.
 To prvent duplicate results, stop searching if the current number is same as the last.
 
 Notice the number at `start` is immune by the rule because we assume that the current group of candidates begins at `start`.
-
+```js
     /**
      * @param {number[]} candidates
      * @param {number} target
@@ -2777,8 +3112,17 @@ Notice the number at `start` is immune by the rule because we assume that the cu
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2824,7 +3168,7 @@ Now if one of these integers is missing in the array, that integer **is** the sm
 If more than one are missing, pick the smallest.
 
 So here we reuse the array and keep trying to put integer `k` into the slot indexed `k-1` (via swapping).
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -2848,8 +3192,17 @@ So here we reuse the array and keep trying to put integer `k` into the slot inde
 
       return n + 1
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2872,7 +3225,7 @@ The above elevation map is represented by array \[0,1,0,2,1,0,1,3,2,1,2,1\]. In 
 ### Solution:
 
 Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rain-water/> .
-
+```js
     /**
      * @param {number[]} height
      * @return {number}
@@ -2906,8 +3259,17 @@ Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rai
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2939,7 +3301,7 @@ Given two non-negative integers `num1` and `num2` represented as strings, return
 ### Solution:
 
 Same as we do multiplication on a paper.
-
+```js
     /**
      * @param {string} num1
      * @param {string} num2
@@ -2958,8 +3320,17 @@ Same as we do multiplication on a paper.
 
       return result.join('').replace(/^0+(?=[0-9])/, '')
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -2989,7 +3360,7 @@ You can assume that you can always reach the last index.
 ### Solution:
 
 Greedy. Always pick the one that would allow to jump to the rightest.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -3010,8 +3381,17 @@ Greedy. Always pick the one that would allow to jump to the rightest.
       }
       return jump
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3039,7 +3419,7 @@ Given a collection of **distinct** integers, return all possible permutations.
 ### Solution:
 
 One position at a time, pick a number from the unused set and put it in that position (by swapping). Then move on to the next.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -3068,8 +3448,17 @@ One position at a time, pick a number from the unused set and put it in that pos
         nums[i] = next
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3094,7 +3483,7 @@ Given a collection of numbers that might contain duplicates, return all possible
 ### Solution:
 
 Same as [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/046.%20Permutations.md). To avoid duplication, when picking a number for a position, only pick the unused. Either sort the `nums` or use a set to mark.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -3130,8 +3519,17 @@ Same as [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
         nums[i] = next
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3186,7 +3584,7 @@ You have to rotate the image [**in-place**](https://en.wikipedia.org/wiki/In-pla
 ### Solution:
 
 Outside-in. Rotate one square at a time.
-
+```js
     /**
      * @param {number[][]} matrix
      * @return {void} Do not return anything, modify matrix in-place instead.
@@ -3210,8 +3608,17 @@ Outside-in. Rotate one square at a time.
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3245,7 +3652,7 @@ It's all about hashing the words.
 #### ONE
 
 Sort each word to get the key.
-
+```js
     /**
      * @param {string[]} strs
      * @return {string[][]}
@@ -3260,12 +3667,15 @@ Sort each word to get the key.
       return Object.values(result)
     };
 
+```
+---
+
 #### TWO
 
 Use the product of prime numbers to generate unique keys.
 
     const prime = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101]
-
+```js
     /**
      * @param {string[]} strs
      * @return {string[][]}
@@ -3283,8 +3693,17 @@ Use the product of prime numbers to generate unique keys.
       }
       return Object.values(result)
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3328,7 +3747,7 @@ Corner cases:
 - n &lt; 0
 
 Note here we can not use any bitwise operator, `n = -2^31` might overflow.
-
+```js
     /**
      * @param {number} x
      * @param {number} n
@@ -3345,8 +3764,17 @@ Note here we can not use any bitwise operator, `n = -2^31` might overflow.
       const res = myPow(x, (n - 1) / 2)
       return x * res * res
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3387,7 +3815,7 @@ Allocate a `n`-length array `queens`. Each item represents a queen coordinate on
 Now use the permutation algorithm from [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/046.%20Permutations.md) to generate all possible queen positions, then test for diagonal.
 
 #### ONE
-
+```js
     /**
      * @param {number} n
      * @return {string[][]}
@@ -3440,7 +3868,7 @@ Now use the permutation algorithm from [46. Permutations](file:///C:/MY-WEB-DEV/
 This is slow because we test diagonal in the end. We can do a tree pruning by moving it right before diving into the next recursion.
 
 #### TWO
-
+```js
     /**
      * @param {number} n
      * @return {string[][]}
@@ -3493,8 +3921,17 @@ This is slow because we test diagonal in the end. We can do a tree pruning by mo
       }
       return board
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3530,7 +3967,7 @@ Given an integer *n*, return the number of distinct solutions to the *n*-quee
 ### Solution:
 
 Just modify [51. N-Queens](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/051.%20N-Queens.md).
-
+```js
     /**
      * @param {number} n
      * @return {string[][]}
@@ -3572,8 +4009,17 @@ Just modify [51. N-Queens](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
       }
       return true
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3607,7 +4053,7 @@ If `f(i-1)` is negative, then `nums[i]` must be greater than `f(i-1) + nums[i]`.
     f(i) = max( f(i-1), 0 ) + nums[i]
 
 Then return the largest one.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -3623,7 +4069,7 @@ Then return the largest one.
     };
 
 We can also compress the dp array:
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -3636,8 +4082,17 @@ We can also compress the dp array:
       }
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3672,7 +4127,7 @@ Given a matrix of _m_ x _n_ elements (_m_ rows, _n_ columns), return all element
 ### Solution:
 
 Loop outside-in. Break each cycle into four stages. Note that the last two stages need at least two rows/columns.
-
+```js
     /**
      * @param {number[][]} matrix
      * @return {number[]}
@@ -3707,8 +4162,17 @@ Loop outside-in. Break each cycle into four stages. Note that the last two stage
       }
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3742,7 +4206,7 @@ Determine if you are able to reach the last index.
 #### ONE
 
 See [45. Jump Game II](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/045.%20Jump%20Game%20II.md). If the range does not expand at some point, we know it is stuck.
-
+```js
     /**
      * @param {number[]} nums
      * @return {boolean}
@@ -3763,12 +4227,15 @@ See [45. Jump Game II](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/C
       return true
     };
 
+```
+---
+
 #### TWO
 
 If we view it backward, and if the range of `nums[n-2]` covers `nums[n-1]`, then we can safely make `n-2` the new destination point, and so on.
 
 If `nums[0]` can cover the last destination point, it is good.
-
+```js
     /**
      * @param {number[]} nums
      * @return {boolean}
@@ -3782,8 +4249,17 @@ If `nums[0]` can cover the last destination point, it is good.
       }
       return nums[0] >= des
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3817,7 +4293,7 @@ Sort then merge.
      *     this.start = start;
      *     this.end = end;
      * }
-     */
+     */```js
     /**
      * @param {Interval[]} intervals
      * @return {Interval[]}
@@ -3838,8 +4314,17 @@ Sort then merge.
       }
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3874,7 +4359,7 @@ The logic of the solution is pretty straight forward. Just need to carefully thi
      *     this.start = start;
      *     this.end = end;
      * }
-     */
+     */```js
     /**
      * @param {Interval[]} intervals
      * @param {Interval} newInterval
@@ -3904,8 +4389,17 @@ The logic of the solution is pretty straight forward. Just need to carefully thi
       }
       return [...result, p, ...intervals.slice(i)]
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3931,7 +4425,7 @@ Example:
 JavaScript specific solutions:
 
 #### ONE
-
+```js
     /**
      * @param {string} s
      * @return {number}
@@ -3940,10 +4434,13 @@ JavaScript specific solutions:
       return (/\w+$/.exec(s) || [''])[0].length
     };
 
+```
+---
+
 #### TWO
 
 Super fast. `split` will guarantee that there is at least one item in the resulted array.
-
+```js
     /**
      * @param {string} s
      * @return {number}
@@ -3952,10 +4449,13 @@ Super fast. `split` will guarantee that there is at least one item in the result
       return s.trim().split(' ').pop().length
     };
 
+```
+---
+
 #### THREE
 
 General solution.
-
+```js
     /**
      * @param {string} s
      * @return {number}
@@ -3973,8 +4473,17 @@ General solution.
 
       return end - start
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -3999,7 +4508,7 @@ Given a positive integer _n_, generate a square matrix filled with elements from
 ### Solution:
 
 Straight-forward.
-
+```js
     /**
      * @param {number} n
      * @return {number[][]}
@@ -4025,8 +4534,17 @@ Straight-forward.
       }
       return matrix
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4071,7 +4589,7 @@ The order of the sequence is fixed hence can be calculated. We can view the proc
 Each digit appears `(n-1)!` times in `result[0]`. And for a fixed `result[0]` each digit appears `(n-2)!` times in `result[1]`. So on.
 
 We also need `k--` to convert `k` into index so that `k <= (n-1)!` maps `0` (and get `1` from the set).
-
+```js
     /**
      * @param {number} n
      * @param {number} k
@@ -4097,8 +4615,17 @@ We also need `k--` to convert `k` into index so that `k <= (n-1)!` maps `0` (and
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4144,7 +4671,7 @@ Locate the right pointer again with `k % len`.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @param {number} k
@@ -4183,8 +4710,17 @@ Locate the right pointer again with `k % len`.
 
       return head
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4232,7 +4768,7 @@ Define `f(i, j)` to be the number of total unique paths from `(0, 0)` to `(i, j)
     f(i, j) = f(i-1, j) + f(i, j-1)
 
 Only two previous states are dependant. Use dynamic array to reduce memory allocation.
-
+```js
     /**
      * @param {number} m
      * @param {number} n
@@ -4247,8 +4783,17 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
       }
       return dp[m-1] || 1
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4283,7 +4828,7 @@ Define `f(i, j)` to be the min sum from `(0, 0)` to `(i, j)`.
     f(i, j) = min( f(i-1, j), f(i, j-1) ) + grid[i][j], j > 0 && i > 0
 
 Only two previous states are dependant. Use dynamic array to reduce memory allocation.
-
+```js
     /**
      * @param {number[][]} grid
      * @return {number}
@@ -4305,8 +4850,17 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
 
       return dp[width-1] || 0
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4340,7 +4894,7 @@ JavaScript specific solutions:
 - `Math.abs(' ') === 0`.
 
 <!-- -->
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -4349,13 +4903,16 @@ JavaScript specific solutions:
       return !!s.trim() && Math.abs(s) >= 0
     };
 
+```
+---
+
 #### TWO
 
 - `isNaN` will first convert the argument to number.
 - `isNaN(' ') === false`.
 
 <!-- -->
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -4363,6 +4920,9 @@ JavaScript specific solutions:
     let isNumber = function(s) {
       return !!s.trim() && !isNaN(s)
     };
+
+```
+---
 
 #### THREE
 
@@ -4399,7 +4959,7 @@ Similary, we can define our own syntax, which requires a few changes:
       - DecimalDigits
 
 Now implement the parser. It is much easier now because we have a clear mental map of the syntax.
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -4418,7 +4978,7 @@ Now implement the parser. It is much easier now because we have a clear mental m
       }
       return nextIndex === s.length
     }
-
+```js
     /**
      * @param {string} s
      * @param {number} start - start index
@@ -4444,7 +5004,7 @@ Now implement the parser. It is much easier now because we have a clear mental m
       const optNextIndex = parseExponentPart(s, nextIndex)
       return optNextIndex === -1 ? nextIndex : optNextIndex
     }
-
+```js
     /**
      * @param {string} s
      * @param {number} start - start index
@@ -4461,7 +5021,7 @@ Now implement the parser. It is much easier now because we have a clear mental m
       }
       return s.length
     }
-
+```js
     /**
      * @param {string} s
      * @param {number} start - start index
@@ -4484,7 +5044,7 @@ Now implement the parser. It is much easier now because we have a clear mental m
       const optNextIndex = parseDecimalDigits (s, nextIndex)
       return optNextIndex === -1 ? nextIndex : optNextIndex
     }
-
+```js
     /**
      * @param {string} s
      * @param {number} start - start index
@@ -4502,8 +5062,17 @@ Now implement the parser. It is much easier now because we have a clear mental m
 
       return parseDecimalDigits(s, nextIndex)
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4536,7 +5105,7 @@ You may assume the integer does not contain any leading zero, except the number 
 #### ONE
 
 JavaScript specific solution. Note that `unshift` is much slower that expanding.
-
+```js
     /**
      * @param {number[]} digits
      * @return {number[]}
@@ -4552,10 +5121,13 @@ JavaScript specific solution. Note that `unshift` is much slower that expanding.
       return [1, ...digits]
     };
 
+```
+---
+
 #### TWO
 
 General solution.
-
+```js
     /**
      * @param {number[]} digits
      * @return {number[]}
@@ -4576,8 +5148,17 @@ General solution.
 
       return digits
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4653,7 +5234,7 @@ For the last line of text, it should be left justified and no **extra** space is
 - Handle the last line.
 
 <!-- -->
-
+```js
     /**
      * @param {string[]} words
      * @param {number} maxWidth
@@ -4697,8 +5278,17 @@ For the last line of text, it should be left justified and no **extra** space is
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4729,7 +5319,7 @@ Since the return type is an integer, the decimal digits are truncated and only 
 ### Solution:
 
 Binary Search. The square root of x is within \[0...(x+1)/2\].
-
+```js
     /**
      * @param {number} x
      * @return {number}
@@ -4750,8 +5340,17 @@ Binary Search. The square root of x is within \[0...(x+1)/2\].
       }
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4781,7 +5380,7 @@ Use stack to handle `/../`.
 #### ONE
 
 RegExp matching.
-
+```js
     /**
      * @param {string} path
      * @return {string}
@@ -4799,10 +5398,13 @@ RegExp matching.
         .join('/')
     };
 
+```
+---
+
 #### TWO
 
 Direct search.
-
+```js
     /**
      * @param {string} path
      * @return {string}
@@ -4830,8 +5432,17 @@ Direct search.
       }
       return '/' + stack.join('/')
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4883,7 +5494,7 @@ Define `f(i, j)` to be the min edit distance from `word1[0...i)` to `word2[0...j
       f(i-1, j) + 1 // delete
       f(i-1, j-1) + (word1[i-1] !== word2[j-1] ? 1 : 0) // replace or do nothing
     )
-
+```js
     /**
      * @param {string} word1
      * @param {string} word2
@@ -4919,8 +5530,17 @@ Define `f(i, j)` to be the min edit distance from `word1[0...i)` to `word2[0...j
 
       return dp[len1][len2]
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -4985,7 +5605,7 @@ Now scan the matrix and set 0 to the first row and column whenever a 0 is met.
 Walk the matrix again and set 0 according to the first row and column.
 
 Finally set the first row and column to 0 if needed.
-
+```js
     /**
      * @param {number[][]} matrix
      * @return {void} Do not return anything, modify matrix in-place instead.
@@ -5033,12 +5653,15 @@ Finally set the first row and column to 0 if needed.
       }
     };
 
+```
+---
+
 #### TWO
 
 Use `NaN` to mark cells that need to be set 0.
 
 Still constant space just a bit slower due to repeatedly setting overlapping `NaN`s.
-
+```js
     /**
      * @param {number[][]} matrix
      * @return {void} Do not return anything, modify matrix in-place instead.
@@ -5075,8 +5698,17 @@ Still constant space just a bit slower due to repeatedly setting overlapping `Na
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5118,7 +5750,7 @@ Write an efficient algorithm that searches for a value in an _m_ x _n_ matrix. T
 #### ONE
 
 Search from top-left to bottom-right. O(_n_).
-
+```js
     /**
      * @param {number[][]} matrix
      * @param {number} target
@@ -5146,6 +5778,9 @@ Search from top-left to bottom-right. O(_n_).
       return false
     };
 
+```
+---
+
 #### TWO
 
 Binary search. O(log*n*).
@@ -5153,7 +5788,7 @@ Binary search. O(log*n*).
 View the matrix as an sorted array that is cut into `n` slices.
 
 Take the algorithm from [35. Search Insert Position](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/035.%20Search%20Insert%20Position.md).
-
+```js
     /**
      * @param {number[][]} matrix
      * @param {number} target
@@ -5181,8 +5816,17 @@ Take the algorithm from [35. Search Insert Position](file:///C:/MY-WEB-DEV/06-DS
 
       return false
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5216,7 +5860,7 @@ One-pass algorithm.
 Take the idea of the partition algorithm from quick sort. Use `1` as pivot.
 
 Count the number of sorted `0`s and `2`s so that we know where to swap.
-
+```js
     /**
      * @param {number[]} nums
      * @return {void} Do not return anything, modify nums in-place instead.
@@ -5242,8 +5886,17 @@ Count the number of sorted `0`s and `2`s so that we know where to swap.
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5271,7 +5924,7 @@ Given two integers _n_ and _k_, return all possible combinations of _k_ numbers 
 ### Solution:
 
 Basic DFS + Backtracking.
-
+```js
     /**
      * @param {number} n
      * @param {number} k
@@ -5294,8 +5947,17 @@ Basic DFS + Backtracking.
         path.pop()
       }
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5329,7 +5991,7 @@ Given a set of **distinct** integers, _nums_, return all possible subsets (the p
 #### ONE
 
 BFS.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -5339,7 +6001,7 @@ BFS.
     };
 
 Or more imperative. Loop backward to avoid crossing the boundary.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -5354,10 +6016,13 @@ Or more imperative. Loop backward to avoid crossing the boundary.
       return result
     };
 
+```
+---
+
 #### TWO
 
 DFS + Backtracking.
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -5376,8 +6041,17 @@ DFS + Backtracking.
         path.pop()
       }
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5407,7 +6081,7 @@ The word can be constructed from letters of sequentially adjacent cell, where "a
 ### Solution:
 
 DFS + Backtracking. Replace the cell with `NaN` before proceeding to the next level and restore when backtracking.
-
+```js
     /**
      * @param {character[][]} board
      * @param {string} word
@@ -5454,8 +6128,17 @@ DFS + Backtracking. Replace the cell with `NaN` before proceeding to the next le
 
       return false
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5505,7 +6188,7 @@ Internally you can think of this:
 ### Solution:
 
 Similar to [26. Remove Duplicates from Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/026.%20Remove%20Duplicates%20from%20Sorted%20Array.md).
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -5519,8 +6202,17 @@ Similar to [26. Remove Duplicates from Sorted Array](file:///C:/MY-WEB-DEV/06-DS
       }
       return len
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5554,7 +6246,7 @@ You are given a target value to search. If found in the array return `true`, oth
 ### Solution:
 
 See [33. Search in Rotated Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/033.%20Search%20in%20Rotated%20Sorted%20Array.md). The code is basically the same. Except with duplicates we can not tell which way to jump when `pivot == nums[e]`. The only thing we can do is to ditch `nums[e]`. SO worst case `O(*n*)`.
-
+```js
     /**
      * @param {number[]} nums
      * @param {number} target
@@ -5591,8 +6283,17 @@ See [33. Search in Rotated Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER
 
       return false
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5626,7 +6327,7 @@ The list is sorted so we only need `dupVal` to keep the latest duplicate value.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @return {ListNode}
@@ -5651,8 +6352,17 @@ The list is sorted so we only need `dupVal` to keep the latest duplicate value.
 
       return prehead.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5686,7 +6396,7 @@ Just like [82. Remove Duplicates from Sorted List II](file:///C:/MY-WEB-DEV/06-D
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @return {ListNode}
@@ -5712,6 +6422,9 @@ Just like [82. Remove Duplicates from Sorted List II](file:///C:/MY-WEB-DEV/06-D
       return prehead.next
     };
 
+```
+---
+
 #### TWO
 
 Just compare the next node. This is way more faster.
@@ -5722,7 +6435,7 @@ Just compare the next node. This is way more faster.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @return {ListNode}
@@ -5741,8 +6454,17 @@ Just compare the next node. This is way more faster.
 
       return head
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5780,7 +6502,7 @@ Notice that if we just loop the bars from left to right, `b1` and `b2` of each b
 Observe how `i1` and `i2` changes depending on the height.
 
 To reduce O(_n^2_) to O(_n_), we use a stack to store incremental `b`s. Because `b1` and `b2` are both lower than `b`, whenever we reach a bar that is lower than the top of the stack, we know it's a `b2`. So stack top is a `b`. Second top is a `b1`. Keep popping the `b` to calculate areas until `b2` is no longer lower than stack top.
-
+```js
     /**
      * @param {number[]} heights
      * @return {number}
@@ -5798,8 +6520,17 @@ To reduce O(_n^2_) to O(_n_), we use a stack to store incremental `b`s. Because 
       }
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5827,7 +6558,7 @@ Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle con
 #### ONE
 
 View every row as a base line then we just have to solve `height(matrix)` times the problem of [84. Largest Rectangle in Histogram](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/084.%20Largest%20Rectangle%20in%20Histogram.md).
-
+```js
     /**
      * @param {character[][]} matrix
      * @return {number}
@@ -5849,7 +6580,11 @@ View every row as a base line then we just have to solve `height(matrix)` times 
 
       return max
     };
+```
 
+---
+
+```js
     /**
      * @param {number[]} heights
      * @return {number}
@@ -5867,6 +6602,9 @@ View every row as a base line then we just have to solve `height(matrix)` times 
       }
       return max
     };
+
+```
+---
 
 #### TWO
 
@@ -5909,7 +6647,7 @@ With `conLeft` and `conRight` we can know if the rectangle on `(row, col)` shrin
     area(row, col) = (right(row, col) - left(row, col) + 1) * height(row, col)
 
 We only need to keep the last state. Use dynamic arrays to reduce space complexity.
-
+```js
     /**
      * @param {character[][]} matrix
      * @return {number}
@@ -5956,8 +6694,17 @@ We only need to keep the last state. Use dynamic arrays to reduce space complexi
 
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -5986,7 +6733,7 @@ Take the second part out as a new list and connect it back.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @param {number} x
@@ -6017,8 +6764,17 @@ Take the second part out as a new list and connect it back.
 
       return prehead1.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6046,7 +6802,7 @@ Given two sorted integer arrays _nums1_ and _nums2_, merge _nums2_ into _nums1_ 
 ### Solution:
 
 Loop backward and keep picking the larger one. `nums1` is guaranteed longer than `nums2` so just use `n` as boundary.
-
+```js
     /**
      * @param {number[]} nums1
      * @param {number} m
@@ -6060,8 +6816,17 @@ Loop backward and keep picking the larger one. `nums1` is guaranteed longer than
         nums1[--len] = nums1[m] >= nums2[n] ? nums1[m--] : nums2[n--]
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6111,7 +6876,7 @@ Given a non-negative integer _n_ representing the total number of bits in the co
 The pattern is self-evident. Reverse the result set and prepend '1' to each item.
 
 Use bitwise shift to speed up the calculation. It is unlikely to overflow since the result set is exponential.
-
+```js
     /**
      * @param {number} n
      * @return {number[]}
@@ -6126,8 +6891,17 @@ Use bitwise shift to speed up the calculation. It is unlikely to overflow since 
       }
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6162,7 +6936,7 @@ See [78. Subsets](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTEN
 2.  Only consider each duplicate once, that is, when it is at the first slot.
 
 <!-- -->
-
+```js
     /**
      * @param {number[]} nums
      * @return {number[][]}
@@ -6184,8 +6958,17 @@ See [78. Subsets](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTEN
         path.pop()
       }
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6229,7 +7012,7 @@ Note that there could be `'0'`.
            f(i-2), if i > 0 && s[i-1] !== '0' && s[i-1] * 10 + s[i] <= 26
 
 Only need to store the last two states. Init `f(-1) = 1` for easy calculation.
-
+```js
     /**
      * @param {string} s
      * @return {number}
@@ -6253,8 +7036,17 @@ Only need to store the last two states. Init `f(-1) = 1` for easy calculation.
 
       return dp
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6283,7 +7075,7 @@ Break the list into 3 parts.
      *     this.val = val;
      *     this.next = null;
      * }
-     */
+     */```js
     /**
      * @param {ListNode} head
      * @param {number} m
@@ -6317,8 +7109,17 @@ Break the list into 3 parts.
 
       return prehead.next
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6338,7 +7139,7 @@ Given a string containing only digits, restore it by returning all possible vali
 ### Solution:
 
 Backtracking. Note that leading `'0'` is not allowed except just `'0'`.
-
+```js
     /**
      * @param {string} s
      * @return {string[]}
@@ -6376,8 +7177,17 @@ Backtracking. Note that leading `'0'` is not allowed except just `'0'`.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6407,7 +7217,7 @@ Define `f(i, j)` to be whether `s3[0...i+j-1)` can be formed by the interleaving
     f(i, j) = f(i-1, j) && s1[i-1] == s3[i+j-1] || f(i, j-1) && s2[j-1] == s3[i+j-1], 0 < i <= len(s1), 0 < j <= len(s2)
 
 Dynamic array can be used.
-
+```js
     /**
      * @param {string} s1
      * @param {string} s2
@@ -6431,8 +7241,17 @@ Dynamic array can be used.
       }
       return dp[len2]
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6486,7 +7305,7 @@ The code should be self-evident.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} p
      * @param {TreeNode} q
@@ -6496,8 +7315,17 @@ The code should be self-evident.
       return p === null && q === null ||
         p !== null && q !== null && p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6542,7 +7370,7 @@ So just like [100. Same Tree](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {boolean}
@@ -6550,7 +7378,11 @@ So just like [100. Same Tree](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO
     let isSymmetric = function(root) {
       return root === null || isSymmetricTree(root.left, root.right)
     };
+```
 
+---
+
+```js
     /**
      * @param {TreeNode} p
      * @param {TreeNode} q
@@ -6560,6 +7392,9 @@ So just like [100. Same Tree](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO
       return p === null && q === null ||
         p !== null && q !== null && p.val === q.val && isSymmetricTree(p.left, q.right) && isSymmetricTree(p.right, q.left)
     };
+
+```
+---
 
 #### TWO
 
@@ -6571,7 +7406,7 @@ Level order traversal. Check symmetry before entering the next level.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {boolean}
@@ -6603,8 +7438,17 @@ Level order traversal. Check symmetry before entering the next level.
 
       return true
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6643,7 +7487,7 @@ The code should be self-evident.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number[][]}
@@ -6666,8 +7510,17 @@ The code should be self-evident.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6706,7 +7559,7 @@ Reverse the level when pushing to the reuslt.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number[][]}
@@ -6734,8 +7587,17 @@ Reverse the level when pushing to the reuslt.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6773,7 +7635,7 @@ The code should be self-evident.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number}
@@ -6783,8 +7645,17 @@ The code should be self-evident.
         ? 0
         : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6828,7 +7699,7 @@ Repeat the process on subtrees.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {number[]} preorder
      * @param {number[]} inorder
@@ -6853,8 +7724,17 @@ Repeat the process on subtrees.
       }
       return node
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6898,7 +7778,7 @@ Repeat the process on subtrees.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {number[]} inorder
      * @param {number[]} postorder
@@ -6923,8 +7803,17 @@ Repeat the process on subtrees.
       }
       return node
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -6963,7 +7852,7 @@ See [102. Binary Tree Level Order Traversal](file:///C:/MY-WEB-DEV/06-DS-ALGO-OU
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number[][]}
@@ -6986,8 +7875,17 @@ See [102. Binary Tree Level Order Traversal](file:///C:/MY-WEB-DEV/06-DS-ALGO-OU
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7039,7 +7937,7 @@ Get the depth of subtrees and compare. Prune the DFS tree by returning `-1`.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {boolean}
@@ -7056,8 +7954,17 @@ Get the depth of subtrees and compare. Prune the DFS tree by returning `-1`.
       if (rightDepth < 0) { return -1 }
       return Math.abs(leftDepth - rightDepth) <= 1 ? Math.max(leftDepth, rightDepth) + 1 : -1
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7095,7 +8002,7 @@ Ignore `null` children.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number}
@@ -7110,8 +8017,17 @@ Ignore `null` children.
         return minDepth(root.right) + 1
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7149,7 +8065,7 @@ Note that node value could be negative so pruning can not be performed.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @param {number} sum
@@ -7160,8 +8076,17 @@ Note that node value could be negative so pruning can not be performed.
       if (root.left === null && root.right === null) { return root.val === sum }
       return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val)
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7204,7 +8129,7 @@ Simple backtracking.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @param {number} sum
@@ -7227,8 +8152,17 @@ Simple backtracking.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7272,7 +8206,7 @@ Return the leaf node of a flattened subtree for concatenation.
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {void} Do not return anything, modify root in-place instead.
@@ -7280,7 +8214,11 @@ Return the leaf node of a flattened subtree for concatenation.
     let flatten = function(root) {
       _flatten(root)
     };
+```
 
+---
+
+```js
     /**
      * @param {TreeNode} root
      * @return {TreeNode} leaf node of a flattened subtree
@@ -7299,8 +8237,17 @@ Return the leaf node of a flattened subtree for concatenation.
       root.left = null
       return rightLeaf || leftLeaf
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7361,7 +8308,7 @@ For `f(i, j)` you can always skip `S[i-1]`, but can only take it when `S[i-1] ==
     f(i, j) = f(i-1, j) + (S[i-1] === T[j-1] ? f(i-1, j-1) : 0)
 
 Dynamic array can be used.
-
+```js
     /**
      * @param {string} s
      * @param {string} t
@@ -7381,8 +8328,17 @@ Dynamic array can be used.
       }
       return dp[lent]
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7448,7 +8404,7 @@ For every `node`:
      *     this.left = this.right = this.next = null;
      * }
      */
-
+```js
     /**
      * @param {TreeLinkNode} root
      * @return {void} Do not return anything, modify tree in-place instead.
@@ -7467,6 +8423,9 @@ For every `node`:
       }
     };
 
+```
+---
+
 #### TWO
 
 Level order traversal.
@@ -7478,7 +8437,7 @@ Level order traversal.
      *     this.left = this.right = this.next = null;
      * }
      */
-
+```js
     /**
      * @param {TreeLinkNode} root
      * @return {void} Do not return anything, modify tree in-place instead.
@@ -7500,8 +8459,17 @@ Level order traversal.
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7563,7 +8531,7 @@ This also means post-order traversal is required.
      *     this.left = this.right = this.next = null;
      * }
      */
-
+```js
     /**
      * @param {TreeLinkNode} root
      * @return {void} Do not return anything, modify tree in-place instead.
@@ -7591,6 +8559,9 @@ This also means post-order traversal is required.
       connect(root.left)
     };
 
+```
+---
+
 #### TWO
 
 Level order traversal. Exact same as [116. Populating Next Right Pointers in Each Node](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/116.%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node.md).
@@ -7602,7 +8573,7 @@ Level order traversal. Exact same as [116. Populating Next Right Pointers in Eac
      *     this.left = this.right = this.next = null;
      * }
      */
-
+```js
     /**
      * @param {TreeLinkNode} root
      * @return {void} Do not return anything, modify tree in-place instead.
@@ -7624,8 +8595,17 @@ Level order traversal. Exact same as [116. Populating Next Right Pointers in Eac
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7656,7 +8636,7 @@ In Pascal's triangle, each number is the sum of the two numbers directly above i
 ### Solution:
 
 Dynamic Programming 101.
-
+```js
     /**
      * @param {number} numRows
      * @return {number[][]}
@@ -7677,8 +8657,17 @@ Dynamic Programming 101.
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7710,7 +8699,7 @@ Could you optimize your algorithm to use only _O_(_k_) extra space?
 Dynamic Programming 101 with dynamic array.
 
 State `(i, j)` depends on `(i-1, j)` and `(i-1, j-1)`. So to access `(i-1, j-1)` iteration must be from right to left.
-
+```js
     /**
      * @param {number} rowIndex
      * @return {number[]}
@@ -7728,8 +8717,17 @@ State `(i, j)` depends on `(i-1, j)` and `(i-1, j-1)`. So to access `(i-1, j-1)`
 
       return row
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7765,7 +8763,7 @@ Define `f(i, j)` to be the minimum path sum from `triangle[0][0]` to `triangle[i
     f(i, i) = f(i-1, i-1) + triangle[i][i], i > 0
 
 Dynamic array can be used.
-
+```js
     /**
      * @param {number[][]} triangle
      * @return {number}
@@ -7783,8 +8781,17 @@ Dynamic array can be used.
       }
       return Math.min(...dp)
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7818,7 +8825,7 @@ Note that you cannot sell a stock before you buy one.
 Only care about positive profits. Take the frist item as base and scan to the right. If we encounter an item `j` whose price `price[j]` is lower than the base (which means if we sell now the profit would be negative), we sell `j-1` instead and make `j` the new base.
 
 Because `price[j]` is lower that the base, using `j` as new base is guaranteed to gain more profit comparing to the old one.
-
+```js
     /**
      * @param {number[]} prices
      * @return {number}
@@ -7836,8 +8843,17 @@ Because `price[j]` is lower that the base, using `j` as new base is guaranteed t
       }
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7877,7 +8893,7 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 ### Solution:
 
 Sell immediately after the price drops. Or in other perspective, it is the sum of all the incremental pairs (buy in then immediately sell out).
-
+```js
     /**
      * @param {number[]} prices
      * @return {number}
@@ -7891,8 +8907,17 @@ Sell immediately after the price drops. Or in other perspective, it is the sum o
       }
       return max
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -7944,7 +8969,7 @@ Define `p2(i)` to be the max profit of day `[i...n-1]`. This is the mirror of `p
     p2(i) = max( p2(i+1), max(prices[i], ..., prices[n-1]) - prices[i] ), n-1 > i >= 0
 
 Define `f(k)` to be `p1(k) + p2(k)`. We need to get `max( f(0), ..., f(n-1) )`.
-
+```js
     /**
      * @param {number[]} prices
      * @return {number}
@@ -7971,8 +8996,17 @@ Define `f(k)` to be `p1(k) + p2(k)`. We need to get `max( f(0), ..., f(n-1) )`.
 
       return Math.max(...dp)
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8033,7 +9067,7 @@ Define a function that returns two values. The max sum of a path that may or may
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number}
@@ -8041,7 +9075,11 @@ Define a function that returns two values. The max sum of a path that may or may
     let maxPathSum = function(root) {
       return Math.max(..._maxPathSum(root))
     };
+```
 
+---
+
+```js
     /**
      * @param {TreeNode} root
      * @return {number[]}
@@ -8067,7 +9105,7 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number}
@@ -8078,7 +9116,7 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
       return global.max
     };
 
-
+```js
     /**
      * @param {TreeNode} root
      * @param {object} global
@@ -8094,8 +9132,17 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
       global.max = Math.max(global.max, localMax, root.val + left + right)
       return localMax
     }
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8122,7 +9169,7 @@ Given a string, determine if it is a palindrome, considering only alphanumeric c
 ### Solution:
 
 #### ONE
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -8132,10 +9179,13 @@ Given a string, determine if it is a palindrome, considering only alphanumeric c
       return clean.join('') === clean.reverse().join('')
     };
 
+```
+---
+
 #### TWO
 
 Remove non-alphanumeric characters then compare.
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -8148,10 +9198,13 @@ Remove non-alphanumeric characters then compare.
       return true
     };
 
+```
+---
+
 #### THREE
 
 Compare the char codes.
-
+```js
     /**
      * @param {string} s
      * @return {boolean}
@@ -8181,8 +9234,17 @@ Compare the char codes.
 
       return true
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8236,7 +9298,7 @@ This is just like [127. Word Ladder](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-
 The constrain still works, but instead of deleting the words right away, collect them and delete them all when a level ends, so that we can reuse the words (matching different parents in the same level).
 
 The items in the queue are not just words now. Parent nodes are also kept so that we can backtrack the path from the end.
-
+```js
     /**
      * @param {string} beginWord
      * @param {string} endWord
@@ -8294,8 +9356,17 @@ The items in the queue are not just words now. Parent nodes are also kept so tha
 
       return result
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8350,7 +9421,7 @@ The best way control the depth (length of the shortest transformations) while bu
 We do not actually build the tree because it is expensive (astronomical if the list is huge). In fact, we only need one shortest path. So just like Dijkstra's algorithm, we say that the first time (level `i`) we encounter a word that turns out to be in a shortest path, then level `i` is the lowest level this word could ever get. We can safely remove it from the `wordList`.
 
 To find all the next words, instead of filtering the `wordList`, enumerate all 25 possible words and check if in `wordList`.
-
+```js
     /**
      * @param {string} beginWord
      * @param {string} endWord
@@ -8394,8 +9465,17 @@ To find all the next words, instead of filtering the `wordList`, enumerate all 2
 
       return 0
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8418,7 +9498,7 @@ Your algorithm should run in O(_n_) complexity.
 ### Solution:
 
 Build a Set from the list. Pick a number, find all it's adjacent numbers that are also in the Set. Count them and remove them all from the Set. Repeat until the Set is empty. Time complexity O(n + n) = O(n).
-
+```js
     /**
      * @param {number[]} nums
      * @return {number}
@@ -8442,8 +9522,17 @@ Build a Set from the list. Pick a number, find all it's adjacent numbers that ar
       }
       return maxCount
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8498,7 +9587,7 @@ To write a clean solution for this promblem, use `0` as indicator of leaf node. 
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {number}
@@ -8508,8 +9597,17 @@ To write a clean solution for this promblem, use `0` as indicator of leaf node. 
       sum = sum * 10 + root.val
       return sumNumbers(root.left, sum) + sumNumbers(root.right, sum) || sum
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8548,7 +9646,7 @@ Find all the `O`s that are connected to the `O`s on the border, change them to `
 The process of finding the connected `O`s is just like tree traversal. `O`s on the border are the same level. Their children are the second level. And so on.
 
 So both BFS and DFS are good. I prefer BFS when pruning is not needed in favor of its readability.
-
+```js
     /**
      * @param {character[][]} board
      * @return {void} Do not return anything, modify board in-place instead.
@@ -8617,8 +9715,17 @@ So both BFS and DFS are good. I prefer BFS when pruning is not needed in favor o
         }
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ---
 
@@ -8666,7 +9773,7 @@ DFS. Cache the visited node before entering the next recursion.
      *     this.neighbors = [];   // Array of UndirectedGraphNode
      * }
      */
-
+```js
     /**
      * @param {UndirectedGraphNode} graph
      * @return {UndirectedGraphNode}
@@ -8685,8 +9792,17 @@ DFS. Cache the visited node before entering the next recursion.
         return cache[label]
       }
     };
+```
 
-_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
+---
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
+---
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+---
 
 ![alt text](./completeLEETCODE_files/binary-tree-upside-down.webp "binary-tree-upside-down")
 
@@ -8696,7 +9812,7 @@ _Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
      *     this.val = val;
      *     this.left = this.right = null;
      * }
-     */
+     */```js
     /**
      * @param {TreeNode} root
      * @return {TreeNode}
@@ -8732,7 +9848,7 @@ _Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._
     }
 
 ![alt text](./completeLEETCODE_files/maximum-sum-circular-subarray.png "maximum-sum-circular-subarray")
-
+```js
     /**
      * @param {number[]} A
      * @return {number}
@@ -8899,7 +10015,7 @@ Please notice that another valid answer is <span class="katex-display"><span cla
 
 [Source](https://leetcode.com/problems/delete-node-in-a-bst/)![alt text](./completeLEETCODE_files/meeting-room-ii-0.jpg "meeting-room-ii")  
 ![alt text](./completeLEETCODE_files/meeting-room-ii-1.jpg "meeting-room-ii")
-
+```js
     /**
      * @param {number[][]} intervals
      * @return {number}
