@@ -87,7 +87,7 @@ A solution set is:
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function(candidates, target) {
+let combinationSum2 = function(candidates, target) {
   return dfs(candidates.sort((a, b) =&gt; a - b), target, [], [], 0)
 };
 
@@ -114,9 +114,8 @@ function dfs (candidates, target, result, path, start) {
 
   return result
 };</code></pre>
-   <br>
-<hr>
-<br>
-
+    <br />
+    <hr />
+    <br />
   </body>
 </html>

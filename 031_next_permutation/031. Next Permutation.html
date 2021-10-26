@@ -68,11 +68,11 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var nextPermutation = function(nums) {
+let nextPermutation = function(nums) {
   const len = nums.length
   if (len &lt;= 1) { return }
 
-  for (var i = len - 1; i &gt; 0; i--) {
+  for (let i = len - 1; i &gt; 0; i--) {
     if (nums[i] &gt; nums[i-1]) {
       let t
       for (let s = i, e = len-1; s &lt; e; s++, e--) {

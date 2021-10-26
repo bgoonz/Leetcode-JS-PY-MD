@@ -51,7 +51,7 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function(n) {
+let generateParenthesis = function(n) {
   const result = []
   if (n &gt; 0) {
     dfs(n, 0, 0, &#39;&#39;, result)
@@ -79,7 +79,7 @@ function dfs (n, nopen, nclose, path, result) {
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function(n) {
+let generateParenthesis = function(n) {
   if (n &lt;= 0) { return [] }
 
   const queue = [{
