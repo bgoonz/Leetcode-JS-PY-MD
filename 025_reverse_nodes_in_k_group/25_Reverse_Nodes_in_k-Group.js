@@ -27,11 +27,11 @@
  */
 
 // http://www.geeksforgeeks.org/reverse-a-list-in-groups-of-given-size/
- let reverseKGroup = function (head, k) {
-   let cur = head;
-   let pre = null;
-   let post = null;
-   let count = 0;
+let reverseKGroup = function (head, k) {
+  let cur = head;
+  let pre = null;
+  let post = null;
+  let count = 0;
 
   while (cur !== null && count < k) {
     cur = cur.next;

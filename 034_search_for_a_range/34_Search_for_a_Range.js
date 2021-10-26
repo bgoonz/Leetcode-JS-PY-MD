@@ -4,14 +4,14 @@
  * @return {number[]}
  */
 
- let searchRange = function (nums, target) {
-   let l = 0;
-   let r = nums.length - 1;
-   let leftBound = -1;
-   let rightBound = -1;
+let searchRange = function (nums, target) {
+  let l = 0;
+  let r = nums.length - 1;
+  let leftBound = -1;
+  let rightBound = -1;
 
   while (l <= r) {
-     let mid = l + parseInt((r - l) / 2);
+    let mid = l + parseInt((r - l) / 2);
     console.log(mid, nums[mid]);
     if (nums[mid] === target) {
       leftBound = mid;

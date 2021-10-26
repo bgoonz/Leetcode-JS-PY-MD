@@ -2,11 +2,11 @@
  * @param {number} num
  * @return {string}
  */
- let intToRoman = function (num) {
-   let M = ["", "M", "MM", "MMM"];
-   let C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-   let X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
-   let I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+let intToRoman = function (num) {
+  let M = ["", "M", "MM", "MMM"];
+  let C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+  let X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+  let I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
   return (
     M[Math.floor(num / 1000)] +
     C[Math.floor((num % 1000) / 100)] +
@@ -16,8 +16,8 @@
 };
 
 // this is awkward because the order of object keys is not reserved
- let intToRoman = function (num) {
-   let map = {
+let intToRoman = function (num) {
+  let map = {
     1000: "M",
     900: "CM",
     500: "D",
@@ -32,7 +32,7 @@
     4: "IV",
     1: "I",
   };
-   let romanStr = "";
+  let romanStr = "";
 
   Object.keys(map)
     .sort(function (a, b) {
@@ -49,9 +49,9 @@
 };
 
 // although you can use two arrays to do it.
- let intToRoman = function (num) {
-   let vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-   let strs = [
+let intToRoman = function (num) {
+  let vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  let strs = [
     "M",
     "CM",
     "D",
@@ -66,7 +66,7 @@
     "IV",
     "I",
   ];
-   let romanStr = "";
+  let romanStr = "";
 
   vals.forEach(function (val, index) {
     while (num >= val) {

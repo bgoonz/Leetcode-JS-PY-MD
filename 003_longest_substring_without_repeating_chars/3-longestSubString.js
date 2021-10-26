@@ -4,10 +4,10 @@
  */
 
 // not accepted!!! time exceeded!
- let lengthOfLongestSubstring = function (s) {
-   let visitedChars = {};
-   let len = 0;
-  for ( let i = 0; i < s.length; i++) {
+let lengthOfLongestSubstring = function (s) {
+  let visitedChars = {};
+  let len = 0;
+  for (let i = 0; i < s.length; i++) {
     if (s[i] in visitedChars) {
       len = Math.max(len, Object.size(visitedChars));
       delete visitedChars[s[i]];
@@ -19,7 +19,7 @@
 };
 
 Object.size = function (obj) {
-   let size = 0,
+  let size = 0,
     key;
   for (key in obj) {
     if (obj.hasOwnProperty(key)) size++;
@@ -28,11 +28,11 @@ Object.size = function (obj) {
 };
 
 // accepted, O(N)
- let lengthOfLongestSubstring = function (s) {
-   let visitedChars = {};
-   let len = 0;
-   let j = 0;
-  for ( let i = 0; i < s.length; i++) {
+let lengthOfLongestSubstring = function (s) {
+  let visitedChars = {};
+  let len = 0;
+  let j = 0;
+  for (let i = 0; i < s.length; i++) {
     if (s[i] in visitedChars) {
       len = Math.max(len, i - j);
       j = Math.max(j, visitedChars[s[i]] + 1);

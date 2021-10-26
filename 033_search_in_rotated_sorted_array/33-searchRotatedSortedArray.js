@@ -8,14 +8,14 @@
  * @param {number} target
  * @return {number}
  */
- let search = function (nums, target) {
+let search = function (nums, target) {
   return searchHelper(nums, 0, nums.length - 1, target);
 };
 
- let searchHelper = function (nums, left, right, target) {
+let searchHelper = function (nums, left, right, target) {
   if (right < left) return -1;
 
-   let mid = left + Math.floor((right - left) / 2);
+  let mid = left + Math.floor((right - left) / 2);
 
   if (nums[mid] === target) return mid;
 
@@ -35,12 +35,12 @@
 };
 
 // Interative
- let search = function (nums, target) {
-   let left = 0;
-   let right = nums.length - 1;
+let search = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
 
   while (left < right) {
-     let mid = left + Math.floor((right - left) / 2);
+    let mid = left + Math.floor((right - left) / 2);
     if (nums[mid] === target) return mid;
     if (nums[left] <= nums[mid]) {
       if (target >= nums[left] && target < nums[mid]) {

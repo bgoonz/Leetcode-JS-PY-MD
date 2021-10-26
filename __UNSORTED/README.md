@@ -3078,14 +3078,14 @@ Advantages include:
 - Having a consistent API leads to more adoption
 - Ability to easily adapt a callback pattern that will lead to more maintainable code As you can see from below example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an Error object, which then becomes the callback’s only parameter. The callback function allows a user to easily know whether or not an error occurred. This practice is also called the _Node.js error convention_, and this kind of callback implementations are called _error-first callbacks_.
 
-   let isTrue = function (value, callback) {
+  let isTrue = function (value, callback) {
   if (value === true) {
   callback(null, "Value was true.");
   } else {
   callback(new Error("Value is not true!"));
   }
   };
-   let callback = function (error, retval) {
+  let callback = function (error, retval) {
   if (error) {
   console.log(error);
   return;
@@ -3833,7 +3833,7 @@ The `this` keyword is an object that represents the context of an executing func
 `this` refers to the object itself inside regular functions if the object precedes the invocation of the function. Properties set as `this` do not refer to the object.
 
 ```js
- let myObject = {
+let myObject = {
   property: this,
   regularFunction: function () {
     return this;
@@ -3896,7 +3896,7 @@ With `call()` and `apply()`, `this` refers to the object passed as the first arg
 Because `this` can change depending on the scope, it can have unexpected values when using regular functions.
 
 ```js
- let obj = {
+let obj = {
   arr: [1, 2, 3],
   doubleArr() {
     return this.arr.map(function (value) {
@@ -4004,19 +4004,19 @@ When no keyword exists before a variable assignment, it is either assigning a gl
 `var` was the default statement to declare a variable until ES2015. It creates a function-scoped variable that can be reassigned and redeclared. However, due to its lack of block scoping, it can cause issues if the variable is being reused in a loop that contains an asynchronous callback because the variable will continue to exist outside of the block scope. Below, by the time the the `setTimeout` callback executes, the loop has already finished and the `i` variable is `10`, so all ten callbacks reference the same variable available in the function scope.
 
 ```js
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   setTimeout(() => {
     // logs `10` ten times
     console.log(i);
   });
 }
 /* Solutions with `var` */
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   // Passed as an argument will use the value as-is in
   // that point in time
   setTimeout(console.log, 0, i);
 }
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   // Create a new function scope that will use the value
   // as-is in that point in time
   ((i) => {
@@ -4524,7 +4524,7 @@ function isDeepEqual(obj1, obj2, testPrototypes = false) {
 
 ```js
 const myLibrary = (function () {
-   let privateVariable = 2;
+  let privateVariable = 2;
   return {
     publicMethod: () => privateVariable,
   };
@@ -4849,7 +4849,7 @@ Array.prototype.push; // instance method of Array
 const arr = [1, 2, 3];
 arr.push(4);
 Array.push(arr, 4);
- let myObject = {
+let myObject = {
   property: this,
   regularFunction: function () {
     return this;
@@ -4882,11 +4882,11 @@ class Example {
 
 ```js
 const myExample = new Example();
- let myFunction = function () {
+let myFunction = function () {
   return this;
 };
 myFunction.call({ customThis: true }); // { customThis: true }
- let obj = {
+let obj = {
   arr: [1, 2, 3],
   doubleArr() {
     return this.arr.map(function (value) {
@@ -4900,19 +4900,19 @@ myFunction.call({ customThis: true }); // { customThis: true }
 };
 obj.doubleArr(); // Uncaught TypeError: this.double is not a function
 typeof typeof 0;
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   setTimeout(() => {
     // logs `10` ten times
     console.log(i);
   });
 }
 /* Solutions with `var` */
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   // Passed as an argument will use the value as-is in
   // that point in time
   setTimeout(console.log, 0, i);
 }
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   // Create a new function scope that will use the value
   // as-is in that point in time
   ((i) => {

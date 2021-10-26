@@ -2,10 +2,10 @@
  * @param {string} s
  * @return {number}
  */
- let romanToInt = function (s) {
-   let result = 0;
+let romanToInt = function (s) {
+  let result = 0;
 
-  for ( let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     if (i > 0 && c2n(s[i]) > c2n(s[i - 1])) {
       result -= 2 * c2n(s[i - 1]); // because previously added [!!!]
     }
@@ -16,7 +16,7 @@
   return result;
 };
 
- let c2n = function (c) {
+let c2n = function (c) {
   switch (c) {
     case "I":
       return 1;

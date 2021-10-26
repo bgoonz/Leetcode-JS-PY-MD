@@ -5,9 +5,9 @@
  * @param {number} target
  * @return {number[][]}
  */
- let combinationSum = function (candidates, target) {
-   let result = [];
-   let results = [];
+let combinationSum = function (candidates, target) {
+  let result = [];
+  let results = [];
 
   candidates.sort(function (a, b) {
     return a - b;
@@ -16,7 +16,7 @@
   return results;
 };
 
- let combinationSumHelper = function (
+let combinationSumHelper = function (
   candidates,
   target,
   results,
@@ -28,7 +28,7 @@
     return results;
   }
 
-  for ( let i = start; i < candidates.length; i++) {
+  for (let i = start; i < candidates.length; i++) {
     if (candidates[i] > target) break;
     result.push(candidates[i]);
     combinationSumHelper(

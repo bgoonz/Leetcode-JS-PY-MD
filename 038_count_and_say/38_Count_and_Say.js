@@ -2,18 +2,18 @@
  * @param {number} n
  * @return {string}
  */
- let countAndSay = function (n) {
+let countAndSay = function (n) {
   if (n === null || n.length === 0) {
     return "";
   }
 
-   let cur = "1";
-   let num = 1;
+  let cur = "1";
+  let num = 1;
 
   while (n > 1) {
-     let r = "";
+    let r = "";
 
-    for ( let i = 0; i < cur.length; i++) {
+    for (let i = 0; i < cur.length; i++) {
       if (i < cur.length - 1 && cur[i] === cur[i + 1]) {
         num++;
       } else {

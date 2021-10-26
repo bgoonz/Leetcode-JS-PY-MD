@@ -12,15 +12,15 @@
  */
 
 // needs improvement, it can be shorter
- let addTwoNumbers = function (l1, l2) {
-   let l3 = new ListNode();
-   let p3 = l3;
-   let addOne = false;
-   let digitSum = 0;
+let addTwoNumbers = function (l1, l2) {
+  let l3 = new ListNode();
+  let p3 = l3;
+  let addOne = false;
+  let digitSum = 0;
 
   while (l1 || l2) {
-     let l1Digit = 0;
-     let l2Digit = 0;
+    let l1Digit = 0;
+    let l2Digit = 0;
     if (l1) l1Digit = l1.val;
     if (l2) l2Digit = l2.val;
     if (addOne) {
@@ -36,7 +36,7 @@
       addOne = false;
     }
 
-     let node = new ListNode(digitSum);
+    let node = new ListNode(digitSum);
     l3.next = node;
     l3 = node;
     if (l1) l1 = l1.next;
@@ -44,7 +44,7 @@
   }
 
   if (addOne) {
-     let node = new ListNode(1);
+    let node = new ListNode(1);
     l3.next = node;
   }
 
@@ -52,10 +52,10 @@
 };
 
 // a shorter and smarter Version, from LeetCode community
- let addTwoNumbers = function (l1, l2) {
-   let l3 = new ListNode();
-   let p3 = l3;
-   let digitSum = 0;
+let addTwoNumbers = function (l1, l2) {
+  let l3 = new ListNode();
+  let p3 = l3;
+  let digitSum = 0;
 
   while (l1 || l2) {
     digitSum = Math.floor(digitSum / 10);
