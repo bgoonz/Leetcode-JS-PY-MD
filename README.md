@@ -1,5 +1,9 @@
 # [**WEBSITE**](https://bgoonz.github.io/Leetcode-JS-PY-MD)
 
+## [Solutions Markdown](./Explinations.md)
+
+---
+
 - [Tech Interview](#tech-interview)
 - [](#asymptotic-notation)<span id="asymptotic-notation"></span>Asymptotic Notation
   - [Definition:](#span-stylecolorred-definition)
