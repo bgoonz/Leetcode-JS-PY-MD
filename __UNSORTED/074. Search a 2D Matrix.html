@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="generator" content="pandoc" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>074. Search a 2D Matrix</title>
-    <style type="text/css">
-      code {
-        white-space: pre-wrap;
-      }
-      span.smallcaps {
-        font-variant: small-caps;
-      }
-      span.underline {
-        text-decoration: underline;
-      }
-      div.column {
-        display: inline-block;
-        vertical-align: top;
-        width: 50%;
-      }
-    </style>
-  </head>
-  <body>
-    <h2 id="search-a-2d-matrix">
-      <a href="https://leetcode.com/problems/search-a-2d-matrix/description/"
-        >74. Search a 2D Matrix</a
-      >
-    </h2>
-    <h3 id="problem">Problem:</h3>
-    <p>
-      Write an efficient algorithm that searches for a value in an <em>m</em> x
-      <em>n</em> matrix. This matrix has the following properties:
-    </p>
-    <ul>
-      <li>Integers in each row are sorted from left to right.</li>
-      <li>
-        The first integer of each row is greater than the last integer of the
-        previous row.
-      </li>
-    </ul>
-    <p><strong>Example 1:</strong></p>
-    <pre><code>Input:
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>074. Search a 2D Matrix</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h2 id="search-a-2d-matrix"><a href="https://leetcode.com/problems/search-a-2d-matrix/description/">74. Search a 2D Matrix</a></h2>
+<h3 id="problem">Problem:</h3>
+<p>Write an efficient algorithm that searches for a value in an <em>m</em> x <em>n</em> matrix. This matrix has the following properties:</p>
+<ul>
+<li>Integers in each row are sorted from left to right.</li>
+<li>The first integer of each row is greater than the last integer of the previous row.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input:
 matrix = [
   [1,   3,  5,  7],
   [10, 11, 16, 20],
@@ -52,8 +29,8 @@ matrix = [
 ]
 target = 3
 Output: true</code></pre>
-    <p><strong>Example 2:</strong></p>
-    <pre><code>Input:
+<p><strong>Example 2:</strong></p>
+<pre><code>Input:
 matrix = [
   [1,   3,  5,  7],
   [10, 11, 16, 20],
@@ -61,10 +38,10 @@ matrix = [
 ]
 target = 13
 Output: false</code></pre>
-    <h3 id="solution">Solution:</h3>
-    <h4 id="one">ONE</h4>
-    <p>Search from top-left to bottom-right. O(<em>n</em>).</p>
-    <pre><code>/**
+<h3 id="solution">Solution:</h3>
+<h4 id="one">ONE</h4>
+<p>Search from top-left to bottom-right. O(<em>n</em>).</p>
+<pre><code>/**
  * @param {number[][]} matrix
  * @param {number} target
  * @return {boolean}
@@ -90,18 +67,11 @@ var searchMatrix = function(matrix, target) {
 
   return false
 };</code></pre>
-    <h4 id="two">TWO</h4>
-    <p>Binary search. O(log<em>n</em>).</p>
-    <p>
-      View the matrix as an sorted array that is cut into <code>n</code> slices.
-    </p>
-    <p>
-      Take the algorithm from
-      <a href="./035.%20Search%20Insert%20Position.md"
-        >35. Search Insert Position</a
-      >.
-    </p>
-    <pre><code>/**
+<h4 id="two">TWO</h4>
+<p>Binary search. O(log<em>n</em>).</p>
+<p>View the matrix as an sorted array that is cut into <code>n</code> slices.</p>
+<p>Take the algorithm from <a href="./035.%20Search%20Insert%20Position.md">35. Search Insert Position</a>.</p>
+<pre><code>/**
  * @param {number[][]} matrix
  * @param {number} target
  * @return {boolean}
@@ -128,8 +98,6 @@ var searchMatrix = function(matrix, target) {
 
   return false
 };</code></pre>
-    <br />
-    <hr />
-    <br />
-  </body>
+<p><em>Template generated via <a href="https://github.com/crimx/crx-leetmark">Leetmark</a>.</em></p>
+</body>
 </html>
