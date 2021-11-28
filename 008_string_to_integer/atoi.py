@@ -1,6 +1,4 @@
 import string
-
-
 class Solution(object):
     def myAtoi(self, str):
         """
@@ -12,10 +10,10 @@ class Solution(object):
             return 0
         start = 0
         negative = False
-        if str[0] == "-":
+        if str[0]=="-":
             start = 1
             negative = True
-        elif str[0] == "+":
+        elif str[0]=="+":
             start = 1
         elif str[0] not in string.digits:
             return 0
@@ -23,7 +21,7 @@ class Solution(object):
         while start < len(str):
             if str[start] not in string.digits:
                 break
-            num = num * 10 + int(str[start])
+            num = num *10 + int(str[start])
             start += 1
         if negative:
             num = -num
