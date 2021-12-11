@@ -12,26 +12,26 @@
  * }
  */
 
- function generateTrees(n: number): Array<TreeNode | null> {
-    if (n == 0) return [];
-    return helper(1, n);
-};
+function generateTrees(n: number): Array<TreeNode | null> {
+  if (n == 0) return [];
+  return helper(1, n);
+}
 
-function helper (start: number, end: number): Array<TreeNode | null> {
-    let ans = [];
-    if (start > end) {
-        ans.push(null);
-        return ans;
-    }
-    for (let i = start; i <= end; i++) {
-        let lefts = helper(start, i - 1);
-        let rights = helper(i + 1, end);
-        for (let left of lefts) {
-            for (let right of rights) {
-                let root = new TreeNode(i, left, right);
-                ans.push(root);
-            }
-        }
-    }
+function helper(start: number, end: number): Array<TreeNode | null> {
+  let ans = [];
+  if (start > end) {
+    ans.push(null);
     return ans;
+  }
+  for (let i = start; i <= end; i++) {
+    let lefts = helper(start, i - 1);
+    let rights = helper(i + 1, end);
+    for (let left of lefts) {
+      for (let right of rights) {
+        let root = new TreeNode(i, left, right);
+        ans.push(root);
+      }
+    }
+  }
+  return ans;
 }

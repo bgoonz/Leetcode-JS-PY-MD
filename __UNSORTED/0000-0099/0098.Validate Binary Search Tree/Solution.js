@@ -10,25 +10,25 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
- var isValidBST = function(root) {
-    let prev = null;
+var isValidBST = function (root) {
+  let prev = null;
 
-    let dfs = function(root) {
-        if (!root) {
-            return true;
-        }
-        if (!dfs(root.left)) {
-            return false;
-        }
-        if (prev && prev.val >= root.val) {
-            return false;
-        }
-        prev = root;
-        if (!dfs(root.right)) {
-            return false;
-        }
-        return true;
+  let dfs = function (root) {
+    if (!root) {
+      return true;
     }
+    if (!dfs(root.left)) {
+      return false;
+    }
+    if (prev && prev.val >= root.val) {
+      return false;
+    }
+    prev = root;
+    if (!dfs(root.right)) {
+      return false;
+    }
+    return true;
+  };
 
-    return dfs(root);
+  return dfs(root);
 };
