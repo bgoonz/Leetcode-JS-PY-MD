@@ -148,7 +148,8 @@ const isValid = function (code) {
             this.state = STATES.tagContent;
             return true;
           }
-        case STATES.dataContent: { // you can try replace these code with indexOf
+        case STATES.dataContent: {
+          // you can try replace these code with indexOf
           let end = this.findStrEnd(this.i, "]]>");
           if (end != -1) {
             // found end
