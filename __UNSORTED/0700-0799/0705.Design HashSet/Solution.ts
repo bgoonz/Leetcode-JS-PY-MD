@@ -1,20 +1,20 @@
 class MyHashSet {
-    data: Array<boolean>;
-    constructor() {
-        this.data = new Array(10 ** 6 + 1).fill(false);
-    }
+  data: Array<boolean>;
+  constructor() {
+    this.data = new Array(10 ** 6 + 1).fill(false);
+  }
 
-    add(key: number): void {
-        this.data[key] = true;
-    }
+  add(key: number): void {
+    this.data[key] = true;
+  }
 
-    remove(key: number): void {
-        this.data[key] = false;
-    }
+  remove(key: number): void {
+    this.data[key] = false;
+  }
 
-    contains(key: number): boolean {
-        return this.data[key];
-    }
+  contains(key: number): boolean {
+    return this.data[key];
+  }
 }
 
 /**

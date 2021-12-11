@@ -12,14 +12,14 @@
  * }
  */
 
- function findTarget(root: TreeNode | null, k: number): boolean {
-    let nodes: Set<number> = new Set();
-    return find(root, k, nodes);
-};
+function findTarget(root: TreeNode | null, k: number): boolean {
+  let nodes: Set<number> = new Set();
+  return find(root, k, nodes);
+}
 
 function find(root: TreeNode | null, k: number, nodes: Set<number>): boolean {
-    if (!root) return false;
-    if (nodes.has(k - root.val)) return true;
-    nodes.add(root.val);
-    return find(root.left, k, nodes) || find(root.right, k, nodes);
+  if (!root) return false;
+  if (nodes.has(k - root.val)) return true;
+  nodes.add(root.val);
+  return find(root.left, k, nodes) || find(root.right, k, nodes);
 }

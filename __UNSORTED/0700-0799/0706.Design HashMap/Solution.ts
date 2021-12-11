@@ -1,20 +1,20 @@
 class MyHashMap {
-    data: Array<number>;
-    constructor() {
-        this.data = new Array(10 ** 6 + 1).fill(-1);
-    }
+  data: Array<number>;
+  constructor() {
+    this.data = new Array(10 ** 6 + 1).fill(-1);
+  }
 
-    put(key: number, value: number): void {
-        this.data[key] = value;
-    }
+  put(key: number, value: number): void {
+    this.data[key] = value;
+  }
 
-    get(key: number): number {
-        return this.data[key];
-    }
+  get(key: number): number {
+    return this.data[key];
+  }
 
-    remove(key: number): void {
-        this.data[key] = -1;
-    }
+  remove(key: number): void {
+    this.data[key] = -1;
+  }
 }
 
 /**
