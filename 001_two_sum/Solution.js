@@ -1,4 +1,3 @@
-
 const twoSum = function (nums, target) {
   const map = {};
   for (let i = 0; i < nums.length; i++) {
@@ -10,7 +9,6 @@ const twoSum = function (nums, target) {
   }
 };
 
-
 var twoSum = function (nums, target) {
   let len = nums.length;
   let n = {};
@@ -21,8 +19,6 @@ var twoSum = function (nums, target) {
     n[nums[i]] = i;
   }
 };
-
-
 
 var twoSum = function (nums, target) {
   const map = new Map();

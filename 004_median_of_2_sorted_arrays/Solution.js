@@ -22,10 +22,10 @@ var findMedianSortedArrays = function (nums1, nums2) {
     N = nums2.length;
   let min = 0,
     max = M,
-    half = parseInt((M + N + 1) / 2); 
+    half = parseInt((M + N + 1) / 2);
   while (min <= max) {
-    let i = parseInt((min + max) / 2); 
-    let j = half - i; 
+    let i = parseInt((min + max) / 2);
+    let j = half - i;
     if (i < max && nums2[j - 1] > nums1[i]) {
       min++;
     } else if (i > min && nums1[i - 1] > nums2[j]) {
