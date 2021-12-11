@@ -22,10 +22,10 @@ var findMedianSortedArrays = function (nums1, nums2) {
     N = nums2.length;
   let min = 0,
     max = M,
-    half = parseInt((M + N + 1) / 2); // 连个数组合并的中间值
+    half = parseInt((M + N + 1) / 2); 
   while (min <= max) {
-    let i = parseInt((min + max) / 2); // nums1 的索引值
-    let j = half - i; // num2 的索引值
+    let i = parseInt((min + max) / 2); 
+    let j = half - i; 
     if (i < max && nums2[j - 1] > nums1[i]) {
       min++;
     } else if (i > min && nums1[i - 1] > nums2[j]) {
@@ -65,13 +65,3 @@ function swap(a, b) {
 const nums1 = [4, 5];
 const nums2 = [1, 2, 3];
 findMedianSortedArrays(nums1, nums2);
-
-/**
- * 实现思路
- * 先排除空数组的情况
- * 数组从小到大排序
- * 取小数组的中间值
- * 取大数组的索引 = 总中间值-小数组中间值
- * 循环直到符合条件
- * 如果都不符合条件，那么说明中间值在两个数组的左边或者右边
- */
