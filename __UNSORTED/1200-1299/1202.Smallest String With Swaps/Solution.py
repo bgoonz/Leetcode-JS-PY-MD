@@ -17,4 +17,4 @@ class Solution:
         chars = list(s)
         for i in range(n):
             chars[i] = heapq.heappop(mp[find(i)])
-        return ''.join(chars)
+        return "".join(chars)

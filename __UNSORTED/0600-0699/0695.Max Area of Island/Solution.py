@@ -8,7 +8,7 @@ class Solution:
             for x, y in [[0, 1], [0, -1], [1, 0], [-1, 0]]:
                 res += dfs(i + x, j + y)
             return res
-        
+
         m, n = len(grid), len(grid[0])
         res = 0
         for i in range(m):

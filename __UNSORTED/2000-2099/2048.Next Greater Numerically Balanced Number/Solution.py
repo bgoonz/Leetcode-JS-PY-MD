@@ -11,6 +11,6 @@ class Solution:
             return True
 
         for i in range(n + 1, 10 ** 7):
-            if (check(i)):
+            if check(i):
                 return i
         return -1

@@ -1,5 +1,7 @@
 class Solution:
-    def hasPath(self, maze: List[List[int]], start: List[int], destination: List[int]) -> bool:
+    def hasPath(
+        self, maze: List[List[int]], start: List[int], destination: List[int]
+    ) -> bool:
         def dfs(maze, start, destination):
             if visited[start[0]][start[1]]:
                 return False

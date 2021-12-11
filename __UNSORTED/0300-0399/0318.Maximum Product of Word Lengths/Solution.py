@@ -4,7 +4,7 @@ class Solution:
         masks = [0] * n
         for i, word in enumerate(words):
             for c in word:
-                masks[i] |= (1 << (ord(c) - ord('a')))
+                masks[i] |= 1 << (ord(c) - ord("a"))
         ans = 0
         for i in range(n - 1):
             for j in range(i + 1, n):

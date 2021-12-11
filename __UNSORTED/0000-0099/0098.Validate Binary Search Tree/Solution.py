@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
-        prev = float('-inf')
+        prev = float("-inf")
 
         def dfs(root):
             nonlocal prev

@@ -1,4 +1,4 @@
-'''
+"""
 https://leetcode.com/problems/delete-nodes-and-return-forest/
 Given the root of a binary tree, each node in the tree has a distinct value.
 
@@ -6,18 +6,18 @@ After deleting all nodes with a value in to_delete, we are left with a forest (a
 
 Return the roots of the trees in the remaining forest.  You may return the result in any order.
 
-'''
+"""
 # Performance
-'''
+"""
 Runtime: 52 ms, faster than 99.34% of Python3 online submissions for Delete Nodes And Return Forest.
 Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for Delete Nodes And Return Forest.
-'''
-'''
+"""
+"""
 n: number of node
 m: number of to_delete
 Runtime: O(n)
 Space: O(log n) or O(m)
-'''
+"""
 
 
 class Solution:
@@ -30,7 +30,7 @@ class Solution:
         # 2) It's not in set_delete
         # dfs return False when 1) Node is none and 2) node is in set_delete
         # When that happen, set the parent link to that node to None
-        
+
         def dfs(node, is_parent_in_delete):
             nonlocal set_delete, forests
             if not node:
@@ -51,5 +51,6 @@ class Solution:
             if node.right and not dfs(node.right, False):
                 node.right = None
             return True
+
         dfs(root, True)
         return forests

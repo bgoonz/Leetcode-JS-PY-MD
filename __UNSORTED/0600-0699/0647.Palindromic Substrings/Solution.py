@@ -1,6 +1,6 @@
 class Solution:
     def countSubstrings(self, s: str) -> int:
-        t = '^#' + '#'.join(s) + '#$'
+        t = "^#" + "#".join(s) + "#$"
         n = len(t)
         p = [0 for _ in range(n)]
         pos, maxRight = 0, 0

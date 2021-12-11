@@ -1,5 +1,4 @@
 class UndergroundSystem:
-
     def __init__(self):
         self.check_in_station = {}
         self.check_in_time = {}
@@ -12,14 +11,14 @@ class UndergroundSystem:
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         cost = t - self.check_in_time.pop(id)
         start_station = self.check_in_station.pop(id)
-        stations = start_station + '.' + stationName
+        stations = start_station + "." + stationName
         times = self.total_time.get(stations, [0, 0])
         times[0] += cost
         times[1] += 1
         self.total_time[stations] = times
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
-        stations = startStation + '.' + endStation
+        stations = startStation + "." + endStation
         times = self.total_time[stations]
         return times[0] / times[1]
 

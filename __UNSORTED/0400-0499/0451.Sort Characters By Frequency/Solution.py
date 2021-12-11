@@ -9,4 +9,4 @@ class Solution:
             if buckets[i]:
                 for c in buckets[i]:
                     res.append(c * i)
-        return ''.join(res)
+        return "".join(res)

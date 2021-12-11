@@ -7,9 +7,9 @@ class Solution:
                 ans.append(t)
                 return
             if left < n:
-                dfs(left + 1, right, t + '(')
+                dfs(left + 1, right, t + "(")
             if right < left:
-                dfs(left, right + 1, t + ')')
+                dfs(left, right + 1, t + ")")
 
-        dfs(0, 0, '')
+        dfs(0, 0, "")
         return ans

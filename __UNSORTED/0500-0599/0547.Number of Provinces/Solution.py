@@ -5,7 +5,7 @@ class Solution:
                 if not visited[j] and isConnected[i][j] == 1:
                     visited[j] = True
                     dfs(j)
-        
+
         n = len(isConnected)
         visited = [False] * n
         num = 0

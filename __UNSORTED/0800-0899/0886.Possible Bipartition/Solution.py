@@ -6,7 +6,7 @@ class Solution:
             if p[x] != x:
                 p[x] = find(p[x])
             return p[x]
-        
+
         mp = collections.defaultdict(list)
         for i, j in dislikes:
             mp[i - 1].append(j - 1)

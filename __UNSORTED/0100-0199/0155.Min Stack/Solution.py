@@ -1,11 +1,10 @@
 class MinStack:
-
     def __init__(self):
         """
         initialize your data structure here.
         """
         self.s = []
-        self.mins = [float('inf')]
+        self.mins = [float("inf")]
 
     def push(self, val: int) -> None:
         self.s.append(val)

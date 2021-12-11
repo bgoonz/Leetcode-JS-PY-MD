@@ -6,13 +6,13 @@ class Solution:
         if n == 0:
             return 0
         i = 0
-        while s[i] == ' ':
+        while s[i] == " ":
             i += 1
             # only contains blank space
             if i == n:
                 return 0
-        sign = -1 if s[i] == '-' else 1
-        if s[i] in ['-', '+']:
+        sign = -1 if s[i] == "-" else 1
+        if s[i] in ["-", "+"]:
             i += 1
         res, flag = 0, (2 ** 31 - 1) // 10
         while i < n:

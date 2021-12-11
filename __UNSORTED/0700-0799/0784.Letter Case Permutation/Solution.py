@@ -2,7 +2,7 @@ class Solution:
     def letterCasePermutation(self, s: str) -> List[str]:
         def dfs(i, t):
             if i == len(t):
-                ans.append(''.join(t))
+                ans.append("".join(t))
                 return
             dfs(i + 1, t)
             if t[i].isalpha():

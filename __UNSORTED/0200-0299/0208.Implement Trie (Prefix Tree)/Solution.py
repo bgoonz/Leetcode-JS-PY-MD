@@ -1,5 +1,4 @@
 class Trie:
-
     def __init__(self):
         self.children = [None] * 26
         self.is_end = False
@@ -7,7 +6,7 @@ class Trie:
     def insert(self, word: str) -> None:
         node = self
         for c in word:
-            idx = ord(c) - ord('a')
+            idx = ord(c) - ord("a")
             if node.children[idx] is None:
                 node.children[idx] = Trie()
             node = node.children[idx]
@@ -24,11 +23,12 @@ class Trie:
     def _search_prefix(self, prefix: str):
         node = self
         for c in prefix:
-            idx = ord(c) - ord('a')
+            idx = ord(c) - ord("a")
             if node.children[idx] is None:
                 return None
             node = node.children[idx]
         return node
+
 
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()

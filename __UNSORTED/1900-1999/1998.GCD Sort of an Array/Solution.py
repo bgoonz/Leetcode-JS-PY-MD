@@ -9,16 +9,16 @@ class Solution:
                 continue
             for j in range(i, mx + 1, i):
                 f[j].append(i)
-        
+
         def find(x):
             if p[x] != x:
                 p[x] = find(p[x])
             return p[x]
-        
+
         for i in nums:
             for j in f[i]:
                 p[find(i)] = find(j)
-        
+
         s = sorted(nums)
         for i, num in enumerate(nums):
             if s[i] != num and find(num) != find(s[i]):

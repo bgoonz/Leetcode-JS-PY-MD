@@ -3,7 +3,7 @@ class Solution:
         n0 = n1 = 0
         t0 = t1 = 0
         for c in s:
-            if c == '0':
+            if c == "0":
                 t0 += 1
                 t1 = 0
             else:

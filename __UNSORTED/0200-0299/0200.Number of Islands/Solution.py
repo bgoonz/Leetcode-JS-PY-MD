@@ -10,15 +10,15 @@ class Solution:
 
         for i in range(m):
             for j in range(n):
-                if grid[i][j] == '1':
-                    if i < m - 1 and grid[i + 1][j] == '1':
+                if grid[i][j] == "1":
+                    if i < m - 1 and grid[i + 1][j] == "1":
                         p[find(i * n + j)] = find((i + 1) * n + j)
-                    if j < n - 1 and grid[i][j + 1] == '1':
+                    if j < n - 1 and grid[i][j + 1] == "1":
                         p[find(i * n + j)] = find(i * n + j + 1)
 
         res = 0
         for i in range(m):
             for j in range(n):
-                if grid[i][j] == '1' and i * n + j == find(i * n + j):
+                if grid[i][j] == "1" and i * n + j == find(i * n + j):
                     res += 1
         return res

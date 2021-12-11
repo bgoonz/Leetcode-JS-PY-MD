@@ -6,7 +6,7 @@ class SparseVector:
                 self.v[i] = num
 
     # Return the dotProduct of two sparse vectors
-    def dotProduct(self, vec: 'SparseVector') -> int:
+    def dotProduct(self, vec: "SparseVector") -> int:
         res = 0
         if len(self.v) > len(vec.v):
             self.v, vec.v = vec.v, self.v

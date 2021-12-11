@@ -9,13 +9,13 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrderBottom = function(root) {
+var levelOrderBottom = function (root) {
   if (!root) return [];
-  
+
   const getDepthNodes = (queue) => {
     const tempQ = [];
     const tempR = [];
-    queue.map(e => {
+    queue.map((e) => {
       if (e.val !== undefined) tempR.push(e.val);
 
       if (e.left) {
@@ -31,7 +31,7 @@ var levelOrderBottom = function(root) {
     } else {
       return [tempR];
     }
-  }
+  };
 
   return getDepthNodes([root]);
 };

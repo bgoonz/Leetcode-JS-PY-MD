@@ -1,5 +1,4 @@
 class StockPrice:
-
     def __init__(self):
         self.last_ts = 0
         self.mp = {}
@@ -11,13 +10,12 @@ class StockPrice:
         if timestamp in self.mp:
             old_price = self.mp[timestamp]
             self.counter[old_price] -= 1
-            
+
         self.mp[timestamp] = price
         self.last_ts = max(self.last_ts, timestamp)
         self.counter[price] += 1
         heapq.heappush(self.mi, price)
         heapq.heappush(self.mx, -price)
-        
 
     def current(self) -> int:
         return self.mp[self.last_ts]

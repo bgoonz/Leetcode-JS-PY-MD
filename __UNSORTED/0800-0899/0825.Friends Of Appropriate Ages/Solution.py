@@ -12,7 +12,7 @@ class Solution:
             for j in range(1, 121):
                 if check(i, j):
                     n2 = counter[j]
-                    res += (n1 * n2)
+                    res += n1 * n2
                     if i == j:
                         res -= n2
         return res

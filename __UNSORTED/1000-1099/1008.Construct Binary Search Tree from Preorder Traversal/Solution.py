@@ -7,7 +7,6 @@
 
 
 class Solution:
-
     def bstFromPreorder(self, preorder: List[int]) -> TreeNode:
         def buildtree(li):
             if not li:
@@ -26,4 +25,5 @@ class Solution:
                 root.left = buildtree(l)
                 root.right = buildtree(r)
             return root
+
         return buildtree(preorder)

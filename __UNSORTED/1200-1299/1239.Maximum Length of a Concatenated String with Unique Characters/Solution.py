@@ -12,7 +12,7 @@ class Solution:
         for s in arr:
             mask = 0
             for ch in s:
-                ch = ord(ch) - ord('a')
+                ch = ord(ch) - ord("a")
                 if (mask >> ch) & 1 == 1:
                     mask = 0
                     break

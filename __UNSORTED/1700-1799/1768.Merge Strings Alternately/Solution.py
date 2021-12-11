@@ -8,4 +8,4 @@ class Solution:
             if i < n:
                 res.append(word2[i])
             i += 1
-        return ''.join(res)
+        return "".join(res)

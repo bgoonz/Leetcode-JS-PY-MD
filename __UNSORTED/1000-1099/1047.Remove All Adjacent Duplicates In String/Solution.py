@@ -6,4 +6,4 @@ class Solution:
                 res.append(s)
             else:
                 res.pop()
-        return ''.join(res)
+        return "".join(res)

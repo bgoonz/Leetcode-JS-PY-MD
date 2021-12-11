@@ -9,25 +9,25 @@ class Solution:
                     ans.add(t)
             if i == len(s):
                 return
-            if s[i] == '(':
+            if s[i] == "(":
                 dfs(i + 1, t, lcnt, rcnt, ldel - 1, rdel)
-                dfs(i + 1, t + '(', lcnt + 1, rcnt, ldel, rdel)
-            elif s[i] == ')':
+                dfs(i + 1, t + "(", lcnt + 1, rcnt, ldel, rdel)
+            elif s[i] == ")":
                 dfs(i + 1, t, lcnt, rcnt, ldel, rdel - 1)
-                dfs(i + 1, t + ')', lcnt, rcnt + 1, ldel, rdel)
+                dfs(i + 1, t + ")", lcnt, rcnt + 1, ldel, rdel)
             else:
                 dfs(i + 1, t + s[i], lcnt, rcnt, ldel, rdel)
 
         ldel = rdel = 0
         for c in s:
-            if c == '(':
+            if c == "(":
                 ldel += 1
-            elif c == ')':
+            elif c == ")":
                 if ldel == 0:
                     rdel += 1
                 else:
                     ldel -= 1
         tdel = ldel + rdel
         ans = set()
-        dfs(0, '', 0, 0, ldel, rdel)
+        dfs(0, "", 0, 0, ldel, rdel)
         return list(ans)

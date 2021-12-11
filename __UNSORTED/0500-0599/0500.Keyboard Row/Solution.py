@@ -1,8 +1,8 @@
 class Solution:
     def findWords(self, words: List[str]) -> List[str]:
-        s1 = set('qwertyuiop')
-        s2 = set('asdfghjkl')
-        s3 = set('zxcvbnm')
+        s1 = set("qwertyuiop")
+        s2 = set("asdfghjkl")
+        s3 = set("zxcvbnm")
         res = []
         for word in words:
             t = set(word.lower())

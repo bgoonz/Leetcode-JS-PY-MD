@@ -9,7 +9,7 @@ class Solution:
         for w in words:
             cur = root
             for i in range(len(w) - 1, -1, -1):
-                idx = ord(w[i]) - ord('a')
+                idx = ord(w[i]) - ord("a")
                 if cur.children[idx] == None:
                     cur.children[idx] = Trie()
                 cur = cur.children[idx]

@@ -1,4 +1,4 @@
-'''
+"""
 https://leetcode.com/problems/rotting-oranges/
 
 In a given grid, each cell can have one of three values:
@@ -12,12 +12,14 @@ Return the minimum number of minutes that must elapse until no cell has a fresh 
 
 Runtime: 44 ms, faster than 98.53% of Python3 online submissions for Rotting Oranges.
 Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Rotting Oranges.
-'''
+"""
 
 from collections import deque
+
+
 class Solution:
     def orangesRotting(self, grid) -> int:
-    # Setting up common used variable
+        # Setting up common used variable
         max_row = len(grid)
         max_col = len(grid[0])
         rotten_oranges = []
@@ -26,15 +28,15 @@ class Solution:
         for row in range(max_row):
             for col in range(max_col):
                 if grid[row][col] == 2:
-                    rotten_oranges.append((row,col))
+                    rotten_oranges.append((row, col))
         # Hepler function. If the grid contain fresh orange, it will become rotten
-        def spread_rotten(row,col):
+        def spread_rotten(row, col):
             nonlocal grid, temp_rotten_oranges
             if grid[row][col] == 1:
-                temp_rotten_oranges.append((row,col))
+                temp_rotten_oranges.append((row, col))
                 grid[row][col] = 2
 
-        # Each loop represent a minutes 
+        # Each loop represent a minutes
         # In a loop, we use a temp array to store all of the rotten array got spreaded in that minutes
         # The loop only ends when the temp array is empty
         time = 0
@@ -43,13 +45,13 @@ class Solution:
             for rotten_orange in rotten_oranges:
                 row, col = rotten_orange
                 if row > 0:
-                    spread_rotten(row-1, col)
+                    spread_rotten(row - 1, col)
                 if col > 0:
-                    spread_rotten(row, col-1)
+                    spread_rotten(row, col - 1)
                 if row < max_row - 1:
-                    spread_rotten(row+1, col)
+                    spread_rotten(row + 1, col)
                 if col < max_col - 1:
-                    spread_rotten(row, col+1)
+                    spread_rotten(row, col + 1)
             if not temp_rotten_oranges:
                 break
             rotten_oranges = temp_rotten_oranges.copy()
@@ -60,8 +62,5 @@ class Solution:
             for col in range(max_col):
                 if grid[row][col] == 1:
                     return -1
-            
+
         return time
-
-
-

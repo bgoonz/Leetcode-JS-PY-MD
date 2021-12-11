@@ -1,5 +1,4 @@
 class ValidWordAbbr:
-
     def __init__(self, dictionary: List[str]):
         self.words = defaultdict(set)
         for word in dictionary:
@@ -12,7 +11,7 @@ class ValidWordAbbr:
         return not words or (len(words) == 1 and word in words)
 
     def word_abbr(self, s):
-        return s if len(s) < 3 else f'{s[0]}{len(s) - 2}{s[-1]}'
+        return s if len(s) < 3 else f"{s[0]}{len(s) - 2}{s[-1]}"
 
 
 # Your ValidWordAbbr object will be instantiated and called as such:

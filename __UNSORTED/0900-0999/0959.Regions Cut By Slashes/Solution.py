@@ -16,10 +16,10 @@ class Solution:
                 if j < n - 1:
                     p[find(idx * 4 + 1)] = find((idx + 1) * 4 + 3)
 
-                if grid[i][j] == '/':
+                if grid[i][j] == "/":
                     p[find(idx * 4)] = find(idx * 4 + 3)
                     p[find(idx * 4 + 1)] = find(idx * 4 + 2)
-                elif grid[i][j] == '\\':
+                elif grid[i][j] == "\\":
                     p[find(idx * 4)] = find(idx * 4 + 1)
                     p[find(idx * 4 + 2)] = find(idx * 4 + 3)
                 else:

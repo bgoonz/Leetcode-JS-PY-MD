@@ -10,5 +10,5 @@ class Solution:
             if last_word in same_first_word:
                 for j in same_first_word[last_word]:
                     if i != j:
-                        res.add(' '.join(words[:-1] + phrases[j].split()))
+                        res.add(" ".join(words[:-1] + phrases[j].split()))
         return sorted(list(res))

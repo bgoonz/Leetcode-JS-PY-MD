@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     def binaryTreePaths(self, root: TreeNode) -> List[str]:
         def dfs(root):
@@ -16,6 +17,7 @@ class Solution:
             dfs(root.left)
             dfs(root.right)
             path.pop()
+
         res = []
         path = []
         dfs(root)

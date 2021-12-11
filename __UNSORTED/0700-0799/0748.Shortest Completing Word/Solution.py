@@ -3,7 +3,7 @@ class Solution:
         def count(word):
             counter = [0] * 26
             for c in word:
-                counter[ord(c) - ord('a')] += 1
+                counter[ord(c) - ord("a")] += 1
             return counter
 
         def check(counter1, counter2):

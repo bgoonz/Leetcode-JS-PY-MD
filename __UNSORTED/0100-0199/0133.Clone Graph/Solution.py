@@ -8,7 +8,7 @@ class Node:
 
 
 class Solution:
-    def cloneGraph(self, node: 'Node') -> 'Node':
+    def cloneGraph(self, node: "Node") -> "Node":
         visited = defaultdict()
 
         def clone(node):

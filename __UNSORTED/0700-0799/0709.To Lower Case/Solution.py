@@ -7,6 +7,6 @@ class Solution:
         for i in range(n):
             c = ord(str[i])
             if c >= 65 and c <= 90:
-               c += 32
+                c += 32
             res.append(chr(c))
-        return ''.join(res)
+        return "".join(res)

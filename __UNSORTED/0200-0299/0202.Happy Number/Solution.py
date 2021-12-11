@@ -6,7 +6,7 @@ class Solution:
                 n, digit = divmod(n, 10)
                 s += digit ** 2
             return s
-        
+
         visited = set()
         while n != 1 and n not in visited:
             visited.add(n)

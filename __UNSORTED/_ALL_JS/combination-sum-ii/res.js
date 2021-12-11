@@ -3,18 +3,18 @@
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function(candidates, target) {
-  candidates.sort((a, b) => b-a);
+var combinationSum2 = function (candidates, target) {
+  candidates.sort((a, b) => b - a);
   const res = [];
-  
+
   const calCombs = (candis, resArr, targ) => {
-    if (!candis.length) return ;
+    if (!candis.length) return;
     const ele = candis[0];
 
     if (targ === ele) {
       res.push([...resArr, ele]);
     } else if (targ - ele > 0) {
-      calCombs(candis.slice(1), [...resArr, ele], targ-ele);
+      calCombs(candis.slice(1), [...resArr, ele], targ - ele);
     }
 
     let sliceIndex = 0;
@@ -22,7 +22,7 @@ var combinationSum2 = function(candidates, target) {
       sliceIndex++;
     }
     calCombs(candis.slice(sliceIndex), [...resArr], targ);
-  }
+  };
 
   calCombs(candidates, [], target);
 

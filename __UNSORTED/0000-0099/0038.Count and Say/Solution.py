@@ -1,6 +1,6 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
-        s = '1'
+        s = "1"
         for _ in range(n - 1):
             i = 0
             t = []
@@ -11,5 +11,5 @@ class Solution:
                 t.append(str(j - i))
                 t.append(str(s[i]))
                 i = j
-            s = ''.join(t)
+            s = "".join(t)
         return s

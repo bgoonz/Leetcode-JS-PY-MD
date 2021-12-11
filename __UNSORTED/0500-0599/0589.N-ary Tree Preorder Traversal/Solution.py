@@ -8,7 +8,7 @@ class Node:
 
 
 class Solution:
-    def preorder(self, root: 'Node') -> List[int]:
+    def preorder(self, root: "Node") -> List[int]:
         if not root:
             return []
 
@@ -16,6 +16,7 @@ class Solution:
             res.append(root.val)
             for i in root.children:
                 PO(i)
+
         res = []
         PO(root)
         return res

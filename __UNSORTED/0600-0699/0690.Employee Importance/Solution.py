@@ -7,8 +7,9 @@ class Employee:
         self.subordinates = subordinates
 """
 
+
 class Solution:
-    def getImportance(self, employees: List['Employee'], id: int) -> int:
+    def getImportance(self, employees: List["Employee"], id: int) -> int:
         m = {emp.id: emp for emp in employees}
 
         def dfs(id: int) -> int:

@@ -13,7 +13,7 @@ class Solution:
 
         for i in range(m):
             for j in range(n):
-                if board[i][j] == 'O':
+                if board[i][j] == "O":
                     if i == 0 or j == 0 or i == m - 1 or j == n - 1:
                         p[find(i * n + j)] = find(m * n)
                     else:
@@ -23,5 +23,5 @@ class Solution:
 
         for i in range(m):
             for j in range(n):
-                if board[i][j] == 'O' and find(i * n + j) != find(m * n):
-                    board[i][j] = 'X'
+                if board[i][j] == "O" and find(i * n + j) != find(m * n):
+                    board[i][j] = "X"

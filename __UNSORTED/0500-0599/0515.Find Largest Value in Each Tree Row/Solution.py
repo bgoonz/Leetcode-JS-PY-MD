@@ -12,7 +12,7 @@ class Solution:
         ans = []
         while q:
             n = len(q)
-            t = float('-inf')
+            t = float("-inf")
             for _ in range(n):
                 node = q.popleft()
                 t = max(t, node.val)

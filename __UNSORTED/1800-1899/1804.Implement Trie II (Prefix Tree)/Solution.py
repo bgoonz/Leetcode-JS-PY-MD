@@ -1,5 +1,4 @@
 class Trie:
-
     def __init__(self):
         self.children = [None] * 26
         self.count = 0
@@ -8,7 +7,7 @@ class Trie:
     def insert(self, word: str) -> None:
         node = self
         for c in word:
-            index = ord(c) - ord('a')
+            index = ord(c) - ord("a")
             if node.children[index] is None:
                 node.children[index] = Trie()
             node = node.children[index]
@@ -26,7 +25,7 @@ class Trie:
     def erase(self, word: str) -> None:
         node = self
         for c in word:
-            index = ord(c) - ord('a')
+            index = ord(c) - ord("a")
             node = node.children[index]
             node.pre_count -= 1
         node.count -= 1
@@ -34,11 +33,12 @@ class Trie:
     def _search_prefix(self, prefix: str):
         node = self
         for c in prefix:
-            index = ord(c) - ord('a')
+            index = ord(c) - ord("a")
             if node.children[index] is None:
                 return None
             node = node.children[index]
         return node
+
 
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()

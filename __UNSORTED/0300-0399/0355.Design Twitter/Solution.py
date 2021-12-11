@@ -1,5 +1,4 @@
 class Twitter:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -41,7 +40,6 @@ class Twitter:
         following = self.user_following[followerId]
         if followeeId in following:
             following.remove(followeeId)
-
 
 
 # Your Twitter object will be instantiated and called as such:

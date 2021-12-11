@@ -1,7 +1,7 @@
 class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
         def make(nums, i, j):
-            return str(nums[i]) if i == j else f'{nums[i]}->{nums[j]}'
+            return str(nums[i]) if i == j else f"{nums[i]}->{nums[j]}"
 
         i = j = 0
         n = len(nums)

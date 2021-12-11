@@ -5,7 +5,7 @@ class Solution:
         cols = collections.defaultdict(list)
         for i in range(m):
             for j in range(n):
-                if picture[i][j] == 'B':
+                if picture[i][j] == "B":
                     rows[i] += 1
                     cols[j].append(i)
         t = [[False] * m for _ in range(m)]

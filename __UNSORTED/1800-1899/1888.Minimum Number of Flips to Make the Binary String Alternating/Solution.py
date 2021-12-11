@@ -1,7 +1,7 @@
 class Solution:
     def minFlips(self, s: str) -> int:
         n = len(s)
-        target = '01'
+        target = "01"
         cnt = 0
         for i, c in enumerate(s):
             cnt += c != target[i & 1]

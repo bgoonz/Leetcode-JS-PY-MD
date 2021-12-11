@@ -5,14 +5,14 @@ class Solution:
         def check(s):
             if not (0 <= int(s) <= 255):
                 return False
-            if s[0] == '0' and len(s) > 1:
+            if s[0] == "0" and len(s) > 1:
                 return False
             return True
 
         def dfs(s, t):
             if len(t) == 4:
                 if not s:
-                    ans.append('.'.join(t))
+                    ans.append(".".join(t))
                 return
             for i in range(1, min(4, len(s) + 1)):
                 if check(s[:i]):

@@ -3,6 +3,7 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
+
         def reverse(s, i, j):
             while i < j:
                 s[i], s[j] = s[j], s[i]
@@ -11,7 +12,7 @@ class Solution:
 
         i, j, n = 0, 0, len(s)
         while j < n:
-            if s[j] == ' ':
+            if s[j] == " ":
                 reverse(s, i, j - 1)
                 i = j + 1
             elif j == n - 1:

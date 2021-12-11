@@ -8,7 +8,7 @@ class Solution:
             return p[x]
 
         for i in range(len(s1)):
-            a, b = ord(s1[i]) - ord('a'), ord(s2[i]) - ord('a')
+            a, b = ord(s1[i]) - ord("a"), ord(s2[i]) - ord("a")
             pa, pb = find(a), find(b)
             if pa < pb:
                 p[pb] = pa
@@ -17,6 +17,6 @@ class Solution:
 
         res = []
         for a in baseStr:
-            a = ord(a) - ord('a')
-            res.append(chr(find(a) + ord('a')))
-        return ''.join(res)
+            a = ord(a) - ord("a")
+            res.append(chr(find(a) + ord("a")))
+        return "".join(res)

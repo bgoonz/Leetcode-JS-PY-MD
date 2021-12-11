@@ -6,11 +6,11 @@ class Solution:
         for i in range(9):
             for j in range(9):
                 c = board[i][j]
-                if c == '.':
+                if c == ".":
                     continue
                 num = int(c) - 1
                 k = i // 3 * 3 + j // 3
-                if row[i][num] or col[j][num] or sub[k][num]: 
+                if row[i][num] or col[j][num] or sub[k][num]:
                     return False
                 row[i][num] = True
                 col[j][num] = True

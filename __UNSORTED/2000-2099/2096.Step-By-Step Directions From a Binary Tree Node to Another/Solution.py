@@ -5,7 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
+    def getDirections(
+        self, root: Optional[TreeNode], startValue: int, destValue: int
+    ) -> str:
         edges = defaultdict(list)
         ans = None
         visited = set()
@@ -14,11 +16,11 @@ class Solution:
             if not root:
                 return
             if root.left:
-                edges[root.val].append([root.left.val, 'L'])
-                edges[root.left.val].append([root.val, 'U'])
+                edges[root.val].append([root.left.val, "L"])
+                edges[root.left.val].append([root.val, "U"])
             if root.right:
-                edges[root.val].append([root.right.val, 'R'])
-                edges[root.right.val].append([root.val, 'U'])
+                edges[root.val].append([root.right.val, "R"])
+                edges[root.right.val].append([root.val, "U"])
             traverse(root.left)
             traverse(root.right)
 
@@ -28,7 +30,7 @@ class Solution:
                 return
             if start == dest:
                 if ans is None or len(ans) > len(t):
-                    ans = ''.join(t)
+                    ans = "".join(t)
                 return
             visited.add(start)
             for d, k in edges[start]:

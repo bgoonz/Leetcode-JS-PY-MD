@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def closestValue(self, root: TreeNode, target: float) -> int:
-        res, min_diff = root.val, float('inf')
+        res, min_diff = root.val, float("inf")
         while root:
             val = abs(root.val - target)
             if min_diff > val:

@@ -12,4 +12,4 @@ class Solution:
 
         for i in range(10):
             y += min(cnt1[i], cnt2[i])
-        return f'{x}A{y}B'
+        return f"{x}A{y}B"

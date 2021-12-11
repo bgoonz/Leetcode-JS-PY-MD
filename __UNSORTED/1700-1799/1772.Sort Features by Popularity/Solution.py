@@ -3,7 +3,7 @@ class Solution:
         feature_set = set(features)
         counter = collections.Counter()
         for resp in responses:
-            for feat in set(resp.split(' ')):
+            for feat in set(resp.split(" ")):
                 if feat in feature_set:
                     counter[feat] += 1
         order = {feat: i for i, feat in enumerate(features)}

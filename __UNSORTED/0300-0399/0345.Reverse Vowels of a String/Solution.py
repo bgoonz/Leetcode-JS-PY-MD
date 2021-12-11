@@ -1,6 +1,6 @@
 class Solution:
     def reverseVowels(self, s: str) -> str:
-        vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+        vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
         i, j = 0, len(s) - 1
         chars = list(s)
         while i < j:
@@ -13,4 +13,4 @@ class Solution:
             chars[i], chars[j] = chars[j], chars[i]
             i += 1
             j -= 1
-        return ''.join(chars)
+        return "".join(chars)

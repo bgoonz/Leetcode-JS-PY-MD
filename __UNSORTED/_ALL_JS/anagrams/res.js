@@ -5,29 +5,29 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-let groupAnagrams = function(strs) {
-    let len = strs.length;
-    if (!len) return [];
+let groupAnagrams = function (strs) {
+  let len = strs.length;
+  if (!len) return [];
 
-    let hashmap = new Map();
-    for (let i = 0; i < len; i++) {
-        let tmparr = strs[i].split('');
-        tmparr.sort();
-        tmparr = tmparr.join();
-        if (!hashmap.has(tmparr)) {
-            hashmap.set(tmparr, [strs[i]]);
-        } else {
-            let tmp = hashmap.get(tmparr);
-            tmp.push(strs[i]);
-            hashmap.set(tmparr, tmp);
-        }
+  let hashmap = new Map();
+  for (let i = 0; i < len; i++) {
+    let tmparr = strs[i].split("");
+    tmparr.sort();
+    tmparr = tmparr.join();
+    if (!hashmap.has(tmparr)) {
+      hashmap.set(tmparr, [strs[i]]);
+    } else {
+      let tmp = hashmap.get(tmparr);
+      tmp.push(strs[i]);
+      hashmap.set(tmparr, tmp);
     }
+  }
 
-    let res = [];
-    console.log(hashmap);
-    for (let [key, value] of hashmap) {
-        res.push(value);
-    }
+  let res = [];
+  console.log(hashmap);
+  for (let [key, value] of hashmap) {
+    res.push(value);
+  }
 
-    return res;
+  return res;
 };

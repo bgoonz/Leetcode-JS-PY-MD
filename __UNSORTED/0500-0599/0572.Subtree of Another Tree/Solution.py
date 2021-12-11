@@ -11,10 +11,18 @@ class Solution:
                 return True
             if root1 is None or root2 is None:
                 return False
-            return root1.val == root2.val and same(root1.left, root2.left) and same(root1.right, root2.right)
+            return (
+                root1.val == root2.val
+                and same(root1.left, root2.left)
+                and same(root1.right, root2.right)
+            )
 
         if root is None and subRoot is None:
             return True
         if root is None or subRoot is None:
             return False
-        return same(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+        return (
+            same(root, subRoot)
+            or self.isSubtree(root.left, subRoot)
+            or self.isSubtree(root.right, subRoot)
+        )

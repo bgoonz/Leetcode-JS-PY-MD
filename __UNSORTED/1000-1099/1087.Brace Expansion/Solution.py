@@ -3,21 +3,21 @@ class Solution:
         def convert(s):
             if not s:
                 return
-            if s[0] == '{':
-                j = s.find('}')
-                items.append(s[1: j].split(','))
-                convert(s[j + 1:])
+            if s[0] == "{":
+                j = s.find("}")
+                items.append(s[1:j].split(","))
+                convert(s[j + 1 :])
             else:
-                j = s.find('{')
+                j = s.find("{")
                 if j != -1:
-                    items.append(s[: j].split(','))
+                    items.append(s[:j].split(","))
                     convert(s[j:])
                 else:
-                    items.append(s.split(','))
+                    items.append(s.split(","))
 
         def dfs(i, t):
             if i == len(items):
-                ans.append(''.join(t))
+                ans.append("".join(t))
                 return
             for c in items[i]:
                 t.append(c)

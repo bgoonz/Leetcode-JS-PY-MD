@@ -1,6 +1,5 @@
 class Solution:
     def validTicTacToe(self, board: List[str]) -> bool:
-
         def win(p):
             for i in range(3):
                 if board[i][0] == board[i][1] == board[i][2] == p:
@@ -14,15 +13,15 @@ class Solution:
         x, o = 0, 0
         for i in range(3):
             for j in range(3):
-                if board[i][j] == 'X':
+                if board[i][j] == "X":
                     x += 1
-                elif board[i][j] == 'O':
+                elif board[i][j] == "O":
                     o += 1
 
         if x != o and x - 1 != o:
             return False
 
-        if win('X') and x - 1 != o:
+        if win("X") and x - 1 != o:
             return False
 
-        return not (win('O') and x != o)
+        return not (win("O") and x != o)

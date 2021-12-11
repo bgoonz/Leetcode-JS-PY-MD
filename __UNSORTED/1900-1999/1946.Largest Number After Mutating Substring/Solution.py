@@ -10,4 +10,4 @@ class Solution:
                 continue
             elif find:
                 break
-        return ''.join(nums)
+        return "".join(nums)

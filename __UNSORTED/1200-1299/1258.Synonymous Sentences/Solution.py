@@ -18,7 +18,7 @@ class Solution:
             s[find(a)].add(a)
             s[find(b)].add(b)
         res = []
-        for word in text.split(' '):
+        for word in text.split(" "):
             if word not in p:
                 if not res:
                     res.append([word])
@@ -32,4 +32,4 @@ class Solution:
                         res.append([b])
                 else:
                     res = [a + [b] for a in res for b in words]
-        return [' '.join(sentence) for sentence in res]
+        return [" ".join(sentence) for sentence in res]

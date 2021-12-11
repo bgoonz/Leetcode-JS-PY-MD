@@ -13,7 +13,10 @@ class Solution:
             i += 1
         if i == len(words2):
             return True
-        while j < len(words2) and words1[len(words1) - 1 - j] == words2[len(words2) - 1 - j]:
+        while (
+            j < len(words2)
+            and words1[len(words1) - 1 - j] == words2[len(words2) - 1 - j]
+        ):
             j += 1
         if j == len(words2):
             return True

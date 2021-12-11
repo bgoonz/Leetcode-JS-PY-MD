@@ -2,7 +2,7 @@ class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
         def gcd(a, b) -> int:
             return a if b == 0 else gcd(b, a % b)
-            
+
         n = len(points)
         if n < 3:
             return n
@@ -19,7 +19,7 @@ class Solution:
                 g = gcd(delta_x, delta_y)
                 d_x = delta_x // g
                 d_y = delta_y // g
-                key = f'{d_x}.{d_y}'
+                key = f"{d_x}.{d_y}"
                 counter[key] += 1
                 t_max = max(t_max, counter[key])
             res = max(res, t_max + duplicate + 1)

@@ -4,7 +4,7 @@ class Solution:
         for word in words:
             t = [0] * 26
             for c in word:
-                t[ord(c) - ord('a')] += 1
+                t[ord(c) - ord("a")] += 1
             for i in range(26):
                 freq[i] = min(freq[i], t[i])
         res = []

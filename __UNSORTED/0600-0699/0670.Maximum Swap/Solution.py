@@ -5,7 +5,7 @@ class Solution:
         :rtype: int
         """
         # s为能得到的最大数
-        s = ''.join(sorted(list(str(num)), reverse=True))
+        s = "".join(sorted(list(str(num)), reverse=True))
         nums = str(num)
         if s == nums:
             return num
@@ -17,4 +17,4 @@ class Solution:
             if nums[i] == s[kai]:
                 loc = i
                 break
-        return int(s[:kai + 1] + nums[kai + 1:loc] + nums[kai] + nums[loc + 1:])
+        return int(s[: kai + 1] + nums[kai + 1 : loc] + nums[kai] + nums[loc + 1 :])

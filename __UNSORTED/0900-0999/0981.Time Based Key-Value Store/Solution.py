@@ -1,5 +1,4 @@
 class TimeMap:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -11,11 +10,10 @@ class TimeMap:
 
     def get(self, key: str, timestamp: int) -> str:
         if key not in self.ktv:
-            return ''
+            return ""
         tv = self.ktv[key]
         i = bisect.bisect_right(tv, (timestamp, chr(127)))
-        return tv[i - 1][1] if i else ''
-        
+        return tv[i - 1][1] if i else ""
 
 
 # Your TimeMap object will be instantiated and called as such:

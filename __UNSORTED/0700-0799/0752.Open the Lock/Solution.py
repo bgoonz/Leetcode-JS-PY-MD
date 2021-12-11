@@ -1,16 +1,16 @@
 class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
         s = set(deadends)
-        if target in s or '0000' in s:
+        if target in s or "0000" in s:
             return -1
-        if target == '0000':
+        if target == "0000":
             return 0
 
         def prev(c):
-            return '9' if c == '0' else str(int(c) - 1)
+            return "9" if c == "0" else str(int(c) - 1)
 
         def next(c):
-            return '0' if c == '9' else str(int(c) + 1)
+            return "0" if c == "9" else str(int(c) + 1)
 
         def get(t):
             res = []
@@ -18,14 +18,14 @@ class Solution:
             for i in range(4):
                 c = t[i]
                 t[i] = prev(c)
-                res.append(''.join(t))
+                res.append("".join(t))
                 t[i] = next(c)
-                res.append(''.join(t))
+                res.append("".join(t))
                 t[i] = c
             return res
 
         visited = set()
-        q = deque([('0000', 0)])
+        q = deque([("0000", 0)])
         while q:
             status, step = q.popleft()
             for t in get(status):

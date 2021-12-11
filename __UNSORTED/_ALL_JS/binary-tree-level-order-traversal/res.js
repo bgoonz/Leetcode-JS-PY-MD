@@ -9,16 +9,16 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrder = function(root) {
+var levelOrder = function (root) {
   if (!root) return [];
-  
+
   let queue = [root];
   const res = [];
 
-  while(queue.length) {
+  while (queue.length) {
     const tempQ = [];
     const tempR = [];
-    queue.map(e => {
+    queue.map((e) => {
       if (e.val !== undefined) tempR.push(e.val);
 
       if (e.left) {

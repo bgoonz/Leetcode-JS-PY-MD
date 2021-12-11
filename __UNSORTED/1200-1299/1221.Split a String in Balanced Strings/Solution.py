@@ -2,7 +2,7 @@ class Solution:
     def balancedStringSplit(self, s: str) -> int:
         n = res = 0
         for c in s:
-            if c == 'L':
+            if c == "L":
                 n += 1
             else:
                 n -= 1

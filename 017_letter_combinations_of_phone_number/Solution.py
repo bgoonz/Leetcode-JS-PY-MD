@@ -3,7 +3,7 @@ class Solution:
         n = len(digits)
         if n == 0:
             return []
-        chars = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+        chars = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
         strs = [chars[int(d) - 2] for d in digits]
         res = []
         for s in strs:

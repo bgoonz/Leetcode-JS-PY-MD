@@ -8,15 +8,15 @@ class Solution:
         for j in range(m):
             q = collections.deque()
             for i in range(n - 1, -1, -1):
-                if res[i][j] == '*':
+                if res[i][j] == "*":
                     q.clear()
                     continue
-                if res[i][j] == '.':
+                if res[i][j] == ".":
                     q.append(i)
                 else:
                     if not q:
                         continue
-                    res[q.popleft()][j] = '#'
-                    res[i][j] = '.'
+                    res[q.popleft()][j] = "#"
+                    res[i][j] = "."
                     q.append(i)
         return res

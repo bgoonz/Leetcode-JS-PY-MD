@@ -8,4 +8,4 @@ class Solution:
             res.append(str(carry % 10))
             carry //= 10
             n1, n2 = n1 - 1, n2 - 1
-        return ''.join(res[::-1])
+        return "".join(res[::-1])

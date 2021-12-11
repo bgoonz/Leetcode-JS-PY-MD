@@ -7,6 +7,6 @@ class Solution:
             t = []
             for i in range(m):
                 word = words[i]
-                t.append(word[j] if j < len(word) else ' ')
-            ans.append(''.join(t).rstrip())
+                t.append(word[j] if j < len(word) else " ")
+            ans.append("".join(t).rstrip())
         return ans
