@@ -1,18 +1,18 @@
 class StockSpanner {
-    stack: number[][];
-    constructor() {
-        this.stack = [];
-    }
+  stack: number[][];
+  constructor() {
+    this.stack = [];
+  }
 
-    next(price: number): number {
-        let ans = 1;
-        while (this.stack.length > 0 && this.stack[0][0] <= price) {
-            let [p, c] = this.stack.shift();
-            ans += c;
-        }
-        this.stack.unshift([price, ans]);
-        return ans;
+  next(price: number): number {
+    let ans = 1;
+    while (this.stack.length > 0 && this.stack[0][0] <= price) {
+      let [p, c] = this.stack.shift();
+      ans += c;
     }
+    this.stack.unshift([price, ans]);
+    return ans;
+  }
 }
 
 /**
