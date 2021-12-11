@@ -1,2944 +1,1536 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      body {
+    * { padding: 0; margin: 0; }
+    body {
         font-family: sans-serif;
         text-rendering: optimizespeed;
         background-color: #ffffff;
-      }
-      a {
+    }
+    a {
         color: #006ed3;
         text-decoration: none;
-      }
-      a:hover,
-      h1 a:hover {
+    }
+    a:hover,
+    h1 a:hover {
         color: #319cff;
-      }
-      header,
-      #summary {
+    }
+    header,
+    #summary {
         padding-left: 5%;
         padding-right: 5%;
-      }
-      th:first-child,
-      td:first-child {
+    }
+    th:first-child,
+    td:first-child {
         width: 5%;
-      }
-      th:last-child,
-      td:last-child {
+    }
+    th:last-child,
+    td:last-child {
         width: 5%;
-      }
-      header {
+    }
+    header {
         padding-top: 25px;
         padding-bottom: 15px;
         background-color: #f2f2f2;
-      }
-      h1 {
+    }
+    h1 {
         font-size: 20px;
         font-weight: normal;
         white-space: nowrap;
         overflow-x: hidden;
         text-overflow: ellipsis;
         color: #999;
-      }
-      h1 a {
+    }
+    h1 a {
         color: #000;
         margin: 0 4px;
-      }
-      h1 a:hover {
+    }
+    h1 a:hover {
         text-decoration: underline;
-      }
-      h1 a:first-child {
+    }
+    h1 a:first-child {
         margin: 0;
-      }
-      main {
+    }
+    main {
         display: block;
-      }
-      .meta {
+    }
+    .meta {
         font-size: 12px;
         font-family: Verdana, sans-serif;
-        border-bottom: 1px solid #9c9c9c;
+        border-bottom: 1px solid #9C9C9C;
         padding-top: 10px;
         padding-bottom: 10px;
-      }
-      .meta-item {
+    }
+    .meta-item {
         margin-right: 1em;
-      }
-      #filter {
+    }
+    #filter {
         padding: 4px;
-        border: 1px solid #ccc;
-      }
-      table {
+        border: 1px solid #CCC;
+    }
+    table {
         width: 100%;
         border-collapse: collapse;
-      }
-      tr {
+    }
+    tr {
         border-bottom: 1px dashed #dadada;
-      }
-      tbody tr:hover {
+    }
+    tbody tr:hover {
         background-color: #ffffec;
-      }
-      th,
-      td {
+    }
+    th,
+    td {
         text-align: left;
         padding: 10px 0;
-      }
-      th {
+    }
+    th {
         padding-top: 15px;
         padding-bottom: 15px;
         font-size: 16px;
         white-space: nowrap;
-      }
-      th a {
+    }
+    th a {
         color: black;
-      }
-      th svg {
+    }
+    th svg {
         vertical-align: middle;
-      }
-      td {
+    }
+    td {
         white-space: nowrap;
         font-size: 14px;
-      }
-      td:nth-child(2) {
+    }
+    td:nth-child(2) {
         width: 80%;
-      }
-      td:nth-child(3) {
+    }
+    td:nth-child(3) {
         padding: 0 20px 0 20px;
-      }
-      th:nth-child(4),
-      td:nth-child(4) {
+    }
+    th:nth-child(4),
+    td:nth-child(4) {
         text-align: right;
-      }
-      td:nth-child(2) svg {
+    }
+    td:nth-child(2) svg {
         position: absolute;
-      }
-      td .name {
+    }
+    td .name {
         margin-left: 1.75em;
         word-break: break-all;
         overflow-wrap: break-word;
         white-space: pre-wrap;
-      }
-      td .goup {
+    }
+    td .goup {
         margin-left: 1.75em;
         padding: 0;
         word-break: break-all;
         overflow-wrap: break-word;
         white-space: pre-wrap;
-      }
-      .icon {
+    }
+    .icon {
         margin-right: 5px;
-      }
-      tr.clickable {
-        cursor: pointer;
-      }
-      tr.clickable a {
-        display: block;
-      }
-      @media (max-width: 600px) {
+    }
+    tr.clickable { 
+        cursor: pointer; 
+    } 
+    tr.clickable a { 
+        display: block; 
+    } 
+    @media (max-width: 600px) {
         * {
-          font-size: 1.06rem;
+            font-size: 1.06rem;
         }
         .hideable {
-          display: none;
+            display: none;
         }
         td:nth-child(2) {
-          width: auto;
+            width: auto;
         }
         th:nth-child(3),
         td:nth-child(3) {
-          padding-right: 5%;
-          text-align: right;
+            padding-right: 5%;
+            text-align: right;
         }
         h1 {
-          color: #000;
+            color: #000;
         }
         h1 a {
-          margin: 0;
+            margin: 0;
         }
         #filter {
-          max-width: 100px;
+            max-width: 100px;
         }
-      }
+    }
     </style>
-  </head>
-  <body>
-    <svg
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      height="0"
-      width="0"
-      style="position: absolute"
-    >
-      <defs>
+</head>
+<body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="0" width="0" style="position: absolute;">
+    <defs>
         <!-- Go-up -->
         <g id="go-up">
-          <path
-            d="M10,9V5L3,12L10,19V14.9C15,14.9 18.5,16.5 21,20C20,15 17,10 10,9Z"
-            fill="#696969"
-          />
+            <path d="M10,9V5L3,12L10,19V14.9C15,14.9 18.5,16.5 21,20C20,15 17,10 10,9Z" fill="#696969"/>
         </g>
         <!-- Folder -->
         <g id="folder" fill-rule="nonzero" fill="none">
-          <path
-            d="M285.22 37.55h-142.6L110.9 0H31.7C14.25 0 0 16.9 0 37.55v75.1h316.92V75.1c0-20.65-14.26-37.55-31.7-37.55z"
-            fill="#FFA000"
-          />
-          <path
-            d="M285.22 36H31.7C14.25 36 0 50.28 0 67.74v158.7c0 17.47 14.26 31.75 31.7 31.75H285.2c17.44 0 31.7-14.3 31.7-31.75V67.75c0-17.47-14.26-31.75-31.7-31.75z"
-            fill="#FFCA28"
-          />
+            <path d="M285.22 37.55h-142.6L110.9 0H31.7C14.25 0 0 16.9 0 37.55v75.1h316.92V75.1c0-20.65-14.26-37.55-31.7-37.55z" fill="#FFA000"/>
+            <path d="M285.22 36H31.7C14.25 36 0 50.28 0 67.74v158.7c0 17.47 14.26 31.75 31.7 31.75H285.2c17.44 0 31.7-14.3 31.7-31.75V67.75c0-17.47-14.26-31.75-31.7-31.75z" fill="#FFCA28"/>
         </g>
-        <g
-          id="folder-shortcut"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-        >
-          <g id="folder-shortcut-group" fill-rule="nonzero">
-            <g id="folder-shortcut-shape">
-              <path
-                d="M285.224876,37.5486902 L142.612438,37.5486902 L110.920785,0 L31.6916529,0 C14.2612438,0 0,16.8969106 0,37.5486902 L0,112.646071 L316.916529,112.646071 L316.916529,75.0973805 C316.916529,54.4456008 302.655285,37.5486902 285.224876,37.5486902 Z"
-                id="Shape"
-                fill="#FFA000"
-              ></path>
-              <path
-                d="M285.224876,36 L31.6916529,36 C14.2612438,36 0,50.2838568 0,67.7419039 L0,226.451424 C0,243.909471 14.2612438,258.193328 31.6916529,258.193328 L285.224876,258.193328 C302.655285,258.193328 316.916529,243.909471 316.916529,226.451424 L316.916529,67.7419039 C316.916529,50.2838568 302.655285,36 285.224876,36 Z"
-                id="Shape"
-                fill="#FFCA28"
-              ></path>
+        <g id="folder-shortcut" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="folder-shortcut-group" fill-rule="nonzero">
+                <g id="folder-shortcut-shape">
+                    <path d="M285.224876,37.5486902 L142.612438,37.5486902 L110.920785,0 L31.6916529,0 C14.2612438,0 0,16.8969106 0,37.5486902 L0,112.646071 L316.916529,112.646071 L316.916529,75.0973805 C316.916529,54.4456008 302.655285,37.5486902 285.224876,37.5486902 Z" id="Shape" fill="#FFA000"></path>
+                    <path d="M285.224876,36 L31.6916529,36 C14.2612438,36 0,50.2838568 0,67.7419039 L0,226.451424 C0,243.909471 14.2612438,258.193328 31.6916529,258.193328 L285.224876,258.193328 C302.655285,258.193328 316.916529,243.909471 316.916529,226.451424 L316.916529,67.7419039 C316.916529,50.2838568 302.655285,36 285.224876,36 Z" id="Shape" fill="#FFCA28"></path>
+                </g>
+                <path d="M126.154134,250.559184 C126.850974,251.883673 127.300549,253.006122 127.772602,254.106122 C128.469442,255.206122 128.919016,256.104082 129.638335,257.002041 C130.559962,258.326531 131.728855,259 133.100057,259 C134.493737,259 135.415364,258.55102 136.112204,257.67551 C136.809044,257.002041 137.258619,255.902041 137.258619,254.577551 C137.258619,253.904082 137.258619,252.804082 137.033832,251.457143 C136.786566,249.908163 136.561779,249.032653 136.561779,248.583673 C136.089726,242.814286 135.864939,237.920408 135.864939,233.273469 C135.864939,225.057143 136.786566,217.514286 138.180246,210.846939 C139.798713,204.202041 141.889234,198.634694 144.429328,193.763265 C147.216689,188.869388 150.678411,184.873469 154.836973,181.326531 C158.995535,177.779592 163.626149,174.883673 168.481552,172.661224 C173.336954,170.438776 179.113983,168.665306 185.587852,167.340816 C192.061722,166.218367 198.760378,165.342857 205.481514,164.669388 C212.18017,164.220408 219.598146,163.995918 228.162535,163.995918 L246.055591,163.995918 L246.055591,195.514286 C246.055591,197.736735 246.752431,199.510204 248.370899,201.059184 C250.214153,202.608163 252.079886,203.506122 254.372715,203.506122 C256.463236,203.506122 258.531277,202.608163 260.172223,201.059184 L326.102289,137.797959 C327.720757,136.24898 328.642384,134.47551 328.642384,132.253061 C328.642384,130.030612 327.720757,128.257143 326.102289,126.708163 L260.172223,63.4469388 C258.553756,61.8979592 256.463236,61 254.395194,61 C252.079886,61 250.236632,61.8979592 248.393377,63.4469388 C246.77491,64.9959184 246.07807,66.7693878 246.07807,68.9918367 L246.07807,100.510204 L228.162535,100.510204 C166.863084,100.510204 129.166282,117.167347 115.274437,150.459184 C110.666301,161.54898 108.350993,175.310204 108.350993,191.742857 C108.350993,205.279592 113.903236,223.912245 124.760454,247.438776 C125.00772,248.112245 125.457294,249.010204 126.154134,250.559184 Z" id="Shape" fill="#FFFFFF" transform="translate(218.496689, 160.000000) scale(-1, 1) translate(-218.496689, -160.000000) "></path>
             </g>
-            <path
-              d="M126.154134,250.559184 C126.850974,251.883673 127.300549,253.006122 127.772602,254.106122 C128.469442,255.206122 128.919016,256.104082 129.638335,257.002041 C130.559962,258.326531 131.728855,259 133.100057,259 C134.493737,259 135.415364,258.55102 136.112204,257.67551 C136.809044,257.002041 137.258619,255.902041 137.258619,254.577551 C137.258619,253.904082 137.258619,252.804082 137.033832,251.457143 C136.786566,249.908163 136.561779,249.032653 136.561779,248.583673 C136.089726,242.814286 135.864939,237.920408 135.864939,233.273469 C135.864939,225.057143 136.786566,217.514286 138.180246,210.846939 C139.798713,204.202041 141.889234,198.634694 144.429328,193.763265 C147.216689,188.869388 150.678411,184.873469 154.836973,181.326531 C158.995535,177.779592 163.626149,174.883673 168.481552,172.661224 C173.336954,170.438776 179.113983,168.665306 185.587852,167.340816 C192.061722,166.218367 198.760378,165.342857 205.481514,164.669388 C212.18017,164.220408 219.598146,163.995918 228.162535,163.995918 L246.055591,163.995918 L246.055591,195.514286 C246.055591,197.736735 246.752431,199.510204 248.370899,201.059184 C250.214153,202.608163 252.079886,203.506122 254.372715,203.506122 C256.463236,203.506122 258.531277,202.608163 260.172223,201.059184 L326.102289,137.797959 C327.720757,136.24898 328.642384,134.47551 328.642384,132.253061 C328.642384,130.030612 327.720757,128.257143 326.102289,126.708163 L260.172223,63.4469388 C258.553756,61.8979592 256.463236,61 254.395194,61 C252.079886,61 250.236632,61.8979592 248.393377,63.4469388 C246.77491,64.9959184 246.07807,66.7693878 246.07807,68.9918367 L246.07807,100.510204 L228.162535,100.510204 C166.863084,100.510204 129.166282,117.167347 115.274437,150.459184 C110.666301,161.54898 108.350993,175.310204 108.350993,191.742857 C108.350993,205.279592 113.903236,223.912245 124.760454,247.438776 C125.00772,248.112245 125.457294,249.010204 126.154134,250.559184 Z"
-              id="Shape"
-              fill="#FFFFFF"
-              transform="translate(218.496689, 160.000000) scale(-1, 1) translate(-218.496689, -160.000000) "
-            ></path>
-          </g>
         </g>
         <!-- File -->
-        <g
-          id="file"
-          stroke="#000"
-          stroke-width="25"
-          fill="#FFF"
-          fill-rule="evenodd"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M13 24.12v274.76c0 6.16 5.87 11.12 13.17 11.12H239c7.3 0 13.17-4.96 13.17-11.12V136.15S132.6 13 128.37 13H26.17C18.87 13 13 17.96 13 24.12z"
-          />
-          <path
-            d="M129.37 13L129 113.9c0 10.58 7.26 19.1 16.27 19.1H249L129.37 13z"
-          />
+        <g id="file" stroke="#000" stroke-width="25" fill="#FFF" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 24.12v274.76c0 6.16 5.87 11.12 13.17 11.12H239c7.3 0 13.17-4.96 13.17-11.12V136.15S132.6 13 128.37 13H26.17C18.87 13 13 17.96 13 24.12z"/>
+            <path d="M129.37 13L129 113.9c0 10.58 7.26 19.1 16.27 19.1H249L129.37 13z"/>
         </g>
-        <g
-          id="file-shortcut"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-        >
-          <g
-            id="file-shortcut-group"
-            transform="translate(13.000000, 13.000000)"
-          >
-            <g
-              id="file-shortcut-shape"
-              stroke="#000000"
-              stroke-width="25"
-              fill="#FFFFFF"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M0,11.1214886 L0,285.878477 C0,292.039924 5.87498876,296.999983 13.1728373,296.999983 L225.997983,296.999983 C233.295974,296.999983 239.17082,292.039942 239.17082,285.878477 L239.17082,123.145388 C239.17082,123.145388 119.58541,2.84217094e-14 115.369423,2.84217094e-14 L13.1728576,2.84217094e-14 C5.87500907,-1.71479982e-05 0,4.96022995 0,11.1214886 Z"
-                id="rect1171"
-              ></path>
-              <path
-                d="M116.37005,0 L116,100.904964 C116,111.483663 123.258008,120 132.273377,120 L236,120 L116.37005,0 L116.37005,0 Z"
-                id="rect1794"
-              ></path>
+        <g id="file-shortcut" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="file-shortcut-group" transform="translate(13.000000, 13.000000)">
+                <g id="file-shortcut-shape" stroke="#000000" stroke-width="25" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M0,11.1214886 L0,285.878477 C0,292.039924 5.87498876,296.999983 13.1728373,296.999983 L225.997983,296.999983 C233.295974,296.999983 239.17082,292.039942 239.17082,285.878477 L239.17082,123.145388 C239.17082,123.145388 119.58541,2.84217094e-14 115.369423,2.84217094e-14 L13.1728576,2.84217094e-14 C5.87500907,-1.71479982e-05 0,4.96022995 0,11.1214886 Z" id="rect1171"></path>
+                    <path d="M116.37005,0 L116,100.904964 C116,111.483663 123.258008,120 132.273377,120 L236,120 L116.37005,0 L116.37005,0 Z" id="rect1794"></path>
+                </g>
+                <path d="M47.803141,294.093878 C48.4999811,295.177551 48.9495553,296.095918 49.4216083,296.995918 C50.1184484,297.895918 50.5680227,298.630612 51.2873415,299.365306 C52.2089688,300.44898 53.3778619,301 54.7490634,301 C56.1427436,301 57.0643709,300.632653 57.761211,299.916327 C58.4580511,299.365306 58.9076254,298.465306 58.9076254,297.381633 C58.9076254,296.830612 58.9076254,295.930612 58.6828382,294.828571 C58.4355724,293.561224 58.2107852,292.844898 58.2107852,292.477551 C57.7387323,287.757143 57.5139451,283.753061 57.5139451,279.95102 C57.5139451,273.228571 58.4355724,267.057143 59.8292526,261.602041 C61.44772,256.165306 63.5382403,251.610204 66.0783349,247.62449 C68.8656954,243.620408 72.3274172,240.35102 76.4859792,237.44898 C80.6445412,234.546939 85.2751561,232.177551 90.1305582,230.359184 C94.9859603,228.540816 100.76299,227.089796 107.236859,226.006122 C113.710728,225.087755 120.409385,224.371429 127.13052,223.820408 C133.829177,223.453061 141.247152,223.269388 149.811542,223.269388 L167.704598,223.269388 L167.704598,249.057143 C167.704598,250.87551 168.401438,252.326531 170.019905,253.593878 C171.86316,254.861224 173.728893,255.595918 176.021722,255.595918 C178.112242,255.595918 180.180284,254.861224 181.82123,253.593878 L247.751296,201.834694 C249.369763,200.567347 250.291391,199.116327 250.291391,197.297959 C250.291391,195.479592 249.369763,194.028571 247.751296,192.761224 L181.82123,141.002041 C180.202763,139.734694 178.112242,139 176.044201,139 C173.728893,139 171.885639,139.734694 170.042384,141.002041 C168.423917,142.269388 167.727077,143.720408 167.727077,145.538776 L167.727077,171.326531 L149.811542,171.326531 C88.5120908,171.326531 50.8152886,184.955102 36.9234437,212.193878 C32.3153075,221.267347 30,232.526531 30,245.971429 C30,257.046939 35.5522422,272.291837 46.4094607,291.540816 C46.6567266,292.091837 47.1063009,292.826531 47.803141,294.093878 Z" id="Shape-Copy" fill="#000000" fill-rule="nonzero" transform="translate(140.145695, 220.000000) scale(-1, 1) translate(-140.145695, -220.000000) "></path>
             </g>
-            <path
-              d="M47.803141,294.093878 C48.4999811,295.177551 48.9495553,296.095918 49.4216083,296.995918 C50.1184484,297.895918 50.5680227,298.630612 51.2873415,299.365306 C52.2089688,300.44898 53.3778619,301 54.7490634,301 C56.1427436,301 57.0643709,300.632653 57.761211,299.916327 C58.4580511,299.365306 58.9076254,298.465306 58.9076254,297.381633 C58.9076254,296.830612 58.9076254,295.930612 58.6828382,294.828571 C58.4355724,293.561224 58.2107852,292.844898 58.2107852,292.477551 C57.7387323,287.757143 57.5139451,283.753061 57.5139451,279.95102 C57.5139451,273.228571 58.4355724,267.057143 59.8292526,261.602041 C61.44772,256.165306 63.5382403,251.610204 66.0783349,247.62449 C68.8656954,243.620408 72.3274172,240.35102 76.4859792,237.44898 C80.6445412,234.546939 85.2751561,232.177551 90.1305582,230.359184 C94.9859603,228.540816 100.76299,227.089796 107.236859,226.006122 C113.710728,225.087755 120.409385,224.371429 127.13052,223.820408 C133.829177,223.453061 141.247152,223.269388 149.811542,223.269388 L167.704598,223.269388 L167.704598,249.057143 C167.704598,250.87551 168.401438,252.326531 170.019905,253.593878 C171.86316,254.861224 173.728893,255.595918 176.021722,255.595918 C178.112242,255.595918 180.180284,254.861224 181.82123,253.593878 L247.751296,201.834694 C249.369763,200.567347 250.291391,199.116327 250.291391,197.297959 C250.291391,195.479592 249.369763,194.028571 247.751296,192.761224 L181.82123,141.002041 C180.202763,139.734694 178.112242,139 176.044201,139 C173.728893,139 171.885639,139.734694 170.042384,141.002041 C168.423917,142.269388 167.727077,143.720408 167.727077,145.538776 L167.727077,171.326531 L149.811542,171.326531 C88.5120908,171.326531 50.8152886,184.955102 36.9234437,212.193878 C32.3153075,221.267347 30,232.526531 30,245.971429 C30,257.046939 35.5522422,272.291837 46.4094607,291.540816 C46.6567266,292.091837 47.1063009,292.826531 47.803141,294.093878 Z"
-              id="Shape-Copy"
-              fill="#000000"
-              fill-rule="nonzero"
-              transform="translate(140.145695, 220.000000) scale(-1, 1) translate(-140.145695, -220.000000) "
-            ></path>
-          </g>
         </g>
-      </defs>
+    </defs>
     </svg>
-    <header>
-      <h1>1400-1499</h1>
-    </header>
-    <main>
-      <div class="listing">
-        <table aria-describedby="summary">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Size</th>
-              <th class="hideable">Modified</th>
-              <th class="hideable"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="clickable">
-              <td></td>
-              <td>
-                <a href=".."
-                  ><svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 24 24"
-                  >
-                    <use xlink:href="#go-up"></use>
-                  </svg>
-                  <span class="goup">..</span></a
-                >
-              </td>
-              <td>&mdash;</td>
-              <td class="hideable">&mdash;</td>
-              <td class="hideable"></td>
-            </tr>
-
-            <tr class="file">
-              <td></td>
-              <td>
+<header>
+    <h1>1400-1499</h1>
+                 </header>
+                 <main>
+                 <div class="listing">
+                     <table aria-describedby="summary">
+                         <thead>
+                         <tr>
+                             <th></th>
+                             <th>Name</th>
+                             <th>Size</th>
+                             <th class="hideable">
+                                 Modified
+                             </th>
+                             <th class="hideable"></th>
+                         </tr>
+                         </thead>
+                         <tbody>
+                         <tr class="clickable">
+                             <td></td>
+                             <td><a href=".."><svg width="1.5em" height="1em" version="1.1" viewBox="0 0 24 24"><use xlink:href="#go-up"></use></svg>
+                 <span class="goup">..</span></a></td>
+                             <td>&mdash;</td>
+                             <td class="hideable">&mdash;</td>
+                             <td class="hideable"></td>
+                         </tr>
+                 
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1400.Construct%20K%20Palindrome%20Strings/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1400.Construct K Palindrome Strings</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1400.Construct K Palindrome Strings</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1401.Circle%20and%20Rectangle%20Overlapping/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1401.Circle and Rectangle Overlapping</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1401.Circle and Rectangle Overlapping</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1402.Reducing%20Dishes/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1402.Reducing Dishes</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1402.Reducing Dishes</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1403.Minimum%20Subsequence%20in%20Non-Increasing%20Order/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1403.Minimum Subsequence in Non-Increasing Order</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1403.Minimum%20Subsequence%20in%20Non-Increasing%20Order/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1403.Minimum Subsequence in Non-Increasing Order</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1404.Number%20of%20Steps%20to%20Reduce%20a%20Number%20in%20Binary%20Representation%20to%20One/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1404.Number of Steps to Reduce a Number in Binary
-                    Representation to One</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1404.Number%20of%20Steps%20to%20Reduce%20a%20Number%20in%20Binary%20Representation%20to%20One/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1404.Number of Steps to Reduce a Number in Binary Representation to One</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1405.Longest%20Happy%20String/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1405.Longest Happy String</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1405.Longest Happy String</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1406.Stone%20Game%20III/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1406.Stone Game III</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1406.Stone Game III</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1407.Top%20Travellers/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1407.Top Travellers</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1407.Top Travellers</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1408.String%20Matching%20in%20an%20Array/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1408.String Matching in an Array</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1408.String Matching in an Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1409.Queries%20on%20a%20Permutation%20With%20Key/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1409.Queries on a Permutation With Key</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1409.Queries on a Permutation With Key</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1410.HTML%20Entity%20Parser/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1410.HTML Entity Parser</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1410.HTML Entity Parser</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1411.Number%20of%20Ways%20to%20Paint%20N%20%C3%97%203%20Grid/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1411.Number of Ways to Paint N × 3 Grid</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1411.Number%20of%20Ways%20to%20Paint%20N%20%C3%97%203%20Grid/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1411.Number of Ways to Paint N × 3 Grid</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1412.Find%20the%20Quiet%20Students%20in%20All%20Exams/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1412.Find the Quiet Students in All Exams</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1412.Find%20the%20Quiet%20Students%20in%20All%20Exams/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1412.Find the Quiet Students in All Exams</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1413.Minimum%20Value%20to%20Get%20Positive%20Step%20by%20Step%20Sum/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1413.Minimum Value to Get Positive Step by Step Sum</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1413.Minimum%20Value%20to%20Get%20Positive%20Step%20by%20Step%20Sum/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1413.Minimum Value to Get Positive Step by Step Sum</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1414.Find%20the%20Minimum%20Number%20of%20Fibonacci%20Numbers%20Whose%20Sum%20Is%20K/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1414.Find the Minimum Number of Fibonacci Numbers Whose Sum
-                    Is K</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1414.Find%20the%20Minimum%20Number%20of%20Fibonacci%20Numbers%20Whose%20Sum%20Is%20K/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1414.Find the Minimum Number of Fibonacci Numbers Whose Sum Is K</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1415.The%20k-th%20Lexicographical%20String%20of%20All%20Happy%20Strings%20of%20Length%20n/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1415.The k-th Lexicographical String of All Happy Strings
-                    of Length n</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1415.The%20k-th%20Lexicographical%20String%20of%20All%20Happy%20Strings%20of%20Length%20n/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1415.The k-th Lexicographical String of All Happy Strings of Length n</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1416.Restore%20The%20Array/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1416.Restore The Array</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1416.Restore The Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1417.Reformat%20The%20String/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1417.Reformat The String</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1417.Reformat The String</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1418.Display%20Table%20of%20Food%20Orders%20in%20a%20Restaurant/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1418.Display Table of Food Orders in a Restaurant</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1418.Display%20Table%20of%20Food%20Orders%20in%20a%20Restaurant/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1418.Display Table of Food Orders in a Restaurant</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1419.Minimum%20Number%20of%20Frogs%20Croaking/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1419.Minimum Number of Frogs Croaking</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1419.Minimum Number of Frogs Croaking</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1420.Build%20Array%20Where%20You%20Can%20Find%20The%20Maximum%20Exactly%20K%20Comparisons/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1420.Build Array Where You Can Find The Maximum Exactly K
-                    Comparisons</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1420.Build%20Array%20Where%20You%20Can%20Find%20The%20Maximum%20Exactly%20K%20Comparisons/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1420.Build Array Where You Can Find The Maximum Exactly K Comparisons</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1421.NPV%20Queries/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1421.NPV Queries</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1421.NPV Queries</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1422.Maximum%20Score%20After%20Splitting%20a%20String/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1422.Maximum Score After Splitting a String</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1422.Maximum%20Score%20After%20Splitting%20a%20String/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1422.Maximum Score After Splitting a String</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1423.Maximum%20Points%20You%20Can%20Obtain%20from%20Cards/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1423.Maximum Points You Can Obtain from Cards</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1423.Maximum%20Points%20You%20Can%20Obtain%20from%20Cards/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1423.Maximum Points You Can Obtain from Cards</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1424.Diagonal%20Traverse%20II/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1424.Diagonal Traverse II</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1424.Diagonal Traverse II</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1425.Constrained%20Subsequence%20Sum/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1425.Constrained Subsequence Sum</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1425.Constrained Subsequence Sum</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1426.Counting%20Elements/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1426.Counting Elements</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1426.Counting Elements</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1427.Perform%20String%20Shifts/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1427.Perform String Shifts</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1427.Perform String Shifts</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1428.Leftmost%20Column%20with%20at%20Least%20a%20One/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1428.Leftmost Column with at Least a One</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1428.Leftmost Column with at Least a One</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1429.First%20Unique%20Number/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1429.First Unique Number</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1429.First Unique Number</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1430.Check%20If%20a%20String%20Is%20a%20Valid%20Sequence%20from%20Root%20to%20Leaves%20Path%20in%20a%20Binary%20Tree/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1430.Check If a String Is a Valid Sequence from Root to
-                    Leaves Path in a Binary Tree</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1430.Check%20If%20a%20String%20Is%20a%20Valid%20Sequence%20from%20Root%20to%20Leaves%20Path%20in%20a%20Binary%20Tree/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1430.Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1431.Kids%20With%20the%20Greatest%20Number%20of%20Candies/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1431.Kids With the Greatest Number of Candies</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1431.Kids%20With%20the%20Greatest%20Number%20of%20Candies/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1431.Kids With the Greatest Number of Candies</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1432.Max%20Difference%20You%20Can%20Get%20From%20Changing%20an%20Integer/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1432.Max Difference You Can Get From Changing an
-                    Integer</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1432.Max%20Difference%20You%20Can%20Get%20From%20Changing%20an%20Integer/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1432.Max Difference You Can Get From Changing an Integer</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1433.Check%20If%20a%20String%20Can%20Break%20Another%20String/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1433.Check If a String Can Break Another String</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1433.Check%20If%20a%20String%20Can%20Break%20Another%20String/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1433.Check If a String Can Break Another String</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1434.Number%20of%20Ways%20to%20Wear%20Different%20Hats%20to%20Each%20Other/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1434.Number of Ways to Wear Different Hats to Each
-                    Other</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1434.Number%20of%20Ways%20to%20Wear%20Different%20Hats%20to%20Each%20Other/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1434.Number of Ways to Wear Different Hats to Each Other</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1435.Create%20a%20Session%20Bar%20Chart/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1435.Create a Session Bar Chart</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1435.Create a Session Bar Chart</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1436.Destination%20City/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1436.Destination City</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1436.Destination City</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1437.Check%20If%20All%201%27s%20Are%20at%20Least%20Length%20K%20Places%20Away/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1437.Check If All 1's Are at Least Length K Places
-                    Away</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1437.Check%20If%20All%201%27s%20Are%20at%20Least%20Length%20K%20Places%20Away/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1437.Check If All 1's Are at Least Length K Places Away</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1438.Longest%20Continuous%20Subarray%20With%20Absolute%20Diff%20Less%20Than%20or%20Equal%20to%20Limit/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1438.Longest Continuous Subarray With Absolute Diff Less
-                    Than or Equal to Limit</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1438.Longest%20Continuous%20Subarray%20With%20Absolute%20Diff%20Less%20Than%20or%20Equal%20to%20Limit/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1438.Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1439.Find%20the%20Kth%20Smallest%20Sum%20of%20a%20Matrix%20With%20Sorted%20Rows/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1439.Find the Kth Smallest Sum of a Matrix With Sorted
-                    Rows</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1439.Find%20the%20Kth%20Smallest%20Sum%20of%20a%20Matrix%20With%20Sorted%20Rows/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1439.Find the Kth Smallest Sum of a Matrix With Sorted Rows</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1440.Evaluate%20Boolean%20Expression/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1440.Evaluate Boolean Expression</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1440.Evaluate Boolean Expression</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1441.Build%20an%20Array%20With%20Stack%20Operations/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1441.Build an Array With Stack Operations</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1441.Build an Array With Stack Operations</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1442.Count%20Triplets%20That%20Can%20Form%20Two%20Arrays%20of%20Equal%20XOR/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1442.Count Triplets That Can Form Two Arrays of Equal
-                    XOR</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1442.Count%20Triplets%20That%20Can%20Form%20Two%20Arrays%20of%20Equal%20XOR/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1442.Count Triplets That Can Form Two Arrays of Equal XOR</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1443.Minimum%20Time%20to%20Collect%20All%20Apples%20in%20a%20Tree/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1443.Minimum Time to Collect All Apples in a Tree</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1443.Minimum%20Time%20to%20Collect%20All%20Apples%20in%20a%20Tree/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1443.Minimum Time to Collect All Apples in a Tree</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1444.Number%20of%20Ways%20of%20Cutting%20a%20Pizza/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1444.Number of Ways of Cutting a Pizza</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1444.Number of Ways of Cutting a Pizza</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1445.Apples%20%26%20Oranges/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1445.Apples & Oranges</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1445.Apples & Oranges</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1446.Consecutive%20Characters/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1446.Consecutive Characters</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1446.Consecutive Characters</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1447.Simplified%20Fractions/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1447.Simplified Fractions</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1447.Simplified Fractions</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1448.Count%20Good%20Nodes%20in%20Binary%20Tree/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1448.Count Good Nodes in Binary Tree</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1448.Count Good Nodes in Binary Tree</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1449.Form%20Largest%20Integer%20With%20Digits%20That%20Add%20up%20to%20Target/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1449.Form Largest Integer With Digits That Add up to
-                    Target</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1449.Form%20Largest%20Integer%20With%20Digits%20That%20Add%20up%20to%20Target/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1449.Form Largest Integer With Digits That Add up to Target</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1450.Number%20of%20Students%20Doing%20Homework%20at%20a%20Given%20Time/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1450.Number of Students Doing Homework at a Given
-                    Time</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1450.Number%20of%20Students%20Doing%20Homework%20at%20a%20Given%20Time/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1450.Number of Students Doing Homework at a Given Time</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1451.Rearrange%20Words%20in%20a%20Sentence/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1451.Rearrange Words in a Sentence</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1451.Rearrange Words in a Sentence</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1452.People%20Whose%20List%20of%20Favorite%20Companies%20Is%20Not%20a%20Subset%20of%20Another%20List/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1452.People Whose List of Favorite Companies Is Not a
-                    Subset of Another List</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1452.People%20Whose%20List%20of%20Favorite%20Companies%20Is%20Not%20a%20Subset%20of%20Another%20List/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1452.People Whose List of Favorite Companies Is Not a Subset of Another List</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1453.Maximum%20Number%20of%20Darts%20Inside%20of%20a%20Circular%20Dartboard/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1453.Maximum Number of Darts Inside of a Circular
-                    Dartboard</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1453.Maximum%20Number%20of%20Darts%20Inside%20of%20a%20Circular%20Dartboard/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1453.Maximum Number of Darts Inside of a Circular Dartboard</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1454.Active%20Users/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1454.Active Users</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1454.Active Users</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1455.Check%20If%20a%20Word%20Occurs%20As%20a%20Prefix%20of%20Any%20Word%20in%20a%20Sentence/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1455.Check If a Word Occurs As a Prefix of Any Word in a
-                    Sentence</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1455.Check%20If%20a%20Word%20Occurs%20As%20a%20Prefix%20of%20Any%20Word%20in%20a%20Sentence/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1455.Check If a Word Occurs As a Prefix of Any Word in a Sentence</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1456.Maximum%20Number%20of%20Vowels%20in%20a%20Substring%20of%20Given%20Length/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1456.Maximum Number of Vowels in a Substring of Given
-                    Length</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1456.Maximum%20Number%20of%20Vowels%20in%20a%20Substring%20of%20Given%20Length/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1456.Maximum Number of Vowels in a Substring of Given Length</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1457.Pseudo-Palindromic%20Paths%20in%20a%20Binary%20Tree/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1457.Pseudo-Palindromic Paths in a Binary Tree</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1457.Pseudo-Palindromic%20Paths%20in%20a%20Binary%20Tree/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1457.Pseudo-Palindromic Paths in a Binary Tree</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1458.Max%20Dot%20Product%20of%20Two%20Subsequences/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1458.Max Dot Product of Two Subsequences</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1458.Max Dot Product of Two Subsequences</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1459.Rectangles%20Area/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1459.Rectangles Area</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1459.Rectangles Area</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1460.Make%20Two%20Arrays%20Equal%20by%20Reversing%20Sub-arrays/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1460.Make Two Arrays Equal by Reversing Sub-arrays</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1460.Make%20Two%20Arrays%20Equal%20by%20Reversing%20Sub-arrays/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1460.Make Two Arrays Equal by Reversing Sub-arrays</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1461.Check%20If%20a%20String%20Contains%20All%20Binary%20Codes%20of%20Size%20K/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1461.Check If a String Contains All Binary Codes of Size
-                    K</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1461.Check%20If%20a%20String%20Contains%20All%20Binary%20Codes%20of%20Size%20K/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1461.Check If a String Contains All Binary Codes of Size K</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1462.Course%20Schedule%20IV/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1462.Course Schedule IV</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1462.Course Schedule IV</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1463.Cherry%20Pickup%20II/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1463.Cherry Pickup II</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1463.Cherry Pickup II</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1464.Maximum%20Product%20of%20Two%20Elements%20in%20an%20Array/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1464.Maximum Product of Two Elements in an Array</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1464.Maximum%20Product%20of%20Two%20Elements%20in%20an%20Array/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1464.Maximum Product of Two Elements in an Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1465.Maximum%20Area%20of%20a%20Piece%20of%20Cake%20After%20Horizontal%20and%20Vertical%20Cuts/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1465.Maximum Area of a Piece of Cake After Horizontal and
-                    Vertical Cuts</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1465.Maximum%20Area%20of%20a%20Piece%20of%20Cake%20After%20Horizontal%20and%20Vertical%20Cuts/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1465.Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1466.Reorder%20Routes%20to%20Make%20All%20Paths%20Lead%20to%20the%20City%20Zero/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1466.Reorder Routes to Make All Paths Lead to the City
-                    Zero</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1466.Reorder%20Routes%20to%20Make%20All%20Paths%20Lead%20to%20the%20City%20Zero/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1466.Reorder Routes to Make All Paths Lead to the City Zero</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1467.Probability%20of%20a%20Two%20Boxes%20Having%20The%20Same%20Number%20of%20Distinct%20Balls/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1467.Probability of a Two Boxes Having The Same Number of
-                    Distinct Balls</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1467.Probability%20of%20a%20Two%20Boxes%20Having%20The%20Same%20Number%20of%20Distinct%20Balls/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1467.Probability of a Two Boxes Having The Same Number of Distinct Balls</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1468.Calculate%20Salaries/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1468.Calculate Salaries</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1468.Calculate Salaries</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1469.Find%20All%20The%20Lonely%20Nodes/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1469.Find All The Lonely Nodes</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1469.Find All The Lonely Nodes</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1470.Shuffle%20the%20Array/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1470.Shuffle the Array</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1470.Shuffle the Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1471.The%20k%20Strongest%20Values%20in%20an%20Array/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1471.The k Strongest Values in an Array</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1471.The k Strongest Values in an Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1472.Design%20Browser%20History/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1472.Design Browser History</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1472.Design Browser History</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1473.Paint%20House%20III/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1473.Paint House III</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1473.Paint House III</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1474.Delete%20N%20Nodes%20After%20M%20Nodes%20of%20a%20Linked%20List/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1474.Delete N Nodes After M Nodes of a Linked List</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1474.Delete%20N%20Nodes%20After%20M%20Nodes%20of%20a%20Linked%20List/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1474.Delete N Nodes After M Nodes of a Linked List</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1475.Final%20Prices%20With%20a%20Special%20Discount%20in%20a%20Shop/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1475.Final Prices With a Special Discount in a Shop</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1475.Final%20Prices%20With%20a%20Special%20Discount%20in%20a%20Shop/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1475.Final Prices With a Special Discount in a Shop</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1476.Subrectangle%20Queries/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1476.Subrectangle Queries</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1476.Subrectangle Queries</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1477.Find%20Two%20Non-overlapping%20Sub-arrays%20Each%20With%20Target%20Sum/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1477.Find Two Non-overlapping Sub-arrays Each With Target
-                    Sum</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1477.Find%20Two%20Non-overlapping%20Sub-arrays%20Each%20With%20Target%20Sum/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1477.Find Two Non-overlapping Sub-arrays Each With Target Sum</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1478.Allocate%20Mailboxes/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1478.Allocate Mailboxes</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1478.Allocate Mailboxes</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1479.Sales%20by%20Day%20of%20the%20Week/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1479.Sales by Day of the Week</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1479.Sales by Day of the Week</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1480.Running%20Sum%20of%201d%20Array/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1480.Running Sum of 1d Array</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1480.Running Sum of 1d Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1481.Least%20Number%20of%20Unique%20Integers%20after%20K%20Removals/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1481.Least Number of Unique Integers after K Removals</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1481.Least%20Number%20of%20Unique%20Integers%20after%20K%20Removals/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1481.Least Number of Unique Integers after K Removals</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1482.Minimum%20Number%20of%20Days%20to%20Make%20m%20Bouquets/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1482.Minimum Number of Days to Make m Bouquets</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1482.Minimum%20Number%20of%20Days%20to%20Make%20m%20Bouquets/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1482.Minimum Number of Days to Make m Bouquets</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1483.Kth%20Ancestor%20of%20a%20Tree%20Node/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1483.Kth Ancestor of a Tree Node</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1483.Kth Ancestor of a Tree Node</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1484.Group%20Sold%20Products%20By%20The%20Date/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1484.Group Sold Products By The Date</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1484.Group Sold Products By The Date</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1485.Clone%20Binary%20Tree%20With%20Random%20Pointer/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1485.Clone Binary Tree With Random Pointer</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1485.Clone Binary Tree With Random Pointer</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1486.XOR%20Operation%20in%20an%20Array/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1486.XOR Operation in an Array</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1486.XOR Operation in an Array</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1487.Making%20File%20Names%20Unique/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1487.Making File Names Unique</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1487.Making File Names Unique</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1488.Avoid%20Flood%20in%20The%20City/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1488.Avoid Flood in The City</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1488.Avoid Flood in The City</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1489.Find%20Critical%20and%20Pseudo-Critical%20Edges%20in%20Minimum%20Spanning%20Tree/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1489.Find Critical and Pseudo-Critical Edges in Minimum
-                    Spanning Tree</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1489.Find%20Critical%20and%20Pseudo-Critical%20Edges%20in%20Minimum%20Spanning%20Tree/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1489.Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1490.Clone%20N-ary%20Tree/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1490.Clone N-ary Tree</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1490.Clone N-ary Tree</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1491.Average%20Salary%20Excluding%20the%20Minimum%20and%20Maximum%20Salary/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1491.Average Salary Excluding the Minimum and Maximum
-                    Salary</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1491.Average%20Salary%20Excluding%20the%20Minimum%20and%20Maximum%20Salary/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1491.Average Salary Excluding the Minimum and Maximum Salary</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1492.The%20kth%20Factor%20of%20n/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1492.The kth Factor of n</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1492.The kth Factor of n</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1493.Longest%20Subarray%20of%201%27s%20After%20Deleting%20One%20Element/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1493.Longest Subarray of 1's After Deleting One
-                    Element</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1493.Longest%20Subarray%20of%201%27s%20After%20Deleting%20One%20Element/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1493.Longest Subarray of 1's After Deleting One Element</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1494.Parallel%20Courses%20II/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1494.Parallel Courses II</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1494.Parallel Courses II</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1495.Friendly%20Movies%20Streamed%20Last%20Month/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1495.Friendly Movies Streamed Last Month</span
-                  >
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1495.Friendly Movies Streamed Last Month</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1496.Path%20Crossing/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1496.Path Crossing</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1496.Path Crossing</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1497.Check%20If%20Array%20Pairs%20Are%20Divisible%20by%20k/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1497.Check If Array Pairs Are Divisible by k</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1497.Check%20If%20Array%20Pairs%20Are%20Divisible%20by%20k/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1497.Check If Array Pairs Are Divisible by k</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
-                <a
-                  href="1498.Number%20of%20Subsequences%20That%20Satisfy%20the%20Given%20Sum%20Condition/"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name"
-                    >1498.Number of Subsequences That Satisfy the Given Sum
-                    Condition</span
-                  >
+        <tr class="file">
+            <td></td>
+            <td>
+                <a href="1498.Number%20of%20Subsequences%20That%20Satisfy%20the%20Given%20Sum%20Condition/">
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1498.Number of Subsequences That Satisfy the Given Sum Condition</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
 
-            <tr class="file">
-              <td></td>
-              <td>
+        <tr class="file">
+            <td></td>
+            <td>
                 <a href="1499.Max%20Value%20of%20Equation/">
-                  <svg
-                    width="1.5em"
-                    height="1em"
-                    version="1.1"
-                    viewBox="0 0 265 323"
-                  >
-                    <use xlink:href="#folder"></use>
-                  </svg>
-                  <span class="name">1499.Max Value of Equation</span>
+                    <svg width="1.5em" height="1em" version="1.1" viewBox="0 0 265 323"><use xlink:href="#folder"></use></svg>
+                    <span class="name">1499.Max Value of Equation</span>
                 </a>
-              </td>
-              <td data-order="-1">&mdash;</td>
-              <td class="hideable">
-                <time datetime="2021-12-11T19:22:54"
-                  >Sat Dec 11 19:22:54 2021</time
-                >
-              </td>
-              <td class="hideable"></td>
-            </tr>
-          </tbody>
+            </td>
+            <td data-order="-1">&mdash;</td>
+            <td class="hideable"><time datetime="2021-12-11T19:22:54">Sat Dec 11 19:22:54 2021</time></td>
+            <td class="hideable"></td>
+        </tr>
+
+            </tbody>
         </table>
-      </div>
-    </main>
-  </body>
+    </div>
+</main>
+</body>
 </html>
