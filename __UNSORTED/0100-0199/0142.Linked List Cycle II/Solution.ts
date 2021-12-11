@@ -10,21 +10,22 @@
  * }
  */
 
- function detectCycle(head: ListNode | null): ListNode | null {
-    let slow = head, fast = head;
-    while (fast) {
-        slow = slow.next;
-        if (!fast.next) return null;
-        fast = fast.next.next;
+function detectCycle(head: ListNode | null): ListNode | null {
+  let slow = head,
+    fast = head;
+  while (fast) {
+    slow = slow.next;
+    if (!fast.next) return null;
+    fast = fast.next.next;
 
-        if (fast == slow) {
-            let cur = head;
-            while (cur != slow) {
-                slow = slow.next;
-                cur = cur.next;
-            } 
-            return cur;
-        }
+    if (fast == slow) {
+      let cur = head;
+      while (cur != slow) {
+        slow = slow.next;
+        cur = cur.next;
+      }
+      return cur;
     }
-    return null;
-};
+  }
+  return null;
+}

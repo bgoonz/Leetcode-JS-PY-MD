@@ -35,4 +35,4 @@ var invertTree = function (root) {
     }
   }
   return root;
-}
+};

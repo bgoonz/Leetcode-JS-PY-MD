@@ -12,13 +12,13 @@
  * }
  */
 
- function sumNumbers(root: TreeNode | null): number {
-    return dfs(root);
-};
+function sumNumbers(root: TreeNode | null): number {
+  return dfs(root);
+}
 
-function dfs(root: TreeNode | null, preSum : number = 0): number {
-    if (!root) return 0;
-    preSum = preSum * 10 + root.val;
-    if (!root.left && !root.right) return preSum;
-    return dfs(root.left, preSum) + dfs(root.right, preSum);
+function dfs(root: TreeNode | null, preSum: number = 0): number {
+  if (!root) return 0;
+  preSum = preSum * 10 + root.val;
+  if (!root.left && !root.right) return preSum;
+  return dfs(root.left, preSum) + dfs(root.right, preSum);
 }

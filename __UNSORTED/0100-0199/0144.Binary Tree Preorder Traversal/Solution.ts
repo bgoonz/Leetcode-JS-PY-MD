@@ -12,18 +12,18 @@
  * }
  */
 
- function preorderTraversal(root: TreeNode | null): number[] {
-    if (root == null) return [];
-    let stack = [];
-    let ans = [];
-    while (root || stack.length) {
-        while (root) {
-            ans.push(root.val);
-            stack.push(root);
-            root = root.left;
-        }
-        root = stack.pop();
-        root = root.right;
+function preorderTraversal(root: TreeNode | null): number[] {
+  if (root == null) return [];
+  let stack = [];
+  let ans = [];
+  while (root || stack.length) {
+    while (root) {
+      ans.push(root.val);
+      stack.push(root);
+      root = root.left;
     }
-    return ans;
-};
+    root = stack.pop();
+    root = root.right;
+  }
+  return ans;
+}

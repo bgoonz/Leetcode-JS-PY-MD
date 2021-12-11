@@ -9,30 +9,30 @@
 /**
  * @param {TreeNode} root
  */
- var BSTIterator = function(root) {
-    this.stack = []
-    for (; root != null; root = root.left) {
-        this.stack.push(root);
-    }
+var BSTIterator = function (root) {
+  this.stack = [];
+  for (; root != null; root = root.left) {
+    this.stack.push(root);
+  }
 };
 
 /**
  * @return {number}
  */
-BSTIterator.prototype.next = function() {
-    let cur = this.stack.pop();
-    let node = cur.right;
-    for (; node != null; node = node.left) {
-        this.stack.push(node);
-    }
-    return cur.val;
+BSTIterator.prototype.next = function () {
+  let cur = this.stack.pop();
+  let node = cur.right;
+  for (; node != null; node = node.left) {
+    this.stack.push(node);
+  }
+  return cur.val;
 };
 
 /**
  * @return {boolean}
  */
-BSTIterator.prototype.hasNext = function() {
-    return this.stack.length > 0;
+BSTIterator.prototype.hasNext = function () {
+  return this.stack.length > 0;
 };
 
 /**

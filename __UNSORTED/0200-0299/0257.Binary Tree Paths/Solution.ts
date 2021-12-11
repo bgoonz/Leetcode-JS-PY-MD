@@ -12,22 +12,22 @@
  * }
  */
 
- function binaryTreePaths(root: TreeNode | null): string[] {
-    let ans = [];
-    let pre = '';
-    dfs(root, pre, ans);
-    return ans;
-};
+function binaryTreePaths(root: TreeNode | null): string[] {
+  let ans = [];
+  let pre = "";
+  dfs(root, pre, ans);
+  return ans;
+}
 
 function dfs(root: TreeNode | null, pre: string, ans: string[]): void {
-    if (root == null) return;
-    let val = String(root.val);
-    pre = pre.length > 0 ? `${pre}->${val}` : pre + val;
-    // 叶子节点
-    if (root.left == null && root.right == null) {
-        ans.push(pre);
-        return;
-    }
-    dfs(root.left, pre, ans);
-    dfs(root.right, pre, ans);
+  if (root == null) return;
+  let val = String(root.val);
+  pre = pre.length > 0 ? `${pre}->${val}` : pre + val;
+  // 叶子节点
+  if (root.left == null && root.right == null) {
+    ans.push(pre);
+    return;
+  }
+  dfs(root.left, pre, ans);
+  dfs(root.right, pre, ans);
 }
