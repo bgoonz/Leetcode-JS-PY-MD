@@ -10,16 +10,16 @@
  * @param {TreeNode} p
  * @return {TreeNode}
  */
- var inorderSuccessor = function(root, p) {
-    let cur = root;
-    let ans = null;
-    while (cur != null) {
-        if (cur.val <= p.val) {
-            cur = cur.right;
-        } else {
-            ans = cur;
-            cur = cur.left;
-        }
+var inorderSuccessor = function (root, p) {
+  let cur = root;
+  let ans = null;
+  while (cur != null) {
+    if (cur.val <= p.val) {
+      cur = cur.right;
+    } else {
+      ans = cur;
+      cur = cur.left;
     }
-    return ans;
+  }
+  return ans;
 };
