@@ -22,45 +22,45 @@
  *
  * @param {number[]} nums
  */
-let Solution = function(nums) {
-    this.nums = nums;
-    this.length = nums.length;
+let Solution = function (nums) {
+  this.nums = nums;
+  this.length = nums.length;
 };
 
 /**
  * Resets the array to its original configuration and return it.
  * @return {number[]}
  */
-Solution.prototype.reset = function() {
-    return this.nums;
+Solution.prototype.reset = function () {
+  return this.nums;
 };
 
 /**
  * Returns a random shuffling of the array.
  * @return {number[]}
  */
-Solution.prototype.shuffle = function() {
-    let shufflelist = []
-    for (let i=0; i<this.length; i++) {
-        shufflelist.push(this.nums[i]);
+Solution.prototype.shuffle = function () {
+  let shufflelist = [];
+  for (let i = 0; i < this.length; i++) {
+    shufflelist.push(this.nums[i]);
+  }
+
+  for (let i = 0; i < this.length; i++) {
+    let random = (Math.floor(Math.random() * this.length) + i) % this.length,
+      temp = 0;
+
+    if (random === i) {
+      continue;
     }
-    
-    for (let i=0; i<this.length; i++) {
-        let random = (Math.floor(Math.random()*this.length) + i) % this.length,
-            temp = 0;
-            
-        if (random === i) {
-            continue;
-        }
-        temp = shufflelist[i];
-        shufflelist[i] = shufflelist[random];
-        shufflelist[random] = temp;
-    }
-    
-    return shufflelist;
+    temp = shufflelist[i];
+    shufflelist[i] = shufflelist[random];
+    shufflelist[random] = temp;
+  }
+
+  return shufflelist;
 };
 
-/** 
+/**
  * Your Solution object will be instantiated and called as such:
  * var obj = Object.create(Solution).createNew(nums)
  * var param_1 = obj.reset()

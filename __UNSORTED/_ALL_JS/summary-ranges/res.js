@@ -2,12 +2,13 @@
  * @param {number[]} nums
  * @return {string[]}
  */
-var summaryRanges = function(nums) {
+var summaryRanges = function (nums) {
   let len = nums.length;
   if (!len) return [];
 
   let res = [];
-  let start = null, end = null;
+  let start = null,
+    end = null;
   for (let i = 0; i < len; i++) {
     const e = nums[i];
     if (start === null) {
@@ -22,7 +23,7 @@ var summaryRanges = function(nums) {
     }
   }
 
-  if (!res.length || res[res.length-1] !== getResStr(start, end)) {
+  if (!res.length || res[res.length - 1] !== getResStr(start, end)) {
     res.push(getResStr(start, end));
   }
 
@@ -31,4 +32,4 @@ var summaryRanges = function(nums) {
 
 const getResStr = (start, end) => {
   return start === end ? `${start}` : `${start}->${end === null ? start : end}`;
-}
+};

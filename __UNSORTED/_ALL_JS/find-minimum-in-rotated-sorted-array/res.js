@@ -2,9 +2,10 @@
  * @param {number[]} nums
  * @return {number}
  */
-var findMin = function(nums) {
-  const len  = nums.length;
-  let left = 0, right = len-1;
+var findMin = function (nums) {
+  const len = nums.length;
+  let left = 0,
+    right = len - 1;
   if (len === 1 || nums[left] < nums[right]) return nums[0];
 
   while (left < right) {

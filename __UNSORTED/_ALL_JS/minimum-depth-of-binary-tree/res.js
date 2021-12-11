@@ -9,17 +9,17 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var minDepth = function(root) {
+var minDepth = function (root) {
   if (!root) return 0;
-  
+
   let queue = [root];
   let res = 1;
 
-  while(queue.length) {
+  while (queue.length) {
     const tempQ = [];
     let isNull = false;
-      
-    queue.map(e => {
+
+    queue.map((e) => {
       if (!e.left && !e.right) isNull = true;
 
       e.left && tempQ.push(e.left);

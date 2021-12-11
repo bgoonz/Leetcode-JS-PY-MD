@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var maxSubArray = function(nums) {
+var maxSubArray = function (nums) {
   if (nums.length < 1) return 0;
 
   let ans = nums[0];
@@ -21,13 +21,12 @@ var maxSubArray = function(nums) {
   return ans;
 };
 
-
 /**
  * @param {number[]} nums
  * @return {number}
  */
-var maxSubArray = function(nums) {
+var maxSubArray = function (nums) {
   if (nums.length < 1) return 0;
-  
-  return getMaxSum
+
+  return getMaxSum;
 };

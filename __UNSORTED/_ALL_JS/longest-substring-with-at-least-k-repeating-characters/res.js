@@ -4,12 +4,12 @@
  * @param {number} k
  * @return {number}
  */
-var longestSubstring = function(s, k) {
+var longestSubstring = function (s, k) {
   const len = s.length;
-  if (len<k) return 0;
+  if (len < k) return 0;
 
   const count = (start, end) => {
-    if (end-start+1 < k) return 0;
+    if (end - start + 1 < k) return 0;
 
     const strdict = {};
     let numOfLessThanK = 0;
@@ -23,29 +23,29 @@ var longestSubstring = function(s, k) {
         if (strdict[e] === k) {
           numOfLessThanK -= 1;
         }
-      };
+      }
     }
 
-    if (!numOfLessThanK) return end-start+1;
-    while(end-start+1 < k && strdict[start] < k) {
+    if (!numOfLessThanK) return end - start + 1;
+    while (end - start + 1 < k && strdict[start] < k) {
       start++;
     }
-    while(end-start+1 < k && strdict[end] < k) {
+    while (end - start + 1 < k && strdict[end] < k) {
       end--;
     }
-    if (end-start+1 < k) return 0;
+    if (end - start + 1 < k) return 0;
 
     for (let i = start; i <= end; i++) {
       const e = s[i];
       if (strdict[e] < k) {
-        let next = i+1;
-        while(strdict[next] < k && next < end) next++;
-        return Math.max(count(start, i-1),count(next, end));
+        let next = i + 1;
+        while (strdict[next] < k && next < end) next++;
+        return Math.max(count(start, i - 1), count(next, end));
       }
     }
 
-    return end-start+1;
-  }
+    return end - start + 1;
+  };
 
-  return count(0, len-1);
+  return count(0, len - 1);
 };

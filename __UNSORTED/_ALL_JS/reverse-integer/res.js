@@ -1,12 +1,12 @@
 /**
  * Reverse digits of an integer.
- * 
+ *
  * Example1: x = 123, return 321
  * Example2: x = -123, return -321
- * 
+ *
  * Note:
  * The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.
- * 
+ *
  * res.js
  * @date    2017-02-21 21:25:59
  * @version $Id$
@@ -16,28 +16,28 @@
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
-    let res = 0,
-    	abs = Math.abs(x),
-    	negative = abs === x? false:true;
+var reverse = function (x) {
+  let res = 0,
+    abs = Math.abs(x),
+    negative = abs === x ? false : true;
 
-    while (abs>0) {
-    	let currentVal = abs % 10;
-    	res = res*10 + currentVal;
-    	abs = Number.parseInt(abs/10);
-    }
+  while (abs > 0) {
+    let currentVal = abs % 10;
+    res = res * 10 + currentVal;
+    abs = Number.parseInt(abs / 10);
+  }
 
-    if (res > Math.pow(2, 31)) {
-    	return 0;
-    } else if (negative) {
-    	return -res;
-    }
+  if (res > Math.pow(2, 31)) {
+    return 0;
+  } else if (negative) {
+    return -res;
+  }
 
-    return res;
+  return res;
 };
 
 // Another solution wrote in Java
-// 
+//
 // public int reverse(int x)
 // {
 //     int result = 0;

@@ -3,12 +3,12 @@
  * @param {number[]} newInterval
  * @return {number[][]}
  */
-var insert = function(intervals, newInterval) {
+var insert = function (intervals, newInterval) {
   const len = intervals.length;
   if (!len) return [newInterval];
   const [start, end] = newInterval;
   const new_itervals = [];
-  
+
   let i = 0;
   while (i < len && start > intervals[i][0]) {
     new_itervals.push(intervals[i]);
@@ -24,9 +24,9 @@ var insert = function(intervals, newInterval) {
   console.log(new_itervals);
   res = [];
   i = 0;
-  while (i < len+1) {
+  while (i < len + 1) {
     let [left, right] = new_itervals[i];
-    while (i < len && new_itervals[i+1][0] <= right) {
+    while (i < len && new_itervals[i + 1][0] <= right) {
       i += 1;
       right = Math.max(new_itervals[i][1], right);
     }
@@ -35,5 +35,4 @@ var insert = function(intervals, newInterval) {
   }
 
   return res;
-
 };

@@ -27,25 +27,26 @@
  * @param {number} target
  * @return {boolean}
  */
-let searchMatrix = function(matrix, target) {
-    // Nothing in the matrix
-    if (matrix.length === 0 || matrix[0] === 0) {
-        return false;
-    }
-    
-    let rowlen = matrix.length,
-        collen = matrix[0].length;
-    
-    let i = 0, j = collen-1;
-    while (i>=0 && i<rowlen && j>=0 && j<collen) {
-        if (matrix[i][j] === target) {
-            return true;
-        } else if (matrix[i][j] > target) {
-            j -= 1;
-        } else {
-            i += 1;
-        }
-    }
-    
+let searchMatrix = function (matrix, target) {
+  // Nothing in the matrix
+  if (matrix.length === 0 || matrix[0] === 0) {
     return false;
+  }
+
+  let rowlen = matrix.length,
+    collen = matrix[0].length;
+
+  let i = 0,
+    j = collen - 1;
+  while (i >= 0 && i < rowlen && j >= 0 && j < collen) {
+    if (matrix[i][j] === target) {
+      return true;
+    } else if (matrix[i][j] > target) {
+      j -= 1;
+    } else {
+      i += 1;
+    }
+  }
+
+  return false;
 };

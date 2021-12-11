@@ -27,28 +27,29 @@
  * @param {TreeNode} root
  * @return {number}
  */
-let sumOfLeftLeaves = function(root) {
-    // Deal with the first root value
-    if (!root || root.val===null || (!root.left && !root.right)) {
-    	return 0;
-    }
+let sumOfLeftLeaves = function (root) {
+  // Deal with the first root value
+  if (!root || root.val === null || (!root.left && !root.right)) {
+    return 0;
+  }
 
-    let leftlefVal = 0, rightlefVal = 0;
-    if (root.left) {
-    	if (!root.left.left && !root.left.right) {
-    		leftlefVal = root.left.val;
-    	} else {
-    		leftlefVal = sumOfLeftLeaves(root.left);
-    	}
+  let leftlefVal = 0,
+    rightlefVal = 0;
+  if (root.left) {
+    if (!root.left.left && !root.left.right) {
+      leftlefVal = root.left.val;
+    } else {
+      leftlefVal = sumOfLeftLeaves(root.left);
     }
+  }
 
-    if (root.right) {
-    	if (!root.right.left && !root.right.right) {
-    		rightlefVal = 0;
-    	} else {
-    		rightlefVal = sumOfLeftLeaves(root.right);
-    	}
+  if (root.right) {
+    if (!root.right.left && !root.right.right) {
+      rightlefVal = 0;
+    } else {
+      rightlefVal = sumOfLeftLeaves(root.right);
     }
+  }
 
-    return leftlefVal + rightlefVal;
+  return leftlefVal + rightlefVal;
 };

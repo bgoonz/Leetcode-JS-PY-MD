@@ -9,7 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var longestUnivaluePath = function(root) {
+var longestUnivaluePath = function (root) {
   if (!root) return 0;
   let compRes = 0;
 
@@ -21,7 +21,7 @@ var longestUnivaluePath = function(root) {
     let right = 0;
     let tl = getMaxPath(ele.left);
     let tr = getMaxPath(ele.right);
-    
+
     if (ele.left !== null && ele.left.val === val) {
       left = tl + 1;
     }
@@ -31,7 +31,7 @@ var longestUnivaluePath = function(root) {
 
     compRes = Math.max(compRes, left + right);
     return Math.max(left, right);
-  }
+  };
 
   getMaxPath(root);
   return compRes;

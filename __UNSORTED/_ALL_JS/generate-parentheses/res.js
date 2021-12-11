@@ -8,24 +8,25 @@
  * @param {number} n
  * @return {string[]}
  */
-let generateParenthesis = function(n) {
-    let res = [], p = '';
-   	
-    function subProblem(p, left, right) {
-    	if (left) {
-    		subProblem(p+'(', left-1, right);
-    	}
-    	if (right>left) {
-    		subProblem(p+')', left, right-1);
-    	}
-    	if (!right) {
-    		res.push(p);
-    	}
+let generateParenthesis = function (n) {
+  let res = [],
+    p = "";
 
-    	return ;
+  function subProblem(p, left, right) {
+    if (left) {
+      subProblem(p + "(", left - 1, right);
+    }
+    if (right > left) {
+      subProblem(p + ")", left, right - 1);
+    }
+    if (!right) {
+      res.push(p);
     }
 
-    subProblem('', n, n);
+    return;
+  }
 
-    return res;
+  subProblem("", n, n);
+
+  return res;
 };

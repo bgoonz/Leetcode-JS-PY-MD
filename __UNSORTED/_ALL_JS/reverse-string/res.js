@@ -13,13 +13,13 @@
  * @param {string} s
  * @return {string}
  */
-let reverseString = function(s) {
-    let res = '';
-    
-    while (s) {
-        res = s.charAt(0)+res;
-        s = s.substring(1);
-    }
-    
-    return res;
+let reverseString = function (s) {
+  let res = "";
+
+  while (s) {
+    res = s.charAt(0) + res;
+    s = s.substring(1);
+  }
+
+  return res;
 };
