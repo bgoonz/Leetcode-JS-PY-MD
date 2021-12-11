@@ -12,37 +12,43 @@
  * }
  */
 
- function verticalTraversal(root: TreeNode | null): number[][] {
-    let solution = [];
-    dfs(root, 0, 0, solution);
-    solution.sort(compare);
-    let ans = [];
-    let pre = Number.MIN_SAFE_INTEGER;
-    for (let node of solution) {
-        const [val, , idx] = node;
-        if (idx != pre) {
-            ans.push([]);
-            pre = idx;
-        }
-        ans[ans.length - 1].push(val);
+function verticalTraversal(root: TreeNode | null): number[][] {
+  let solution = [];
+  dfs(root, 0, 0, solution);
+  solution.sort(compare);
+  let ans = [];
+  let pre = Number.MIN_SAFE_INTEGER;
+  for (let node of solution) {
+    const [val, , idx] = node;
+    if (idx != pre) {
+      ans.push([]);
+      pre = idx;
     }
-    return ans;
-};
-
-function compare(a: Array<number>, b: Array<number>) {
-    const [a0, a1, a2] = a, [b0, b1, b2] = b;
-    if (a2 == b2) {
-        if (a1 == b1) {
-            return a0 - b0;
-        }
-        return a1 - b1;
-    }
-    return a2 - b2;
+    ans[ans.length - 1].push(val);
+  }
+  return ans;
 }
 
-function dfs(root: TreeNode | null, depth: number, idx: number, solution: Array<Array<number>>) {
-    if (!root) return;
-    solution.push([root.val, depth, idx]);
-    dfs(root.left, depth + 1, idx - 1, solution);
-    dfs(root.right, depth + 1, idx + 1, solution);
+function compare(a: Array<number>, b: Array<number>) {
+  const [a0, a1, a2] = a,
+    [b0, b1, b2] = b;
+  if (a2 == b2) {
+    if (a1 == b1) {
+      return a0 - b0;
+    }
+    return a1 - b1;
+  }
+  return a2 - b2;
+}
+
+function dfs(
+  root: TreeNode | null,
+  depth: number,
+  idx: number,
+  solution: Array<Array<number>>
+) {
+  if (!root) return;
+  solution.push([root.val, depth, idx]);
+  dfs(root.left, depth + 1, idx - 1, solution);
+  dfs(root.right, depth + 1, idx + 1, solution);
 }
