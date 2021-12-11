@@ -43,26 +43,26 @@ var treeToDoublyList = function (root) {
  * @return {Node}
  */
 var treeToDoublyList = function (root) {
-    if (!root) return;
-    let stk = [];
-    let cur = root;
-    let pre, head;
-    while (cur || stk.length) {
-        while (cur) {
-            stk.push(cur);
-            cur = cur.left;
-        }
-        let top = stk.pop();
-        if (pre) {
-            pre.right = top;
-            top.left = pre;
-        } else {
-            head = top;
-        }
-        pre = top;
-        cur = top.right;
+  if (!root) return;
+  let stk = [];
+  let cur = root;
+  let pre, head;
+  while (cur || stk.length) {
+    while (cur) {
+      stk.push(cur);
+      cur = cur.left;
     }
-    pre.right = head;
-    head.left = pre;
-    return head;
+    let top = stk.pop();
+    if (pre) {
+      pre.right = top;
+      top.left = pre;
+    } else {
+      head = top;
+    }
+    pre = top;
+    cur = top.right;
+  }
+  pre.right = head;
+  head.left = pre;
+  return head;
 };

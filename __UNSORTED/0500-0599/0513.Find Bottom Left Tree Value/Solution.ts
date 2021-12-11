@@ -12,23 +12,23 @@
  * }
  */
 
- function findBottomLeftValue(root: TreeNode | null): number {
-    let stack: Array<TreeNode> = [root];
-    let ans = root.val;
-    while (stack.length) {
-        let next = [];
-        for (let node of stack) {
-            if (node.left) {
-                next.push(node.left);
-            }
-            if (node.right) {
-                next.push(node.right);
-            }
-        }
-        if (next.length) {
-            ans = next[0].val;
-        }
-        stack = next;
+function findBottomLeftValue(root: TreeNode | null): number {
+  let stack: Array<TreeNode> = [root];
+  let ans = root.val;
+  while (stack.length) {
+    let next = [];
+    for (let node of stack) {
+      if (node.left) {
+        next.push(node.left);
+      }
+      if (node.right) {
+        next.push(node.right);
+      }
     }
-    return ans;
-};
+    if (next.length) {
+      ans = next[0].val;
+    }
+    stack = next;
+  }
+  return ans;
+}
